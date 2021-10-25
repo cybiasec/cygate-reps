@@ -1,0 +1,651 @@
+=>> Building net/radvd
+build started at Mon Oct 18 23:30:49 EAT 2021
+port directory: /usr/ports/net/radvd
+package name: radvd-2.19_2
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-03 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: farrokhi@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root  wheel  802 Oct 18 18:58 /usr/ports/net/radvd/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 03
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/03/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for radvd-2.19_2:
+     DOCS=off: Build and/or install documentation
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+farrokhi@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--program-transform-name= --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake PKG_CONFIG=pkgconf XDG_DATA_HOME=/wrkdirs/usr/ports/net/radvd/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net/radvd/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net/radvd/work/.cache  HOME=/wrkdirs/usr/ports/net/radvd/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net/radvd/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/net/radvd/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net/radvd/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net/radvd/work/.cache  HOME=/wrkdirs/usr/ports/net/radvd/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net/radvd/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="@comment " OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/radvd"  EXAMPLESDIR="share/examples/radvd"  DATADIR="share/radvd"  WWWDIR="www/radvd"  ETCDIR="etc/radvd"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/radvd DOCSDIR=/usr/local/share/doc/radvd EXAMPLESDIR=/usr/local/share/examples/radvd  WWWDIR=/usr/local/www/radvd ETCDIR=/usr/local/etc/radvd
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License RADVD accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   radvd-2.19_2 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting pkg-1.17.2: .......... done
+===>   radvd-2.19_2 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of radvd-2.19_2
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License RADVD accepted by the user
+===> Fetching all distfiles required by radvd-2.19_2 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License RADVD accepted by the user
+===> Fetching all distfiles required by radvd-2.19_2 for building
+=> SHA256 Checksum OK for radvd-2.19.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License RADVD accepted by the user
+===> Fetching all distfiles required by radvd-2.19_2 for building
+===>  Extracting for radvd-2.19_2
+=> SHA256 Checksum OK for radvd-2.19.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for radvd-2.19_2
+===>  Applying FreeBSD patches for radvd-2.19_2 from /usr/ports/net/radvd/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   radvd-2.19_2 depends on package: gmake>=4.3 - not found
+===>   Installing existing package /packages/All/gmake-4.3_2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing gmake-4.3_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Installing gettext-runtime-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] |   `-- Installing indexinfo-0.3.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] |   `-- Extracting indexinfo-0.3.1: .... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Extracting gettext-runtime-0.21: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting gmake-4.3_2: .......... done
+===>   radvd-2.19_2 depends on package: gmake>=4.3 - found
+===>   Returning to build of radvd-2.19_2
+===>   radvd-2.19_2 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-1.8.0,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing pkgconf-1.8.0,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting pkgconf-1.8.0,1: .......... done
+===>   radvd-2.19_2 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of radvd-2.19_2
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for radvd-2.19_2
+configure: loading site script /usr/ports/Templates/config.site
+checking build system type... amd64-portbld-freebsd12.3
+checking host system type... amd64-portbld-freebsd12.3
+checking target system type... amd64-portbld-freebsd12.3
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether gmake sets $(MAKE)... yes
+checking whether gmake supports nested variables... yes
+checking whether gmake supports nested variables... (cached) yes
+checking architecture... bsd44
+checking for style of include used by gmake... GNU
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking whether cc understands -c and -o together... yes
+checking dependency style of cc... gcc3
+checking for cc option to accept ISO C99... none needed
+checking for ranlib... ranlib
+checking pkg-config is at least version 0.9.0... yes
+checking netlink... no
+checking for library containing clock_gettime... none required
+checking for rm... /bin/rm
+checking for sed... (cached) /usr/bin/sed
+checking for ln... /bin/ln
+checking for bison... no
+checking for byacc... byacc
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... -lfl
+checking whether yytext is a pointer... yes
+checking for tar... /usr/bin/tar
+checking for gzip... (cached) /usr/bin/gzip
+checking where to put logfile... /var/log/radvd.log
+checking where to put pidfile... /var/run/radvd.pid
+checking where to find configfile... /usr/local/etc/radvd.conf
+checking which syslog facility to use... LOG_DAEMON
+checking for inet_ntop in -lc... yes
+checking how to run the C preprocessor... cpp
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getopt.h... (cached) yes
+checking ifaddrs.h usability... yes
+checking ifaddrs.h presence... yes
+checking for ifaddrs.h... yes
+checking linux/if_arp.h usability... no
+checking linux/if_arp.h presence... no
+checking for linux/if_arp.h... no
+checking machine/limits.h usability... yes
+checking machine/limits.h presence... yes
+checking for machine/limits.h... yes
+checking machine/param.h usability... yes
+checking machine/param.h presence... yes
+checking for machine/param.h... yes
+checking net/if_arp.h usability... no
+checking net/if_arp.h presence... yes
+configure: WARNING: net/if_arp.h: present but cannot be compiled
+configure: WARNING: net/if_arp.h:     check for missing prerequisite headers?
+configure: WARNING: net/if_arp.h: see the Autoconf documentation
+configure: WARNING: net/if_arp.h:     section "Present But Cannot Be Compiled"
+configure: WARNING: net/if_arp.h: proceeding with the compiler's result
+checking for net/if_arp.h... no
+checking net/if_dl.h usability... yes
+checking net/if_dl.h presence... yes
+checking for net/if_dl.h... yes
+checking net/if_types.h usability... yes
+checking net/if_types.h presence... yes
+checking for net/if_types.h... yes
+checking for sys/param.h... (cached) yes
+checking sys/sockio.h usability... yes
+checking sys/sockio.h presence... yes
+checking for sys/sockio.h... yes
+checking for sys/time.h... (cached) yes
+checking for time.h... (cached) yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether struct sockaddr_in6 has sin6_scope_id... yes
+checking whether struct in6_addr has u6_addrXX and defines s6_addrXX... no
+checking for getopt_long... yes
+checking for ppoll... yes
+checking for sysctl... (cached) yes
+checking pkg-config is at least version 0.9.0... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating radvd.service
+config.status: creating redhat/systemd/radvd.spec
+config.status: creating redhat/SysV/radvd.spec
+config.status: creating config.h
+config.status: executing depfiles commands
+
+Your build configuration:
+
+	CPPFLAGS = 
+	CFLAGS = -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing 
+	LDFLAGS =  -fstack-protector-strong 
+	Arch = bsd44
+	Extras: device-bsd44.o 
+	prefix: /usr/local
+	PID file: /var/run/radvd.pid
+	Log file: /var/log/radvd.log
+	Config file: /usr/local/etc/radvd.conf
+	Radvd version: 2.19
+
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for radvd-2.19_2
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/radvd/work/radvd-2.19'
+gmake  all-am
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/radvd/work/radvd-2.19'
+/bin/sh ./ylwrap gram.y y.tab.c gram.c y.tab.h `echo gram.c | sed -e s/cc$/hh/ -e s/cpp$/hpp/ -e s/cxx$/hxx/ -e s/c++$/h++/ -e s/c$/h/` y.output gram.output -- byacc -d 
+depbase=`echo log.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT log.o -MD -MP -MF $depbase.Tpo -c -o log.o log.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo recv.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT recv.o -MD -MP -MF $depbase.Tpo -c -o recv.o recv.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo socket.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT socket.o -MD -MP -MF $depbase.Tpo -c -o socket.o socket.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo util.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT util.o -MD -MP -MF $depbase.Tpo -c -o util.o util.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo device-common.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT device-common.o -MD -MP -MF $depbase.Tpo -c -o device-common.o device-common.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo interface.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT interface.o -MD -MP -MF $depbase.Tpo -c -o interface.o interface.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo process.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT process.o -MD -MP -MF $depbase.Tpo -c -o process.o process.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo radvd.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT radvd.o -MD -MP -MF $depbase.Tpo -c -o radvd.o radvd.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo send.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT send.o -MD -MP -MF $depbase.Tpo -c -o send.o send.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo timer.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT timer.o -MD -MP -MF $depbase.Tpo -c -o timer.o timer.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo device-bsd44.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT device-bsd44.o -MD -MP -MF $depbase.Tpo -c -o device-bsd44.o device-bsd44.c &&\
+mv -f $depbase.Tpo $depbase.Po
+updating gram.h
+depbase=`echo radvdump.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT radvdump.o -MD -MP -MF $depbase.Tpo -c -o radvdump.o radvdump.c &&\
+mv -f $depbase.Tpo $depbase.Po
+process.c:289:38: warning: taking address of packed member 'nd_opt_pi_prefix' of class or structure 'nd_opt_prefix_info' may result in an unaligned pointer value [-Waddress-of-packed-member]
+                                    addr_match(&prefix->Prefix, &pinfo->nd_opt_pi_prefix, prefix->PrefixLen)) {
+                                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/bin/sed \
+	-e 's,@''VERSION''@,2.19,g' \
+	-e 's,@''sbindir''@,/usr/local/sbin,g' \
+	-e 's,@''PATH_RADVD_CONF''@,/usr/local/etc/radvd.conf,g' \
+	-e 's,@''PATH_RADVD_PID''@,/var/run/radvd.pid,g' \
+	-e 's,@''PATH_RADVD_LOG''@,/var/log/radvd.log,g' \
+	-e 's,@''LOG_FACILITY''@,LOG_DAEMON,g' \
+	radvd.8.man > radvd.8
+/usr/bin/sed \
+	-e 's,@''VERSION''@,2.19,g' \
+	-e 's,@''sbindir''@,/usr/local/sbin,g' \
+	-e 's,@''PATH_RADVD_CONF''@,/usr/local/etc/radvd.conf,g' \
+	-e 's,@''PATH_RADVD_PID''@,/var/run/radvd.pid,g' \
+	-e 's,@''PATH_RADVD_LOG''@,/var/log/radvd.log,g' \
+	-e 's,@''LOG_FACILITY''@,LOG_DAEMON,g' \
+	radvd.conf.5.man > radvd.conf.5
+/usr/bin/sed \
+	-e 's,@''VERSION''@,2.19,g' \
+	-e 's,@''sbindir''@,/usr/local/sbin,g' \
+	-e 's,@''PATH_RADVD_CONF''@,/usr/local/etc/radvd.conf,g' \
+	-e 's,@''PATH_RADVD_PID''@,/var/run/radvd.pid,g' \
+	-e 's,@''PATH_RADVD_LOG''@,/var/log/radvd.log,g' \
+	-e 's,@''LOG_FACILITY''@,LOG_DAEMON,g' \
+	radvdump.8.man > radvdump.8
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -Wno-implicit-function-declaration -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT libradvd_parser_a-gram.o -MD -MP -MF .deps/libradvd_parser_a-gram.Tpo -c -o libradvd_parser_a-gram.o `test -f 'gram.c' || echo './'`gram.c
+/bin/sh ./ylwrap scanner.l lex.yy.c scanner.c -- flex  
+radvdump.c:299:15: warning: taking address of packed member 'nd_opt_pi_prefix' of class or structure 'nd_opt_prefix_info' may result in an unaligned pointer value [-Waddress-of-packed-member]
+                        addrtostr(&pinfo->nd_opt_pi_prefix, prefix_str, sizeof(prefix_str));
+                                   ^~~~~~~~~~~~~~~~~~~~~~~
+cc -DINET6=1 -DLOG_FACILITY=LOG_DAEMON -DPATH_RADVD_CONF=\"/usr/local/etc/radvd.conf\" -DPATH_RADVD_LOG=\"/var/log/radvd.log\" -DPATH_RADVD_PID=\"/var/run/radvd.pid\" -DVERSION=\"2.19\" -I.    -Wno-implicit-function-declaration -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -MT libradvd_parser_a-scanner.o -MD -MP -MF .deps/libradvd_parser_a-scanner.Tpo -c -o libradvd_parser_a-scanner.o `test -f 'scanner.c' || echo './'`scanner.c
+1 warning generated.
+1 warning generated.
+cc -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -fstack-protector-strong  -o radvdump log.o recv.o socket.o util.o radvdump.o  -lc 
+mv -f .deps/libradvd_parser_a-gram.Tpo .deps/libradvd_parser_a-gram.Po
+mv -f .deps/libradvd_parser_a-scanner.Tpo .deps/libradvd_parser_a-scanner.Po
+rm -f libradvd-parser.a
+ar cru libradvd-parser.a libradvd_parser_a-gram.o libradvd_parser_a-scanner.o 
+ranlib libradvd-parser.a
+cc -fno-strict-aliasing -Wall -Wcast-qual -Wmissing-declarations -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -Wno-strict-aliasing -Wno-cast-align -Wno-strict-overflow -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -fstack-protector-strong  -o radvd log.o recv.o socket.o util.o device-common.o interface.o process.o radvd.o send.o timer.o libradvd-parser.a device-bsd44.o  -lc 
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/radvd/work/radvd-2.19'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/radvd/work/radvd-2.19'
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for radvd-2.19_2
+===>   Generating temporary packing list
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/radvd/work/radvd-2.19'
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/radvd/work/radvd-2.19'
+ /bin/mkdir -p '/wrkdirs/usr/ports/net/radvd/work/stage/usr/local/sbin'
+  install  -s -m 555 radvd radvdump '/wrkdirs/usr/ports/net/radvd/work/stage/usr/local/sbin'
+ /bin/mkdir -p '/wrkdirs/usr/ports/net/radvd/work/stage/usr/local/man/man5'
+ install  -m 0644 radvd.conf.5 '/wrkdirs/usr/ports/net/radvd/work/stage/usr/local/man/man5'
+ /bin/mkdir -p '/wrkdirs/usr/ports/net/radvd/work/stage/usr/local/man/man8'
+ install  -m 0644 radvd.8 radvdump.8 '/wrkdirs/usr/ports/net/radvd/work/stage/usr/local/man/man8'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/radvd/work/radvd-2.19'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/radvd/work/radvd-2.19'
+install  -m 0644 /wrkdirs/usr/ports/net/radvd/work/radvd-2.19/radvd.conf.example /wrkdirs/usr/ports/net/radvd/work/stage/usr/local/etc/radvd.conf.sample
+install -d /wrkdirs/usr/ports/net/radvd/work/stage/usr/local/share/doc/radvd
+install  -m 0644 /wrkdirs/usr/ports/net/radvd/work/radvd-2.19/CHANGES /wrkdirs/usr/ports/net/radvd/work/radvd-2.19/COPYRIGHT /wrkdirs/usr/ports/net/radvd/work/radvd-2.19/INTRO.html /wrkdirs/usr/ports/net/radvd/work/radvd-2.19/README /wrkdirs/usr/ports/net/radvd/work/radvd-2.19/TODO /wrkdirs/usr/ports/net/radvd/work/stage/usr/local/share/doc/radvd
+====> Compressing man pages (compress-man)
+===> Staging rc.d startup script(s)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:30:49+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for radvd-2.19_2
+install -l rs /.npkg/All/radvd-2.19_2.pkg /.npkg/All/radvd-2.19_2.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for radvd-2.19_2
+build of net/radvd | radvd-2.19_2 ended at Mon Oct 18 23:30:53 EAT 2021
+build time: 00:00:04

@@ -1,0 +1,771 @@
+=>> Building sysutils/apcupsd
+build started at Mon Oct 18 23:29:43 EAT 2021
+port directory: /usr/ports/sysutils/apcupsd
+package name: apcupsd-3.14.14_4
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-03 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: dbaio@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root  wheel  3302 Oct 18 18:58 /usr/ports/sysutils/apcupsd/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 03
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/03/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for apcupsd-3.14.14_4:
+     APCDUMB_DRV=on: Dumb UPS driver support
+     APCSMART_DRV=on: APC SmartUPS serial driver support
+     CGI=off: Build CGI programs to show status
+     CLIENT_ONLY=off: Only NIS client (no network server or drivers)
+     GAPCMON=off: Build GTK GUI front-end
+     MODBUS=on: MODBUS driver support
+     MODBUS_USB=on: MODBUS USB driver support
+     PCNET_DRV=on: PowerChute Network Shutdown driver support
+     SHUTDOWN_POWEROFF=off: Shutdown behavior with Halt and Power off
+     SNMP_DRV=on: SNMP driver support
+     SNMP_DRV_OLD=off: Old SNMP driver support
+     TCP_WRAPPERS=on: TCP wrapper support
+     TEST_DRV=off: Test driver support
+     USB_DRV=on: USB driver support
+     USB_REPORTING=off: Experimental patch for faulty USB reporting
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+dbaio@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--sbindir=/usr/local/sbin  --with-nologin=/var/run  --disable-install-distdir  --sysconfdir=/usr/local/etc/apcupsd  --with-serial-dev=/dev/usv --enable-dumb --enable-apcsmart --disable-cgi --disable-gapcmon --enable-modbus --enable-modbus-usb --enable-pcnet --enable-snmp --disable-net-snmp --with-libwrap=yes --disable-test --enable-usb --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+LD="c++"  ac_cv_path_SHUTDOWN="/sbin/shutdown" MAKE=gmake XDG_DATA_HOME=/wrkdirs/usr/ports/sysutils/apcupsd/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/sysutils/apcupsd/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/sysutils/apcupsd/work/.cache  HOME=/wrkdirs/usr/ports/sysutils/apcupsd/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/sysutils/apcupsd/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/sysutils/apcupsd/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/sysutils/apcupsd/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/sysutils/apcupsd/work/.cache  HOME=/wrkdirs/usr/ports/sysutils/apcupsd/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/sysutils/apcupsd/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+ APCDUMB_DRV="" NO_APCDUMB_DRV="@comment " APCSMART_DRV="" NO_APCSMART_DRV="@comment " CGI="@comment " NO_CGI="" CLIENT_ONLY="@comment " NO_CLIENT_ONLY="" GAPCMON="@comment " NO_GAPCMON="" MODBUS="" NO_MODBUS="@comment " MODBUS_USB="" NO_MODBUS_USB="@comment " PCNET_DRV="" NO_PCNET_DRV="@comment " SHUTDOWN_POWEROFF="@comment " NO_SHUTDOWN_POWEROFF="" SNMP_DRV="" NO_SNMP_DRV="@comment " SNMP_DRV_OLD="@comment " NO_SNMP_DRV_OLD="" TCP_WRAPPERS="" NO_TCP_WRAPPERS="@comment " TEST_DRV="@comment " NO_TEST_DRV="" USB_DRV="" NO_USB_DRV="@comment " USB_REPORTING="@comment " NO_USB_REPORTING="" OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/apcupsd"  EXAMPLESDIR="share/examples/apcupsd"  DATADIR="share/apcupsd"  WWWDIR="www/apcupsd"  ETCDIR="etc/apcupsd"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ APCDUMB_DRV="" NO_APCDUMB_DRV="@comment " APCSMART_DRV="" NO_APCSMART_DRV="@comment " CGI="@comment " NO_CGI="" CLIENT_ONLY="@comment " NO_CLIENT_ONLY="" GAPCMON="@comment " NO_GAPCMON="" MODBUS="" NO_MODBUS="@comment " MODBUS_USB="" NO_MODBUS_USB="@comment " PCNET_DRV="" NO_PCNET_DRV="@comment " SHUTDOWN_POWEROFF="@comment " NO_SHUTDOWN_POWEROFF="" SNMP_DRV="" NO_SNMP_DRV="@comment " SNMP_DRV_OLD="@comment " NO_SNMP_DRV_OLD="" TCP_WRAPPERS="" NO_TCP_WRAPPERS="@comment " TEST_DRV="@comment " NO_TEST_DRV="" USB_DRV="" NO_USB_DRV="@comment " USB_REPORTING="@comment " NO_USB_REPORTING="" PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/apcupsd DOCSDIR=/usr/local/share/doc/apcupsd EXAMPLESDIR=/usr/local/share/examples/apcupsd  WWWDIR=/usr/local/www/apcupsd ETCDIR=/usr/local/etc/apcupsd
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License GPLv2 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   apcupsd-3.14.14_4 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting pkg-1.17.2: .......... done
+===>   apcupsd-3.14.14_4 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of apcupsd-3.14.14_4
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2 accepted by the user
+===> Fetching all distfiles required by apcupsd-3.14.14_4 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2 accepted by the user
+===> Fetching all distfiles required by apcupsd-3.14.14_4 for building
+=> SHA256 Checksum OK for apcupsd-3.14.14.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License GPLv2 accepted by the user
+===> Fetching all distfiles required by apcupsd-3.14.14_4 for building
+===>  Extracting for apcupsd-3.14.14_4
+=> SHA256 Checksum OK for apcupsd-3.14.14.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for apcupsd-3.14.14_4
+===>  Applying FreeBSD patches for apcupsd-3.14.14_4 from /usr/ports/sysutils/apcupsd/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   apcupsd-3.14.14_4 depends on package: gmake>=4.3 - not found
+===>   Installing existing package /packages/All/gmake-4.3_2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing gmake-4.3_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Installing gettext-runtime-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] |   `-- Installing indexinfo-0.3.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] |   `-- Extracting indexinfo-0.3.1: .... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Extracting gettext-runtime-0.21: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting gmake-4.3_2: .......... done
+===>   apcupsd-3.14.14_4 depends on package: gmake>=4.3 - found
+===>   Returning to build of apcupsd-3.14.14_4
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for apcupsd-3.14.14_4
+configure: WARNING: unrecognized options: --disable-net-snmp
+configure: loading site script /usr/ports/Templates/config.site
+checking for true... /usr/bin/true
+checking for false... /usr/bin/false
+checking build system type... amd64-portbld-freebsd12.3
+checking host system type... amd64-portbld-freebsd12.3
+checking for C++ compiler default output file name... a.out
+checking whether the C++ compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether c++ accepts -g... yes
+checking for gcc... cc
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking how to run the C preprocessor... cpp
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for gawk... (cached) /usr/bin/awk
+checking for library containing strerror... none required
+checking for shutdown... (cached) /sbin/shutdown
+checking for mail... /usr/bin/mail
+checking for wall... /usr/bin/wall
+checking for sh... /bin/sh
+checking for GNU make... gmake
+checking for ranlib... ranlib
+checking for rm... /bin/rm
+checking for cp... /bin/cp
+checking for echo... /bin/echo
+checking for ln... /bin/ln
+checking for sed... (cached) /usr/bin/sed
+checking for ar... ar
+checking for mv... /bin/mv
+checking for windres... no
+checking for strip... strip
+checking for rst2html... no
+checking for rst2html.py... no
+checking for rst2pdf... no
+checking for abort... yes
+checking for calloc... (cached) yes
+checking for getpid... (cached) yes
+checking for rewind... yes
+checking for signal... yes
+checking for strerror... (cached) yes
+checking for strncmp... (cached) yes
+checking for strncpy... yes
+checking for vfprintf... (cached) yes
+checking for snprintf... (cached) yes
+checking for vsnprintf... (cached) yes
+checking for strlcpy... (cached) yes
+checking for strlcat... (cached) yes
+checking for accept4... (cached) yes
+checking for fork... (cached) yes
+checking for ioctl... yes
+checking for kill... (cached) yes
+checking for select... (cached) yes
+checking for setsid... (cached) yes
+checking for tcgetattr... yes
+checking for syslog... yes
+checking for library containing nanosleep... none required
+checking for strftime... (cached) yes
+checking for library containing socket... none required
+checking for library containing gethostname... none required
+checking for library containing gethostbyname... none required
+checking for library containing gethostbyname_r... none required
+checking for library containing inet_addr... none required
+checking for strchr... (cached) yes
+using libc's strchr
+checking for strstr... (cached) yes
+checking for strcasecmp... (cached) yes
+checking for memmove... (cached) yes
+checking for getopt_long... yes
+checking for inet_pton... yes
+checking for localtime_r... yes
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for arpa/inet.h... (cached) yes
+checking for ctype.h... (cached) yes
+checking for errno.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for limits.h... (cached) yes
+checking for netdb.h... (cached) yes
+checking for netinet/in.h... (cached) yes
+checking for signal.h... (cached) yes
+checking for stdarg.h... (cached) yes
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/ioctl.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking for unistd.h... (cached) yes
+checking for arpa/nameser.h... (cached) yes
+checking whether stat file-mode macros are broken... no
+checking whether time.h and sys/time.h may both be included... yes
+checking for sys/wait.h that is POSIX.1 compatible... (cached) yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... yes
+checking for uid_t in sys/types.h... (cached) yes
+checking type of array argument to getgroups... gid_t
+checking for mode_t... (cached) yes
+checking for off_t... (cached) yes
+checking for pid_t... (cached) yes
+checking return type of signal handlers... void
+checking for size_t... (cached) yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for socklen_t... yes
+checking for X... no
+checking whether #! works in shell scripts... yes
+Will not install HAL policy file
+checking for libwrap... yes
+checking for libusb-config... no
+checking for usb_init in -lusb... yes
+Using generic libusb USB driver.
+checking for pkg-config... no
+checking how many arguments gethostbyname_r() takes... six
+checking whether C compiler accepts -fno-exceptions... yes
+checking whether C compiler accepts -fno-rtti... yes
+checking whether C compiler accepts -Wall... yes
+checking whether C compiler accepts -Wno-unused-result... yes
+checking for wait... (cached) yes
+checking for waitpid... (cached) yes
+checking for wait3... (cached) yes
+Disabling cgi support...
+configure: creating ./config.status
+config.status: creating autoconf/variables.mak
+config.status: WARNING:  'autoconf/variables.mak.in' seems to ignore the --datarootdir setting
+config.status: creating platforms/apccontrol
+config.status: creating platforms/etc/changeme
+config.status: creating platforms/etc/commfailure
+config.status: creating platforms/etc/commok
+config.status: creating platforms/etc/offbattery
+config.status: creating platforms/etc/onbattery
+config.status: creating platforms/etc/apcupsd.conf
+config.status: creating examples/safe.apccontrol
+config.status: creating platforms/freebsd/apcupsd
+config.status: creating platforms/freebsd/apccontrol
+config.status: creating include/libusb.h
+config.status: creating include/apcconfig.h
+configure: WARNING: unrecognized options: --disable-net-snmp
+gmake[1]: Entering directory '/wrkdirs/usr/ports/sysutils/apcupsd/work/apcupsd-3.14.14'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/sysutils/apcupsd/work/apcupsd-3.14.14'
+
+
+Configuration on Mon Oct 18 20:29:47 UTC 2021:
+
+  Host:                       amd64-portbld-freebsd12.3 -- freebsd 12.3-PRERELEASE
+  Apcupsd version:            3.14.14 (31 May 2016)
+  Source code location:       .
+  Install binaries:           /usr/local/sbin
+  Install config files:       /usr/local/etc/apcupsd
+  Install man files:          /usr/local/man
+  Nologin file in:            /var/run
+  PID directory:              /var/run
+  LOG dir (events, status)    /var/log
+  LOCK dir (for serial port)  /var/spool/lock
+  Power Fail dir              /var/run
+  Compiler:                   c++ version
+  Preprocessor flags:          -I/usr/local/include -I$(topdir)/src/libusbhid
+  Compiler flags:             -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -fno-exceptions -fno-rtti -Wall -Wno-unused-result 
+  Linker:                     c++
+  Linker flags:                -fstack-protector-strong  -L/usr/local/lib -pthread
+  Host and version:           freebsd 12.3-PRERELEASE
+  Shutdown Program:           /sbin/shutdown
+  Port/Device:                /dev/usv
+  Network Info Port (CGI):    3551
+  UPSTYPE                     apcsmart
+  UPSCABLE                    smart
+
+  drivers (no-* are disabled): apcsmart dumb net generic-usb snmp pcnet modbus modbus-usb no-test
+
+  enable-nis:                 yes
+  with-nisip:                 0.0.0.0
+  enable-cgi:                 no
+  with-cgi-bin:               /etc/apcupsd
+  with-libwrap:               yes
+  enable-pthreads:            yes
+  enable-dist-install:        no
+  enable-gapcmon:             no
+  enable-apcagent:            no
+  
+Configuration complete: Run 'gmake' to build apcuspd.
+
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for apcupsd-3.14.14_4
+gmake[1]: Entering directory '/wrkdirs/usr/ports/sysutils/apcupsd/work/apcupsd-3.14.14'
+        src
+        doc
+        src/lib
+        src/drivers
+        src/libusbhid
+  MAN   apcupsd.8 -> apcupsd.man.txt
+  MAN   apcaccess.8 -> apcaccess.man.txt
+  MAN   apctest.8 -> apctest.man.txt
+  MAN   apccontrol.8 -> apccontrol.man.txt
+  MAN   apcupsd.conf.5 -> apcupsd.conf.man.txt
+        src/drivers/apcsmart
+        src/drivers/net
+        src/drivers/dumb
+        src/drivers/usb
+        src/drivers/pcnet
+        src/drivers/usb/generic
+  CXX   src/libusbhid/parse.c
+  CXX   src/drivers/net/net.c
+  CXX   src/drivers/pcnet/pcnet.c
+  CXX   src/drivers/dumb/dumboper.c
+  CXX   src/drivers/apcsmart/smart.c
+  CXX   src/drivers/usb/generic/generic-usb.c
+  CXX   src/lib/apcconfig.c
+        src/drivers/snmplite
+        src/drivers/modbus
+  CXX   src/lib/apcerror.c
+  CXX   src/drivers/dumb/dumbsetup.c
+  CXX   src/drivers/apcsmart/smarteeprom.c
+  CXX   src/drivers/modbus/mapping.cpp
+  CXX   src/drivers/snmplite/apc-mib.cpp
+  CXX   src/drivers/modbus/modbus.cpp
+  CXX   src/lib/apcevents.c
+  CXX   src/libusbhid/data.c
+  CXX   src/drivers/apcsmart/smartoper.c
+  CXX   src/drivers/snmplite/asn.cpp
+  AR    src/drivers/net/libnetdrv.a
+  CXX   src/drivers/usb/usb.c
+  AR    src/drivers/dumb/libdumbdrv.a
+  CXX   src/drivers/modbus/ModbusComm.cpp
+  CXX   src/drivers/modbus/ModbusRs232Comm.cpp
+  CXX   src/drivers/snmplite/mge-mib.cpp
+  CXX   src/libusbhid/descr.c
+  CXX   src/lib/apcexec.c
+  AR    src/drivers/pcnet/libpcnetdrv.a
+  CXX   src/drivers/snmplite/mibs.cpp
+  CXX   src/libusbhid/HidUps.cpp
+  CXX   src/drivers/modbus/ModbusUsbComm.cpp
+  CXX   src/lib/apcfile.c
+  CXX   src/drivers/apcsmart/smartsetup.c
+  CXX   src/drivers/snmplite/rfc1628-mib.cpp
+  CXX   src/lib/apclibnis.c
+  CXX   src/drivers/apcsmart/smartsetup2.c
+  CXX   src/drivers/snmplite/snmp.cpp
+  CXX   src/lib/apclock.c
+  CXX   src/lib/apclog.c
+  AR    src/drivers/usb/libusbdrv.a
+  CXX   src/drivers/snmplite/snmplite.cpp
+  CXX   src/lib/apcsignal.c
+  CXX   src/lib/apcstatus.c
+  AR    src/drivers/modbus/libmodbusdrv.a
+  CXX   src/lib/asys.c
+  AR    src/libusbhid/libusbhid.a
+  CXX   src/lib/newups.c
+  CXX   src/lib/md5.c
+  AR    src/drivers/apcsmart/libapcsmartdrv.a
+  CXX   src/lib/statmgr.cpp
+  CXX   src/lib/gethostname.c
+  CXX   src/lib/amutex.cpp
+  CXX   src/lib/astring.cpp
+  CXX   src/lib/autil.cpp
+  CXX   src/lib/atimer.cpp
+  CXX   src/lib/athread.cpp
+  CXX   src/lib/usbvidpid.cpp
+  CXX   src/lib/cloexec.c
+  AR    src/lib/libapc.a
+  AR    src/drivers/snmplite/libsnmplitedrv.a
+  CXX   src/drivers/drivers.c
+  AR    src/drivers/libdrivers.a
+  CXX   src/options.c
+  CXX   src/device.c
+  CXX   src/reports.c
+  CXX   src/action.c
+  CXX   src/apcupsd.c
+  CXX   src/apcnis.c
+  CXX   src/apcaccess.c
+  CXX   src/smtp.c
+  CXX   src/apctest.c
+  LD    src/apcaccess
+  LD    src/smtp
+  LD    src/apcupsd
+  LD    src/apctest
+        platforms
+        platforms/etc
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/sysutils/apcupsd/work/apcupsd-3.14.14'
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for apcupsd-3.14.14_4
+===>   Generating temporary packing list
+gmake[1]: Entering directory '/wrkdirs/usr/ports/sysutils/apcupsd/work/apcupsd-3.14.14'
+        src
+        src/lib
+        src/drivers
+        src/drivers/apcsmart
+        src/drivers/dumb
+        src/drivers/net
+        src/drivers/pcnet
+        src/drivers/usb
+        src/drivers/usb/generic
+        src/drivers/snmplite
+        src/drivers/modbus
+        src/libusbhid
+  COPY  apcupsd => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/sbin/apcupsd
+  COPY  apctest => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/sbin/apctest
+  COPY  apcaccess => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/sbin/apcaccess
+  COPY  smtp => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/sbin/smtp
+        platforms
+        platforms/etc
+  MKDIR /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/etc/apcupsd
+  COPY  apcupsd.conf => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/etc/apcupsd/apcupsd.conf.sample
+  COPY  changeme => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/etc/apcupsd/changeme.sample
+  COPY  commfailure => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/etc/apcupsd/commfailure.sample
+  COPY  commok => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/etc/apcupsd/commok.sample
+  COPY  offbattery => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/etc/apcupsd/offbattery.sample
+  COPY  onbattery => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/etc/apcupsd/onbattery.sample
+  COPY  apccontrol => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/etc/apcupsd/apccontrol
+        doc
+  COPY  apcupsd.8 => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/man/man8/apcupsd.8
+  COPY  apcaccess.8 => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/man/man8/apcaccess.8
+  COPY  apctest.8 => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/man/man8/apctest.8
+  COPY  apccontrol.8 => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/man/man8/apccontrol.8
+  COPY  apcupsd.conf.5 => /wrkdirs/usr/ports/sysutils/apcupsd/work/stage/usr/local/man/man5/apcupsd.conf.5
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/sysutils/apcupsd/work/apcupsd-3.14.14'
+====> Compressing man pages (compress-man)
+===> Staging rc.d startup script(s)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:29:43+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for apcupsd-3.14.14_4
+install -l rs /.npkg/All/apcupsd-3.14.14_4.pkg /.npkg/All/apcupsd-3.14.14_4.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for apcupsd-3.14.14_4
+build of sysutils/apcupsd | apcupsd-3.14.14_4 ended at Mon Oct 18 23:29:50 EAT 2021
+build time: 00:00:07

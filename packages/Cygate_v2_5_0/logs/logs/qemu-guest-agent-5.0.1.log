@@ -1,0 +1,1097 @@
+=>> Building emulators/qemu-guest-agent
+build started at Mon Oct 18 23:43:19 EAT 2021
+port directory: /usr/ports/emulators/qemu-guest-agent
+package name: qemu-guest-agent-5.0.1
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-02 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: zhecka@gmail.com
+Makefile datestamp: -rw-r--r--  1 root  wheel  4095 Oct 18 18:58 /usr/ports/emulators/qemu-guest-agent/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 02
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+zhecka@gmail.com
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--localstatedir=/var --extra-ldflags=-L\"/usr/local/lib\"  --mandir=/usr/local/man  --prefix=/usr/local --cc=cc --disable-kvm  --python=/usr/local/bin/python3.8  --extra-cflags=-I/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/qemu-5.0.1\ -I/usr/local/include\ -DPREFIX=\\\"\"/usr/local\\\"\"\ -DBSD_GUEST_AGENT\ -DFREEBSD  --disable-blobs  --disable-system  --disable-user  --disable-linux-user  --disable-bsd-user  --disable-docs  --enable-guest-agent  --disable-guest-agent-msi  --disable-pie  --disable-modules  --disable-module-upgrades  --disable-debug-tcg  --disable-debug-info  --disable-sparse  --disable-gnutls  --disable-nettle  --disable-gcrypt  --disable-auth-pam  --disable-sdl  --disable-sdl-image  --disable-gtk  --disable-vte  --disable-curses  --disable-iconv  --disable-vnc  --disable-vnc-sasl  --disable-vnc-jpeg  --disable-vnc-png  --disable-cocoa  --disable-virtfs  --disable-mpath  --disable-xen  --disable-xen-pci-passthrough  --disable-brlapi  --disable-curl  --disable-membarrier  --disable-fdt  --disable-kvm  --disable-hax  --disable-hvf  --disable-whpx  --disable-rdma  --disable-pvrdma  --disable-vde  --disable-netmap  --disable-linux-aio  --disable-linux-io-uring  --disable-cap-ng  --disable-attr  --disable-vhost-net  --disable-vhost-vsock  --disable-vhost-scsi  --disable-vhost-crypto  --disable-vhost-kernel  --disable-vhost-user  --disable-spice  --disable-rbd  --disable-libiscsi  --disable-libnfs  --disable-smartcard  --disable-libusb  --disable-live-block-migration  --disable-usb-redir  --disable-lzo  --disable-snappy  --disable-bzip2  --disable-lzfse  --disable-zstd  --disable-seccomp  --disable-coroutine-pool  --disable-glusterfs  --disable-tpm  --disable-libssh  --disable-numa  --disable-libxml2  --disable-tcmalloc  --disable-jemalloc  --disable-avx2  --disable-avx512f  --disable-replication  --disable-opengl  --disable-virglrenderer  --disable-xfsctl  --disable-qom-cast-debug  --enable-tools  --disable-vxhs  --disable-bochs  --disable-cloop  --disable-dmg  --disable-qcow1  --disable-vdi  --disable-vvfat  --disable-qed  --disable-parallels  --disable-sheepdog  --disable-crypto-afalg  --disable-capstone  --disable-debug-mutex  --disable-libpmem  --disable-xkbcommon
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake PKG_CONFIG=pkgconf PYTHON="/usr/local/bin/python3.8" XDG_DATA_HOME=/wrkdirs/usr/ports/emulators/qemu-guest-agent/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/emulators/qemu-guest-agent/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/.cache  HOME=/wrkdirs/usr/ports/emulators/qemu-guest-agent/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+BSD_MAKE="/usr/bin/make" PREFIX=/usr/local XDG_DATA_HOME=/wrkdirs/usr/ports/emulators/qemu-guest-agent/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/emulators/qemu-guest-agent/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/.cache  HOME=/wrkdirs/usr/ports/emulators/qemu-guest-agent/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="@comment " LINUXBOOT_DMA="" GTK2_VERSION="2.10.0"  GTK3_VERSION="3.0.0"  GTK4_VERSION="4.0.0" PYTHON_INCLUDEDIR=include/python3.8  PYTHON_LIBDIR=lib/python3.8  PYTHON_PLATFORM=freebsd12  PYTHON_SITELIBDIR=lib/python3.8/site-packages  PYTHON_SUFFIX=38  PYTHON_EXT_SUFFIX=.cpython-38  PYTHON_VER=3.8  PYTHON_VERSION=python3.8 PYTHON2="@comment " PYTHON3="" OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/qemu"  EXAMPLESDIR="share/examples/qemu"  DATADIR="share/qemu"  WWWDIR="www/qemu"  ETCDIR="etc/qemu"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/qemu DOCSDIR=/usr/local/share/doc/qemu EXAMPLESDIR=/usr/local/share/examples/qemu  WWWDIR=/usr/local/www/qemu ETCDIR=/usr/local/etc/qemu
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License GPLv2 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   qemu-guest-agent-5.0.1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkg-1.17.2: .......... done
+===>   qemu-guest-agent-5.0.1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of qemu-guest-agent-5.0.1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2 accepted by the user
+===> Fetching all distfiles required by qemu-guest-agent-5.0.1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2 accepted by the user
+===> Fetching all distfiles required by qemu-guest-agent-5.0.1 for building
+=> SHA256 Checksum OK for qemu/5.0.1/qemu-5.0.1.tar.xz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License GPLv2 accepted by the user
+===> Fetching all distfiles required by qemu-guest-agent-5.0.1 for building
+===>  Extracting for qemu-guest-agent-5.0.1
+=> SHA256 Checksum OK for qemu/5.0.1/qemu-5.0.1.tar.xz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for qemu-guest-agent-5.0.1
+===>  Applying FreeBSD patches for qemu-guest-agent-5.0.1 from /usr/ports/emulators/qemu-guest-agent/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   qemu-guest-agent-5.0.1 depends on package: gmake>=4.3 - not found
+===>   Installing existing package /packages/All/gmake-4.3_2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing gmake-4.3_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing gettext-runtime-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing indexinfo-0.3.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting indexinfo-0.3.1: .... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting gettext-runtime-0.21: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting gmake-4.3_2: .......... done
+===>   qemu-guest-agent-5.0.1 depends on package: gmake>=4.3 - found
+===>   Returning to build of qemu-guest-agent-5.0.1
+===>   qemu-guest-agent-5.0.1 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-1.8.0,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkgconf-1.8.0,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkgconf-1.8.0,1: .......... done
+===>   qemu-guest-agent-5.0.1 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of qemu-guest-agent-5.0.1
+===>   qemu-guest-agent-5.0.1 depends on file: /usr/local/bin/python3.8 - not found
+===>   Installing existing package /packages/All/python38-3.8.12_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing python38-3.8.12_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libffi-3.3_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libffi-3.3_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing mpdecimal-2.5.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting mpdecimal-2.5.1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing readline-8.1.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting readline-8.1.1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting python38-3.8.12_1: .......... done
+=====
+Message from python38-3.8.12_1:
+
+--
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+py38-gdbm       databases/py-gdbm@py38
+py38-sqlite3    databases/py-sqlite3@py38
+py38-tkinter    x11-toolkits/py-tkinter@py38
+===>   qemu-guest-agent-5.0.1 depends on file: /usr/local/bin/python3.8 - found
+===>   Returning to build of qemu-guest-agent-5.0.1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   qemu-guest-agent-5.0.1 depends on shared library: libglib-2.0.so - not found
+===>   Installing existing package /packages/All/glib-2.70.0_1,2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing glib-2.70.0_1,2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libiconv-1.16...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libiconv-1.16: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing pcre-8.45...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting pcre-8.45: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting glib-2.70.0_1,2: .......... done
+No schema files found: doing nothing.
+===>   qemu-guest-agent-5.0.1 depends on shared library: libglib-2.0.so - found (/usr/local/lib/libglib-2.0.so)
+===>   Returning to build of qemu-guest-agent-5.0.1
+===>   qemu-guest-agent-5.0.1 depends on shared library: libintl.so - found (/usr/local/lib/libintl.so)
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for qemu-guest-agent-5.0.1
+./configure: pod2man: not found
+Install prefix    /usr/local
+BIOS directory    /usr/local/share/qemu
+firmware path     /usr/local/share/qemu-firmware
+binary directory  /usr/local/bin
+library directory /usr/local/lib
+module directory  /usr/local/lib/qemu
+libexec directory /usr/local/libexec
+include directory /usr/local/include
+config directory  /usr/local/etc
+local state directory   /var
+Manual directory  /usr/local/man
+ELF interp prefix /usr/gnemul/qemu-%M
+Build directory   /wrkdirs/usr/ports/emulators/qemu-guest-agent/work/qemu-5.0.1
+Source path       /wrkdirs/usr/ports/emulators/qemu-guest-agent/work/qemu-5.0.1
+GIT binary        git
+GIT submodules    
+C compiler        cc
+Host C compiler   cc
+C++ compiler      c++
+Objective-C compiler clang
+ARFLAGS           rv
+CFLAGS            -O2 -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing 
+QEMU_CFLAGS          -I/usr/local/include -pthread -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include   -m64 -mcx16 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wall -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -std=gnu99  -I/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/qemu-5.0.1 -I/usr/local/include -DPREFIX=\""/usr/local\"" -DBSD_GUEST_AGENT -DFREEBSD -Wno-string-plus-int -Wno-typedef-redefinition -Wno-initializer-overrides -Wexpansion-to-defined -Wendif-labels -Wno-shift-negative-value -Wno-missing-include-dirs -Wempty-body -Wnested-externs -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wold-style-definition -Wtype-limits -fstack-protector-strong
+QEMU_LDFLAGS       -Wl,-z,relro -Wl,-z,now  -m64  -L"/usr/local/lib" -I/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/qemu-5.0.1 -I/usr/local/include -DPREFIX=\""/usr/local\"" -DBSD_GUEST_AGENT -DFREEBSD -fstack-protector-strong
+make              gmake
+install           /usr/bin/install -c
+python            /usr/local/bin/python3.8 -B (3.8.12)
+genisoimage       
+slirp support     no 
+module support    no
+alt path mod load no
+host CPU          x86_64
+host big endian   no
+target list       
+gprof enabled     no
+sparse enabled    no
+strip binaries    yes
+profiler          no
+static build      no
+SDL support       no 
+SDL image support no
+GTK support       no 
+GTK GL support    no
+VTE support       no 
+TLS priority      NORMAL
+GNUTLS support    no
+libgcrypt         no
+nettle            no 
+libtasn1          no
+PAM               no
+iconv support     no
+curses support    no
+virgl support     no 
+curl support      no
+mingw32 support   no
+Audio drivers     oss 
+Block whitelist (rw) 
+Block whitelist (ro) 
+VirtFS support    no
+pcap support      no
+Multipath support no
+VNC support       no
+xen support       no
+brlapi support    no
+Documentation     no
+PIE               no
+vde support       no
+netmap support    no
+Linux AIO support no
+Linux io_uring support no
+ATTR/XATTR support no
+Install blobs     no
+KVM support       no
+HAX support       no
+HVF support       no
+WHPX support      no
+TCG support       yes
+TCG debug enabled no
+TCG interpreter   no
+malloc trim support no
+RDMA support      no
+PVRDMA support    no
+fdt support       no
+membarrier        no
+preadv support    yes
+fdatasync         no
+madvise           yes
+posix_madvise     yes
+posix_memalign    yes
+libcap-ng support no
+vhost-net support no
+vhost-crypto support no
+vhost-scsi support no
+vhost-vsock support no
+vhost-user support no
+vhost-user-fs support no
+Trace backends    log
+spice support     no 
+rbd support       no
+xfsctl support    no
+smartcard support no
+libusb            no
+usb net redir     no
+OpenGL support    no
+OpenGL dmabufs    no
+libiscsi support  no
+libnfs support    no
+build guest agent yes
+QGA VSS support   no
+QGA w32 disk info no
+QGA MSI support   no
+seccomp support   no
+coroutine backend ucontext
+coroutine pool    no
+debug stack usage no
+mutex debugging   no
+crypto afalg      no
+GlusterFS support no
+gcov              gcov
+gcov enabled      no
+TPM support       no
+libssh support    no
+QOM debugging     no
+Live block migration no
+lzo support       no
+snappy support    no
+bzip2 support     no
+lzfse support     no
+zstd support      no
+NUMA host support no
+libxml2           no
+tcmalloc support  no
+jemalloc support  no
+avx2 optimization no
+avx512f optimization no
+replication support no
+VxHS block device no
+bochs support     no
+cloop support     no
+dmg support       no
+qcow v1 support   no
+vdi support       no
+vvfat support     no
+qed support       no
+parallels support no
+sheepdog support  no
+capstone          no
+libpmem support   no
+libudev           no
+default devices   yes
+plugin support    no
+fuzzing support   no
+gdb               
+cross containers  no
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for qemu-guest-agent-5.0.1
+gmake[1]: Entering directory '/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/qemu-5.0.1'
+  GEN     config-all-devices.mak
+  GEN     config-host.h
+  GEN     qemu-options.def
+  GEN     qapi-gen
+  GEN     storage-daemon/qapi/qapi-gen
+  GEN     trace/generated-tcg-tracers.h
+  GEN     trace/generated-helpers-wrappers.h
+  GEN     trace/generated-helpers.h
+  GEN     trace/generated-helpers.c
+  GEN     module_block.h
+  GEN     tests/test-qapi-gen
+  GEN     trace-root.h
+  GEN     accel/kvm/trace.h
+  GEN     accel/tcg/trace.h
+  GEN     backends/trace.h
+  GEN     crypto/trace.h
+  GEN     monitor/trace.h
+  GEN     authz/trace.h
+  GEN     block/trace.h
+  GEN     io/trace.h
+  GEN     nbd/trace.h
+  GEN     scsi/trace.h
+  GEN     hw/core/trace.h
+  GEN     hw/display/trace.h
+  GEN     qapi/trace.h
+  GEN     qom/trace.h
+  GEN     target/arm/trace.h
+  GEN     target/hppa/trace.h
+  GEN     target/i386/trace.h
+  GEN     target/mips/trace.h
+  GEN     target/ppc/trace.h
+  GEN     target/riscv/trace.h
+  GEN     target/s390x/trace.h
+  GEN     target/sparc/trace.h
+  GEN     util/trace.h
+  GEN     trace-root.c
+  GEN     accel/kvm/trace.c
+  GEN     accel/tcg/trace.c
+  GEN     backends/trace.c
+  GEN     crypto/trace.c
+  GEN     monitor/trace.c
+  GEN     authz/trace.c
+  GEN     block/trace.c
+  GEN     io/trace.c
+  GEN     nbd/trace.c
+  GEN     scsi/trace.c
+  GEN     hw/core/trace.c
+  GEN     hw/display/trace.c
+  GEN     qapi/trace.c
+  GEN     qom/trace.c
+  GEN     target/arm/trace.c
+  GEN     target/hppa/trace.c
+  GEN     target/i386/trace.c
+  GEN     target/mips/trace.c
+  GEN     target/ppc/trace.c
+  GEN     target/riscv/trace.c
+  GEN     target/s390x/trace.c
+  GEN     target/sparc/trace.c
+  GEN     util/trace.c
+  GEN     qga/qapi-generated/qapi-gen
+  CC      crypto/random-platform.o
+  CC      crypto/aes.o
+  CC      crypto/init.o
+  CC      qapi/qapi-visit-core.o
+  CC      qapi/qapi-dealloc-visitor.o
+  CC      qapi/qobject-input-visitor.o
+  CC      qapi/qobject-output-visitor.o
+  CC      qapi/qmp-registry.o
+  CC      qapi/qmp-dispatch.o
+  CC      qapi/string-input-visitor.o
+  CC      qapi/string-output-visitor.o
+  CC      qapi/opts-visitor.o
+  CC      qapi/qapi-clone-visitor.o
+  CC      qapi/qmp-event.o
+  CC      qapi/qapi-util.o
+  CC      qapi/qapi-builtin-types.o
+  CC      qapi/qapi-types-audio.o
+  CC      qapi/qapi-types-authz.o
+  CC      qapi/qapi-types-block-core.o
+  CC      qapi/qapi-types-block.o
+  CC      qapi/qapi-types-char.o
+  CC      qapi/qapi-types-common.o
+  CC      qapi/qapi-types-control.o
+  CC      qapi/qapi-types-crypto.o
+  CC      qapi/qapi-types-dump.o
+  CC      qapi/qapi-types-error.o
+  CC      qapi/qapi-types-introspect.o
+  CC      qapi/qapi-types-machine.o
+  CC      qapi/qapi-types-job.o
+  CC      qapi/qapi-types-migration.o
+  CC      qapi/qapi-types-misc.o
+  CC      qapi/qapi-types-net.o
+  CC      qapi/qapi-types-pragma.o
+  CC      qapi/qapi-types-qdev.o
+  CC      qapi/qapi-types-qom.o
+  CC      qapi/qapi-types-rdma.o
+  CC      qapi/qapi-types-rocker.o
+  CC      qapi/qapi-types-run-state.o
+  CC      qapi/qapi-types-sockets.o
+  CC      qapi/qapi-types-tpm.o
+  CC      qapi/qapi-types-trace.o
+  CC      qapi/qapi-types-transaction.o
+  CC      qapi/qapi-types-ui.o
+  CC      qapi/qapi-builtin-visit.o
+  CC      qapi/qapi-visit-audio.o
+  CC      qapi/qapi-visit-authz.o
+  CC      qapi/qapi-visit-block-core.o
+  CC      qapi/qapi-visit-block.o
+  CC      qapi/qapi-visit-char.o
+  CC      qapi/qapi-visit-common.o
+  CC      qapi/qapi-visit-control.o
+  CC      qapi/qapi-visit-crypto.o
+  CC      qapi/qapi-visit-dump.o
+  CC      qapi/qapi-visit-error.o
+  CC      qapi/qapi-visit-introspect.o
+  CC      qapi/qapi-visit-job.o
+  CC      qapi/qapi-visit-machine.o
+  CC      qapi/qapi-visit-migration.o
+  CC      qapi/qapi-visit-misc.o
+  CC      qapi/qapi-visit-net.o
+  CC      qapi/qapi-visit-pragma.o
+  CC      qapi/qapi-visit-qdev.o
+  CC      qapi/qapi-visit-qom.o
+  CC      qapi/qapi-visit-rdma.o
+  CC      qapi/qapi-visit-rocker.o
+  CC      qapi/qapi-visit-run-state.o
+  CC      qapi/qapi-visit-sockets.o
+  CC      qapi/qapi-visit-tpm.o
+  CC      qapi/qapi-visit-trace.o
+  CC      qapi/qapi-visit-transaction.o
+  CC      qapi/qapi-visit-ui.o
+  CC      qapi/qapi-emit-events.o
+  CC      qapi/qapi-events-audio.o
+  CC      qapi/qapi-events-authz.o
+  CC      qapi/qapi-events-block-core.o
+  CC      qapi/qapi-events-block.o
+  CC      qapi/qapi-events-char.o
+  CC      qapi/qapi-events-common.o
+  CC      qapi/qapi-events-control.o
+  CC      qapi/qapi-events-crypto.o
+  CC      qapi/qapi-events-dump.o
+  CC      qapi/qapi-events-error.o
+  CC      qapi/qapi-events-introspect.o
+  CC      qapi/qapi-events-job.o
+  CC      qapi/qapi-events-machine.o
+  CC      qapi/qapi-events-migration.o
+  CC      qapi/qapi-events-misc.o
+  CC      qapi/qapi-events-net.o
+  CC      qapi/qapi-events-pragma.o
+  CC      qapi/qapi-events-qdev.o
+  CC      qapi/qapi-events-qom.o
+  CC      qapi/qapi-events-rdma.o
+  CC      qapi/qapi-events-rocker.o
+  CC      qapi/qapi-events-run-state.o
+  CC      qapi/qapi-events-sockets.o
+  CC      qapi/qapi-events-tpm.o
+  CC      qapi/qapi-events-trace.o
+  CC      qapi/qapi-events-transaction.o
+  CC      qapi/qapi-events-ui.o
+  CC      qobject/qnull.o
+  CC      qobject/qnum.o
+  CC      qobject/qstring.o
+  CC      qobject/qdict.o
+  CC      qobject/qlist.o
+  CC      qobject/qbool.o
+  CC      qobject/qlit.o
+  CC      qobject/qjson.o
+  CC      qobject/qobject.o
+  CC      qobject/json-lexer.o
+  CC      qobject/json-streamer.o
+  CC      qobject/json-parser.o
+  CC      qobject/block-qdict.o
+  CC      trace/control.o
+  CC      trace/qmp.o
+  CC      util/osdep.o
+  CC      util/cutils.o
+  CC      util/unicode.o
+  CC      util/qemu-timer-common.o
+  CC      util/bufferiszero.o
+  CC      util/lockcnt.o
+  CC      util/aiocb.o
+  CC      util/async.o
+  CC      util/thread-pool.o
+  CC      util/qemu-timer.o
+  CC      util/aio-wait.o
+  CC      util/main-loop.o
+  CC      util/aio-posix.o
+  CC      util/fdmon-poll.o
+  CC      util/compatfd.o
+  CC      util/event_notifier-posix.o
+  CC      util/mmap-alloc.o
+  CC      util/oslib-posix.o
+  CC      util/qemu-openpty.o
+  CC      util/qemu-thread-posix.o
+  CC      util/memfd.o
+  CC      util/envlist.o
+  CC      util/path.o
+  CC      util/module.o
+  CC      util/host-utils.o
+  CC      util/bitmap.o
+  CC      util/bitops.o
+  CC      util/hbitmap.o
+  CC      util/fifo8.o
+  CC      util/nvdimm-utils.o
+  CC      util/cacheinfo.o
+  CC      util/error.o
+  CC      util/qemu-error.o
+  CC      util/qemu-print.o
+  CC      util/id.o
+  CC      util/iov.o
+  CC      util/qemu-config.o
+  CC      util/qemu-sockets.o
+  CC      util/uri.o
+  CC      util/notify.o
+  CC      util/qemu-option.o
+  CC      util/qemu-progress.o
+  CC      util/keyval.o
+  CC      util/hexdump.o
+  CC      util/crc32c.o
+  CC      util/uuid.o
+  CC      util/throttle.o
+  CC      util/getauxval.o
+  CC      util/readline.o
+  CC      util/rcu.o
+  CC      util/qemu-coroutine.o
+  CC      util/qemu-coroutine-lock.o
+  CC      util/qemu-coroutine-io.o
+  CC      util/qemu-coroutine-sleep.o
+  CC      util/qemu-co-shared-resource.o
+  CC      util/coroutine-ucontext.o
+  CC      util/buffer.o
+  CC      util/timed-average.o
+  CC      util/base64.o
+  CC      util/log.o
+  CC      util/pagesize.o
+  CC      util/qdist.o
+  CC      util/qht.o
+  CC      util/qsp.o
+  CC      util/range.o
+  CC      util/stats64.o
+  CC      util/systemd.o
+  CC      util/iova-tree.o
+  CC      util/filemonitor-stub.o
+  CC      util/drm.o
+  CC      util/guest-random.o
+  CC      util/dbus.o
+  CC      trace-root.o
+  CC      accel/kvm/trace.o
+  CC      accel/tcg/trace.o
+  CC      backends/trace.o
+  CC      crypto/trace.o
+  CC      monitor/trace.o
+  CC      authz/trace.o
+  CC      block/trace.o
+  CC      io/trace.o
+  CC      nbd/trace.o
+  CC      scsi/trace.o
+  CC      hw/core/trace.o
+  CC      hw/display/trace.o
+  CC      qapi/trace.o
+  CC      qom/trace.o
+  CC      target/arm/trace.o
+  CC      target/hppa/trace.o
+  CC      target/i386/trace.o
+  CC      target/mips/trace.o
+  CC      target/ppc/trace.o
+  CC      target/riscv/trace.o
+  CC      target/s390x/trace.o
+  CC      target/sparc/trace.o
+  CC      util/trace.o
+  CC      stubs/arch_type.o
+  CC      stubs/bdrv-next-monitor-owned.o
+  CC      stubs/blk-commit-all.o
+  CC      stubs/blockdev-close-all-bdrv-states.o
+  CC      stubs/clock-warp.o
+  CC      stubs/cpu-get-clock.o
+  CC      stubs/cpu-get-icount.o
+  CC      stubs/dump.o
+  CC      stubs/error-printf.o
+  CC      stubs/fdset.o
+  CC      stubs/gdbstub.o
+  CC      stubs/get-vm-name.o
+  CC      stubs/iothread.o
+  CC      stubs/iothread-lock.o
+  CC      stubs/is-daemonized.o
+  CC      stubs/machine-init-done.o
+  CC      stubs/migr-blocker.o
+  CC      stubs/monitor.o
+  CC      stubs/change-state-handler.o
+  CC      stubs/monitor-core.o
+  CC      stubs/notify-event.o
+  CC      stubs/qtest.o
+  CC      stubs/replay.o
+  CC      stubs/replay-user.o
+  CC      stubs/runstate-check.o
+  CC      stubs/set-fd-handler.o
+  CC      stubs/sysbus.o
+  CC      stubs/tpm.o
+  CC      stubs/trace-control.o
+  CC      stubs/uuid.o
+  CC      stubs/vm-stop.o
+  CC      stubs/vmstate.o
+  CC      stubs/fd-register.o
+  CC      stubs/qmp_memory_device.o
+  CC      stubs/target-monitor-defs.o
+  CC      stubs/target-get-monitor-def.o
+  CC      stubs/vmgenid.o
+  CC      stubs/xen-common.o
+  CC      stubs/xen-hvm.o
+  CC      stubs/pci-host-piix.o
+  CC      stubs/ram-block.o
+  CC      stubs/ramfb.o
+  CC      stubs/fw_cfg.o
+  CC      qemu-nbd.o
+  CC      authz/base.o
+  CC      authz/simple.o
+  CC      authz/list.o
+  CC      authz/listfile.o
+  CC      block.o
+  CC      blockjob.o
+  CC      job.o
+  CC      qemu-io-cmds.o
+  CC      block/raw-format.o
+  CC      block/vmdk.o
+  CC      block/vpc.o
+  CC      block/qcow2.o
+  CC      block/qcow2-refcount.o
+  CC      block/qcow2-cluster.o
+  CC      block/qcow2-snapshot.o
+  CC      block/qcow2-cache.o
+  CC      block/qcow2-bitmap.o
+  CC      block/qcow2-threads.o
+  CC      block/vhdx.o
+  CC      block/vhdx-endian.o
+  CC      block/vhdx-log.o
+  CC      block/quorum.o
+  CC      block/blkdebug.o
+  CC      block/blkverify.o
+  CC      block/blkreplay.o
+  CC      block/blklogwrites.o
+  CC      block/block-backend.o
+  CC      block/snapshot.o
+  CC      block/qapi.o
+  CC      block/file-posix.o
+  CC      block/null.o
+  CC      block/mirror.o
+  CC      block/commit.o
+  CC      block/io.o
+  CC      block/create.o
+  CC      block/throttle-groups.o
+  CC      block/nbd.o
+  CC      block/accounting.o
+  CC      block/dirty-bitmap.o
+  CC      block/write-threshold.o
+  CC      block/backup.o
+  CC      block/throttle.o
+  CC      block/copy-on-read.o
+  CC      block/block-copy.o
+  CC      block/crypto.o
+  CC      block/aio_task.o
+  CC      block/backup-top.o
+  CC      block/filter-compress.o
+  CC      block/stream.o
+  CC      nbd/server.o
+  CC      nbd/client.o
+  CC      nbd/common.o
+  CC      scsi/utils.o
+  CC      scsi/pr-manager-stub.o
+  CC      crypto/hash.o
+  CC      crypto/hash-glib.o
+  CC      crypto/hmac.o
+  CC      crypto/hmac-glib.o
+  CC      crypto/desrfb.o
+  CC      crypto/cipher.o
+  CC      crypto/tlscreds.o
+  CC      crypto/tlscredsanon.o
+  CC      crypto/tlscredspsk.o
+  CC      crypto/tlscredsx509.o
+  CC      crypto/tlssession.o
+  CC      crypto/secret.o
+  CC      crypto/pbkdf.o
+  CC      crypto/pbkdf-stub.o
+  CC      crypto/ivgen.o
+  CC      crypto/ivgen-essiv.o
+  CC      crypto/ivgen-plain.o
+  CC      crypto/ivgen-plain64.o
+  CC      crypto/afsplit.o
+  CC      crypto/xts.o
+  CC      crypto/block.o
+  CC      crypto/block-qcow.o
+  CC      crypto/block-luks.o
+  CC      io/channel.o
+  CC      io/channel-buffer.o
+  CC      io/channel-command.o
+  CC      io/channel-file.o
+  CC      io/channel-socket.o
+  CC      io/channel-tls.o
+  CC      io/channel-watch.o
+  CC      io/channel-websock.o
+  CC      io/channel-util.o
+  CC      io/dns-resolver.o
+  CC      io/net-listener.o
+  CC      io/task.o
+  CC      qom/object.o
+  CC      qom/container.o
+  CC      qom/qom-qobject.o
+  CC      qom/object_interfaces.o
+  CC      qemu-storage-daemon.o
+  CC      chardev/char.o
+  CC      chardev/char-fd.o
+  CC      chardev/char-fe.o
+  CC      chardev/char-file.o
+  CC      chardev/char-io.o
+  CC      chardev/char-mux.o
+  CC      chardev/char-null.o
+  CC      chardev/char-parallel.o
+  CC      chardev/char-pipe.o
+  CC      chardev/char-pty.o
+  CC      chardev/char-ringbuf.o
+  CC      chardev/char-serial.o
+  CC      chardev/char-socket.o
+  CC      chardev/char-stdio.o
+  CC      chardev/char-udp.o
+  CC      blockdev.o
+  CC      blockdev-nbd.o
+  CC      iothread.o
+  CC      job-qmp.o
+  CC      os-posix.o
+  CC      monitor/monitor.o
+  CC      monitor/qmp.o
+  CC      monitor/qmp-cmds-control.o
+  CC      qapi/qapi-commands-block-core.o
+  CC      qapi/qapi-commands-char.o
+  CC      qapi/qapi-commands-common.o
+  CC      qapi/qapi-commands-control.o
+  CC      qapi/qapi-commands-crypto.o
+  CC      qapi/qapi-commands-introspect.o
+  CC      qapi/qapi-commands-job.o
+  CC      qapi/qapi-commands-qom.o
+  CC      qapi/qapi-commands-sockets.o
+  CC      qapi/qapi-commands-pragma.o
+  CC      qapi/qapi-commands-transaction.o
+  CC      qom/qom-qmp-cmds.o
+  CC      storage-daemon/qapi/qapi-commands.o
+  CC      storage-daemon/qapi/qapi-init-commands.o
+  CC      storage-daemon/qapi/qapi-introspect.o
+  GEN     qemu-img-cmds.h
+  CC      qemu-io.o
+  CC      qemu-edid.o
+  CC      hw/display/edid-generate.o
+  CC      qga/commands.o
+  CC      qga/guest-agent-command-state.o
+  CC      qga/main.o
+  CC      qga/commands-posix.o
+  CC      qga/channel-posix.o
+  CC      qga/qapi-generated/qga-qapi-types.o
+  CC      qga/qapi-generated/qga-qapi-visit.o
+  CC      qga/qapi-generated/qga-qapi-commands.o
+  CC      qga/qapi-generated/qga-qapi-init-commands.o
+  AR      libqemuutil.a
+  CC      qemu-img.o
+  LINK    qemu-nbd
+  LINK    qemu-io
+  LINK    qemu-edid
+  LINK    qemu-storage-daemon
+  LINK    qemu-ga
+  LINK    qemu-img
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/qemu-5.0.1'
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for qemu-guest-agent-5.0.1
+===>   Generating temporary packing list
+gmake[1]: Entering directory '/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/qemu-5.0.1'
+/usr/bin/install -c -d -m 0755 "/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/stage/usr/local/share/qemu"
+/usr/bin/install -c -d -m 0755 "/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/stage/var"/run
+/usr/bin/install -c -d -m 0755 "/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/stage/usr/local/include"
+/usr/bin/install -c -d -m 0755 "/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/stage/usr/local/bin"
+/usr/bin/install -c -c -m 0755 qemu-ga qemu-nbd qemu-storage-daemon qemu-img qemu-io qemu-edid  "/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/stage/usr/local/bin"
+strip "/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/stage/usr/local/bin/qemu-ga" "/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/stage/usr/local/bin/qemu-nbd" "/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/stage/usr/local/bin/qemu-storage-daemon" "/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/stage/usr/local/bin/qemu-img" "/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/stage/usr/local/bin/qemu-io" "/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/stage/usr/local/bin/qemu-edid"
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/emulators/qemu-guest-agent/work/qemu-5.0.1'
+/bin/mkdir -p /wrkdirs/usr/ports/emulators/qemu-guest-agent/work/stage/usr/local/qemu
+====> Compressing man pages (compress-man)
+===> Staging rc.d startup script(s)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:43:19+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for qemu-guest-agent-5.0.1
+install -l rs /.npkg/All/qemu-guest-agent-5.0.1.pkg /.npkg/All/qemu-guest-agent-5.0.1.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for qemu-guest-agent-5.0.1
+build of emulators/qemu-guest-agent | qemu-guest-agent-5.0.1 ended at Mon Oct 18 23:43:48 EAT 2021
+build time: 00:00:29

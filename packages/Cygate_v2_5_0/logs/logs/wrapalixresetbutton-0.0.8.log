@@ -1,0 +1,418 @@
+=>> Building sysutils/wrapalixresetbutton
+build started at Mon Oct 18 23:32:23 EAT 2021
+port directory: /usr/ports/sysutils/wrapalixresetbutton
+package name: wrapalixresetbutton-0.0.8
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-03 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: coreteam@pfsense.org
+Makefile datestamp: -rw-r--r--  1 root  wheel  1306 Oct 18 18:59 /usr/ports/sysutils/wrapalixresetbutton/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 03
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/03/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+coreteam@pfsense.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/.cache  HOME=/wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/.cache  HOME=/wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/wrapalixresetbutton"  EXAMPLESDIR="share/examples/wrapalixresetbutton"  DATADIR="share/wrapalixresetbutton"  WWWDIR="www/wrapalixresetbutton"  ETCDIR="etc/wrapalixresetbutton"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/wrapalixresetbutton DOCSDIR=/usr/local/share/doc/wrapalixresetbutton EXAMPLESDIR=/usr/local/share/examples/wrapalixresetbutton  WWWDIR=/usr/local/www/wrapalixresetbutton ETCDIR=/usr/local/etc/wrapalixresetbutton
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   wrapalixresetbutton-0.0.8 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting pkg-1.17.2: .......... done
+===>   wrapalixresetbutton-0.0.8 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of wrapalixresetbutton-0.0.8
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===> Fetching all distfiles required by wrapalixresetbutton-0.0.8 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===> Fetching all distfiles required by wrapalixresetbutton-0.0.8 for building
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===> Fetching all distfiles required by wrapalixresetbutton-0.0.8 for building
+===>  Extracting for wrapalixresetbutton-0.0.8
+/bin/mkdir -p /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/wrapalixresetbutton-0.0.8
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for wrapalixresetbutton-0.0.8
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for wrapalixresetbutton-0.0.8
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for wrapalixresetbutton-0.0.8
+cc -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -o /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/wrapalixresetbutton-0.0.8/wrapresetbtn /usr/ports/sysutils/wrapalixresetbutton/files/wrapresetbtn.c
+cc -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -o /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/wrapalixresetbutton-0.0.8/alixresetbtn /usr/ports/sysutils/wrapalixresetbutton/files/alixresetbtn.c
+cc -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -o /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/wrapalixresetbutton-0.0.8/FW7541resetbtn /usr/ports/sysutils/wrapalixresetbutton/files/FW7541resetbtn.c
+cc -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -o /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/wrapalixresetbutton-0.0.8/APUresetbtn /usr/ports/sysutils/wrapalixresetbutton/files/APUresetbtn.c
+cc -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -o /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/wrapalixresetbutton-0.0.8/RCC-VEresetbtn /usr/ports/sysutils/wrapalixresetbutton/files/RCC-VE.c
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for wrapalixresetbutton-0.0.8
+===>   Generating temporary packing list
+install  -s -m 555 /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/wrapalixresetbutton-0.0.8/wrapresetbtn /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/stage/usr/local/sbin
+install  -s -m 555 /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/wrapalixresetbutton-0.0.8/alixresetbtn /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/stage/usr/local/sbin
+install  -s -m 555 /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/wrapalixresetbutton-0.0.8/FW7541resetbtn /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/stage/usr/local/sbin
+install  -s -m 555 /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/wrapalixresetbutton-0.0.8/APUresetbtn /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/stage/usr/local/sbin
+install  -s -m 555 /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/wrapalixresetbutton-0.0.8/RCC-VEresetbtn /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/stage/usr/local/sbin
+/bin/ln -sf RCC-VEresetbtn /wrkdirs/usr/ports/sysutils/wrapalixresetbutton/work/stage/usr/local/sbin/RCC-DFFresetbtn
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:32:23+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for wrapalixresetbutton-0.0.8
+install -l rs /.npkg/All/wrapalixresetbutton-0.0.8.pkg /.npkg/All/wrapalixresetbutton-0.0.8.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for wrapalixresetbutton-0.0.8
+build of sysutils/wrapalixresetbutton | wrapalixresetbutton-0.0.8 ended at Mon Oct 18 23:32:25 EAT 2021
+build time: 00:00:02

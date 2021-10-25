@@ -1,0 +1,571 @@
+=>> Building net/hping
+build started at Mon Oct 18 23:41:57 EAT 2021
+port directory: /usr/ports/net/hping
+package name: hping-2.0.0r3_2,1
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-03 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: ecu@200ok.org
+Makefile datestamp: -rw-r--r--  1 root  wheel  1329 Oct 18 18:58 /usr/ports/net/hping/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 03
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/03/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for hping-2.0.0r3_2,1:
+     DOCS=off: Build and/or install documentation
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+ecu@200ok.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--force-libpcap --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake XDG_DATA_HOME=/wrkdirs/usr/ports/net/hping/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net/hping/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net/hping/work/.cache  HOME=/wrkdirs/usr/ports/net/hping/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net/hping/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/net/hping/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net/hping/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net/hping/work/.cache  HOME=/wrkdirs/usr/ports/net/hping/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net/hping/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="@comment " OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/hping"  EXAMPLESDIR="share/examples/hping"  DATADIR="share/hping"  WWWDIR="www/hping"  ETCDIR="etc/hping"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/hping DOCSDIR=/usr/local/share/doc/hping EXAMPLESDIR=/usr/local/share/examples/hping  WWWDIR=/usr/local/www/hping ETCDIR=/usr/local/etc/hping
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   hping-2.0.0r3_2,1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting pkg-1.17.2: .......... done
+===>   hping-2.0.0r3_2,1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of hping-2.0.0r3_2,1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===> Fetching all distfiles required by hping-2.0.0r3_2,1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===> Fetching all distfiles required by hping-2.0.0r3_2,1 for building
+=> SHA256 Checksum OK for hping2.0.0-rc3.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===> Fetching all distfiles required by hping-2.0.0r3_2,1 for building
+===>  Extracting for hping-2.0.0r3_2,1
+=> SHA256 Checksum OK for hping2.0.0-rc3.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for hping-2.0.0r3_2,1
+===>  Applying extra patch /usr/ports/net/hping/files/extra-patch-sendip.c
+===>  Applying FreeBSD patches for hping-2.0.0r3_2,1 from /usr/ports/net/hping/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   hping-2.0.0r3_2,1 depends on package: gmake>=4.3 - not found
+===>   Installing existing package /packages/All/gmake-4.3_2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing gmake-4.3_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Installing gettext-runtime-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] |   `-- Installing indexinfo-0.3.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] |   `-- Extracting indexinfo-0.3.1: .... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Extracting gettext-runtime-0.21: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting gmake-4.3_2: .......... done
+===>   hping-2.0.0r3_2,1 depends on package: gmake>=4.3 - found
+===>   Returning to build of hping-2.0.0r3_2,1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for hping-2.0.0r3_2,1
+build byteorder.c...
+byteorder.c:77:41: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+                printf("sizeof(unsigned int) = %d\n", sizeof(unsigned int));
+                                               ~~     ^~~~~~~~~~~~~~~~~~~~
+                                               %lu
+1 warning generated.
+create byteorder.h...
+--------------------------------------
+system type: FREEBSD
+
+FORCE_LIBPCAP: -DFORCE_LIBPCAP
+LIBPCAP      : PCAP=-lpcap
+PCAP_INCLUDE : 
+MANPATH      : /usr/local/man
+
+(to modify try configure --help)
+--------------------------------------
+creating Makefile...
+now you can try `make'
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for hping-2.0.0r3_2,1
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/hping/work/hping2-rc3'
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP main.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP getifname.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP getlhs.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP linux_sockpacket.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP parseoptions.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP datafiller.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP datahandler.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP gethostname.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP binding.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP getusec.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP opensockraw.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP logicmp.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP waitpacket.c
+getifname.c:345:58: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+        if (getsockname(sock_rt, (struct sockaddr *)&iface_out, &len) == -1 ) {
+                                                                ^~~~
+/usr/include/sys/socket.h:670:74: note: passing argument to parameter here
+int     getsockname(int, struct sockaddr * __restrict, socklen_t * __restrict);
+                                                                             ^
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP resolve.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP sendip.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP sendicmp.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP sendudp.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP sendtcp.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP cksum.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP statistics.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP usage.c
+waitpacket.c:470:8: warning: variable 'tstamp' is used uninitialized whenever 'while' loop exits because its condition is false [-Wsometimes-uninitialized]
+        while(optlen) {
+              ^~~~~~
+waitpacket.c:499:40: note: uninitialized use occurs here
+        printf("  TCP timestamp: tcpts=%u\n", tstamp);
+                                              ^~~~~~
+waitpacket.c:470:8: note: remove the condition if it is always true
+        while(optlen) {
+              ^~~~~~
+              1
+waitpacket.c:455:14: note: initialize the variable 'tstamp' to silence this warning
+        __u32 tstamp, echo;
+                    ^
+                     = 0
+1 warning generated.
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP version.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP antigetopt.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP sockopt.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP listen.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP sendhcmp.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP memstr.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP rtt.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP relid.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP sendip_handler.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP libpcap_stuff.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP memlockall.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP memunlockall.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP memlock.c
+rtt.c:46:4: warning: misleading indentation; statement is not part of the previous 'for' [-Wmisleading-indentation]
+                        if (i != TABLESIZE)
+                        ^
+rtt.c:41:3: note: previous statement is here
+                for (i=0; i<TABLESIZE; i++)
+                ^
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP memunlock.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP ip_opt_build.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP display_ipopt.c
+libpcap_stuff.c:61:19: warning: assigning to 'char *' from 'unsigned char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+                p = (unsigned char*) pcap_next(pcapfp, &hdr);
+                  ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP sendrawip.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP signal.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP send.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP strlcpy.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP arsglue.c
+1 warning generated.
+1 warning generated.
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP random.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP scan.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP hstring.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP ars.c
+ip_opt_build.c:26:30: warning: 'memset' call operates on objects of type 'char' while the size is based on a different type 'char *' [-Wsizeof-pointer-memaccess]
+    memset(ip_opt, 1, sizeof(ip_opt));
+           ~~~~~~            ^~~~~~
+ip_opt_build.c:26:30: note: did you mean to provide an explicit length?
+    memset(ip_opt, 1, sizeof(ip_opt));
+                             ^~~~~~
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP apd.c
+cc -c -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -DFORCE_LIBPCAP split.c
+1 warning generated.
+In file included from scan.c:50:
+./hstring.h:1:9: warning: 'HPING_HSTRNIG_H' is used as a header guard here, followed by #define of a different macro [-Wheader-guard]
+#ifndef HPING_HSTRNIG_H
+        ^~~~~~~~~~~~~~~
+./hstring.h:2:9: note: 'HPING_HSTRING_H' is defined here; did you mean 'HPING_HSTRNIG_H'?
+#define HPING_HSTRING_H
+        ^~~~~~~~~~~~~~~
+        HPING_HSTRNIG_H
+scan.c:455:6: warning: assigning to 'unsigned char *' from 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+                        p = packet+linkhdr_size+iphdrlen;
+                          ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ars.c:433:46: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+                assert("else reached in ars_multi_cksum()" == "");
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/usr/include/assert.h:56:21: note: expanded from macro 'assert'
+#define assert(e)       ((e) ? (void)0 : __assert(__func__, __FILE__, \
+                          ^
+scan.c:456:4: warning: 'memcpy' will always overflow; destination buffer has size 8, but size argument is 20 [-Wfortify-source]
+                        memcpy(&icmp, p, sizeof(subtcp));
+                        ^
+1 warning generated.
+3 warnings generated.
+1 warning generated.
+/usr/bin/ar rc libars.a ars.o apd.o split.o
+/usr/bin/ranlib libars.a
+cc -o hping2 -Wall -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   main.o getifname.o getlhs.o linux_sockpacket.o parseoptions.o datafiller.o datahandler.o gethostname.o binding.o getusec.o opensockraw.o logicmp.o waitpacket.o resolve.o sendip.o sendicmp.o sendudp.o sendtcp.o cksum.o statistics.o usage.o version.o antigetopt.o sockopt.o listen.o sendhcmp.o memstr.o rtt.o relid.o sendip_handler.o libpcap_stuff.o memlockall.o memunlockall.o memlock.o memunlock.o ip_opt_build.o display_ipopt.o sendrawip.o signal.o send.o strlcpy.o arsglue.o random.o scan.o hstring.o libars.a -lpcap 
+
+./hping2 -v
+hping version 2.0.0-rc3 (Mon May  3 10:56:19 CEST 2004)
+libpcap based binary
+use `make strip' to strip hping2 binary
+use `make install' to install hping2
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/hping/work/hping2-rc3'
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for hping-2.0.0r3_2,1
+===>   Generating temporary packing list
+install  -s -m 555 /wrkdirs/usr/ports/net/hping/work/hping2-rc3/hping2 /wrkdirs/usr/ports/net/hping/work/stage/usr/local/sbin/hping
+install  -m 444 /wrkdirs/usr/ports/net/hping/work/hping2-rc3/docs/hping2.8  /wrkdirs/usr/ports/net/hping/work/stage/usr/local/man/man8/hping.8
+install  -m 0644 /wrkdirs/usr/ports/net/hping/work/hping2-rc3/docs/AS-BACKDOOR /wrkdirs/usr/ports/net/hping/work/stage/usr/local/share/doc/hping
+install  -m 0644 /wrkdirs/usr/ports/net/hping/work/hping2-rc3/docs/HPING2-HOWTO.txt /wrkdirs/usr/ports/net/hping/work/stage/usr/local/share/doc/hping
+install  -m 0644 /wrkdirs/usr/ports/net/hping/work/hping2-rc3/docs/HPING2-IS-OPEN /wrkdirs/usr/ports/net/hping/work/stage/usr/local/share/doc/hping
+install  -m 0644 /wrkdirs/usr/ports/net/hping/work/hping2-rc3/docs/MORE-FUN-WITH-IPID /wrkdirs/usr/ports/net/hping/work/stage/usr/local/share/doc/hping
+install  -m 0644 /wrkdirs/usr/ports/net/hping/work/hping2-rc3/docs/SPOOFED_SCAN.txt /wrkdirs/usr/ports/net/hping/work/stage/usr/local/share/doc/hping
+install  -m 0644 /wrkdirs/usr/ports/net/hping/work/hping2-rc3/docs/APD.txt /wrkdirs/usr/ports/net/hping/work/stage/usr/local/share/doc/hping
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:41:57+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for hping-2.0.0r3_2,1
+install -l rs /.npkg/All/hping-2.0.0r3_2,1.pkg /.npkg/All/hping-2.0.0r3_2,1.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for hping-2.0.0r3_2,1
+build of net/hping | hping-2.0.0r3_2,1 ended at Mon Oct 18 23:42:01 EAT 2021
+build time: 00:00:04

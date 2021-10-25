@@ -1,0 +1,755 @@
+=>> Building sysutils/node_exporter
+build started at Mon Oct 18 23:31:00 EAT 2021
+port directory: /usr/ports/sysutils/node_exporter
+package name: node_exporter-1.2.2
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-03 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: dor.bsd@xm0.uk
+Makefile datestamp: -rw-r--r--  1 root  wheel  1127 Oct 18 18:59 /usr/ports/sysutils/node_exporter/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 03
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/03/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for node_exporter-1.2.2:
+     DOCS=off: Build and/or install documentation
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+dor.bsd@xm0.uk
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake XDG_DATA_HOME=/wrkdirs/usr/ports/sysutils/node_exporter/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/sysutils/node_exporter/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/sysutils/node_exporter/work/.cache  HOME=/wrkdirs/usr/ports/sysutils/node_exporter/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/sysutils/node_exporter/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/sysutils/node_exporter/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/sysutils/node_exporter/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/sysutils/node_exporter/work/.cache  HOME=/wrkdirs/usr/ports/sysutils/node_exporter/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/sysutils/node_exporter/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="@comment " OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/node_exporter"  EXAMPLESDIR="share/examples/node_exporter"  DATADIR="share/node_exporter"  WWWDIR="www/node_exporter"  ETCDIR="etc/node_exporter"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/node_exporter DOCSDIR=/usr/local/share/doc/node_exporter EXAMPLESDIR=/usr/local/share/examples/node_exporter  WWWDIR=/usr/local/www/node_exporter ETCDIR=/usr/local/etc/node_exporter
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License APACHE20 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   node_exporter-1.2.2 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting pkg-1.17.2: .......... done
+===>   node_exporter-1.2.2 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of node_exporter-1.2.2
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License APACHE20 accepted by the user
+===> Fetching all distfiles required by node_exporter-1.2.2 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License APACHE20 accepted by the user
+===> Fetching all distfiles required by node_exporter-1.2.2 for building
+=> SHA256 Checksum OK for prometheus-node_exporter-v1.2.2_GH0.tar.gz.
+=> SHA256 Checksum OK for alecthomas-kingpin-v2.2.6_GH0.tar.gz.
+=> SHA256 Checksum OK for alecthomas-template-fb15b899a751_GH0.tar.gz.
+=> SHA256 Checksum OK for alecthomas-units-f65c72e2690d_GH0.tar.gz.
+=> SHA256 Checksum OK for beevik-ntp-v0.3.0_GH0.tar.gz.
+=> SHA256 Checksum OK for beorn7-perks-v1.0.1_GH0.tar.gz.
+=> SHA256 Checksum OK for cespare-xxhash-v2.1.1_GH0.tar.gz.
+=> SHA256 Checksum OK for coreos-go-systemd-d3cd4ed1dbcf_GH0.tar.gz.
+=> SHA256 Checksum OK for ema-qdisc-62d0308e3e00_GH0.tar.gz.
+=> SHA256 Checksum OK for go-kit-log-v0.1.0_GH0.tar.gz.
+=> SHA256 Checksum OK for go-logfmt-logfmt-v0.5.0_GH0.tar.gz.
+=> SHA256 Checksum OK for go-yaml-yaml-v2.4.0_GH0.tar.gz.
+=> SHA256 Checksum OK for godbus-dbus-271e53dc4968_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-appengine-v1.6.6_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-crypto-5ff15b29337e_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-net-abc453219eb5_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-oauth2-f6687ab2804c_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-protobuf-v1.4.3_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-sync-09787c993a3a_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-sys-0f9fa26af87c_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-text-v0.3.6_GH0.tar.gz.
+=> SHA256 Checksum OK for google-go-cmp-v0.5.6_GH0.tar.gz.
+=> SHA256 Checksum OK for hodgesds-perf-utils-v0.2.5_GH0.tar.gz.
+=> SHA256 Checksum OK for illumos-go-kstat-173c9b0a9973_GH0.tar.gz.
+=> SHA256 Checksum OK for josharian-native-b6b71def0850_GH0.tar.gz.
+=> SHA256 Checksum OK for jpillora-backoff-v1.0.0_GH0.tar.gz.
+=> SHA256 Checksum OK for jsimonetti-rtnetlink-2bfdf1dbdbd6_GH0.tar.gz.
+=> SHA256 Checksum OK for lufia-iostat-v1.1.0_GH0.tar.gz.
+=> SHA256 Checksum OK for mattn-go-xmlrpc-v0.0.3_GH0.tar.gz.
+=> SHA256 Checksum OK for matttproud-golang_protobuf_extensions-v1.0.1_GH0.tar.gz.
+=> SHA256 Checksum OK for mdlayher-genetlink-v1.0.0_GH0.tar.gz.
+=> SHA256 Checksum OK for mdlayher-netlink-v1.4.1_GH0.tar.gz.
+=> SHA256 Checksum OK for mdlayher-socket-262dc9984e00_GH0.tar.gz.
+=> SHA256 Checksum OK for mdlayher-wifi-84f0b9457fdd_GH0.tar.gz.
+=> SHA256 Checksum OK for mwitkow-go-conntrack-2f068394615f_GH0.tar.gz.
+=> SHA256 Checksum OK for pkg-errors-v0.9.1_GH0.tar.gz.
+=> SHA256 Checksum OK for prometheus-client_golang-v1.11.0_GH0.tar.gz.
+=> SHA256 Checksum OK for prometheus-client_model-v0.2.0_GH0.tar.gz.
+=> SHA256 Checksum OK for prometheus-common-v0.29.0_GH0.tar.gz.
+=> SHA256 Checksum OK for prometheus-exporter-toolkit-v0.6.0_GH0.tar.gz.
+=> SHA256 Checksum OK for prometheus-procfs-v0.7.2_GH0.tar.gz.
+=> SHA256 Checksum OK for protocolbuffers-protobuf-go-v1.26.0-rc.1_GH0.tar.gz.
+=> SHA256 Checksum OK for safchain-ethtool-874930cb3ce0_GH0.tar.gz.
+=> SHA256 Checksum OK for siebenmann-go-kstat-173c9b0a9973_GH0.tar.gz.
+=> SHA256 Checksum OK for soundcloud-go-runit-06ad41a06c4a_GH0.tar.gz.
+=> SHA256 Checksum OK for uber-go-atomic-v1.7.0_GH0.tar.gz.
+=> SHA256 Checksum OK for uber-go-multierr-v1.6.0_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License APACHE20 accepted by the user
+===> Fetching all distfiles required by node_exporter-1.2.2 for building
+===>  Extracting for node_exporter-1.2.2
+=> SHA256 Checksum OK for prometheus-node_exporter-v1.2.2_GH0.tar.gz.
+=> SHA256 Checksum OK for alecthomas-kingpin-v2.2.6_GH0.tar.gz.
+=> SHA256 Checksum OK for alecthomas-template-fb15b899a751_GH0.tar.gz.
+=> SHA256 Checksum OK for alecthomas-units-f65c72e2690d_GH0.tar.gz.
+=> SHA256 Checksum OK for beevik-ntp-v0.3.0_GH0.tar.gz.
+=> SHA256 Checksum OK for beorn7-perks-v1.0.1_GH0.tar.gz.
+=> SHA256 Checksum OK for cespare-xxhash-v2.1.1_GH0.tar.gz.
+=> SHA256 Checksum OK for coreos-go-systemd-d3cd4ed1dbcf_GH0.tar.gz.
+=> SHA256 Checksum OK for ema-qdisc-62d0308e3e00_GH0.tar.gz.
+=> SHA256 Checksum OK for go-kit-log-v0.1.0_GH0.tar.gz.
+=> SHA256 Checksum OK for go-logfmt-logfmt-v0.5.0_GH0.tar.gz.
+=> SHA256 Checksum OK for go-yaml-yaml-v2.4.0_GH0.tar.gz.
+=> SHA256 Checksum OK for godbus-dbus-271e53dc4968_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-appengine-v1.6.6_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-crypto-5ff15b29337e_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-net-abc453219eb5_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-oauth2-f6687ab2804c_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-protobuf-v1.4.3_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-sync-09787c993a3a_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-sys-0f9fa26af87c_GH0.tar.gz.
+=> SHA256 Checksum OK for golang-text-v0.3.6_GH0.tar.gz.
+=> SHA256 Checksum OK for google-go-cmp-v0.5.6_GH0.tar.gz.
+=> SHA256 Checksum OK for hodgesds-perf-utils-v0.2.5_GH0.tar.gz.
+=> SHA256 Checksum OK for illumos-go-kstat-173c9b0a9973_GH0.tar.gz.
+=> SHA256 Checksum OK for josharian-native-b6b71def0850_GH0.tar.gz.
+=> SHA256 Checksum OK for jpillora-backoff-v1.0.0_GH0.tar.gz.
+=> SHA256 Checksum OK for jsimonetti-rtnetlink-2bfdf1dbdbd6_GH0.tar.gz.
+=> SHA256 Checksum OK for lufia-iostat-v1.1.0_GH0.tar.gz.
+=> SHA256 Checksum OK for mattn-go-xmlrpc-v0.0.3_GH0.tar.gz.
+=> SHA256 Checksum OK for matttproud-golang_protobuf_extensions-v1.0.1_GH0.tar.gz.
+=> SHA256 Checksum OK for mdlayher-genetlink-v1.0.0_GH0.tar.gz.
+=> SHA256 Checksum OK for mdlayher-netlink-v1.4.1_GH0.tar.gz.
+=> SHA256 Checksum OK for mdlayher-socket-262dc9984e00_GH0.tar.gz.
+=> SHA256 Checksum OK for mdlayher-wifi-84f0b9457fdd_GH0.tar.gz.
+=> SHA256 Checksum OK for mwitkow-go-conntrack-2f068394615f_GH0.tar.gz.
+=> SHA256 Checksum OK for pkg-errors-v0.9.1_GH0.tar.gz.
+=> SHA256 Checksum OK for prometheus-client_golang-v1.11.0_GH0.tar.gz.
+=> SHA256 Checksum OK for prometheus-client_model-v0.2.0_GH0.tar.gz.
+=> SHA256 Checksum OK for prometheus-common-v0.29.0_GH0.tar.gz.
+=> SHA256 Checksum OK for prometheus-exporter-toolkit-v0.6.0_GH0.tar.gz.
+=> SHA256 Checksum OK for prometheus-procfs-v0.7.2_GH0.tar.gz.
+=> SHA256 Checksum OK for protocolbuffers-protobuf-go-v1.26.0-rc.1_GH0.tar.gz.
+=> SHA256 Checksum OK for safchain-ethtool-874930cb3ce0_GH0.tar.gz.
+=> SHA256 Checksum OK for siebenmann-go-kstat-173c9b0a9973_GH0.tar.gz.
+=> SHA256 Checksum OK for soundcloud-go-runit-06ad41a06c4a_GH0.tar.gz.
+=> SHA256 Checksum OK for uber-go-atomic-v1.7.0_GH0.tar.gz.
+=> SHA256 Checksum OK for uber-go-multierr-v1.6.0_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for node_exporter-1.2.2
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   node_exporter-1.2.2 depends on package: gmake>=4.3 - not found
+===>   Installing existing package /packages/All/gmake-4.3_2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing gmake-4.3_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Installing gettext-runtime-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] |   `-- Installing indexinfo-0.3.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] |   `-- Extracting indexinfo-0.3.1: .... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Extracting gettext-runtime-0.21: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting gmake-4.3_2: .......... done
+===>   node_exporter-1.2.2 depends on package: gmake>=4.3 - found
+===>   Returning to build of node_exporter-1.2.2
+===>   node_exporter-1.2.2 depends on file: /usr/local/bin/go - not found
+===>   Installing existing package /packages/All/go-1.17.2,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing go-1.17.2,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting go-1.17.2,1: .......... done
+===>   node_exporter-1.2.2 depends on file: /usr/local/bin/go - found
+===>   Returning to build of node_exporter-1.2.2
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for node_exporter-1.2.2
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for node_exporter-1.2.2
+(cd /wrkdirs/usr/ports/sysutils/node_exporter/work/node_exporter-1.2.2;  for t in github.com/prometheus/node_exporter; do  out=$(/usr/bin/basename $(echo ${t} |  /usr/bin/sed -Ee 's/^[^:]*:([^:]+).*$/\1/' -e 's/^\.$/node_exporter/'));  pkg=$(echo ${t} |  /usr/bin/sed -Ee 's/^([^:]*).*$/\1/' -e 's/^node_exporter$/./');  echo "===>  Building ${out} from ${pkg}";  /usr/bin/env XDG_DATA_HOME=/wrkdirs/usr/ports/sysutils/node_exporter/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/sysutils/node_exporter/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/sysutils/node_exporter/work/.cache  HOME=/wrkdirs/usr/ports/sysutils/node_exporter/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/sysutils/node_exporter/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/nonexistent/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444" CGO_ENABLED=1  CGO_CFLAGS="-I/usr/local/include"  CGO_LDFLAGS="-L/usr/local/lib"  GOARM= GOPATH="/portdistfiles/go/sysutils_node_exporter"  GOBIN="/wrkdirs/usr/ports/sysutils/node_exporter/work/bin"  GO111MODULE=on  GOFLAGS=-modcacherw  GOSUMDB=sum.golang.org GO_NO_VENDOR_CHECKS=1 GOPROXY=off /usr/local/bin/go build -v -ldflags "-s  -X github.com/prometheus/common/version.Version=1.2.2  -X github.com/prometheus/common/version.Revision=0  -X github.com/prometheus/common/version.Branch=release-1.2  -X github.com/prometheus/common/version.BuildUser=nobody" -v -buildmode=exe -trimpath -mod=vendor  -o /wrkdirs/usr/ports/sysutils/node_exporter/work/bin/${out}  ${pkg};  done)
+===>  Building node_exporter from github.com/prometheus/node_exporter
+internal/itoa
+internal/unsafeheader
+math/bits
+unicode/utf8
+internal/race
+runtime/internal/atomic
+internal/abi
+unicode
+sync/atomic
+internal/goexperiment
+runtime/internal/sys
+internal/cpu
+encoding
+unicode/utf16
+container/list
+runtime/internal/math
+crypto/internal/subtle
+vendor/golang.org/x/crypto/cryptobyte/asn1
+crypto/subtle
+internal/nettrace
+vendor/golang.org/x/crypto/internal/subtle
+google.golang.org/protobuf/internal/set
+golang.org/x/sys/internal/unsafeheader
+google.golang.org/protobuf/internal/flags
+golang.org/x/net/internal/iana
+internal/bytealg
+math
+runtime
+internal/reflectlite
+sync
+internal/testlog
+internal/singleflight
+google.golang.org/protobuf/internal/pragma
+math/rand
+runtime/cgo
+errors
+sort
+internal/oserror
+path
+crypto/elliptic/internal/fiat
+github.com/beorn7/perks/quantile
+vendor/golang.org/x/net/dns/dnsmessage
+io
+strconv
+syscall
+bytes
+hash
+strings
+crypto/internal/randutil
+text/tabwriter
+hash/crc32
+crypto/hmac
+hash/fnv
+vendor/golang.org/x/crypto/hkdf
+crypto
+golang.org/x/crypto/blowfish
+crypto/rc4
+reflect
+net/http/internal/ascii
+regexp/syntax
+github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg
+html
+bufio
+golang.org/x/text/transform
+vendor/golang.org/x/text/transform
+internal/syscall/execenv
+internal/syscall/unix
+time
+regexp
+github.com/jpillora/backoff
+context
+io/fs
+internal/poll
+internal/fmtsort
+encoding/binary
+os
+encoding/base64
+crypto/md5
+github.com/cespare/xxhash/v2
+crypto/sha512
+crypto/ed25519/internal/edwards25519/field
+crypto/sha1
+crypto/sha256
+crypto/cipher
+vendor/golang.org/x/crypto/poly1305
+encoding/pem
+crypto/ed25519/internal/edwards25519
+vendor/golang.org/x/sys/cpu
+io/ioutil
+path/filepath
+runtime/debug
+google.golang.org/protobuf/internal/detrand
+internal/lazyregexp
+fmt
+vendor/golang.org/x/net/route
+crypto/des
+crypto/aes
+vendor/golang.org/x/crypto/chacha20
+vendor/golang.org/x/crypto/chacha20poly1305
+net
+log
+encoding/hex
+net/url
+github.com/go-logfmt/logfmt
+vendor/golang.org/x/net/http2/hpack
+vendor/golang.org/x/crypto/curve25519
+compress/flate
+mime
+encoding/json
+vendor/golang.org/x/text/unicode/norm
+math/big
+vendor/golang.org/x/text/unicode/bidi
+mime/quotedprintable
+net/http/internal
+google.golang.org/protobuf/internal/errors
+google.golang.org/protobuf/encoding/protowire
+go/token
+google.golang.org/protobuf/internal/version
+github.com/prometheus/procfs/internal/fs
+compress/gzip
+github.com/prometheus/procfs/internal/util
+golang.org/x/sys/unix
+database/sql/driver
+github.com/pkg/errors
+google.golang.org/protobuf/reflect/protoreflect
+github.com/alecthomas/template/parse
+github.com/alecthomas/units
+vendor/golang.org/x/text/secure/bidirule
+go/scanner
+text/template/parse
+golang.org/x/net/internal/timeseries
+golang.org/x/text/unicode/bidi
+vendor/golang.org/x/net/idna
+database/sql
+golang.org/x/text/unicode/norm
+github.com/go-kit/log
+github.com/prometheus/common/model
+github.com/alecthomas/template
+google.golang.org/protobuf/internal/encoding/messageset
+crypto/rand
+crypto/elliptic
+encoding/asn1
+crypto/dsa
+crypto/ed25519
+crypto/rsa
+github.com/go-kit/log/level
+google.golang.org/protobuf/internal/strs
+google.golang.org/protobuf/internal/genid
+google.golang.org/protobuf/internal/order
+google.golang.org/protobuf/reflect/protoregistry
+google.golang.org/protobuf/internal/descfmt
+google.golang.org/protobuf/runtime/protoiface
+google.golang.org/protobuf/internal/encoding/text
+google.golang.org/protobuf/internal/descopts
+vendor/golang.org/x/crypto/cryptobyte
+crypto/x509/pkix
+github.com/prometheus/common/promlog
+go/ast
+text/template
+golang.org/x/text/secure/bidirule
+golang.org/x/net/http2/hpack
+google.golang.org/protobuf/proto
+golang.org/x/net/idna
+gopkg.in/yaml.v2
+golang.org/x/crypto/bcrypt
+golang.org/x/net/bpf
+encoding/xml
+google.golang.org/protobuf/internal/encoding/defval
+github.com/soundcloud/go-runit/runit
+crypto/ecdsa
+internal/profile
+runtime/pprof
+runtime/trace
+os/user
+google.golang.org/protobuf/encoding/prototext
+google.golang.org/protobuf/internal/filedesc
+html/template
+go/doc
+google.golang.org/protobuf/internal/encoding/tag
+google.golang.org/protobuf/internal/impl
+vendor/golang.org/x/net/http/httpproxy
+net/textproto
+crypto/x509
+golang.org/x/net/internal/socket
+gopkg.in/alecthomas/kingpin.v2
+github.com/prometheus/procfs
+golang.org/x/net/http/httpguts
+vendor/golang.org/x/net/http/httpguts
+mime/multipart
+golang.org/x/net/ipv4
+github.com/beevik/ntp
+crypto/tls
+github.com/prometheus/common/promlog/flag
+google.golang.org/protobuf/internal/filetype
+google.golang.org/protobuf/runtime/protoimpl
+google.golang.org/protobuf/types/known/timestamppb
+google.golang.org/protobuf/types/known/anypb
+google.golang.org/protobuf/types/known/durationpb
+github.com/golang/protobuf/proto
+github.com/golang/protobuf/ptypes/timestamp
+github.com/golang/protobuf/ptypes/duration
+github.com/golang/protobuf/ptypes/any
+github.com/prometheus/client_model/go
+github.com/matttproud/golang_protobuf_extensions/pbutil
+github.com/golang/protobuf/ptypes
+github.com/prometheus/client_golang/prometheus/internal
+net/http/httptrace
+net/http
+golang.org/x/net/context/ctxhttp
+github.com/mattn/go-xmlrpc
+expvar
+net/http/pprof
+golang.org/x/net/trace
+github.com/prometheus/common/expfmt
+golang.org/x/net/http2
+golang.org/x/oauth2/internal
+golang.org/x/oauth2
+golang.org/x/oauth2/clientcredentials
+github.com/prometheus/client_golang/prometheus
+github.com/prometheus/common/version
+github.com/prometheus/client_golang/prometheus/promhttp
+github.com/mwitkow/go-conntrack
+github.com/prometheus/client_golang/prometheus/collectors
+github.com/prometheus/node_exporter/collector
+github.com/prometheus/common/config
+github.com/prometheus/exporter-toolkit/web
+github.com/prometheus/node_exporter
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for node_exporter-1.2.2
+===>   Generating temporary packing list
+for t in github.com/prometheus/node_exporter; do  dst=$(echo ${t} |  /usr/bin/sed -Ee 's/^[^:]*:([^:]+).*$/\1/' -e 's/^\.$/node_exporter/');  src=$(/usr/bin/basename ${dst});  case ${dst} in  /*) dst=/wrkdirs/usr/ports/sysutils/node_exporter/work/stage${dst}; /bin/mkdir -p $(/usr/bin/dirname ${dst}) ;;  *) dst=/wrkdirs/usr/ports/sysutils/node_exporter/work/stage/usr/local/bin/${src} ;;  esac;  echo "===>  Installing ${src} as ${dst}";  install  -s -m 555 /wrkdirs/usr/ports/sysutils/node_exporter/work/bin/${src} ${dst};  done
+===>  Installing node_exporter as /wrkdirs/usr/ports/sysutils/node_exporter/work/stage/usr/local/bin/node_exporter
+====> Compressing man pages (compress-man)
+===> Staging rc.d startup script(s)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:31:00+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for node_exporter-1.2.2
+install -l rs /.npkg/All/node_exporter-1.2.2.pkg /.npkg/All/node_exporter-1.2.2.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for node_exporter-1.2.2
+build of sysutils/node_exporter | node_exporter-1.2.2 ended at Mon Oct 18 23:31:25 EAT 2021
+build time: 00:00:25

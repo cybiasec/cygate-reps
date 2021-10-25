@@ -1,0 +1,636 @@
+=>> Building sysutils/pftop
+build started at Mon Oct 18 23:30:37 EAT 2021
+port directory: /usr/ports/sysutils/pftop
+package name: pftop-0.7_9
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-02 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: ports@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root  wheel  1990 Oct 18 18:59 /usr/ports/sysutils/pftop/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 02
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for pftop-0.7_9:
+     ALTQ=on: ALTQ support for queue statistics
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+ports@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/sysutils/pftop/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/sysutils/pftop/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/sysutils/pftop/work/.cache  HOME=/wrkdirs/usr/ports/sysutils/pftop/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/sysutils/pftop/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+__MAKE_CONF=/dev/null XDG_DATA_HOME=/wrkdirs/usr/ports/sysutils/pftop/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/sysutils/pftop/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/sysutils/pftop/work/.cache  HOME=/wrkdirs/usr/ports/sysutils/pftop/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/sysutils/pftop/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+ OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/pftop"  EXAMPLESDIR="share/examples/pftop"  DATADIR="share/pftop"  WWWDIR="www/pftop"  ETCDIR="etc/pftop"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/pftop DOCSDIR=/usr/local/share/doc/pftop EXAMPLESDIR=/usr/local/share/examples/pftop  WWWDIR=/usr/local/www/pftop ETCDIR=/usr/local/etc/pftop
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>   NOTICE:
+
+The pftop port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+
+===>  License BSD2CLAUSE accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   pftop-0.7_9 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkg-1.17.2: .......... done
+===>   pftop-0.7_9 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of pftop-0.7_9
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>   NOTICE:
+
+The pftop port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+
+===>  License BSD2CLAUSE accepted by the user
+===> Fetching all distfiles required by pftop-0.7_9 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>   NOTICE:
+
+The pftop port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+
+===>  License BSD2CLAUSE accepted by the user
+===> Fetching all distfiles required by pftop-0.7_9 for building
+=> SHA256 Checksum OK for araujobsd-pftop-0.7_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>   NOTICE:
+
+The pftop port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+
+===>  License BSD2CLAUSE accepted by the user
+===> Fetching all distfiles required by pftop-0.7_9 for building
+===>  Extracting for pftop-0.7_9
+=> SHA256 Checksum OK for araujobsd-pftop-0.7_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for pftop-0.7_9
+===>  Applying extra patch /usr/ports/sysutils/pftop/files/extra-patch-bpf_dump.c
+===>  Applying extra patch /usr/ports/sysutils/pftop/files/extra-patch-sf-gencode.h
+===>  Applying extra patch /usr/ports/sysutils/pftop/files/extra-patch-cache.c
+===>  Applying extra patch /usr/ports/sysutils/pftop/files/extra-patch-cache.h
+===>  Applying extra patch /usr/ports/sysutils/pftop/files/extra-patch-config.h
+===>  Applying extra patch /usr/ports/sysutils/pftop/files/extra-patch-pftop.c
+===>  Applying extra patch /usr/ports/sysutils/pftop/files/extra-patch-sf-gencode.c
+===>  Applying extra patch /usr/ports/sysutils/pftop/files/extra-patch-engine.c
+===>  Applying FreeBSD patches for pftop-0.7_9 from /usr/ports/sysutils/pftop/files
+===> Applying FairQ/Codel patches to pftop.
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for pftop-0.7_9
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for pftop-0.7_9
+--- objwarn ---
+--- sf-grammer.c ---
+--- sf-scanner.c ---
+--- objwarn ---
+Warning: Object directory not changed from original /wrkdirs/usr/ports/sysutils/pftop/work/pftop-0.7
+--- sf-grammer.c ---
+yacc -d  -o sf-grammer.c sf-grammer.y
+--- sf-scanner.c ---
+lex   -osf-scanner.c sf-scanner.l
+--- .depend ---
+echo pftop: /usr/lib/libc.a  >> .depend
+--- pftop.o ---
+--- cache.o ---
+--- engine.o ---
+--- sf-gencode.o ---
+--- sf-grammer.o ---
+--- sf-scanner.o ---
+--- pcap-nametoaddr.o ---
+--- bpf_optimize.o ---
+--- bpf_filter.o ---
+--- bpf_dump.o ---
+--- bpf_image.o ---
+--- pftop.8.gz ---
+--- pftop.o ---
+cc  -O2 -pipe  -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing  -Wall -DOS_LEVEL=45   -MD  -MF.depend.pftop.o -MTpftop.o -std=gnu89 -Wno-format-zero-length -fstack-protector-strong    -Qunused-arguments  -c pftop.c -o pftop.o
+--- cache.o ---
+cc  -O2 -pipe  -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing  -Wall -DOS_LEVEL=45   -MD  -MF.depend.cache.o -MTcache.o -std=gnu89 -Wno-format-zero-length -fstack-protector-strong    -Qunused-arguments  -c cache.c -o cache.o
+--- engine.o ---
+cc  -O2 -pipe  -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing  -Wall -DOS_LEVEL=45   -MD  -MF.depend.engine.o -MTengine.o -std=gnu89 -Wno-format-zero-length -fstack-protector-strong    -Qunused-arguments  -c engine.c -o engine.o
+--- sf-gencode.o ---
+cc  -O2 -pipe  -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing  -Wall -DOS_LEVEL=45   -MD  -MF.depend.sf-gencode.o -MTsf-gencode.o -std=gnu89 -Wno-format-zero-length -fstack-protector-strong    -Qunused-arguments  -c sf-gencode.c -o sf-gencode.o
+--- sf-grammer.o ---
+cc  -O2 -pipe  -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing  -Wall -DOS_LEVEL=45   -MD  -MF.depend.sf-grammer.o -MTsf-grammer.o -std=gnu89 -Wno-format-zero-length -fstack-protector-strong    -Qunused-arguments  -c sf-grammer.c -o sf-grammer.o
+--- sf-scanner.o ---
+cc  -O2 -pipe  -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing  -Wall -DOS_LEVEL=45   -MD  -MF.depend.sf-scanner.o -MTsf-scanner.o -std=gnu89 -Wno-format-zero-length -fstack-protector-strong    -Qunused-arguments  -c sf-scanner.c -o sf-scanner.o
+--- pcap-nametoaddr.o ---
+cc  -O2 -pipe  -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing  -Wall -DOS_LEVEL=45   -MD  -MF.depend.pcap-nametoaddr.o -MTpcap-nametoaddr.o -std=gnu89 -Wno-format-zero-length -fstack-protector-strong    -Qunused-arguments  -c pcap-nametoaddr.c -o pcap-nametoaddr.o
+--- bpf_optimize.o ---
+cc  -O2 -pipe  -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing  -Wall -DOS_LEVEL=45   -MD  -MF.depend.bpf_optimize.o -MTbpf_optimize.o -std=gnu89 -Wno-format-zero-length -fstack-protector-strong    -Qunused-arguments  -c bpf_optimize.c -o bpf_optimize.o
+--- bpf_filter.o ---
+cc  -O2 -pipe  -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing  -Wall -DOS_LEVEL=45   -MD  -MF.depend.bpf_filter.o -MTbpf_filter.o -std=gnu89 -Wno-format-zero-length -fstack-protector-strong    -Qunused-arguments  -c bpf_filter.c -o bpf_filter.o
+--- bpf_dump.o ---
+cc  -O2 -pipe  -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing  -Wall -DOS_LEVEL=45   -MD  -MF.depend.bpf_dump.o -MTbpf_dump.o -std=gnu89 -Wno-format-zero-length -fstack-protector-strong    -Qunused-arguments  -c bpf_dump.c -o bpf_dump.o
+--- bpf_image.o ---
+cc  -O2 -pipe  -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing  -Wall -DOS_LEVEL=45   -MD  -MF.depend.bpf_image.o -MTbpf_image.o -std=gnu89 -Wno-format-zero-length -fstack-protector-strong    -Qunused-arguments  -c bpf_image.c -o bpf_image.o
+--- pftop.8.gz ---
+gzip -cn pftop.8 > pftop.8.gz
+--- bpf_optimize.o ---
+In file included from bpf_optimize.c:36:
+./sf-gencode.h:173:20: warning: unknown attribute 'volatile' ignored [-Wunknown-attributes]
+    __attribute__((volatile, __format__ (printf, 1, 2)));
+--- bpf_dump.o ---
+bpf_dump.c:25:19: warning: unused variable 'rcsid' [-Wunused-const-variable]
+static const char rcsid[] =
+                  ^
+--- bpf_optimize.o ---
+                   ^
+--- sf-grammer.o ---
+In file included from sf-grammer.y:46:
+./sf-gencode.h:173:20: warning: unknown attribute 'volatile' ignored [-Wunknown-attributes]
+    __attribute__((volatile, __format__ (printf, 1, 2)));
+                   ^
+--- pcap-nametoaddr.o ---
+In file included from pcap-nametoaddr.c:52:
+./sf-gencode.h:173:20: warning: unknown attribute 'volatile' ignored [-Wunknown-attributes]
+    __attribute__((volatile, __format__ (printf, 1, 2)));
+                   ^
+--- bpf_dump.o ---
+1 warning generated.
+--- sf-scanner.o ---
+In file included from sf-scanner.l:40:
+./sf-gencode.h:173:20: warning: unknown attribute 'volatile' ignored [-Wunknown-attributes]
+    __attribute__((volatile, __format__ (printf, 1, 2)));
+                   ^
+sf-scanner.l:225:14: warning: assigning to 'u_char *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+                                yylval.e = sdup((char *)yytext); return HID6;
+                                         ^ ~~~~~~~~~~~~~~~~~~~~
+--- sf-gencode.o ---
+In file included from sf-gencode.c:49:
+./sf-gencode.h:173:20: warning: unknown attribute 'volatile' ignored [-Wunknown-attributes]
+    __attribute__((volatile, __format__ (printf, 1, 2)));
+                   ^
+--- pcap-nametoaddr.o ---
+pcap-nametoaddr.c:191:1: warning: unused function 'xdtoi' [-Wunused-function]
+xdtoi(c)
+^
+--- sf-grammer.o ---
+sf-grammer.c:680:18: warning: implicit declaration of function 'yylex' [-Wimplicit-function-declaration]
+        yychar = YYLEX;
+                 ^
+sf-grammer.c:139:16: note: expanded from macro 'YYLEX'
+# define YYLEX yylex()
+               ^
+--- sf-scanner.o ---
+sf-scanner.l:27:19: warning: unused variable 'rcsid' [-Wunused-const-variable]
+static const char rcsid[] =
+                  ^
+sf-scanner.c:2405:16: warning: function 'input' is not needed and will not be emitted [-Wunneeded-internal-declaration]
+    static int input  (void)
+               ^
+--- sf-grammer.o ---
+sf-grammer.c:1154:22: warning: implicit declaration of function 'yylex' [-Wimplicit-function-declaration]
+            yychar = YYLEX;
+                     ^
+sf-grammer.c:139:16: note: expanded from macro 'YYLEX'
+# define YYLEX yylex()
+               ^
+sf-grammer.y:28:19: warning: unused variable 'rcsid' [-Wunused-const-variable]
+static const char rcsid[] =
+                  ^
+--- sf-gencode.o ---
+sf-gencode.c:1282:9: warning: implicit declaration of function '__pcap_atoin' [-Wimplicit-function-declaration]
+        nlen = __pcap_atoin(s1, &n);
+               ^
+sf-gencode.c:1325:10: warning: implicit declaration of function '__pcap_atoin' [-Wimplicit-function-declaration]
+                vlen = __pcap_atoin(s, &v);
+                       ^
+sf-gencode.c:1861:37: warning: passing 'char *' to parameter of type 'const u_char *' (aka 'const unsigned char *') converts between pointers to integer types with different sign [-Wpointer-sign]
+        b0 = gen_bcmp(off, strlen(ifname), ifname);
+                                           ^~~~~~
+sf-gencode.c:395:50: note: passing argument to parameter 'v' here
+gen_bcmp(u_int offset, u_int size, const u_char *v)
+                                                 ^
+sf-gencode.c:446:1: warning: unused function 'gen_true' [-Wunused-function]
+gen_true(void)
+^
+sf-gencode.c:452:1: warning: unused function 'gen_false' [-Wunused-function]
+gen_false(void)
+^
+--- pcap-nametoaddr.o ---
+2 warnings generated.
+--- pftop.o ---
+In file included from pftop.c:70:
+./sf-gencode.h:173:20: warning: unknown attribute 'volatile' ignored [-Wunknown-attributes]
+    __attribute__((volatile, __format__ (printf, 1, 2)));
+                   ^
+pftop.c:860:41: warning: passing 'char *' to parameter of type 'const u_char *' (aka 'const unsigned char *') converts between pointers to integer types with different sign [-Wpointer-sign]
+                        if (bpf_filter(filter_prog.bf_insns, (char *)(&state_buf[n]),
+                                                             ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/pcap/pcap.h:544:68: note: passing argument to parameter here
+  PCAP_API u_int        bpf_filter(const struct bpf_insn *, const u_char *, u_int, u_int);
+                                                                          ^
+pftop.c:1656:28: warning: incompatible pointer to integer conversion passing 'counter_u64_t' (aka 'unsigned long *') to parameter of type 'u_int64_t' (aka 'unsigned long'); dereference with * [-Wint-conversion]
+        print_fld_size(FLD_STATS, pr->states_tot);
+                                  ^~~~~~~~~~~~~~
+                                  *
+./engine.h:112:47: note: passing argument to parameter 'size' here
+void print_fld_size(field_def *fld, u_int64_t size);
+                                              ^
+--- sf-grammer.o ---
+4 warnings generated.
+--- sf-scanner.o ---
+4 warnings generated.
+--- pftop.o ---
+3 warnings generated.
+--- bpf_optimize.o ---
+1 warning generated.
+--- sf-gencode.o ---
+6 warnings generated.
+--- pftop ---
+cc -O2 -pipe -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 -DHAVE_FINE_GRAINED_LOCKING=1 -DHAVE_ALTQ=1 -fstack-protector-strong -fno-strict-aliasing -Wall -DOS_LEVEL=45 -std=gnu89 -Wno-format-zero-length -fstack-protector-strong -Qunused-arguments  -fstack-protector-strong   -o pftop pftop.o cache.o engine.o sf-gencode.o sf-grammer.o sf-scanner.o pcap-nametoaddr.o bpf_optimize.o bpf_filter.o bpf_dump.o bpf_image.o  -lcurses
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for pftop-0.7_9
+===>   Generating temporary packing list
+install  -s -m 555 /wrkdirs/usr/ports/sysutils/pftop/work/pftop-0.7/pftop  /wrkdirs/usr/ports/sysutils/pftop/work/stage/usr/local/sbin
+install  -m 444 /wrkdirs/usr/ports/sysutils/pftop/work/pftop-0.7/pftop.8  /wrkdirs/usr/ports/sysutils/pftop/work/stage/usr/local/man/man8
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:30:37+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for pftop-0.7_9
+install -l rs /.npkg/All/pftop-0.7_9.pkg /.npkg/All/pftop-0.7_9.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for pftop-0.7_9
+build of sysutils/pftop | pftop-0.7_9 ended at Mon Oct 18 23:30:40 EAT 2021
+build time: 00:00:03

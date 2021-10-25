@@ -1,0 +1,568 @@
+=>> Building devel/php74-sysvmsg
+build started at Mon Oct 18 23:29:27 EAT 2021
+port directory: /usr/ports/devel/php74-sysvmsg
+package name: php74-sysvmsg-7.4.24
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-02 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: tz@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root  wheel  139 Oct 18 18:58 /usr/ports/devel/php74-sysvmsg/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 02
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+tz@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--enable-sysvmsg --with-php-config=/usr/local/bin/php-config --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PKG_CONFIG=pkgconf XDG_DATA_HOME=/wrkdirs/usr/ports/devel/php74-sysvmsg/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/php74-sysvmsg/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/php74-sysvmsg/work/.cache  HOME=/wrkdirs/usr/ports/devel/php74-sysvmsg/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/php74-sysvmsg/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/php74-sysvmsg/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/php74-sysvmsg/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/php74-sysvmsg/work/.cache  HOME=/wrkdirs/usr/ports/devel/php74-sysvmsg/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/php74-sysvmsg/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PHP_EXT_DIR=20190902 OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/php74"  EXAMPLESDIR="share/examples/php74"  DATADIR="share/php74"  WWWDIR="www/php74"  ETCDIR="etc/php74"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PHP_EXT_DIR=20190902 PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/php74 DOCSDIR=/usr/local/share/doc/php74 EXAMPLESDIR=/usr/local/share/examples/php74  WWWDIR=/usr/local/www/php74 ETCDIR=/usr/local/etc/php74
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License PHP301 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   php74-sysvmsg-7.4.24 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkg-1.17.2: .......... done
+===>   php74-sysvmsg-7.4.24 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of php74-sysvmsg-7.4.24
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License PHP301 accepted by the user
+===> Fetching all distfiles required by php74-sysvmsg-7.4.24 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License PHP301 accepted by the user
+===> Fetching all distfiles required by php74-sysvmsg-7.4.24 for building
+=> SHA256 Checksum OK for php-7.4.24.tar.xz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License PHP301 accepted by the user
+===> Fetching all distfiles required by php74-sysvmsg-7.4.24 for building
+===>  Extracting for php74-sysvmsg-7.4.24
+=> SHA256 Checksum OK for php-7.4.24.tar.xz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for php74-sysvmsg-7.4.24
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   php74-sysvmsg-7.4.24 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-1.8.0,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkgconf-1.8.0,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkgconf-1.8.0,1: .......... done
+===>   php74-sysvmsg-7.4.24 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of php74-sysvmsg-7.4.24
+===>   php74-sysvmsg-7.4.24 depends on file: /usr/local/bin/phpize - not found
+===>   Installing existing package /packages/All/php74-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libargon2-20190702...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libargon2-20190702: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libxml2-2.9.12...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libxml2-2.9.12: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing pcre2-10.37...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting pcre2-10.37: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-7.4.24: .......... done
+===>   php74-sysvmsg-7.4.24 depends on file: /usr/local/bin/phpize - found
+===>   Returning to build of php74-sysvmsg-7.4.24
+===>   php74-sysvmsg-7.4.24 depends on package: autoconf>0 - not found
+===>   Installing existing package /packages/All/autoconf-2.69_3.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing autoconf-2.69_3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing autoconf-wrapper-20131203...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting autoconf-wrapper-20131203: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing indexinfo-0.3.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting indexinfo-0.3.1: .... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing m4-1.4.19,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing gettext-runtime-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting gettext-runtime-0.21: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting m4-1.4.19,1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing perl5-5.32.1_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting perl5-5.32.1_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting autoconf-2.69_3: .......... done
+===>   php74-sysvmsg-7.4.24 depends on package: autoconf>0 - found
+===>   Returning to build of php74-sysvmsg-7.4.24
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  PHPizing for php74-sysvmsg-7.4.24
+===>  Configuring for php74-sysvmsg-7.4.24
+Configuring for:
+PHP Api Version:         20190902
+Zend Module Api No:      20190902
+Zend Extension Api No:   320190902
+configure: loading site script /usr/ports/Templates/config.site
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking pkg-config is at least version 0.9.0... yes
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking how to run the C preprocessor... cpp
+checking for icc... no
+checking for suncc... no
+checking for system library directory... lib
+checking if compiler supports -R... no
+checking if compiler supports -Wl,-rpath,... yes
+checking build system type... amd64-portbld-freebsd12.3
+checking host system type... amd64-portbld-freebsd12.3
+checking target system type... amd64-portbld-freebsd12.3
+checking for PHP prefix... /usr/local
+checking for PHP includes... -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib
+checking for PHP extension directory... /usr/local/lib/php/20190902
+checking for PHP installed headers prefix... /usr/local/include/php
+checking if debug is enabled... no
+checking if zts is enabled... no
+checking for gawk... (cached) /usr/bin/awk
+checking if /usr/bin/awk is broken... no
+checking whether to enable System V IPC support... yes, shared
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/msg.h... (cached) yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/nm
+checking whether ln -s works... yes
+checking how to recognize dependent libraries... pass_all
+checking for dlfcn.h... (cached) yes
+checking the maximum length of command line arguments... (cached) 524288
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for objdir... .libs
+checking for ar... ar
+checking for ranlib... ranlib
+checking for strip... strip
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC
+checking if cc PIC flag -fPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd12.3 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... no
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+
+creating libtool
+appending configuration tag "CXX" to libtool
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for c++ option to produce PIC... 
+checking if c++ static flag  works... yes
+checking if c++ supports -c -o file.o... yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... freebsd12.3 ld.so
+(cached) (cached) checking how to hardcode library paths into programs... unsupported
+configure: patching config.h.in
+configure: creating ./config.status
+config.status: creating config.h
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for php74-sysvmsg-7.4.24
+--- sysvmsg.lo ---
+/bin/sh /wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/libtool --mode=compile cc  -I. -I/wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg -DPHP_ATOM_INC -I/wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/include -I/wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/main -I/wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -c /wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/sysvmsg.c -o sysvmsg.lo
+mkdir .libs
+ cc -I. -I/wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg -DPHP_ATOM_INC -I/wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/include -I/wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/main -I/wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -c /wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/sysvmsg.c  -fPIC -DPIC -o .libs/sysvmsg.o
+--- ./sysvmsg.la ---
+/bin/sh /wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/libtool --mode=link cc -DPHP_ATOM_INC -I/wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/include -I/wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/main -I/wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -O2 -pipe -fstack-protector-strong -fno-strict-aliasing  -fstack-protector-strong  -o ./sysvmsg.la -export-dynamic -avoid-version -prefer-pic -module -rpath /wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/modules  sysvmsg.lo 
+cc -shared  .libs/sysvmsg.o   -Wl,-soname -Wl,sysvmsg.so -o ./.libs/sysvmsg.so
+creating ./sysvmsg.la
+(cd ./.libs && rm -f sysvmsg.la && ln -s ../sysvmsg.la sysvmsg.la)
+--- /wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/modules/sysvmsg.la ---
+/bin/sh /wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/libtool --mode=install cp ./sysvmsg.la /wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/modules
+cp ./.libs/sysvmsg.so /wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/modules/sysvmsg.so
+cp ./.libs/sysvmsg.lai /wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/modules/sysvmsg.la
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /wrkdirs/usr/ports/devel/php74-sysvmsg/work/php-7.4.24/ext/sysvmsg/modules
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,--rpath -Wl,LIBDIR' linker flag
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+--- all ---
+
+Build complete.
+Don't forget to run 'make test'.
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   php74-sysvmsg-7.4.24 depends on file: /usr/local/include/php/main/php.h - found
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for php74-sysvmsg-7.4.24
+===>   Generating temporary packing list
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:29:27+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for php74-sysvmsg-7.4.24
+install -l rs /.npkg/All/php74-sysvmsg-7.4.24.pkg /.npkg/All/php74-sysvmsg-7.4.24.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for php74-sysvmsg-7.4.24
+build of devel/php74-sysvmsg | php74-sysvmsg-7.4.24 ended at Mon Oct 18 23:29:35 EAT 2021
+build time: 00:00:08

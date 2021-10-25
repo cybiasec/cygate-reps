@@ -1,0 +1,556 @@
+=>> Building net/igmpproxy
+build started at Mon Oct 18 23:31:43 EAT 2021
+port directory: /usr/ports/net/igmpproxy
+package name: igmpproxy-0.3,1
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-02 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: franco@opnsense.org
+Makefile datestamp: -rw-r--r--  1 root  wheel  439 Oct 18 18:58 /usr/ports/net/igmpproxy/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 02
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+franco@opnsense.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/net/igmpproxy/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net/igmpproxy/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net/igmpproxy/work/.cache  HOME=/wrkdirs/usr/ports/net/igmpproxy/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net/igmpproxy/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/net/igmpproxy/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net/igmpproxy/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net/igmpproxy/work/.cache  HOME=/wrkdirs/usr/ports/net/igmpproxy/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net/igmpproxy/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/igmpproxy"  EXAMPLESDIR="share/examples/igmpproxy"  DATADIR="share/igmpproxy"  WWWDIR="www/igmpproxy"  ETCDIR="etc/igmpproxy"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/igmpproxy DOCSDIR=/usr/local/share/doc/igmpproxy EXAMPLESDIR=/usr/local/share/examples/igmpproxy  WWWDIR=/usr/local/www/igmpproxy ETCDIR=/usr/local/etc/igmpproxy
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License GPLv2+ accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   igmpproxy-0.3,1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkg-1.17.2: .......... done
+===>   igmpproxy-0.3,1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of igmpproxy-0.3,1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2+ accepted by the user
+===> Fetching all distfiles required by igmpproxy-0.3,1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2+ accepted by the user
+===> Fetching all distfiles required by igmpproxy-0.3,1 for building
+=> SHA256 Checksum OK for pali-igmpproxy-0.3_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License GPLv2+ accepted by the user
+===> Fetching all distfiles required by igmpproxy-0.3,1 for building
+===>  Extracting for igmpproxy-0.3,1
+=> SHA256 Checksum OK for pali-igmpproxy-0.3_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for igmpproxy-0.3,1
+===>  Applying FreeBSD patches for igmpproxy-0.3,1 from /usr/ports/net/igmpproxy/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   igmpproxy-0.3,1 depends on package: autoconf>=2.69 - not found
+===>   Installing existing package /packages/All/autoconf-2.69_3.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing autoconf-2.69_3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing autoconf-wrapper-20131203...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting autoconf-wrapper-20131203: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing indexinfo-0.3.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting indexinfo-0.3.1: .... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing m4-1.4.19,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing gettext-runtime-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting gettext-runtime-0.21: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting m4-1.4.19,1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing perl5-5.32.1_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting perl5-5.32.1_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting autoconf-2.69_3: .......... done
+===>   igmpproxy-0.3,1 depends on package: autoconf>=2.69 - found
+===>   Returning to build of igmpproxy-0.3,1
+===>   igmpproxy-0.3,1 depends on package: automake>=1.16.1 - not found
+===>   Installing existing package /packages/All/automake-1.16.4.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing automake-1.16.4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting automake-1.16.4: .......... done
+===>   igmpproxy-0.3,1 depends on package: automake>=1.16.1 - found
+===>   Returning to build of igmpproxy-0.3,1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for igmpproxy-0.3,1
+configure.ac:6: installing './compile'
+configure.ac:10: installing './config.guess'
+configure.ac:10: installing './config.sub'
+configure.ac:3: installing './install-sh'
+configure.ac:3: installing './missing'
+src/Makefile.am: installing './depcomp'
+configure: loading site script /usr/ports/Templates/config.site
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking whether cc understands -c and -o together... yes
+checking dependency style of cc... gcc3
+checking for cc option to accept ISO C99... none needed
+checking build system type... amd64-portbld-freebsd12.3
+checking host system type... amd64-portbld-freebsd12.3
+checking for struct sockaddr.sa_len... yes
+checking for struct sockaddr_in.sin_len... yes
+checking for library containing socket... none required
+checking for library containing clock_gettime... none required
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating src/Makefile
+config.status: creating doc/igmpproxy.8
+config.status: creating doc/igmpproxy.conf.5
+config.status: creating config.h
+config.status: linking src/os-freebsd.h to src/os.h
+config.status: executing depfiles commands
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for igmpproxy-0.3,1
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+Making all in doc
+Making all in src
+--- callout.o ---
+--- config.o ---
+--- confread.o ---
+--- ifvc.o ---
+--- igmp.o ---
+--- igmpproxy.o ---
+--- kern.o ---
+--- lib.o ---
+--- mroute-api.o ---
+--- request.o ---
+--- rttable.o ---
+--- syslog.o ---
+--- callout.o ---
+cc -DHAVE_CONFIG_H -I. -I..      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT callout.o -MD -MP -MF .deps/callout.Tpo -c -o callout.o callout.c
+--- config.o ---
+cc -DHAVE_CONFIG_H -I. -I..      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT config.o -MD -MP -MF .deps/config.Tpo -c -o config.o config.c
+--- confread.o ---
+cc -DHAVE_CONFIG_H -I. -I..      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT confread.o -MD -MP -MF .deps/confread.Tpo -c -o confread.o confread.c
+--- ifvc.o ---
+cc -DHAVE_CONFIG_H -I. -I..      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT ifvc.o -MD -MP -MF .deps/ifvc.Tpo -c -o ifvc.o ifvc.c
+--- igmp.o ---
+cc -DHAVE_CONFIG_H -I. -I..      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT igmp.o -MD -MP -MF .deps/igmp.Tpo -c -o igmp.o igmp.c
+--- igmpproxy.o ---
+cc -DHAVE_CONFIG_H -I. -I..      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT igmpproxy.o -MD -MP -MF .deps/igmpproxy.Tpo -c -o igmpproxy.o igmpproxy.c
+--- kern.o ---
+cc -DHAVE_CONFIG_H -I. -I..      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT kern.o -MD -MP -MF .deps/kern.Tpo -c -o kern.o kern.c
+--- lib.o ---
+cc -DHAVE_CONFIG_H -I. -I..      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT lib.o -MD -MP -MF .deps/lib.Tpo -c -o lib.o lib.c
+--- mroute-api.o ---
+cc -DHAVE_CONFIG_H -I. -I..      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT mroute-api.o -MD -MP -MF .deps/mroute-api.Tpo -c -o mroute-api.o mroute-api.c
+--- rttable.o ---
+cc -DHAVE_CONFIG_H -I. -I..      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT rttable.o -MD -MP -MF .deps/rttable.Tpo -c -o rttable.o rttable.c
+--- syslog.o ---
+cc -DHAVE_CONFIG_H -I. -I..      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT syslog.o -MD -MP -MF .deps/syslog.Tpo -c -o syslog.o syslog.c
+--- request.o ---
+cc -DHAVE_CONFIG_H -I. -I..      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT request.o -MD -MP -MF .deps/request.Tpo -c -o request.o request.c
+--- syslog.o ---
+mv -f .deps/syslog.Tpo .deps/syslog.Po
+--- confread.o ---
+mv -f .deps/confread.Tpo .deps/confread.Po
+--- kern.o ---
+mv -f .deps/kern.Tpo .deps/kern.Po
+--- lib.o ---
+mv -f .deps/lib.Tpo .deps/lib.Po
+--- request.o ---
+mv -f .deps/request.Tpo .deps/request.Po
+--- mroute-api.o ---
+mv -f .deps/mroute-api.Tpo .deps/mroute-api.Po
+--- callout.o ---
+mv -f .deps/callout.Tpo .deps/callout.Po
+--- config.o ---
+mv -f .deps/config.Tpo .deps/config.Po
+--- igmpproxy.o ---
+mv -f .deps/igmpproxy.Tpo .deps/igmpproxy.Po
+--- ifvc.o ---
+mv -f .deps/ifvc.Tpo .deps/ifvc.Po
+--- igmp.o ---
+mv -f .deps/igmp.Tpo .deps/igmp.Po
+--- rttable.o ---
+mv -f .deps/rttable.Tpo .deps/rttable.Po
+--- igmpproxy ---
+cc  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -fstack-protector-strong -o igmpproxy callout.o config.o  confread.o ifvc.o igmp.o  igmpproxy.o kern.o lib.o  mroute-api.o request.o rttable.o  syslog.o  
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for igmpproxy-0.3,1
+===>   Generating temporary packing list
+Making install in doc
+ /bin/mkdir -p '/wrkdirs/usr/ports/net/igmpproxy/work/stage/usr/local/man/man5'
+ install  -m 0644 igmpproxy.conf.5 '/wrkdirs/usr/ports/net/igmpproxy/work/stage/usr/local/man/man5'
+ /bin/mkdir -p '/wrkdirs/usr/ports/net/igmpproxy/work/stage/usr/local/man/man8'
+ install  -m 0644 igmpproxy.8 '/wrkdirs/usr/ports/net/igmpproxy/work/stage/usr/local/man/man8'
+Making install in src
+ /bin/mkdir -p '/wrkdirs/usr/ports/net/igmpproxy/work/stage/usr/local/sbin'
+  install  -s -m 555 igmpproxy '/wrkdirs/usr/ports/net/igmpproxy/work/stage/usr/local/sbin'
+ /bin/mkdir -p '/wrkdirs/usr/ports/net/igmpproxy/work/stage/usr/local/etc'
+ install  -m 0644 igmpproxy.conf '/wrkdirs/usr/ports/net/igmpproxy/work/stage/usr/local/etc'
+install  -m 0644 /wrkdirs/usr/ports/net/igmpproxy/work/igmpproxy-0.3/igmpproxy.conf  /wrkdirs/usr/ports/net/igmpproxy/work/stage/usr/local/etc/igmpproxy.conf.sample
+====> Compressing man pages (compress-man)
+===> Staging rc.d startup script(s)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:31:43+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for igmpproxy-0.3,1
+install -l rs /.npkg/All/igmpproxy-0.3,1.pkg /.npkg/All/igmpproxy-0.3,1.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for igmpproxy-0.3,1
+build of net/igmpproxy | igmpproxy-0.3,1 ended at Mon Oct 18 23:31:52 EAT 2021
+build time: 00:00:09

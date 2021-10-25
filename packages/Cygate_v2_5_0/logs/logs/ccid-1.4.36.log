@@ -1,0 +1,856 @@
+=>> Building devel/libccid
+build started at Mon Oct 18 23:32:39 EAT 2021
+port directory: /usr/ports/devel/libccid
+package name: ccid-1.4.36
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-02 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: ports@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root  wheel  1074 Oct 18 18:58 /usr/ports/devel/libccid/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 02
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+ports@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--enable-usbdropdir=/usr/local/lib/pcsc/drivers  --enable-ccidtwindir=/usr/local/lib/pcsc/drivers/serial --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+ac_cv_path_PERL=/usr/local/bin/perl ac_cv_path_PERL_PATH=/usr/local/bin/perl  PERL_USE_UNSAFE_INC=1 PKG_CONFIG=pkgconf XDG_DATA_HOME=/wrkdirs/usr/ports/devel/libccid/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/libccid/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/libccid/work/.cache  HOME=/wrkdirs/usr/ports/devel/libccid/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/libccid/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+PERL_USE_UNSAFE_INC=1 XDG_DATA_HOME=/wrkdirs/usr/ports/devel/libccid/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/libccid/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/libccid/work/.cache  HOME=/wrkdirs/usr/ports/devel/libccid/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/libccid/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib PERL_VERSION=5.32.1  PERL_VER=5.32  PERL5_MAN1=lib/perl5/site_perl/man/man1  PERL5_MAN3=lib/perl5/site_perl/man/man3  SITE_PERL=lib/perl5/site_perl  SITE_ARCH=lib/perl5/site_perl/mach/5.32 DOCSDIR="share/doc/ccid"  EXAMPLESDIR="share/examples/ccid"  DATADIR="share/ccid"  WWWDIR="www/ccid"  ETCDIR="etc/ccid"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/ccid DOCSDIR=/usr/local/share/doc/ccid EXAMPLESDIR=/usr/local/share/examples/ccid  WWWDIR=/usr/local/www/ccid ETCDIR=/usr/local/etc/ccid
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>   NOTICE:
+
+The ccid port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+
+===>  License LGPL21 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   ccid-1.4.36 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkg-1.17.2: .......... done
+===>   ccid-1.4.36 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of ccid-1.4.36
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>   NOTICE:
+
+The ccid port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+
+===>  License LGPL21 accepted by the user
+===> Fetching all distfiles required by ccid-1.4.36 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>   NOTICE:
+
+The ccid port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+
+===>  License LGPL21 accepted by the user
+===> Fetching all distfiles required by ccid-1.4.36 for building
+=> SHA256 Checksum OK for ccid-1.4.36.tar.bz2.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>   NOTICE:
+
+The ccid port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+
+===>  License LGPL21 accepted by the user
+===> Fetching all distfiles required by ccid-1.4.36 for building
+===>  Extracting for ccid-1.4.36
+=> SHA256 Checksum OK for ccid-1.4.36.tar.bz2.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for ccid-1.4.36
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   ccid-1.4.36 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-1.8.0,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkgconf-1.8.0,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkgconf-1.8.0,1: .......... done
+===>   ccid-1.4.36 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of ccid-1.4.36
+===>   ccid-1.4.36 depends on package: perl5>=5.32.r0<5.33 - not found
+===>   Installing existing package /packages/All/perl5-5.32.1_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing perl5-5.32.1_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting perl5-5.32.1_1: .......... done
+===>   ccid-1.4.36 depends on package: perl5>=5.32.r0<5.33 - found
+===>   Returning to build of ccid-1.4.36
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   ccid-1.4.36 depends on shared library: libpcsclite.so - not found
+===>   Installing existing package /packages/All/pcsc-lite-1.9.4,2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pcsc-lite-1.9.4,2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pcsc-lite-1.9.4,2: .......... done
+=====
+Message from pcsc-lite-1.9.4,2:
+
+--
+PC/SC-Lite has been installed.
+
+You need to install a driver for your smartcard reader e.g.,
+- devel/libccid
+- security/ifd-slb_rf60
+
+For cardreaders connected to the serial port: After installing the driver,
+please update the pcscd configuration file:
+/usr/local/etc/reader.conf
+
+For USB cardreaders add the following lines to /etc/devd.conf to enable
+hotplugging:
+
+attach 100 {
+        device-name "ugen[0-9]+";
+        action "/usr/local/sbin/pcscd -H";
+};
+
+detach 100 {
+        device-name "ugen[0-9]+";
+        action "/usr/local/sbin/pcscd -H";
+};
+===>   ccid-1.4.36 depends on shared library: libpcsclite.so - found (/usr/local/lib/libpcsclite.so)
+===>   Returning to build of ccid-1.4.36
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for ccid-1.4.36
+configure: loading site script /usr/ports/Templates/config.site
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking build system type... amd64-portbld-freebsd12.3
+checking host system type... amd64-portbld-freebsd12.3
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking whether cc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of cc... gcc3
+checking how to run the C preprocessor... cpp
+checking whether make sets $(MAKE)... (cached) yes
+checking whether ln -s works... yes
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... -lfl
+checking whether yytext is a pointer... yes
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking pkg-config is at least version 0.9.0... yes
+checking for libpcsclite >= 1.8.3... yes
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking ifdhandler.h usability... yes
+checking ifdhandler.h presence... yes
+checking for ifdhandler.h... yes
+checking reader.h usability... yes
+checking reader.h presence... yes
+checking for reader.h... yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm
+checking the name lister (/usr/bin/nm) interface... BSD nm
+checking the maximum length of command line arguments... (cached) 524288
+checking how to convert amd64-portbld-freebsd12.3 file names to amd64-portbld-freebsd12.3 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd12.3 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd12.3 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... no
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking for errno.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking for string.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for stdarg.h... (cached) yes
+checking for arpa/inet.h... (cached) yes
+checking for stdio.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... (cached) yes
+checking for select... (cached) yes
+checking for strerror... (cached) yes
+checking for strncpy... yes
+checking for memcpy... (cached) yes
+checking for strlcpy... (cached) yes
+checking for strlcat... (cached) yes
+checking for libusb-1.0 >= 1.0.9... yes
+checking libusb.h usability... yes
+checking libusb.h presence... yes
+checking for libusb.h... yes
+checking for libusb_init... yes
+checking for -fvisibility=hidden... yes
+checking whether cc is Clang... yes
+checking whether Clang needs flag to prevent "argument unused" warning when linking with -pthread... no
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking whether more special flags are required for pthreads... no
+checking for PTHREAD_PRIO_INHERIT... yes
+checking for SCardEstablishContext... yes
+
+libccid has been configured with following options:
+
+Version:             1.4.36
+Host:                amd64-portbld-freebsd12.3
+Compiler:            cc
+Preprocessor flags:  
+Compiler flags:      -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing 
+Preprocessor flags:  
+Linker flags:         -fstack-protector-strong 
+Libraries:           
+
+PCSC_CFLAGS:         -I/usr/local/include/PCSC -pthread 
+PCSC_LIBS:           -L/usr/local/lib -lpcsclite 
+PTHREAD_CFLAGS:      -pthread
+PTHREAD_LIBS:        
+BUNDLE_HOST:         FreeBSD
+DYN_LIB_EXT:         so
+LIBUSB_CFLAGS:       
+LIBUSB_LIBS:         -lusb 
+SYMBOL_VISIBILITY:   -fvisibility=hidden
+NOCLASS:             
+
+libusb support:          yes
+composite as multislot:  no
+multi threading:         yes
+bundle directory name:   ifd-ccid.bundle
+USB drop directory:      /usr/local/lib/pcsc/drivers
+serial Twin support:     no
+serial twin install dir: /usr/local/lib/pcsc/drivers/serial
+serial config directory: /usr/local/etc/reader.conf.d
+compiled for pcsc-lite:  yes
+syslog debug:            no
+os_log debug:            no
+class driver:            yes
+
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating readers/Makefile
+config.status: creating contrib/Makefile
+config.status: creating contrib/Kobil_mIDentity_switch/Makefile
+config.status: creating contrib/RSA_SecurID/Makefile
+config.status: creating examples/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for ccid-1.4.36
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+Making all in readers
+Making all in examples
+--- scardcontrol-scardcontrol.o ---
+--- scardcontrol-PCSCv2part10.o ---
+--- scardcontrol-scardcontrol.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread -pthread -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT scardcontrol-scardcontrol.o -MD -MP -MF .deps/scardcontrol-scardcontrol.Tpo -c -o scardcontrol-scardcontrol.o `test -f 'scardcontrol.c' || echo './'`scardcontrol.c
+--- scardcontrol-PCSCv2part10.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread -pthread -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT scardcontrol-PCSCv2part10.o -MD -MP -MF .deps/scardcontrol-PCSCv2part10.Tpo -c -o scardcontrol-PCSCv2part10.o `test -f 'PCSCv2part10.c' || echo './'`PCSCv2part10.c
+mv -f .deps/scardcontrol-PCSCv2part10.Tpo .deps/scardcontrol-PCSCv2part10.Po
+--- scardcontrol-scardcontrol.o ---
+mv -f .deps/scardcontrol-scardcontrol.Tpo .deps/scardcontrol-scardcontrol.Po
+--- scardcontrol ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc -I/usr/local/include/PCSC -pthread -pthread  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -fstack-protector-strong -o scardcontrol scardcontrol-scardcontrol.o  scardcontrol-PCSCv2part10.o -L/usr/local/lib -lpcsclite  
+libtool: link: cc -I/usr/local/include/PCSC -pthread -pthread -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fstack-protector-strong -o scardcontrol scardcontrol-scardcontrol.o scardcontrol-PCSCv2part10.o  -L/usr/local/lib -lpcsclite -pthread
+Making all in contrib
+--- all-recursive ---
+Making all in Kobil_mIDentity_switch
+--- Kobil_mIDentity_switch-Kobil_mIDentity_switch.o ---
+cc -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT Kobil_mIDentity_switch-Kobil_mIDentity_switch.o -MD -MP -MF .deps/Kobil_mIDentity_switch-Kobil_mIDentity_switch.Tpo -c -o Kobil_mIDentity_switch-Kobil_mIDentity_switch.o `test -f 'Kobil_mIDentity_switch.c' || echo './'`Kobil_mIDentity_switch.c
+mv -f .deps/Kobil_mIDentity_switch-Kobil_mIDentity_switch.Tpo .deps/Kobil_mIDentity_switch-Kobil_mIDentity_switch.Po
+--- Kobil_mIDentity_switch ---
+/bin/sh ../../libtool  --tag=CC    --mode=link cc   -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -fstack-protector-strong -o Kobil_mIDentity_switch Kobil_mIDentity_switch-Kobil_mIDentity_switch.o -lusb 
+libtool: link: cc -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fstack-protector-strong -o Kobil_mIDentity_switch Kobil_mIDentity_switch-Kobil_mIDentity_switch.o  -lusb
+Making all in RSA_SecurID
+--- RSA_SecurID_getpasswd-RSA_SecurID_getpasswd.o ---
+cc -DHAVE_CONFIG_H -I. -I../..    -I/usr/local/include/PCSC -pthread -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT RSA_SecurID_getpasswd-RSA_SecurID_getpasswd.o -MD -MP -MF .deps/RSA_SecurID_getpasswd-RSA_SecurID_getpasswd.Tpo -c -o RSA_SecurID_getpasswd-RSA_SecurID_getpasswd.o `test -f 'RSA_SecurID_getpasswd.c' || echo './'`RSA_SecurID_getpasswd.c
+mv -f .deps/RSA_SecurID_getpasswd-RSA_SecurID_getpasswd.Tpo .deps/RSA_SecurID_getpasswd-RSA_SecurID_getpasswd.Po
+--- RSA_SecurID_getpasswd ---
+/bin/sh ../../libtool  --tag=CC    --mode=link cc  -I/usr/local/include/PCSC -pthread -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -fstack-protector-strong -o RSA_SecurID_getpasswd RSA_SecurID_getpasswd-RSA_SecurID_getpasswd.o -L/usr/local/lib -lpcsclite 
+libtool: link: cc -I/usr/local/include/PCSC -pthread -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fstack-protector-strong -o RSA_SecurID_getpasswd RSA_SecurID_getpasswd-RSA_SecurID_getpasswd.o  -L/usr/local/lib -lpcsclite -pthread
+Making all in src
+--- libccid_la-ccid_usb.lo ---
+--- libccid_la-strlcpy.lo ---
+--- libccid_la-simclist.lo ---
+--- towitoko/.dirstamp ---
+--- towitoko/.deps/.dirstamp ---
+--- openct/.dirstamp ---
+--- openct/.deps/.dirstamp ---
+--- parse-parse.o ---
+--- parse-debug.o ---
+--- parse-ccid_usb.o ---
+--- parse-strlcpy.o ---
+--- parse-simclist.o ---
+--- libccid_la-ccid_usb.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-ccid_usb.lo -MD -MP -MF .deps/libccid_la-ccid_usb.Tpo -c -o libccid_la-ccid_usb.lo `test -f 'ccid_usb.c' || echo './'`ccid_usb.c
+--- libccid_la-strlcpy.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-strlcpy.lo -MD -MP -MF .deps/libccid_la-strlcpy.Tpo -c -o libccid_la-strlcpy.lo `test -f 'strlcpy.c' || echo './'`strlcpy.c
+--- libccid_la-simclist.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-simclist.lo -MD -MP -MF .deps/libccid_la-simclist.Tpo -c -o libccid_la-simclist.lo `test -f 'simclist.c' || echo './'`simclist.c
+--- libccid_la-ccid.lo ---
+--- parse-parse.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT parse-parse.o -MD -MP -MF .deps/parse-parse.Tpo -c -o parse-parse.o `test -f 'parse.c' || echo './'`parse.c
+--- parse-debug.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT parse-debug.o -MD -MP -MF .deps/parse-debug.Tpo -c -o parse-debug.o `test -f 'debug.c' || echo './'`debug.c
+--- parse-ccid_usb.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT parse-ccid_usb.o -MD -MP -MF .deps/parse-ccid_usb.Tpo -c -o parse-ccid_usb.o `test -f 'ccid_usb.c' || echo './'`ccid_usb.c
+--- libccid_la-commands.lo ---
+--- libccid_la-ifdhandler.lo ---
+--- parse-simclist.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT parse-simclist.o -MD -MP -MF .deps/parse-simclist.Tpo -c -o parse-simclist.o `test -f 'simclist.c' || echo './'`simclist.c
+--- parse-strlcpy.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT parse-strlcpy.o -MD -MP -MF .deps/parse-strlcpy.Tpo -c -o parse-strlcpy.o `test -f 'strlcpy.c' || echo './'`strlcpy.c
+--- libccid_la-ccid.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-ccid.lo -MD -MP -MF .deps/libccid_la-ccid.Tpo -c -o libccid_la-ccid.lo `test -f 'ccid.c' || echo './'`ccid.c
+--- libccid_la-utils.lo ---
+--- libccid_la-commands.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-commands.lo -MD -MP -MF .deps/libccid_la-commands.Tpo -c -o libccid_la-commands.lo `test -f 'commands.c' || echo './'`commands.c
+--- libccid_la-ifdhandler.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-ifdhandler.lo -MD -MP -MF .deps/libccid_la-ifdhandler.Tpo -c -o libccid_la-ifdhandler.lo `test -f 'ifdhandler.c' || echo './'`ifdhandler.c
+--- libccid_la-utils.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-utils.lo -MD -MP -MF .deps/libccid_la-utils.Tpo -c -o libccid_la-utils.lo `test -f 'utils.c' || echo './'`utils.c
+--- parse-strlcpy.o ---
+mv -f .deps/parse-strlcpy.Tpo .deps/parse-strlcpy.Po
+--- libccid_la-tokenparser.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-tokenparser.lo -MD -MP -MF .deps/libccid_la-tokenparser.Tpo -c -o libccid_la-tokenparser.lo `test -f 'tokenparser.c' || echo './'`tokenparser.c
+--- libccid_la-utils.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-utils.lo -MD -MP -MF .deps/libccid_la-utils.Tpo -c utils.c  -fPIC -DPIC -o .libs/libccid_la-utils.o
+--- libccid_la-ccid_usb.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-ccid_usb.lo -MD -MP -MF .deps/libccid_la-ccid_usb.Tpo -c ccid_usb.c  -fPIC -DPIC -o .libs/libccid_la-ccid_usb.o
+--- libccid_la-strlcpy.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-strlcpy.lo -MD -MP -MF .deps/libccid_la-strlcpy.Tpo -c strlcpy.c  -fPIC -DPIC -o .libs/libccid_la-strlcpy.o
+--- libccid_la-ccid.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-ccid.lo -MD -MP -MF .deps/libccid_la-ccid.Tpo -c ccid.c  -fPIC -DPIC -o .libs/libccid_la-ccid.o
+--- libccid_la-commands.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-commands.lo -MD -MP -MF .deps/libccid_la-commands.Tpo -c commands.c  -fPIC -DPIC -o .libs/libccid_la-commands.o
+--- libccid_la-ifdhandler.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-ifdhandler.lo -MD -MP -MF .deps/libccid_la-ifdhandler.Tpo -c ifdhandler.c  -fPIC -DPIC -o .libs/libccid_la-ifdhandler.o
+--- libccid_la-simclist.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-simclist.lo -MD -MP -MF .deps/libccid_la-simclist.Tpo -c simclist.c  -fPIC -DPIC -o .libs/libccid_la-simclist.o
+--- libccid_la-tokenparser.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT libccid_la-tokenparser.lo -MD -MP -MF .deps/libccid_la-tokenparser.Tpo -c tokenparser.c  -fPIC -DPIC -o .libs/libccid_la-tokenparser.o
+--- libccid_la-strlcpy.lo ---
+mv -f .deps/libccid_la-strlcpy.Tpo .deps/libccid_la-strlcpy.Plo
+--- parse-tokenparser.o ---
+--- parse-debug.o ---
+mv -f .deps/parse-debug.Tpo .deps/parse-debug.Po
+--- towitoko/libccid_la-atr.lo ---
+--- parse-tokenparser.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT parse-tokenparser.o -MD -MP -MF .deps/parse-tokenparser.Tpo -c -o parse-tokenparser.o `test -f 'tokenparser.c' || echo './'`tokenparser.c
+--- towitoko/libccid_la-atr.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT towitoko/libccid_la-atr.lo -MD -MP -MF towitoko/.deps/libccid_la-atr.Tpo -c -o towitoko/libccid_la-atr.lo `test -f 'towitoko/atr.c' || echo './'`towitoko/atr.c
+--- libccid_la-utils.lo ---
+mv -f .deps/libccid_la-utils.Tpo .deps/libccid_la-utils.Plo
+--- towitoko/libccid_la-atr.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT towitoko/libccid_la-atr.lo -MD -MP -MF towitoko/.deps/libccid_la-atr.Tpo -c towitoko/atr.c  -fPIC -DPIC -o towitoko/.libs/libccid_la-atr.o
+--- towitoko/libccid_la-pps.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT towitoko/libccid_la-pps.lo -MD -MP -MF towitoko/.deps/libccid_la-pps.Tpo -c -o towitoko/libccid_la-pps.lo `test -f 'towitoko/pps.c' || echo './'`towitoko/pps.c
+--- towitoko/libccid_la-atr.lo ---
+mv -f towitoko/.deps/libccid_la-atr.Tpo towitoko/.deps/libccid_la-atr.Plo
+--- openct/libccid_la-buffer.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT openct/libccid_la-buffer.lo -MD -MP -MF openct/.deps/libccid_la-buffer.Tpo -c -o openct/libccid_la-buffer.lo `test -f 'openct/buffer.c' || echo './'`openct/buffer.c
+--- libccid_la-ccid.lo ---
+mv -f .deps/libccid_la-ccid.Tpo .deps/libccid_la-ccid.Plo
+--- openct/libccid_la-checksum.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT openct/libccid_la-checksum.lo -MD -MP -MF openct/.deps/libccid_la-checksum.Tpo -c -o openct/libccid_la-checksum.lo `test -f 'openct/checksum.c' || echo './'`openct/checksum.c
+--- towitoko/libccid_la-pps.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT towitoko/libccid_la-pps.lo -MD -MP -MF towitoko/.deps/libccid_la-pps.Tpo -c towitoko/pps.c  -fPIC -DPIC -o towitoko/.libs/libccid_la-pps.o
+--- parse-parse.o ---
+mv -f .deps/parse-parse.Tpo .deps/parse-parse.Po
+--- openct/libccid_la-proto-t1.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT openct/libccid_la-proto-t1.lo -MD -MP -MF openct/.deps/libccid_la-proto-t1.Tpo -c -o openct/libccid_la-proto-t1.lo `test -f 'openct/proto-t1.c' || echo './'`openct/proto-t1.c
+--- openct/libccid_la-buffer.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT openct/libccid_la-buffer.lo -MD -MP -MF openct/.deps/libccid_la-buffer.Tpo -c openct/buffer.c  -fPIC -DPIC -o openct/.libs/libccid_la-buffer.o
+--- openct/libccid_la-checksum.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT openct/libccid_la-checksum.lo -MD -MP -MF openct/.deps/libccid_la-checksum.Tpo -c openct/checksum.c  -fPIC -DPIC -o openct/.libs/libccid_la-checksum.o
+--- openct/libccid_la-proto-t1.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I/usr/local/include/PCSC -pthread -pthread -fvisibility=hidden -DCCID_VERSION=0x01040024 -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT openct/libccid_la-proto-t1.lo -MD -MP -MF openct/.deps/libccid_la-proto-t1.Tpo -c openct/proto-t1.c  -fPIC -DPIC -o openct/.libs/libccid_la-proto-t1.o
+--- towitoko/libccid_la-pps.lo ---
+mv -f towitoko/.deps/libccid_la-pps.Tpo towitoko/.deps/libccid_la-pps.Plo
+--- openct/libccid_la-buffer.lo ---
+mv -f openct/.deps/libccid_la-buffer.Tpo openct/.deps/libccid_la-buffer.Plo
+--- openct/libccid_la-checksum.lo ---
+mv -f openct/.deps/libccid_la-checksum.Tpo openct/.deps/libccid_la-checksum.Plo
+--- parse-ccid_usb.o ---
+mv -f .deps/parse-ccid_usb.Tpo .deps/parse-ccid_usb.Po
+--- parse-tokenparser.o ---
+mv -f .deps/parse-tokenparser.Tpo .deps/parse-tokenparser.Po
+--- parse-simclist.o ---
+mv -f .deps/parse-simclist.Tpo .deps/parse-simclist.Po
+--- parse ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc -I/usr/local/include/PCSC -pthread  -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing   -fstack-protector-strong -o parse parse-parse.o parse-debug.o  parse-ccid_usb.o parse-tokenparser.o parse-strlcpy.o  parse-simclist.o -lusb 
+--- libccid_la-ifdhandler.lo ---
+mv -f .deps/libccid_la-ifdhandler.Tpo .deps/libccid_la-ifdhandler.Plo
+--- libccid_la-ccid_usb.lo ---
+mv -f .deps/libccid_la-ccid_usb.Tpo .deps/libccid_la-ccid_usb.Plo
+--- libccid_la-tokenparser.lo ---
+mv -f .deps/libccid_la-tokenparser.Tpo .deps/libccid_la-tokenparser.Plo
+--- parse ---
+libtool: link: cc -I/usr/local/include/PCSC -pthread -DSIMCLIST_NO_DUMPRESTORE -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fstack-protector-strong -o parse parse-parse.o parse-debug.o parse-ccid_usb.o parse-tokenparser.o parse-strlcpy.o parse-simclist.o  -lusb -pthread
+--- libccid_la-simclist.lo ---
+mv -f .deps/libccid_la-simclist.Tpo .deps/libccid_la-simclist.Plo
+--- openct/libccid_la-proto-t1.lo ---
+mv -f openct/.deps/libccid_la-proto-t1.Tpo openct/.deps/libccid_la-proto-t1.Plo
+--- libccid_la-commands.lo ---
+mv -f .deps/libccid_la-commands.Tpo .deps/libccid_la-commands.Plo
+--- libccid.la ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc -I/usr/local/include/PCSC -pthread  -pthread  -fvisibility=hidden -DCCID_VERSION=`./convert_version.pl 1.4.36` -DSIMCLIST_NO_DUMPRESTORE  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -avoid-version -fstack-protector-strong -o libccid.la -rpath /usr/local/lib libccid_la-ccid.lo libccid_la-commands.lo  libccid_la-ifdhandler.lo libccid_la-utils.lo libccid_la-ccid_usb.lo  libccid_la-tokenparser.lo libccid_la-strlcpy.lo  libccid_la-simclist.lo  towitoko/libccid_la-atr.lo towitoko/libccid_la-pps.lo  openct/libccid_la-buffer.lo openct/libccid_la-checksum.lo  openct/libccid_la-proto-t1.lo -lusb  
+libtool: link: cc -shared  -fPIC -DPIC  .libs/libccid_la-ccid.o .libs/libccid_la-commands.o .libs/libccid_la-ifdhandler.o .libs/libccid_la-utils.o .libs/libccid_la-ccid_usb.o .libs/libccid_la-tokenparser.o .libs/libccid_la-strlcpy.o .libs/libccid_la-simclist.o towitoko/.libs/libccid_la-atr.o towitoko/.libs/libccid_la-pps.o openct/.libs/libccid_la-buffer.o openct/.libs/libccid_la-checksum.o openct/.libs/libccid_la-proto-t1.o   -lusb  -pthread -pthread -O2 -fstack-protector-strong -fstack-protector-strong   -pthread -Wl,-soname -Wl,libccid.so -o .libs/libccid.so
+libtool: link: ( cd ".libs" && rm -f "libccid.la" && ln -s "../libccid.la" "libccid.la" )
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for ccid-1.4.36
+===>   Generating temporary packing list
+if test -z 'strip'; then  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libccid/work/ccid-1.4.36/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libccid/work/ccid-1.4.36/install-sh -c -s" INSTALL_STRIP_FLAG=-s  install;  else  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libccid/work/ccid-1.4.36/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libccid/work/ccid-1.4.36/install-sh -c -s" INSTALL_STRIP_FLAG=-s  "INSTALL_PROGRAM_ENV=STRIPPROG='strip'" install;  fi
+Making install in readers
+Making install in examples
+Making install in contrib
+Making install in Kobil_mIDentity_switch
+Making install in RSA_SecurID
+Making install in src
+./create_Info_plist.pl ./../readers/supported_readers.txt ./Info.plist.src --target=libccid.so --version=1.4.36  > Info.plist
+/bin/sh /wrkdirs/usr/ports/devel/libccid/work/ccid-1.4.36/install-sh -d "/wrkdirs/usr/ports/devel/libccid/work/stage/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/"
+cp Info.plist "/wrkdirs/usr/ports/devel/libccid/work/stage/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/"
+cp .libs/libccid.so "/wrkdirs/usr/ports/devel/libccid/work/stage/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so"
+***************
+copy the src/92_pcscd_ccid.rules file in udev directory (/etc/udev/rules.d/)
+***************
+install  -s -m 555 /wrkdirs/usr/ports/devel/libccid/work/ccid-1.4.36/contrib/RSA_SecurID/RSA_SecurID_getpasswd  /wrkdirs/usr/ports/devel/libccid/work/stage/usr/local/bin
+install  -m 444 /wrkdirs/usr/ports/devel/libccid/work/ccid-1.4.36/contrib/RSA_SecurID/RSA_SecurID_getpasswd.1  /wrkdirs/usr/ports/devel/libccid/work/stage/usr/local/man/man1
+/usr/bin/strip /wrkdirs/usr/ports/devel/libccid/work/stage/usr/local/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:32:39+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for ccid-1.4.36
+install -l rs /.npkg/All/ccid-1.4.36.pkg /.npkg/All/ccid-1.4.36.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for ccid-1.4.36
+build of devel/libccid | ccid-1.4.36 ended at Mon Oct 18 23:32:47 EAT 2021
+build time: 00:00:08

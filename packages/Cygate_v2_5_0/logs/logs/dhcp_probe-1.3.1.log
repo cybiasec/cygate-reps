@@ -1,0 +1,639 @@
+=>> Building net-mgmt/dhcp_probe
+build started at Mon Oct 18 23:44:32 EAT 2021
+port directory: /usr/ports/net-mgmt/dhcp_probe
+package name: dhcp_probe-1.3.1
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-02 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: khung@nullaxiom.com
+Makefile datestamp: -rw-r--r--  1 root  wheel  934 Oct 18 18:58 /usr/ports/net-mgmt/dhcp_probe/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 02
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+khung@nullaxiom.com
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/.cache  HOME=/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/.cache  HOME=/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/dhcp_probe"  EXAMPLESDIR="share/examples/dhcp_probe"  DATADIR="share/dhcp_probe"  WWWDIR="www/dhcp_probe"  ETCDIR="etc/dhcp_probe"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/dhcp_probe DOCSDIR=/usr/local/share/doc/dhcp_probe EXAMPLESDIR=/usr/local/share/examples/dhcp_probe  WWWDIR=/usr/local/www/dhcp_probe ETCDIR=/usr/local/etc/dhcp_probe
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License GPLv2 LGPL20 addl accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   dhcp_probe-1.3.1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkg-1.17.2: .......... done
+===>   dhcp_probe-1.3.1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of dhcp_probe-1.3.1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2 LGPL20 addl accepted by the user
+===> Fetching all distfiles required by dhcp_probe-1.3.1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2 LGPL20 addl accepted by the user
+===> Fetching all distfiles required by dhcp_probe-1.3.1 for building
+=> SHA256 Checksum OK for dhcp_probe-1.3.1.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License GPLv2 LGPL20 addl accepted by the user
+===> Fetching all distfiles required by dhcp_probe-1.3.1 for building
+===>  Extracting for dhcp_probe-1.3.1
+=> SHA256 Checksum OK for dhcp_probe-1.3.1.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for dhcp_probe-1.3.1
+===>  Applying FreeBSD patches for dhcp_probe-1.3.1 from /usr/ports/net-mgmt/dhcp_probe/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   dhcp_probe-1.3.1 depends on shared library: libnet.so - not found
+===>   Installing existing package /packages/All/libnet-1.1.6_5,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing libnet-1.1.6_5,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting libnet-1.1.6_5,1: .......... done
+===>   dhcp_probe-1.3.1 depends on shared library: libnet.so - found (/usr/local/lib/libnet.so)
+===>   Returning to build of dhcp_probe-1.3.1
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for dhcp_probe-1.3.1
+configure: loading site script /usr/ports/Templates/config.site
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking build system type... amd64-portbld-freebsd12.3
+checking host system type... amd64-portbld-freebsd12.3
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking whether cc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of cc... gcc3
+checking for ranlib... ranlib
+checking how to run the C preprocessor... cpp
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for ctype.h... (cached) yes
+checking for errno.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for netdb.h... (cached) yes
+checking for pthread.h... (cached) yes
+checking for signal.h... (cached) yes
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking stropts.h usability... no
+checking stropts.h presence... no
+checking for stropts.h... no
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for time.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for arpa/inet.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for net/if.h... (cached) yes
+checking for net/if_arp.h... no
+checking for netinet/in.h... (cached) yes
+checking for netinet/if_ether.h... no
+checking netinet/in_systm.h usability... yes
+checking netinet/in_systm.h presence... yes
+checking for netinet/in_systm.h... yes
+checking for netinet/ip.h... no
+checking for netinet/udp.h... no
+checking for sys/file.h... (cached) yes
+checking sys/filio.h usability... yes
+checking sys/filio.h presence... yes
+checking for sys/filio.h... yes
+checking for sys/ioctl.h... (cached) yes
+checking for sys/resource.h... (cached) yes
+checking for sys/select.h... (cached) yes
+checking sys/sockio.h usability... yes
+checking sys/sockio.h presence... yes
+checking for sys/sockio.h... yes
+checking for sys/stat.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/uio.h... (cached) yes
+checking for sys/un.h... (cached) yes
+checking for sys/wait.h... (cached) yes
+checking netinet/ether.h usability... no
+checking netinet/ether.h presence... no
+checking for netinet/ether.h... no
+checking net/if_dl.h usability... yes
+checking net/if_dl.h presence... yes
+checking for net/if_dl.h... yes
+checking ifaddrs.h usability... yes
+checking ifaddrs.h presence... yes
+checking for ifaddrs.h... yes
+checking for int8_t... (cached) yes
+checking for int16_t... (cached) yes
+checking for int32_t... (cached) yes
+checking for int64_t... (cached) yes
+checking for uint8_t... (cached) yes
+checking for uint16_t... (cached) yes
+checking for uint32_t... (cached) yes
+checking for uint64_t... (cached) yes
+checking pcap.h usability... yes
+checking pcap.h presence... yes
+checking for pcap.h... yes
+checking for pcap_lookupdev in -lpcap... yes
+checking whether pcap_breakloop is declared... yes
+checking for pcap_breakloop... yes
+checking libnet.h usability... yes
+checking libnet.h presence... yes
+checking for libnet.h... yes
+checking for libnet_build_ipv4 in -lnet... yes
+checking whether libnet_cq_end_loop is declared... yes
+checking for libnet_cq_end_loop... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for sockaddr.sa_len... yes
+checking for arpreq.arp_dev... no
+checking for struct ether_addr.ether_addr_octet... no
+checking for struct ether_addr.octet... no
+checking for sys_nerr... yes
+checking for sys_nerr declaration... yes
+checking for sys_errlist... yes
+checking for sys_errlist declaration... yes
+checking for inet_aton function prototype in arpa/inet.h... yes
+checking for strerror function prototype in string.h... yes
+checking whether ether_aton is declared... no
+checking whether ether_ntoa is declared... no
+checking whether ether_ntohost is declared... no
+checking whether ether_hostton is declared... no
+checking for bcmp... (cached) yes
+checking for bcopy... (cached) yes
+checking for bzero... (cached) yes
+checking for vsnprintf... (cached) yes
+checking for sysconf... (cached) yes
+checking for getrlimit... (cached) yes
+checking for getifaddrs... yes
+checking for strerror... (cached) yes
+checking for inet_aton... (cached) yes
+checking for my_null_proc... no
+checking for stropts.h... (cached) no
+checking if socket ioctls should use STREAMS instead of SIOCxxx... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating lib/Makefile
+config.status: creating src/Makefile
+config.status: creating doc/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing stamp-h commands
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for dhcp_probe-1.3.1
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+Making all in lib
+--- my_null_proc.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT my_null_proc.o -MD -MP -MF .deps/my_null_proc.Tpo -c -o my_null_proc.o my_null_proc.c
+mv -f .deps/my_null_proc.Tpo .deps/my_null_proc.Po
+--- libreplace.a ---
+rm -f libreplace.a
+ar cru libreplace.a  my_null_proc.o
+ranlib libreplace.a
+Making all in src
+--- bootp.o ---
+--- configfile.o ---
+--- dhcp_probe.o ---
+--- get_myeaddr.o ---
+--- get_myipaddr.o ---
+--- daemonize.o ---
+--- open_max.o ---
+--- report.o ---
+--- utils.o ---
+--- bootp.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT bootp.o -MD -MP -MF .deps/bootp.Tpo -c -o bootp.o bootp.c
+--- configfile.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT configfile.o -MD -MP -MF .deps/configfile.Tpo -c -o configfile.o configfile.c
+--- dhcp_probe.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT dhcp_probe.o -MD -MP -MF .deps/dhcp_probe.Tpo -c -o dhcp_probe.o dhcp_probe.c
+--- get_myeaddr.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT get_myeaddr.o -MD -MP -MF .deps/get_myeaddr.Tpo -c -o get_myeaddr.o get_myeaddr.c
+--- get_myipaddr.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT get_myipaddr.o -MD -MP -MF .deps/get_myipaddr.Tpo -c -o get_myipaddr.o get_myipaddr.c
+--- daemonize.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT daemonize.o -MD -MP -MF .deps/daemonize.Tpo -c -o daemonize.o daemonize.c
+--- open_max.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT open_max.o -MD -MP -MF .deps/open_max.Tpo -c -o open_max.o open_max.c
+--- report.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT report.o -MD -MP -MF .deps/report.Tpo -c -o report.o report.c
+--- utils.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -I/usr/local/include -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT utils.o -MD -MP -MF .deps/utils.Tpo -c -o utils.o utils.c
+--- get_myeaddr.o ---
+mv -f .deps/get_myeaddr.Tpo .deps/get_myeaddr.Po
+--- utils.o ---
+mv -f .deps/utils.Tpo .deps/utils.Po
+--- open_max.o ---
+mv -f .deps/open_max.Tpo .deps/open_max.Po
+--- daemonize.o ---
+mv -f .deps/daemonize.Tpo .deps/daemonize.Po
+--- get_myipaddr.o ---
+mv -f .deps/get_myipaddr.Tpo .deps/get_myipaddr.Po
+--- bootp.o ---
+mv -f .deps/bootp.Tpo .deps/bootp.Po
+--- report.o ---
+mv -f .deps/report.Tpo .deps/report.Po
+--- configfile.o ---
+mv -f .deps/configfile.Tpo .deps/configfile.Po
+--- dhcp_probe.o ---
+mv -f .deps/dhcp_probe.Tpo .deps/dhcp_probe.Po
+--- dhcp_probe ---
+cc  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -fstack-protector-strong  -L/usr/local/lib -L/usr/local/lib -o dhcp_probe bootp.o configfile.o  dhcp_probe.o get_myeaddr.o  get_myipaddr.o daemonize.o open_max.o  report.o utils.o ../lib/libreplace.a -lnet -lpcap
+Making all in doc
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for dhcp_probe-1.3.1
+===>   Generating temporary packing list
+if test -z ''; then  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/dhcp_probe-1.3.1/config/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/dhcp_probe-1.3.1/config/install-sh -c -s" INSTALL_STRIP_FLAG=-s  install;  else  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/dhcp_probe-1.3.1/config/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/dhcp_probe-1.3.1/config/install-sh -c -s" INSTALL_STRIP_FLAG=-s  "INSTALL_PROGRAM_ENV=STRIPPROG=''" install;  fi
+Making install in lib
+Making install in src
+ /bin/mkdir -p '/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/stage/usr/local/sbin'
+  /bin/sh /wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/dhcp_probe-1.3.1/config/install-sh -c -s dhcp_probe '/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/stage/usr/local/sbin'
+Making install in doc
+ /bin/mkdir -p '/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/stage/usr/local/man/man5'
+ install  -m 0644 dhcp_probe.cf.5 '/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/stage/usr/local/man/man5'
+ /bin/mkdir -p '/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/stage/usr/local/man/man8'
+ install  -m 0644 dhcp_probe.8 '/wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/stage/usr/local/man/man8'
+install  -m 0644 /wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/dhcp_probe-1.3.1/extras/dhcp_probe.cf.sample  /wrkdirs/usr/ports/net-mgmt/dhcp_probe/work/stage/usr/local/etc
+====> Compressing man pages (compress-man)
+===> Staging rc.d startup script(s)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:44:32+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for dhcp_probe-1.3.1
+install -l rs /.npkg/All/dhcp_probe-1.3.1.pkg /.npkg/All/dhcp_probe-1.3.1.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for dhcp_probe-1.3.1
+build of net-mgmt/dhcp_probe | dhcp_probe-1.3.1 ended at Mon Oct 18 23:44:35 EAT 2021
+build time: 00:00:03

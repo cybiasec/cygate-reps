@@ -1,0 +1,956 @@
+=>> Building net/ladvd
+build started at Mon Oct 18 23:33:19 EAT 2021
+port directory: /usr/ports/net/ladvd
+package name: ladvd-1.1.2_1
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-02 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: ports@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root  wheel  751 Oct 18 18:58 /usr/ports/net/ladvd/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 02
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for ladvd-1.1.2_1:
+     DOCS=off: Build and/or install documentation
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+ports@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--with-chroot-dir=/var/empty --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PKG_CONFIG=pkgconf XDG_DATA_HOME=/wrkdirs/usr/ports/net/ladvd/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net/ladvd/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net/ladvd/work/.cache  HOME=/wrkdirs/usr/ports/net/ladvd/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net/ladvd/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/net/ladvd/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net/ladvd/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net/ladvd/work/.cache  HOME=/wrkdirs/usr/ports/net/ladvd/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net/ladvd/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="@comment " OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/ladvd"  EXAMPLESDIR="share/examples/ladvd"  DATADIR="share/ladvd"  WWWDIR="www/ladvd"  ETCDIR="etc/ladvd"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/ladvd DOCSDIR=/usr/local/share/doc/ladvd EXAMPLESDIR=/usr/local/share/examples/ladvd  WWWDIR=/usr/local/www/ladvd ETCDIR=/usr/local/etc/ladvd
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>   NOTICE:
+
+The ladvd port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+
+===>  License MIT accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   ladvd-1.1.2_1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkg-1.17.2: .......... done
+===>   ladvd-1.1.2_1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of ladvd-1.1.2_1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>   NOTICE:
+
+The ladvd port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by ladvd-1.1.2_1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>   NOTICE:
+
+The ladvd port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by ladvd-1.1.2_1 for building
+=> SHA256 Checksum OK for sspans-ladvd-v1.1.2_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>   NOTICE:
+
+The ladvd port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by ladvd-1.1.2_1 for building
+===>  Extracting for ladvd-1.1.2_1
+=> SHA256 Checksum OK for sspans-ladvd-v1.1.2_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for ladvd-1.1.2_1
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   ladvd-1.1.2_1 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-1.8.0,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkgconf-1.8.0,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkgconf-1.8.0,1: .......... done
+===>   ladvd-1.1.2_1 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of ladvd-1.1.2_1
+===>   ladvd-1.1.2_1 depends on package: autoconf>=2.69 - not found
+===>   Installing existing package /packages/All/autoconf-2.69_3.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing autoconf-2.69_3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing autoconf-wrapper-20131203...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting autoconf-wrapper-20131203: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing indexinfo-0.3.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting indexinfo-0.3.1: .... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing m4-1.4.19,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing gettext-runtime-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting gettext-runtime-0.21: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting m4-1.4.19,1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing perl5-5.32.1_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting perl5-5.32.1_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting autoconf-2.69_3: .......... done
+===>   ladvd-1.1.2_1 depends on package: autoconf>=2.69 - found
+===>   Returning to build of ladvd-1.1.2_1
+===>   ladvd-1.1.2_1 depends on package: automake>=1.16.1 - not found
+===>   Installing existing package /packages/All/automake-1.16.4.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing automake-1.16.4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting automake-1.16.4: .......... done
+===>   ladvd-1.1.2_1 depends on package: automake>=1.16.1 - found
+===>   Returning to build of ladvd-1.1.2_1
+===>   ladvd-1.1.2_1 depends on executable: libtoolize - not found
+===>   Installing existing package /packages/All/libtool-2.4.6_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing libtool-2.4.6_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting libtool-2.4.6_1: .......... done
+===>   ladvd-1.1.2_1 depends on executable: libtoolize - found
+===>   Returning to build of ladvd-1.1.2_1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   ladvd-1.1.2_1 depends on shared library: libevent.so - not found
+===>   Installing existing package /packages/All/libevent-2.1.12.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing libevent-2.1.12...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting libevent-2.1.12: .......... done
+===>   ladvd-1.1.2_1 depends on shared library: libevent.so - found (/usr/local/lib/libevent.so)
+===>   Returning to build of ladvd-1.1.2_1
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for ladvd-1.1.2_1
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure.ac:16: installing './compile'
+configure.ac:7: installing './config.guess'
+configure.ac:7: installing './config.sub'
+configure.ac:11: installing './install-sh'
+configure.ac:11: installing './missing'
+src/Makefile.am: installing './depcomp'
+parallel-tests: installing './test-driver'
+configure: loading site script /usr/ports/Templates/config.site
+checking build system type... amd64-portbld-freebsd12.3
+checking host system type... amd64-portbld-freebsd12.3
+checking target system type... amd64-portbld-freebsd12.3
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking whether cc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of cc... gcc3
+checking for cc option to accept ISO C99... none needed
+checking whether we are using the GNU C++ compiler... yes
+checking whether c++ accepts -g... yes
+checking dependency style of c++... gcc3
+checking how to run the C preprocessor... cpp
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for minix/config.h... (cached) no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for egrep... (cached) /usr/bin/egrep
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm
+checking the name lister (/usr/bin/nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 524288
+checking how to convert amd64-portbld-freebsd12.3 file names to amd64-portbld-freebsd12.3 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd12.3 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd12.3 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... c++ -E
+checking for ld used by c++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for c++ option to produce PIC... -fPIC -DPIC
+checking if c++ PIC flag -fPIC -DPIC works... yes
+checking if c++ static flag -static works... yes
+checking if c++ supports -c -o file.o... yes
+checking if c++ supports -c -o file.o... (cached) yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... freebsd12.3 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking pkg-config is at least version 0.9.0... yes
+checking WCFLAGS for gcc -Wall... -Wall
+checking WCFLAGS for gcc -Wformat -Wformat-security... -Wformat -Wformat-security
+checking for how to force completely read-only GOT table... 
+checking whether C compiler handles -fPIE -DPIE... yes
+checking whether the linker accepts the -Werror -pie flag... yes
+checking whether C compiler handles -fstack-protector -Werror... yes
+checking whether C compiler handles --param ssp-buffer-size=4... yes
+checking whether C compiler handles -D_FORTIFY_SOURCE=2... yes
+checking for socket... yes
+checking for gethostent... yes
+checking for CHECK... no
+checking pcap.h usability... yes
+checking pcap.h presence... yes
+checking for pcap.h... yes
+checking for pcap_compile in -lpcap... yes
+checking for pcap_create in -lpcap... yes
+checking for pcap_set_immediate_mode in -lpcap... yes
+checking for libevent directory... /usr/local
+checking for event_init in -levent... yes
+checking event.h usability... yes
+checking event.h presence... yes
+checking for event.h... yes
+checking for evhttp.h... yes
+checking for LIBMNL... no
+checking for ANSI C header files... (cached) yes
+checking for fcntl.h... (cached) yes
+checking grp.h usability... yes
+checking grp.h presence... yes
+checking for grp.h... yes
+checking for pwd.h... (cached) yes
+checking for stdarg.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for stdio.h... (cached) yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for sys/file.h... (cached) yes
+checking sys/utsname.h usability... yes
+checking sys/utsname.h presence... yes
+checking for sys/utsname.h... yes
+checking for unistd.h... (cached) yes
+checking for sys/ioctl.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for sys/uio.h... (cached) yes
+checking for signal.h... (cached) yes
+checking for ctype.h... (cached) yes
+checking for string.h... (cached) yes
+checking assert.h usability... yes
+checking assert.h presence... yes
+checking for assert.h... yes
+checking for time.h... (cached) yes
+checking asm/types.h usability... no
+checking asm/types.h presence... no
+checking for asm/types.h... no
+checking linux/sockios.h usability... no
+checking linux/sockios.h presence... no
+checking for linux/sockios.h... no
+checking sys/sockio.h usability... yes
+checking sys/sockio.h presence... yes
+checking for sys/sockio.h... yes
+checking for net/if_media.h... (cached) yes
+checking for net/if.h... (cached) yes
+checking for net/route.h... yes
+checking for net/if_mib.h... yes
+checking for linux/ethtool.h... no
+checking net/ethernet.h usability... yes
+checking net/ethernet.h presence... yes
+checking for net/ethernet.h... yes
+checking net/ethertypes.h usability... no
+checking net/ethertypes.h presence... no
+checking for net/ethertypes.h... no
+checking for netinet/in.h... (cached) yes
+checking netinet/ether.h usability... no
+checking netinet/ether.h presence... no
+checking for netinet/ether.h... no
+checking for netinet/if_ether.h... yes
+checking net/if_types.h usability... yes
+checking net/if_types.h presence... yes
+checking for net/if_types.h... yes
+checking for linux/filter.h... no
+checking for LIBTEAM... no
+checking for linux/if_vlan.h... no
+checking for linux/if_bridge.h... no
+checking for linux/if_bonding.h... no
+checking for linux/if_team.h... no
+checking whether GET_VLAN_REALDEV_NAME_CMD is declared... no
+checking whether GET_VLAN_VID_CMD is declared... no
+checking for net/if_vlan_var.h... yes
+checking for net/if_bridge.h... no
+checking for net/if_bridgevar.h... yes
+checking for net/if_lagg.h... yes
+checking for net/if_trunk.h... no
+checking for net/if_bond_var.h... no
+checking for linux/wireless.h... no
+checking net80211/ieee80211.h usability... yes
+checking net80211/ieee80211.h presence... yes
+checking for net80211/ieee80211.h... yes
+checking for net80211/ieee80211_ioctl.h... yes
+checking netpacket/packet.h usability... no
+checking netpacket/packet.h presence... no
+checking for netpacket/packet.h... no
+checking net/bpf.h usability... yes
+checking net/bpf.h presence... yes
+checking for net/bpf.h... yes
+checking net/if_dl.h usability... yes
+checking net/if_dl.h presence... yes
+checking for net/if_dl.h... yes
+checking kenv.h usability... yes
+checking kenv.h presence... yes
+checking for kenv.h... yes
+checking for sys/sysctl.h... (cached) yes
+checking cap-ng.h usability... no
+checking cap-ng.h presence... no
+checking for cap-ng.h... no
+checking for capng_clear in -lcap-ng... no
+checking whether to use libcap-ng... no
+checking sys/prctl.h usability... no
+checking sys/prctl.h presence... no
+checking for sys/prctl.h... no
+checking sys/capability.h usability... yes
+checking sys/capability.h presence... yes
+checking for sys/capability.h... yes
+checking for cap_init in -lcap... no
+checking for an ANSI C-conforming const... yes
+checking for size_t... (cached) yes
+checking for uint8_t... (cached) yes
+checking for uint16_t... (cached) yes
+checking for uint32_t... (cached) yes
+checking for vprintf... (cached) yes
+checking for _doprnt... no
+checking for asprintf... (cached) yes
+checking for memcpy... (cached) yes
+checking for memset... (cached) yes
+checking for snprintf... (cached) yes
+checking for strdup... (cached) yes
+checking for strerror... (cached) yes
+checking for strsep... (cached) yes
+checking for uname... (cached) yes
+checking for socketpair... (cached) yes
+checking for vsyslog... yes
+checking for setresuid... (cached) yes
+checking for setreuid... (cached) yes
+checking for setresgid... (cached) yes
+checking for setregid... (cached) yes
+checking for setproctitle... (cached) yes
+checking for strlcpy... (cached) yes
+checking for strlcat... (cached) yes
+checking for strnvis... yes
+checking for __strdup... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating doc/Makefile
+config.status: creating systemd/Makefile
+config.status: creating src/config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for ladvd-1.1.2_1
+--- all-recursive ---
+Making all in src
+--- all ---
+/usr/bin/make  all-am
+--- proto/.dirstamp ---
+--- proto/.deps/.dirstamp ---
+--- compat/.dirstamp ---
+--- compat/.deps/.dirstamp ---
+--- main.o ---
+--- child.lo ---
+--- parent.lo ---
+--- cli.lo ---
+--- util.lo ---
+--- sysinfo.lo ---
+--- netif.lo ---
+--- main.o ---
+depbase=`echo main.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H -I.    -I/usr/local/include -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT main.o -MD -MP -MF $depbase.Tpo -c -o main.o main.c && mv -f $depbase.Tpo $depbase.Po
+--- child.lo ---
+depbase=`echo child.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT child.lo -MD -MP -MF $depbase.Tpo -c -o child.lo child.c && mv -f $depbase.Tpo $depbase.Plo
+--- proto/tlv.lo ---
+--- proto/lldp.lo ---
+--- proto/cdp.lo ---
+--- sysinfo.lo ---
+depbase=`echo sysinfo.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT sysinfo.lo -MD -MP -MF $depbase.Tpo -c -o sysinfo.lo sysinfo.c && mv -f $depbase.Tpo $depbase.Plo
+--- parent.lo ---
+depbase=`echo parent.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT parent.lo -MD -MP -MF $depbase.Tpo -c -o parent.lo parent.c && mv -f $depbase.Tpo $depbase.Plo
+--- cli.lo ---
+depbase=`echo cli.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT cli.lo -MD -MP -MF $depbase.Tpo -c -o cli.lo cli.c && mv -f $depbase.Tpo $depbase.Plo
+--- util.lo ---
+depbase=`echo util.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT util.lo -MD -MP -MF $depbase.Tpo -c -o util.lo util.c && mv -f $depbase.Tpo $depbase.Plo
+--- proto/edp.lo ---
+--- proto/fdp.lo ---
+--- netif.lo ---
+depbase=`echo netif.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT netif.lo -MD -MP -MF $depbase.Tpo -c -o netif.lo netif.c && mv -f $depbase.Tpo $depbase.Plo
+--- proto/lldp.lo ---
+depbase=`echo proto/lldp.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT proto/lldp.lo -MD -MP -MF $depbase.Tpo -c -o proto/lldp.lo proto/lldp.c && mv -f $depbase.Tpo $depbase.Plo
+--- proto/cdp.lo ---
+depbase=`echo proto/cdp.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT proto/cdp.lo -MD -MP -MF $depbase.Tpo -c -o proto/cdp.lo proto/cdp.c && mv -f $depbase.Tpo $depbase.Plo
+--- proto/tlv.lo ---
+depbase=`echo proto/tlv.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT proto/tlv.lo -MD -MP -MF $depbase.Tpo -c -o proto/tlv.lo proto/tlv.c && mv -f $depbase.Tpo $depbase.Plo
+--- proto/edp.lo ---
+depbase=`echo proto/edp.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT proto/edp.lo -MD -MP -MF $depbase.Tpo -c -o proto/edp.lo proto/edp.c && mv -f $depbase.Tpo $depbase.Plo
+--- proto/fdp.lo ---
+depbase=`echo proto/fdp.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT proto/fdp.lo -MD -MP -MF $depbase.Tpo -c -o proto/fdp.lo proto/fdp.c && mv -f $depbase.Tpo $depbase.Plo
+--- sysinfo.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT sysinfo.lo -MD -MP -MF .deps/sysinfo.Tpo -c sysinfo.c  -fPIC -DPIC -o .libs/sysinfo.o
+--- util.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT util.lo -MD -MP -MF .deps/util.Tpo -c util.c  -fPIC -DPIC -o .libs/util.o
+--- parent.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT parent.lo -MD -MP -MF .deps/parent.Tpo -c parent.c  -fPIC -DPIC -o .libs/parent.o
+--- child.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT child.lo -MD -MP -MF .deps/child.Tpo -c child.c  -fPIC -DPIC -o .libs/child.o
+--- cli.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT cli.lo -MD -MP -MF .deps/cli.Tpo -c cli.c  -fPIC -DPIC -o .libs/cli.o
+--- netif.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT netif.lo -MD -MP -MF .deps/netif.Tpo -c netif.c  -fPIC -DPIC -o .libs/netif.o
+--- proto/tlv.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT proto/tlv.lo -MD -MP -MF proto/.deps/tlv.Tpo -c proto/tlv.c  -fPIC -DPIC -o proto/.libs/tlv.o
+--- proto/edp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT proto/edp.lo -MD -MP -MF proto/.deps/edp.Tpo -c proto/edp.c  -fPIC -DPIC -o proto/.libs/edp.o
+--- proto/lldp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT proto/lldp.lo -MD -MP -MF proto/.deps/lldp.Tpo -c proto/lldp.c  -fPIC -DPIC -o proto/.libs/lldp.o
+--- proto/fdp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT proto/fdp.lo -MD -MP -MF proto/.deps/fdp.Tpo -c proto/fdp.c  -fPIC -DPIC -o proto/.libs/fdp.o
+--- proto/cdp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT proto/cdp.lo -MD -MP -MF proto/.deps/cdp.Tpo -c proto/cdp.c  -fPIC -DPIC -o proto/.libs/cdp.o
+--- proto/ndp.lo ---
+depbase=`echo proto/ndp.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT proto/ndp.lo -MD -MP -MF $depbase.Tpo -c -o proto/ndp.lo proto/ndp.c && mv -f $depbase.Tpo $depbase.Plo
+--- sysinfo.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT sysinfo.lo -MD -MP -MF .deps/sysinfo.Tpo -c sysinfo.c -fPIE -o sysinfo.o >/dev/null 2>&1
+--- proto/tlv.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT proto/tlv.lo -MD -MP -MF proto/.deps/tlv.Tpo -c proto/tlv.c -fPIE -o proto/tlv.o >/dev/null 2>&1
+--- proto/edp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT proto/edp.lo -MD -MP -MF proto/.deps/edp.Tpo -c proto/edp.c -fPIE -o proto/edp.o >/dev/null 2>&1
+--- cli.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT cli.lo -MD -MP -MF .deps/cli.Tpo -c cli.c -fPIE -o cli.o >/dev/null 2>&1
+--- proto/fdp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT proto/fdp.lo -MD -MP -MF proto/.deps/fdp.Tpo -c proto/fdp.c -fPIE -o proto/fdp.o >/dev/null 2>&1
+--- proto/ndp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT proto/ndp.lo -MD -MP -MF proto/.deps/ndp.Tpo -c proto/ndp.c  -fPIC -DPIC -o proto/.libs/ndp.o
+--- compat/strlcpy.lo ---
+depbase=`echo compat/strlcpy.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT compat/strlcpy.lo -MD -MP -MF $depbase.Tpo -c -o compat/strlcpy.lo compat/strlcpy.c && mv -f $depbase.Tpo $depbase.Plo
+--- child.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT child.lo -MD -MP -MF .deps/child.Tpo -c child.c -fPIE -o child.o >/dev/null 2>&1
+--- util.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT util.lo -MD -MP -MF .deps/util.Tpo -c util.c -fPIE -o util.o >/dev/null 2>&1
+--- parent.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT parent.lo -MD -MP -MF .deps/parent.Tpo -c parent.c -fPIE -o parent.o >/dev/null 2>&1
+--- compat/strlcpy.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT compat/strlcpy.lo -MD -MP -MF compat/.deps/strlcpy.Tpo -c compat/strlcpy.c  -fPIC -DPIC -o compat/.libs/strlcpy.o
+--- compat/strlcat.lo ---
+--- compat/strlcpy.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT compat/strlcpy.lo -MD -MP -MF compat/.deps/strlcpy.Tpo -c compat/strlcpy.c -fPIE -o compat/strlcpy.o >/dev/null 2>&1
+--- compat/strlcat.lo ---
+depbase=`echo compat/strlcat.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT compat/strlcat.lo -MD -MP -MF $depbase.Tpo -c -o compat/strlcat.lo compat/strlcat.c && mv -f $depbase.Tpo $depbase.Plo
+--- proto/ndp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT proto/ndp.lo -MD -MP -MF proto/.deps/ndp.Tpo -c proto/ndp.c -fPIE -o proto/ndp.o >/dev/null 2>&1
+--- compat/setproctitle.lo ---
+depbase=`echo compat/setproctitle.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT compat/setproctitle.lo -MD -MP -MF $depbase.Tpo -c -o compat/setproctitle.lo compat/setproctitle.c && mv -f $depbase.Tpo $depbase.Plo
+--- netif.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT netif.lo -MD -MP -MF .deps/netif.Tpo -c netif.c -fPIE -o netif.o >/dev/null 2>&1
+--- compat/vis.lo ---
+depbase=`echo compat/vis.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT compat/vis.lo -MD -MP -MF $depbase.Tpo -c -o compat/vis.lo compat/vis.c && mv -f $depbase.Tpo $depbase.Plo
+--- compat/strlcat.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT compat/strlcat.lo -MD -MP -MF compat/.deps/strlcat.Tpo -c compat/strlcat.c  -fPIC -DPIC -o compat/.libs/strlcat.o
+--- proto/cdp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT proto/cdp.lo -MD -MP -MF proto/.deps/cdp.Tpo -c proto/cdp.c -fPIE -o proto/cdp.o >/dev/null 2>&1
+--- compat/strlcat.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT compat/strlcat.lo -MD -MP -MF compat/.deps/strlcat.Tpo -c compat/strlcat.c -fPIE -o compat/strlcat.o >/dev/null 2>&1
+--- compat/imsg.lo ---
+depbase=`echo compat/imsg.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT compat/imsg.lo -MD -MP -MF $depbase.Tpo -c -o compat/imsg.lo compat/imsg.c && mv -f $depbase.Tpo $depbase.Plo
+--- compat/setproctitle.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT compat/setproctitle.lo -MD -MP -MF compat/.deps/setproctitle.Tpo -c compat/setproctitle.c  -fPIC -DPIC -o compat/.libs/setproctitle.o
+--- compat/vis.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT compat/vis.lo -MD -MP -MF compat/.deps/vis.Tpo -c compat/vis.c  -fPIC -DPIC -o compat/.libs/vis.o
+--- compat/imsg-buffer.lo ---
+depbase=`echo compat/imsg-buffer.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I.   -I/usr/local/include  -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT compat/imsg-buffer.lo -MD -MP -MF $depbase.Tpo -c -o compat/imsg-buffer.lo compat/imsg-buffer.c && mv -f $depbase.Tpo $depbase.Plo
+--- compat/setproctitle.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT compat/setproctitle.lo -MD -MP -MF compat/.deps/setproctitle.Tpo -c compat/setproctitle.c -fPIE -o compat/setproctitle.o >/dev/null 2>&1
+--- compat/imsg.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT compat/imsg.lo -MD -MP -MF compat/.deps/imsg.Tpo -c compat/imsg.c  -fPIC -DPIC -o compat/.libs/imsg.o
+--- proto/lldp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT proto/lldp.lo -MD -MP -MF proto/.deps/lldp.Tpo -c proto/lldp.c -fPIE -o proto/lldp.o >/dev/null 2>&1
+--- compat/imsg-buffer.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT compat/imsg-buffer.lo -MD -MP -MF compat/.deps/imsg-buffer.Tpo -c compat/imsg-buffer.c  -fPIC -DPIC -o compat/.libs/imsg-buffer.o
+--- compat/vis.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT compat/vis.lo -MD -MP -MF compat/.deps/vis.Tpo -c compat/vis.c -fPIE -o compat/vis.o >/dev/null 2>&1
+--- compat/imsg.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT compat/imsg.lo -MD -MP -MF compat/.deps/imsg.Tpo -c compat/imsg.c -fPIE -o compat/imsg.o >/dev/null 2>&1
+--- compat/imsg-buffer.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I/usr/local/include -Wall -Wformat -Wformat-security -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -MT compat/imsg-buffer.lo -MD -MP -MF compat/.deps/imsg-buffer.Tpo -c compat/imsg-buffer.c -fPIE -o compat/imsg-buffer.o >/dev/null 2>&1
+--- libmisc.la ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -pie -L/usr/local/lib  -fstack-protector-strong -o libmisc.la   child.lo parent.lo cli.lo  util.lo sysinfo.lo netif.lo  
+--- libcompat.la ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -pie -L/usr/local/lib  -fstack-protector-strong -o libcompat.la  compat/strlcpy.lo compat/strlcat.lo  compat/setproctitle.lo compat/vis.lo compat/imsg.lo  compat/imsg-buffer.lo  
+--- libmisc.la ---
+libtool: link: ar cru .libs/libmisc.a .libs/child.o .libs/parent.o .libs/cli.o .libs/util.o .libs/sysinfo.o .libs/netif.o 
+libtool: link: ranlib .libs/libmisc.a
+libtool: link: ( cd ".libs" && rm -f "libmisc.la" && ln -s "../libmisc.la" "libmisc.la" )
+--- libcompat.la ---
+libtool: link: ar cru .libs/libcompat.a compat/.libs/strlcpy.o compat/.libs/strlcat.o compat/.libs/setproctitle.o compat/.libs/vis.o compat/.libs/imsg.o compat/.libs/imsg-buffer.o 
+libtool: link: ranlib .libs/libcompat.a
+libtool: link: ( cd ".libs" && rm -f "libcompat.la" && ln -s "../libcompat.la" "libcompat.la" )
+--- libproto.la ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -pie -L/usr/local/lib  -fstack-protector-strong -o libproto.la  proto/tlv.lo proto/lldp.lo proto/cdp.lo  proto/edp.lo proto/fdp.lo proto/ndp.lo  
+libtool: link: ar cru .libs/libproto.a proto/.libs/tlv.o proto/.libs/lldp.o proto/.libs/cdp.o proto/.libs/edp.o proto/.libs/fdp.o proto/.libs/ndp.o 
+libtool: link: ranlib .libs/libproto.a
+libtool: link: ( cd ".libs" && rm -f "libproto.la" && ln -s "../libproto.la" "libproto.la" )
+--- ladvd ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -pie -L/usr/local/lib  -fstack-protector-strong -o ladvd  main.o libmisc.la libproto.la libcompat.la -levent -lpcap       
+libtool: link: cc -Wall -Wformat -Wformat-security -fPIE -DPIE -D_FORTIFY_SOURCE=2 --param ssp-buffer-size=4 -fstack-protector -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -pie -fstack-protector-strong -o ladvd main.o  -L/usr/local/lib ./.libs/libmisc.a ./.libs/libproto.a ./.libs/libcompat.a -levent -lpcap
+Making all in .
+Making all in doc
+--- ladvd.8 ---
+--- ladvdc.8 ---
+--- ladvd.8 ---
+/usr/bin/sed -e s/PACKAGE_USER/ladvd/  < ../doc/ladvd.8.in > ladvd.8
+--- ladvdc.8 ---
+/usr/bin/sed -e 's/^HTTP_POST //' -e s/PACKAGE_USER/ladvd/  < ../doc/ladvdc.8.in > ladvdc.8
+Making all in systemd
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for ladvd-1.1.2_1
+===>   Generating temporary packing list
+===> Creating groups.
+===> Creating users
+Making install in src
+ /bin/mkdir -p '/wrkdirs/usr/ports/net/ladvd/work/stage/usr/local/sbin'
+  /bin/sh ../libtool   --mode=install install  -s -m 555 ladvd '/wrkdirs/usr/ports/net/ladvd/work/stage/usr/local/sbin'
+libtool: install: install -m 555 -s ladvd /wrkdirs/usr/ports/net/ladvd/work/stage/usr/local/sbin/ladvd
+/usr/bin/make  install-exec-hook
+ln -s ladvd  /wrkdirs/usr/ports/net/ladvd/work/stage/usr/local/sbin/ladvdc
+Making install in .
+Making install in doc
+ /bin/mkdir -p '/wrkdirs/usr/ports/net/ladvd/work/stage/usr/local/share/doc/ladvd'
+ install  -m 0644 README TODO HACKING '/wrkdirs/usr/ports/net/ladvd/work/stage/usr/local/share/doc/ladvd'
+ /bin/mkdir -p '/wrkdirs/usr/ports/net/ladvd/work/stage/usr/local/man/man8'
+ install  -m 0644 ladvd.8 ladvdc.8 '/wrkdirs/usr/ports/net/ladvd/work/stage/usr/local/man/man8'
+Making install in systemd
+====> Compressing man pages (compress-man)
+===> Staging rc.d startup script(s)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:33:19+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for ladvd-1.1.2_1
+install -l rs /.npkg/All/ladvd-1.1.2_1.pkg /.npkg/All/ladvd-1.1.2_1.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for ladvd-1.1.2_1
+build of net/ladvd | ladvd-1.1.2_1 ended at Mon Oct 18 23:33:34 EAT 2021
+build time: 00:00:15

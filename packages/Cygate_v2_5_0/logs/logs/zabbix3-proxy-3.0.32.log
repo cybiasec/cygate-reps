@@ -1,0 +1,2109 @@
+=>> Building net-mgmt/zabbix3-proxy
+build started at Mon Oct 18 23:32:09 EAT 2021
+port directory: /usr/ports/net-mgmt/zabbix3-proxy
+package name: zabbix3-proxy-3.0.32
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-02 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: pg@pakhom.spb.ru
+Makefile datestamp: -rw-r--r--  1 root  wheel  185 Oct 18 18:58 /usr/ports/net-mgmt/zabbix3-proxy/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 02
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for zabbix3-proxy-3.0.32:
+     CURL=on: Support for web monitoring
+     FPING=on: Build/install fping for ping checks
+     IPMI=on: Support for IPMI checks
+     IPV6=on: IPv6 protocol support
+     JABBER=off: Support for Jabber media type
+     LDAP=off: Support for LDAP server checks
+     LIBXML2=on: Support for libxml2 (required by monitoring VMware)
+     NMAP=off: Build/install nmap for o/s detection
+     SSH=on: Support for SSH-based checks
+====> Options available for the single DB: you have to select exactly one of them
+     MYSQL=off: MySQL database support
+     PGSQL=off: PostgreSQL database support
+     SQLITE=on: SQLite database support
+     ORACLE=off: Oracle database support
+====> Support for database checks via ODBC: you have to select exactly one of them
+     IODBC=off: ODBC backend via iODBC
+     UNIXODBC=on: ODBC backend via unixODBC
+====> SSL protocol support: you have to select exactly one of them
+     OPENSSL=on: SSL/TLS support via OpenSSL
+     GNUTLS=off: SSL/TLS support via GnuTLS
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+pg@pakhom.spb.ru
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--cache-file=/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/zabbix-3.0.32/config.cache --enable-proxy  --sysconfdir=/usr/local/etc/zabbix3  --datadir=/usr/local/etc/zabbix3  --with-iconv=/usr --with-net-snmp --with-libcurl --without-gnutls --without-iodbc --with-openipmi --enable-ipv6 --without-jabber --without-ldap --with-libxml2=/usr/local --without-mysql --with-openssl --without-oracle --without-postgresql --with-sqlite3 --with-ssh2 --with-unixodbc --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PKG_CONFIG=pkgconf XDG_DATA_HOME=/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/.cache  HOME=/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+OPENSSLBASE=/usr OPENSSLDIR=/etc/ssl OPENSSLINC=/usr/include OPENSSLLIB=/usr/lib XDG_DATA_HOME=/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/.cache  HOME=/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS="-I/usr/local/include -DLIBICONV_PLUG"  LDFLAGS="  -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -DLIBICONV_PLUG "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PROXY="" SERVER="@comment " ZABBIX_BUILD=proxy PORTVERSION=3.0.32 CURL="" NO_CURL="@comment " FPING="" NO_FPING="@comment " GNUTLS="@comment " NO_GNUTLS="" IODBC="@comment " NO_IODBC="" IPMI="" NO_IPMI="@comment " IPV6="" NO_IPV6="@comment " JABBER="@comment " NO_JABBER="" LDAP="@comment " NO_LDAP="" LIBXML2="" NO_LIBXML2="@comment " MYSQL="@comment " NO_MYSQL="" NMAP="@comment " NO_NMAP="" OPENSSL="" NO_OPENSSL="@comment " ORACLE="@comment " NO_ORACLE="" PGSQL="@comment " NO_PGSQL="" SQLITE="" NO_SQLITE="@comment " SSH="" NO_SSH="@comment " UNIXODBC="" NO_UNIXODBC="@comment " OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/zabbix3"  EXAMPLESDIR="share/examples/zabbix3"  DATADIR="share/zabbix3"  WWWDIR="www/zabbix3"  ETCDIR="etc/zabbix3"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ZABBIX_BUILD=proxy ZABBIX_REQUIRE= CURL="" NO_CURL="@comment " FPING="" NO_FPING="@comment " GNUTLS="@comment " NO_GNUTLS="" IODBC="@comment " NO_IODBC="" IPMI="" NO_IPMI="@comment " IPV6="" NO_IPV6="@comment " JABBER="@comment " NO_JABBER="" LDAP="@comment " NO_LDAP="" LIBXML2="" NO_LIBXML2="@comment " MYSQL="@comment " NO_MYSQL="" NMAP="@comment " NO_NMAP="" OPENSSL="" NO_OPENSSL="@comment " ORACLE="@comment " NO_ORACLE="" PGSQL="@comment " NO_PGSQL="" SQLITE="" NO_SQLITE="@comment " SSH="" NO_SSH="@comment " UNIXODBC="" NO_UNIXODBC="@comment " PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/zabbix3 DOCSDIR=/usr/local/share/doc/zabbix3 EXAMPLESDIR=/usr/local/share/examples/zabbix3  WWWDIR=/usr/local/www/zabbix3 ETCDIR=/usr/local/etc/zabbix3
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License GPLv2+ accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   zabbix3-proxy-3.0.32 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkg-1.17.2: .......... done
+===>   zabbix3-proxy-3.0.32 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of zabbix3-proxy-3.0.32
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2+ accepted by the user
+===> Fetching all distfiles required by zabbix3-proxy-3.0.32 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2+ accepted by the user
+===> Fetching all distfiles required by zabbix3-proxy-3.0.32 for building
+=> SHA256 Checksum OK for zabbix-3.0.32.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License GPLv2+ accepted by the user
+===> Fetching all distfiles required by zabbix3-proxy-3.0.32 for building
+===>  Extracting for zabbix3-proxy-3.0.32
+=> SHA256 Checksum OK for zabbix-3.0.32.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for zabbix3-proxy-3.0.32
+===>  Applying FreeBSD patches for zabbix3-proxy-3.0.32 from /usr/ports/net-mgmt/zabbix3-proxy/../zabbix3-server/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   zabbix3-proxy-3.0.32 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-1.8.0,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkgconf-1.8.0,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkgconf-1.8.0,1: .......... done
+===>   zabbix3-proxy-3.0.32 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of zabbix3-proxy-3.0.32
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   zabbix3-proxy-3.0.32 depends on shared library: libnetsnmp.so - not found
+===>   Installing existing package /packages/All/net-snmp-5.9_3,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing net-snmp-5.9_3,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing perl5-5.32.1_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting perl5-5.32.1_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting net-snmp-5.9_3,1: .......... done
+=====
+Message from net-snmp-5.9_3,1:
+
+--
+**** This port installs snmpd, header files and libraries but does not
+     start snmpd by default.
+     If you want to auto-start snmpd and snmptrapd:, add the following to
+     /etc/rc.conf:
+
+	snmpd_enable="YES"
+	snmpd_flags="-a"
+	snmpd_conffile="/usr/local/share/snmp/snmpd.conf /etc/snmpd.conf"
+	snmptrapd_enable="YES"
+	snmptrapd_flags="-a -p /var/run/snmptrapd.pid"
+
+**** You may also specify the following make variables:
+
+	NET_SNMP_SYS_CONTACT="zi@FreeBSD.org"
+	NET_SNMP_SYS_LOCATION="USA"
+	DEFAULT_SNMP_VERSION=3
+	NET_SNMP_MIB_MODULES="host smux mibII/mta_sendmail ucd-snmp/diskio"
+	NET_SNMP_LOGFILE=/var/log/snmpd.log
+	NET_SNMP_PERSISTENTDIR=/var/net-snmp
+
+     to define default values (or to override the defaults).  To avoid being
+     prompted during the configuration process, you should (minimally) define
+     the first two variables. (NET_SNMP_SYS_*)
+
+     You may also define the following to avoid all interactive configuration:
+
+	BATCH="yes"
+===>   zabbix3-proxy-3.0.32 depends on shared library: libnetsnmp.so - found (/usr/local/lib/libnetsnmp.so)
+===>   Returning to build of zabbix3-proxy-3.0.32
+===>   zabbix3-proxy-3.0.32 depends on shared library: libcurl.so - not found
+===>   Installing existing package /packages/All/curl-7.79.1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing curl-7.79.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing ca_root_nss-3.71...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting ca_root_nss-3.71: ........ done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libnghttp2-1.45.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libnghttp2-1.45.1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libssh2-1.9.0_3,3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libssh2-1.9.0_3,3: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting curl-7.79.1: .......... done
+=====
+Message from ca_root_nss-3.71:
+
+--
+FreeBSD does not, and can not warrant that the certification authorities
+whose certificates are included in this package have in any way been
+audited for trustworthiness or RFC 3647 compliance.
+
+Assessment and verification of trust is the complete responsibility of the
+system administrator.
+
+
+This package installs symlinks to support root certificates discovery by
+default for software that uses OpenSSL.
+
+This enables SSL Certificate Verification by client software without manual
+intervention.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * /usr/local/etc/ssl/cert.pem
+  * /usr/local/openssl/cert.pem
+===>   zabbix3-proxy-3.0.32 depends on shared library: libcurl.so - found (/usr/local/lib/libcurl.so)
+===>   Returning to build of zabbix3-proxy-3.0.32
+===>   zabbix3-proxy-3.0.32 depends on shared library: libOpenIPMI.so - not found
+===>   Installing existing package /packages/All/openipmi-2.0.29.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing openipmi-2.0.29...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing popt-1.18_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing gettext-runtime-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Installing indexinfo-0.3.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Extracting indexinfo-0.3.1: .... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting gettext-runtime-0.21: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting popt-1.18_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing readline-8.1.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting readline-8.1.1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting openipmi-2.0.29: .......... done
+===>   zabbix3-proxy-3.0.32 depends on shared library: libOpenIPMI.so - found (/usr/local/lib/libOpenIPMI.so)
+===>   Returning to build of zabbix3-proxy-3.0.32
+===>   zabbix3-proxy-3.0.32 depends on shared library: libxml2.so - not found
+===>   Installing existing package /packages/All/libxml2-2.9.12.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing libxml2-2.9.12...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting libxml2-2.9.12: .......... done
+===>   zabbix3-proxy-3.0.32 depends on shared library: libxml2.so - found (/usr/local/lib/libxml2.so)
+===>   Returning to build of zabbix3-proxy-3.0.32
+===>   zabbix3-proxy-3.0.32 depends on shared library: libssh2.so - found (/usr/local/lib/libssh2.so)
+===>   zabbix3-proxy-3.0.32 depends on shared library: libodbc.so - not found
+===>   Installing existing package /packages/All/unixODBC-2.3.9.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing unixODBC-2.3.9...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting unixODBC-2.3.9: .......... done
+===>   zabbix3-proxy-3.0.32 depends on shared library: libodbc.so - found (/usr/local/lib/libodbc.so)
+===>   Returning to build of zabbix3-proxy-3.0.32
+===>   zabbix3-proxy-3.0.32 depends on shared library: libsqlite3.so - not found
+===>   Installing existing package /packages/All/sqlite3-3.35.5_3,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing sqlite3-3.35.5_3,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libedit-3.1.20210216,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libedit-3.1.20210216,1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting sqlite3-3.35.5_3,1: .......... done
+===>   zabbix3-proxy-3.0.32 depends on shared library: libsqlite3.so - found (/usr/local/lib/libsqlite3.so)
+===>   Returning to build of zabbix3-proxy-3.0.32
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for zabbix3-proxy-3.0.32
+configure: WARNING: unrecognized options: --without-iodbc
+configure: loading site script /usr/ports/Templates/config.site
+configure: loading cache /wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/zabbix-3.0.32/config.cache
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+configure: Configuring Zabbix 3.0.32
+checking whether make sets $(MAKE)... (cached) yes
+checking build system type... amd64-portbld-freebsd12.3
+checking host system type... amd64-portbld-freebsd12.3
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking whether cc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of cc... gcc3
+checking how to run the C preprocessor... cpp
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for netdb.h... (cached) yes
+checking for signal.h... (cached) yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for time.h... (cached) yes
+checking for errno.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for netinet/in.h... (cached) yes
+checking for math.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for dirent.h... (cached) yes
+checking for ctype.h... (cached) yes
+checking mtent.h usability... no
+checking mtent.h presence... no
+checking for mtent.h... no
+checking for fcntl.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for arpa/inet.h... (cached) yes
+checking sys/vfs.h usability... no
+checking sys/vfs.h presence... no
+checking for sys/vfs.h... no
+checking sys/pstat.h usability... no
+checking sys/pstat.h presence... no
+checking for sys/pstat.h... no
+checking sys/sysinfo.h usability... no
+checking sys/sysinfo.h presence... no
+checking for sys/sysinfo.h... no
+checking for sys/statvfs.h... (cached) yes
+checking sys/statfs.h usability... no
+checking sys/statfs.h presence... no
+checking for sys/statfs.h... no
+checking for sys/socket.h... (cached) yes
+checking sys/loadavg.h usability... no
+checking sys/loadavg.h presence... no
+checking for sys/loadavg.h... no
+checking for arpa/inet.h... (cached) yes
+checking sys/vmmeter.h usability... yes
+checking sys/vmmeter.h presence... yes
+checking for sys/vmmeter.h... yes
+checking for strings.h... (cached) yes
+checking vm/vm_param.h usability... yes
+checking vm/vm_param.h presence... yes
+checking for vm/vm_param.h... yes
+checking for sys/time.h... (cached) yes
+checking kstat.h usability... no
+checking kstat.h presence... no
+checking for kstat.h... no
+checking sys/syscall.h usability... yes
+checking sys/syscall.h presence... yes
+checking for sys/syscall.h... yes
+checking sys/sysmacros.h usability... no
+checking sys/sysmacros.h presence... no
+checking for sys/sysmacros.h... no
+checking for stdint.h... (cached) yes
+checking mach/host_info.h usability... no
+checking mach/host_info.h presence... no
+checking for mach/host_info.h... no
+checking mach/mach_host.h usability... no
+checking mach/mach_host.h presence... no
+checking for mach/mach_host.h... no
+checking knlist.h usability... no
+checking knlist.h presence... no
+checking for knlist.h... no
+checking for pwd.h... (cached) yes
+checking sys/var.h usability... no
+checking sys/var.h presence... no
+checking for sys/var.h... no
+checking for arpa/nameser.h... (cached) yes
+checking assert.h usability... yes
+checking assert.h presence... yes
+checking for assert.h... yes
+checking sys/dkstat.h usability... yes
+checking sys/dkstat.h presence... yes
+checking for sys/dkstat.h... yes
+checking sys/disk.h usability... yes
+checking sys/disk.h presence... yes
+checking for sys/disk.h... yes
+checking sys/sched.h usability... yes
+checking sys/sched.h presence... yes
+checking for sys/sched.h... yes
+checking zone.h usability... no
+checking zone.h presence... no
+checking for zone.h... no
+checking nlist.h usability... yes
+checking nlist.h presence... yes
+checking for nlist.h... yes
+checking kvm.h usability... yes
+checking kvm.h presence... yes
+checking for kvm.h... yes
+checking linux/kernel.h usability... no
+checking linux/kernel.h presence... no
+checking for linux/kernel.h... no
+checking procinfo.h usability... no
+checking procinfo.h presence... no
+checking for procinfo.h... no
+checking sys/dk.h usability... no
+checking sys/dk.h presence... no
+checking for sys/dk.h... no
+checking for sys/resource.h... (cached) yes
+checking for pthread.h... (cached) yes
+checking windows.h usability... no
+checking windows.h presence... no
+checking for windows.h... no
+checking process.h usability... no
+checking process.h presence... no
+checking for process.h... no
+checking conio.h usability... no
+checking conio.h presence... no
+checking for conio.h... no
+checking for sys/wait.h... (cached) yes
+checking regex.h usability... yes
+checking regex.h presence... yes
+checking for regex.h... yes
+checking for stdarg.h... (cached) yes
+checking winsock2.h usability... no
+checking winsock2.h presence... no
+checking for winsock2.h... no
+checking pdh.h usability... no
+checking pdh.h presence... no
+checking for pdh.h... no
+checking psapi.h usability... no
+checking psapi.h presence... no
+checking for psapi.h... no
+checking sys/sem.h usability... yes
+checking sys/sem.h presence... yes
+checking for sys/sem.h... yes
+checking sys/ipc.h usability... yes
+checking sys/ipc.h presence... yes
+checking for sys/ipc.h... yes
+checking sys/shm.h usability... yes
+checking sys/shm.h presence... yes
+checking for sys/shm.h... yes
+checking Winldap.h usability... no
+checking Winldap.h presence... no
+checking for Winldap.h... no
+checking Winber.h usability... no
+checking Winber.h presence... no
+checking for Winber.h... no
+checking lber.h usability... no
+checking lber.h presence... no
+checking for lber.h... no
+checking ws2tcpip.h usability... no
+checking ws2tcpip.h presence... no
+checking for ws2tcpip.h... no
+checking for inttypes.h... (cached) yes
+checking for sys/file.h... (cached) yes
+checking grp.h usability... yes
+checking grp.h presence... yes
+checking for grp.h... yes
+checking execinfo.h usability... yes
+checking execinfo.h presence... yes
+checking for execinfo.h... yes
+checking sys/systemcfg.h usability... no
+checking sys/systemcfg.h presence... no
+checking for sys/systemcfg.h... no
+checking sys/mnttab.h usability... no
+checking sys/mnttab.h presence... no
+checking for sys/mnttab.h... no
+checking mntent.h usability... no
+checking mntent.h presence... no
+checking for mntent.h... no
+checking for sys/times.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking sys/utsname.h usability... yes
+checking sys/utsname.h presence... yes
+checking for sys/utsname.h... yes
+checking sys/protosw.h usability... yes
+checking sys/protosw.h presence... yes
+checking for sys/protosw.h... yes
+checking for resolv.h... (cached) yes
+checking for net/if.h... (cached) yes
+checking for net/if_mib.h... yes
+checking for sys/mount.h... (cached) yes
+checking for sys/proc.h... yes
+checking for sys/sysctl.h... (cached) yes
+checking for sys/user.h... yes
+checking for sys/swap.h... no
+checking for sys/ucontext.h... yes
+checking for devstat.h... yes
+checking for linux/netlink.h... no
+checking for libperfstat.h... no
+checking for library containing socket... none required
+checking for library containing kstat_open... no
+checking for library containing gethostbyname... none required
+checking for library containing clock_gettime... none required
+checking for library containing dlopen... none required
+checking for library containing perfstat_memory_total... no
+checking for library containing devstat_getdevs... -ldevstat
+checking for library containing getdevs... no
+checking for library containing backtrace_symbols... -lexecinfo
+checking for main in -lm... yes
+checking for main in -lkvm... yes
+checking for DNS lookup functions... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for an ANSI C-conforming const... yes
+checking for pid_t... (cached) yes
+checking for socklen_t... yes
+checking for actual socklen_t parameter type in socket functions... socklen_t
+checking for integer field name in union sigval of struct siginfo_t... sival_int
+checking for res_ninit... yes
+checking for res_ndestroy... yes
+checking for union semun... no
+checking for struct swaptable in sys/swap.h... no
+checking for struct sensordev in sys/sensors.h... no
+checking for struct statvfs64 in sys/statvfs.h... no
+checking for struct statfs64 in sys/statfs.h... no
+checking for field ss_family in struct sockaddr_storage... yes
+checking for field mem_unit in struct sysinfo... no
+checking for field freeswap in struct sysinfo... no
+checking for field totalswap in struct sysinfo... no
+checking for field totalram in struct sysinfo... no
+checking for field sharedram in struct sysinfo... no
+checking for field bufferram in struct sysinfo... no
+checking for field freeram in struct sysinfo... no
+checking for field uptime in struct sysinfo... no
+checking for field procs in struct sysinfo... no
+checking for field tm_gmtoff in struct tm... yes
+checking for function sysconf() in unistd.h... no
+checking for function initgroups()... yes
+checking for functions seteuid() and setegid()... yes
+checking for function setproctitle()... yes
+checking for function sysctlbyname()... yes
+checking for function sysctl (KERN_BOOTTIME)... yes
+checking for function sysctl (HW_NCPU)... yes
+checking for function sysctl (KERN_MAXFILES)... yes
+checking for function sysctl (KERN_MAXPROC)... yes
+checking for function sysctl (KERN_CPTIME,KERN_CPTIME2)... no
+checking for function clock_gettime in time.h... yes
+checking for macro __va_copy() in stdarg.h... yes
+checking for macro __VA_ARGS__... yes
+checking return type of signal handlers... void
+checking for getloadavg... yes
+checking for hstrerror... yes
+checking for getenv... (cached) yes
+checking for putenv... (cached) yes
+checking for sigqueue... yes
+checking for round... yes
+checking for /proc filesystem... yes
+checking for file /proc/stat... no
+checking for file /proc/cpuinfo... no
+checking for file /proc/0/psinfo... no
+checking for file /proc/loadavg... no
+checking for file /proc/net/dev... no
+checking for long long format... yes
+checking for -rdynamic linking option... yes
+checking for libperfstat 5.2.0.40 fileset... no
+checking for libperfstat 5.3.0.60 fileset... no
+checking for architecture... freebsd (freebsd12.3)
+checking size of void *... 8
+checking for Oracle support... no
+checking for SQLite3 library >= 3.0.0... yes
+checking for function sqlite3_open_v2() in sqlite3.h... yes
+checking for Zabbix server/proxy database selection... ok
+checking for multirow insert statements... no
+checking for pkg-config... /usr/local/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for pkg-config... (cached) /usr/local/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for xmlReadMemory in -lxml2... yes
+checking for odbc_config... /usr/local/bin/odbc_config
+checking for SQLAllocHandle in -lodbc... yes
+checking for net-snmp-config... /usr/local/bin/net-snmp-config
+checking for main in -lnetsnmp... yes
+checking for localname in struct snmp_session... yes
+checking for SSH2 support... yes
+checking for OPENIPMI support... yes
+checking for OpenSSL support... yes
+checking if OpenSSL supports PSK... yes
+checking for gawk... (cached) /usr/bin/awk
+checking for curl-config... /usr/local/bin/curl-config
+checking for the version of libcurl... 7.79.1
+checking for libcurl >= version 7.13.1... yes
+checking for main in -lcurl... yes
+checking whether libcurl is usable... yes
+checking for curl_free... yes
+checking for curl_easy_escape... yes
+checking for ICONV support... checking iconv.h usability... yes
+checking iconv.h presence... yes
+checking for iconv.h... yes
+yes
+checking for mkdir -p candidate... ok (/bin/mkdir -p)
+configure: updating cache /wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/zabbix-3.0.32/config.cache
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating database/Makefile
+config.status: creating misc/Makefile
+config.status: creating src/Makefile
+config.status: creating src/libs/Makefile
+config.status: creating src/libs/zbxlog/Makefile
+config.status: creating src/libs/zbxalgo/Makefile
+config.status: creating src/libs/zbxmemory/Makefile
+config.status: creating src/libs/zbxcrypto/Makefile
+config.status: creating src/libs/zbxconf/Makefile
+config.status: creating src/libs/zbxdbcache/Makefile
+config.status: creating src/libs/zbxdbhigh/Makefile
+config.status: creating src/libs/zbxmedia/Makefile
+config.status: creating src/libs/zbxsysinfo/Makefile
+config.status: creating src/libs/zbxcommon/Makefile
+config.status: creating src/libs/zbxsysinfo/agent/Makefile
+config.status: creating src/libs/zbxsysinfo/common/Makefile
+config.status: creating src/libs/zbxsysinfo/simple/Makefile
+config.status: creating src/libs/zbxsysinfo/linux/Makefile
+config.status: creating src/libs/zbxsysinfo/aix/Makefile
+config.status: creating src/libs/zbxsysinfo/freebsd/Makefile
+config.status: creating src/libs/zbxsysinfo/hpux/Makefile
+config.status: creating src/libs/zbxsysinfo/openbsd/Makefile
+config.status: creating src/libs/zbxsysinfo/osx/Makefile
+config.status: creating src/libs/zbxsysinfo/solaris/Makefile
+config.status: creating src/libs/zbxsysinfo/osf/Makefile
+config.status: creating src/libs/zbxsysinfo/netbsd/Makefile
+config.status: creating src/libs/zbxsysinfo/unknown/Makefile
+config.status: creating src/libs/zbxnix/Makefile
+config.status: creating src/libs/zbxsys/Makefile
+config.status: creating src/libs/zbxcomms/Makefile
+config.status: creating src/libs/zbxcommshigh/Makefile
+config.status: creating src/libs/zbxdb/Makefile
+config.status: creating src/libs/zbxdbupgrade/Makefile
+config.status: creating src/libs/zbxjson/Makefile
+config.status: creating src/libs/zbxserver/Makefile
+config.status: creating src/libs/zbxicmpping/Makefile
+config.status: creating src/libs/zbxexec/Makefile
+config.status: creating src/libs/zbxself/Makefile
+config.status: creating src/libs/zbxmodules/Makefile
+config.status: creating src/libs/zbxregexp/Makefile
+config.status: creating src/zabbix_agent/Makefile
+config.status: creating src/zabbix_get/Makefile
+config.status: creating src/zabbix_sender/Makefile
+config.status: creating src/zabbix_server/Makefile
+config.status: creating src/zabbix_server/alerter/Makefile
+config.status: creating src/zabbix_server/dbsyncer/Makefile
+config.status: creating src/zabbix_server/dbconfig/Makefile
+config.status: creating src/zabbix_server/discoverer/Makefile
+config.status: creating src/zabbix_server/housekeeper/Makefile
+config.status: creating src/zabbix_server/httppoller/Makefile
+config.status: creating src/zabbix_server/pinger/Makefile
+config.status: creating src/zabbix_server/poller/Makefile
+config.status: creating src/zabbix_server/snmptrapper/Makefile
+config.status: creating src/zabbix_server/timer/Makefile
+config.status: creating src/zabbix_server/trapper/Makefile
+config.status: creating src/zabbix_server/watchdog/Makefile
+config.status: creating src/zabbix_server/escalator/Makefile
+config.status: creating src/zabbix_server/proxypoller/Makefile
+config.status: creating src/zabbix_server/selfmon/Makefile
+config.status: creating src/zabbix_server/vmware/Makefile
+config.status: creating src/zabbix_proxy/Makefile
+config.status: creating src/zabbix_proxy/heart/Makefile
+config.status: creating src/zabbix_proxy/housekeeper/Makefile
+config.status: creating src/zabbix_proxy/proxyconfig/Makefile
+config.status: creating src/zabbix_proxy/datasender/Makefile
+config.status: creating src/zabbix_java/Makefile
+config.status: creating upgrades/Makefile
+config.status: creating man/Makefile
+config.status: creating include/config.h
+config.status: executing depfiles commands
+configure: WARNING: unrecognized options: --without-iodbc
+
+
+Configuration:
+
+  Detected OS:           freebsd12.3
+  Install path:          /usr/local
+  Compilation arch:      freebsd
+
+  Compiler:              cc
+  Compiler flags:        -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing 
+
+  Library-specific flags:
+    database:                  -I/usr/local/include
+    libXML2:               -I/usr/local/include/libxml2 
+    unixODBC:              -I/usr/local/include
+    Net-SNMP:               -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include
+    OpenIPMI:              -I/usr/local/include
+    libssh2:               -I/usr/local/include
+    TLS:                   -I/usr/include
+    iconv:                 -I//usr/include
+
+  Enable server:         no
+
+  Enable proxy:          yes
+  Proxy details:
+    With database:         SQLite v3.x
+    WEB Monitoring:        cURL
+    SNMP:                  yes
+    IPMI:                  yes
+    SSH:                   yes
+    TLS:                   OpenSSL
+    ODBC:                  yes
+    Linker flags:               -L/usr/local/lib  -L/usr/local/lib -L/usr/local/lib  -L/usr/local/lib -L/usr/local/lib -L/usr/local/lib -L/usr/lib   -L/usr/local/lib -rdynamic   -fstack-protector-strong  -L//usr/lib
+    Libraries:                  -lsqlite3 -lxml2  -lodbc  -lnetsnmp -lssh2 -lOpenIPMI -lOpenIPMIposix -lssl -lcrypto   -lcurl -lkvm -lm -lexecinfo -ldevstat   
+
+  Enable agent:          no
+
+  Enable Java gateway:   no
+
+  LDAP support:          no
+  IPv6 support:          yes
+
+***********************************************************
+*            Now run 'make install'                       *
+*                                                         *
+*            Thank you for using Zabbix!                  *
+*              <http://www.zabbix.com>                    *
+***********************************************************
+
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for zabbix3-proxy-3.0.32
+--- all-recursive ---
+Making all in src
+--- all-recursive ---
+Making all in libs
+--- all-recursive ---
+Making all in zbxcrypto
+--- libzbxcrypto_a-md5.o ---
+--- libzbxcrypto_a-base64.o ---
+--- libzbxcrypto_a-tls.o ---
+--- libzbxcrypto_a-md5.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I/usr/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxcrypto_a-md5.o -MD -MP -MF .deps/libzbxcrypto_a-md5.Tpo -c -o libzbxcrypto_a-md5.o `test -f 'md5.c' || echo './'`md5.c
+--- libzbxcrypto_a-base64.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I/usr/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxcrypto_a-base64.o -MD -MP -MF .deps/libzbxcrypto_a-base64.Tpo -c -o libzbxcrypto_a-base64.o `test -f 'base64.c' || echo './'`base64.c
+--- libzbxcrypto_a-tls.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I/usr/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxcrypto_a-tls.o -MD -MP -MF .deps/libzbxcrypto_a-tls.Tpo -c -o libzbxcrypto_a-tls.o `test -f 'tls.c' || echo './'`tls.c
+--- libzbxcrypto_a-base64.o ---
+mv -f .deps/libzbxcrypto_a-base64.Tpo .deps/libzbxcrypto_a-base64.Po
+--- libzbxcrypto_a-md5.o ---
+mv -f .deps/libzbxcrypto_a-md5.Tpo .deps/libzbxcrypto_a-md5.Po
+--- libzbxcrypto_a-tls.o ---
+mv -f .deps/libzbxcrypto_a-tls.Tpo .deps/libzbxcrypto_a-tls.Po
+--- libzbxcrypto.a ---
+rm -f libzbxcrypto.a
+ar cru libzbxcrypto.a libzbxcrypto_a-md5.o  libzbxcrypto_a-base64.o libzbxcrypto_a-tls.o 
+ranlib libzbxcrypto.a
+Making all in zbxcommon
+--- libzbxcommon_a-misc.o ---
+--- libzbxcommon_a-xml.o ---
+--- libzbxcommon_a-comms.o ---
+--- libzbxcommon_a-str.o ---
+--- libzbxcommon_a-zbxgetopt.o ---
+--- libzbxcommon_a-alias.o ---
+--- libzbxcommon_a-file.o ---
+--- libzbxcommon_a-setproctitle.o ---
+--- libzbxcommon_a-iprange.o ---
+--- libzbxcommon_a-misc.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I//usr/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxcommon_a-misc.o -MD -MP -MF .deps/libzbxcommon_a-misc.Tpo -c -o libzbxcommon_a-misc.o `test -f 'misc.c' || echo './'`misc.c
+--- libzbxcommon_a-xml.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I//usr/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxcommon_a-xml.o -MD -MP -MF .deps/libzbxcommon_a-xml.Tpo -c -o libzbxcommon_a-xml.o `test -f 'xml.c' || echo './'`xml.c
+--- libzbxcommon_a-comms.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I//usr/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxcommon_a-comms.o -MD -MP -MF .deps/libzbxcommon_a-comms.Tpo -c -o libzbxcommon_a-comms.o `test -f 'comms.c' || echo './'`comms.c
+--- libzbxcommon_a-str.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I//usr/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxcommon_a-str.o -MD -MP -MF .deps/libzbxcommon_a-str.Tpo -c -o libzbxcommon_a-str.o `test -f 'str.c' || echo './'`str.c
+--- libzbxcommon_a-zbxgetopt.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I//usr/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxcommon_a-zbxgetopt.o -MD -MP -MF .deps/libzbxcommon_a-zbxgetopt.Tpo -c -o libzbxcommon_a-zbxgetopt.o `test -f 'zbxgetopt.c' || echo './'`zbxgetopt.c
+--- libzbxcommon_a-alias.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I//usr/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxcommon_a-alias.o -MD -MP -MF .deps/libzbxcommon_a-alias.Tpo -c -o libzbxcommon_a-alias.o `test -f 'alias.c' || echo './'`alias.c
+--- libzbxcommon_a-file.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I//usr/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxcommon_a-file.o -MD -MP -MF .deps/libzbxcommon_a-file.Tpo -c -o libzbxcommon_a-file.o `test -f 'file.c' || echo './'`file.c
+--- libzbxcommon_a-setproctitle.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I//usr/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxcommon_a-setproctitle.o -MD -MP -MF .deps/libzbxcommon_a-setproctitle.Tpo -c -o libzbxcommon_a-setproctitle.o `test -f 'setproctitle.c' || echo './'`setproctitle.c
+--- libzbxcommon_a-iprange.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I//usr/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxcommon_a-iprange.o -MD -MP -MF .deps/libzbxcommon_a-iprange.Tpo -c -o libzbxcommon_a-iprange.o `test -f 'iprange.c' || echo './'`iprange.c
+--- libzbxcommon_a-alias.o ---
+mv -f .deps/libzbxcommon_a-alias.Tpo .deps/libzbxcommon_a-alias.Po
+--- libzbxcommon_a-misc.o ---
+misc.c:577:15: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+        setproctitle(title);
+                     ^~~~~
+misc.c:577:15: note: treat the string as an argument to avoid this
+        setproctitle(title);
+                     ^
+                     "%s", 
+--- libzbxcommon_a-setproctitle.o ---
+mv -f .deps/libzbxcommon_a-setproctitle.Tpo .deps/libzbxcommon_a-setproctitle.Po
+--- libzbxcommon_a-xml.o ---
+mv -f .deps/libzbxcommon_a-xml.Tpo .deps/libzbxcommon_a-xml.Po
+--- libzbxcommon_a-file.o ---
+mv -f .deps/libzbxcommon_a-file.Tpo .deps/libzbxcommon_a-file.Po
+--- libzbxcommon_a-comms.o ---
+mv -f .deps/libzbxcommon_a-comms.Tpo .deps/libzbxcommon_a-comms.Po
+--- libzbxcommon_a-zbxgetopt.o ---
+mv -f .deps/libzbxcommon_a-zbxgetopt.Tpo .deps/libzbxcommon_a-zbxgetopt.Po
+--- libzbxcommon_a-iprange.o ---
+mv -f .deps/libzbxcommon_a-iprange.Tpo .deps/libzbxcommon_a-iprange.Po
+--- libzbxcommon_a-str.o ---
+mv -f .deps/libzbxcommon_a-str.Tpo .deps/libzbxcommon_a-str.Po
+--- libzbxcommon_a-misc.o ---
+1 warning generated.
+mv -f .deps/libzbxcommon_a-misc.Tpo .deps/libzbxcommon_a-misc.Po
+--- libzbxcommon.a ---
+rm -f libzbxcommon.a
+ar cru libzbxcommon.a libzbxcommon_a-misc.o  libzbxcommon_a-xml.o libzbxcommon_a-comms.o  libzbxcommon_a-str.o  libzbxcommon_a-zbxgetopt.o  libzbxcommon_a-alias.o libzbxcommon_a-file.o  libzbxcommon_a-setproctitle.o  libzbxcommon_a-iprange.o 
+ranlib libzbxcommon.a
+Making all in zbxlog
+--- log.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT log.o -MD -MP -MF .deps/log.Tpo -c -o log.o log.c
+mv -f .deps/log.Tpo .deps/log.Po
+--- libzbxlog.a ---
+rm -f libzbxlog.a
+ar cru libzbxlog.a log.o 
+ranlib libzbxlog.a
+Making all in zbxalgo
+--- algodefs.o ---
+--- binaryheap.o ---
+--- evaluate.o ---
+--- hashmap.o ---
+--- hashset.o ---
+--- int128.o ---
+--- prediction.o ---
+--- vector.o ---
+--- algodefs.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT algodefs.o -MD -MP -MF .deps/algodefs.Tpo -c -o algodefs.o algodefs.c
+--- binaryheap.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT binaryheap.o -MD -MP -MF .deps/binaryheap.Tpo -c -o binaryheap.o binaryheap.c
+--- evaluate.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT evaluate.o -MD -MP -MF .deps/evaluate.Tpo -c -o evaluate.o evaluate.c
+--- hashmap.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT hashmap.o -MD -MP -MF .deps/hashmap.Tpo -c -o hashmap.o hashmap.c
+--- hashset.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT hashset.o -MD -MP -MF .deps/hashset.Tpo -c -o hashset.o hashset.c
+--- int128.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT int128.o -MD -MP -MF .deps/int128.Tpo -c -o int128.o int128.c
+--- prediction.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT prediction.o -MD -MP -MF .deps/prediction.Tpo -c -o prediction.o prediction.c
+--- vector.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT vector.o -MD -MP -MF .deps/vector.Tpo -c -o vector.o vector.c
+--- int128.o ---
+mv -f .deps/int128.Tpo .deps/int128.Po
+--- binaryheap.o ---
+mv -f .deps/binaryheap.Tpo .deps/binaryheap.Po
+--- hashmap.o ---
+mv -f .deps/hashmap.Tpo .deps/hashmap.Po
+--- hashset.o ---
+mv -f .deps/hashset.Tpo .deps/hashset.Po
+--- evaluate.o ---
+mv -f .deps/evaluate.Tpo .deps/evaluate.Po
+--- algodefs.o ---
+mv -f .deps/algodefs.Tpo .deps/algodefs.Po
+--- vector.o ---
+mv -f .deps/vector.Tpo .deps/vector.Po
+--- prediction.o ---
+mv -f .deps/prediction.Tpo .deps/prediction.Po
+--- libzbxalgo.a ---
+rm -f libzbxalgo.a
+ar cru libzbxalgo.a algodefs.o binaryheap.o  evaluate.o hashmap.o hashset.o  int128.o prediction.o vector.o 
+ranlib libzbxalgo.a
+Making all in zbxnix
+--- daemon.o ---
+--- pid.o ---
+--- ipc.o ---
+--- fatal.o ---
+--- sighandler.o ---
+--- control.o ---
+--- dshm.o ---
+--- coredump.o ---
+--- daemon.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT daemon.o -MD -MP -MF .deps/daemon.Tpo -c -o daemon.o daemon.c
+--- pid.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT pid.o -MD -MP -MF .deps/pid.Tpo -c -o pid.o pid.c
+--- ipc.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT ipc.o -MD -MP -MF .deps/ipc.Tpo -c -o ipc.o ipc.c
+--- fatal.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT fatal.o -MD -MP -MF .deps/fatal.Tpo -c -o fatal.o fatal.c
+--- sighandler.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT sighandler.o -MD -MP -MF .deps/sighandler.Tpo -c -o sighandler.o sighandler.c
+--- control.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT control.o -MD -MP -MF .deps/control.Tpo -c -o control.o control.c
+--- dshm.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT dshm.o -MD -MP -MF .deps/dshm.Tpo -c -o dshm.o dshm.c
+--- coredump.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT coredump.o -MD -MP -MF .deps/coredump.Tpo -c -o coredump.o coredump.c
+mv -f .deps/coredump.Tpo .deps/coredump.Po
+--- pid.o ---
+mv -f .deps/pid.Tpo .deps/pid.Po
+--- control.o ---
+mv -f .deps/control.Tpo .deps/control.Po
+--- sighandler.o ---
+mv -f .deps/sighandler.Tpo .deps/sighandler.Po
+--- fatal.o ---
+mv -f .deps/fatal.Tpo .deps/fatal.Po
+--- ipc.o ---
+mv -f .deps/ipc.Tpo .deps/ipc.Po
+--- dshm.o ---
+mv -f .deps/dshm.Tpo .deps/dshm.Po
+--- daemon.o ---
+mv -f .deps/daemon.Tpo .deps/daemon.Po
+--- libzbxnix.a ---
+rm -f libzbxnix.a
+ar cru libzbxnix.a daemon.o pid.o ipc.o  fatal.o sighandler.o control.o  dshm.o coredump.o 
+ranlib libzbxnix.a
+Making all in zbxconf
+--- cfg.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT cfg.o -MD -MP -MF .deps/cfg.Tpo -c -o cfg.o cfg.c
+mv -f .deps/cfg.Tpo .deps/cfg.Po
+--- libzbxconf.a ---
+rm -f libzbxconf.a
+ar cru libzbxconf.a cfg.o 
+ranlib libzbxconf.a
+Making all in zbxsysinfo
+--- all-recursive ---
+Making all in agent
+--- agent.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT agent.o -MD -MP -MF .deps/agent.Tpo -c -o agent.o agent.c
+mv -f .deps/agent.Tpo .deps/agent.Po
+--- libagentsysinfo.a ---
+rm -f libagentsysinfo.a
+ar cru libagentsysinfo.a agent.o 
+ranlib libagentsysinfo.a
+Making all in common
+--- libcommonsysinfo_a-common.o ---
+--- libcommonsysinfo_a-file.o ---
+--- libcommonsysinfo_a-cpu.o ---
+--- libcommonsysinfo_a-http.o ---
+--- libcommonsysinfo_a-net.o ---
+--- libcommonsysinfo_a-system.o ---
+--- libcommonsysinfo_a-common.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libcommonsysinfo_a-common.o -MD -MP -MF .deps/libcommonsysinfo_a-common.Tpo -c -o libcommonsysinfo_a-common.o `test -f 'common.c' || echo './'`common.c
+--- libcommonsysinfo_a-file.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libcommonsysinfo_a-file.o -MD -MP -MF .deps/libcommonsysinfo_a-file.Tpo -c -o libcommonsysinfo_a-file.o `test -f 'file.c' || echo './'`file.c
+--- libcommonsysinfo_a-cpu.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libcommonsysinfo_a-cpu.o -MD -MP -MF .deps/libcommonsysinfo_a-cpu.Tpo -c -o libcommonsysinfo_a-cpu.o `test -f 'cpu.c' || echo './'`cpu.c
+--- libcommonsysinfo_a-http.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libcommonsysinfo_a-http.o -MD -MP -MF .deps/libcommonsysinfo_a-http.Tpo -c -o libcommonsysinfo_a-http.o `test -f 'http.c' || echo './'`http.c
+--- libcommonsysinfo_a-net.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libcommonsysinfo_a-net.o -MD -MP -MF .deps/libcommonsysinfo_a-net.Tpo -c -o libcommonsysinfo_a-net.o `test -f 'net.c' || echo './'`net.c
+--- libcommonsysinfo_a-system.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libcommonsysinfo_a-system.o -MD -MP -MF .deps/libcommonsysinfo_a-system.Tpo -c -o libcommonsysinfo_a-system.o `test -f 'system.c' || echo './'`system.c
+mv -f .deps/libcommonsysinfo_a-system.Tpo .deps/libcommonsysinfo_a-system.Po
+--- libcommonsysinfo_a-cpu.o ---
+mv -f .deps/libcommonsysinfo_a-cpu.Tpo .deps/libcommonsysinfo_a-cpu.Po
+--- libcommonsysinfo_a-common.o ---
+mv -f .deps/libcommonsysinfo_a-common.Tpo .deps/libcommonsysinfo_a-common.Po
+--- libcommonsysinfo_a-http.o ---
+mv -f .deps/libcommonsysinfo_a-http.Tpo .deps/libcommonsysinfo_a-http.Po
+--- libcommonsysinfo_a-file.o ---
+mv -f .deps/libcommonsysinfo_a-file.Tpo .deps/libcommonsysinfo_a-file.Po
+--- libcommonsysinfo_a-net.o ---
+mv -f .deps/libcommonsysinfo_a-net.Tpo .deps/libcommonsysinfo_a-net.Po
+--- libcommonsysinfo.a ---
+rm -f libcommonsysinfo.a
+ar cru libcommonsysinfo.a libcommonsysinfo_a-common.o  libcommonsysinfo_a-file.o  libcommonsysinfo_a-cpu.o  libcommonsysinfo_a-http.o  libcommonsysinfo_a-net.o  libcommonsysinfo_a-system.o 
+ranlib libcommonsysinfo.a
+Making all in simple
+--- libsimplesysinfo_a-simple.o ---
+--- libsimplesysinfo_a-ntp.o ---
+--- libsimplesysinfo_a-simple.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libsimplesysinfo_a-simple.o -MD -MP -MF .deps/libsimplesysinfo_a-simple.Tpo -c -o libsimplesysinfo_a-simple.o `test -f 'simple.c' || echo './'`simple.c
+--- libsimplesysinfo_a-ntp.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libsimplesysinfo_a-ntp.o -MD -MP -MF .deps/libsimplesysinfo_a-ntp.Tpo -c -o libsimplesysinfo_a-ntp.o `test -f 'ntp.c' || echo './'`ntp.c
+mv -f .deps/libsimplesysinfo_a-ntp.Tpo .deps/libsimplesysinfo_a-ntp.Po
+--- libsimplesysinfo_a-simple.o ---
+mv -f .deps/libsimplesysinfo_a-simple.Tpo .deps/libsimplesysinfo_a-simple.Po
+--- libsimplesysinfo.a ---
+rm -f libsimplesysinfo.a
+ar cru libsimplesysinfo.a libsimplesysinfo_a-simple.o  libsimplesysinfo_a-ntp.o 
+ranlib libsimplesysinfo.a
+Making all in freebsd
+--- libspecsysinfo_a-boottime.o ---
+--- libspecsysinfo_a-cpu.o ---
+--- libspecsysinfo_a-diskio.o ---
+--- libspecsysinfo_a-diskspace.o ---
+--- libspecsysinfo_a-freebsd.o ---
+--- libspecsysinfo_a-inodes.o ---
+--- libspecsysinfo_a-kernel.o ---
+--- libspecsysinfo_a-memory.o ---
+--- libspecsysinfo_a-net.o ---
+--- libspecsysinfo_a-proc.o ---
+--- libspecsysinfo_a-software.o ---
+--- libspecsysinfo_a-swap.o ---
+--- libspecsysinfo_a-boottime.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-boottime.o -MD -MP -MF .deps/libspecsysinfo_a-boottime.Tpo -c -o libspecsysinfo_a-boottime.o `test -f 'boottime.c' || echo './'`boottime.c
+--- libspecsysinfo_a-cpu.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-cpu.o -MD -MP -MF .deps/libspecsysinfo_a-cpu.Tpo -c -o libspecsysinfo_a-cpu.o `test -f 'cpu.c' || echo './'`cpu.c
+--- libspecsysinfo_a-diskio.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-diskio.o -MD -MP -MF .deps/libspecsysinfo_a-diskio.Tpo -c -o libspecsysinfo_a-diskio.o `test -f 'diskio.c' || echo './'`diskio.c
+--- libspecsysinfo_a-diskspace.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-diskspace.o -MD -MP -MF .deps/libspecsysinfo_a-diskspace.Tpo -c -o libspecsysinfo_a-diskspace.o `test -f 'diskspace.c' || echo './'`diskspace.c
+--- libspecsysinfo_a-freebsd.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-freebsd.o -MD -MP -MF .deps/libspecsysinfo_a-freebsd.Tpo -c -o libspecsysinfo_a-freebsd.o `test -f 'freebsd.c' || echo './'`freebsd.c
+--- libspecsysinfo_a-inodes.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-inodes.o -MD -MP -MF .deps/libspecsysinfo_a-inodes.Tpo -c -o libspecsysinfo_a-inodes.o `test -f 'inodes.c' || echo './'`inodes.c
+--- libspecsysinfo_a-kernel.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-kernel.o -MD -MP -MF .deps/libspecsysinfo_a-kernel.Tpo -c -o libspecsysinfo_a-kernel.o `test -f 'kernel.c' || echo './'`kernel.c
+--- libspecsysinfo_a-memory.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-memory.o -MD -MP -MF .deps/libspecsysinfo_a-memory.Tpo -c -o libspecsysinfo_a-memory.o `test -f 'memory.c' || echo './'`memory.c
+--- libspecsysinfo_a-net.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-net.o -MD -MP -MF .deps/libspecsysinfo_a-net.Tpo -c -o libspecsysinfo_a-net.o `test -f 'net.c' || echo './'`net.c
+--- libspecsysinfo_a-proc.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-proc.o -MD -MP -MF .deps/libspecsysinfo_a-proc.Tpo -c -o libspecsysinfo_a-proc.o `test -f 'proc.c' || echo './'`proc.c
+--- libspecsysinfo_a-software.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-software.o -MD -MP -MF .deps/libspecsysinfo_a-software.Tpo -c -o libspecsysinfo_a-software.o `test -f 'software.c' || echo './'`software.c
+--- libspecsysinfo_a-swap.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-swap.o -MD -MP -MF .deps/libspecsysinfo_a-swap.Tpo -c -o libspecsysinfo_a-swap.o `test -f 'swap.c' || echo './'`swap.c
+--- libspecsysinfo_a-freebsd.o ---
+mv -f .deps/libspecsysinfo_a-freebsd.Tpo .deps/libspecsysinfo_a-freebsd.Po
+--- libspecsysinfo_a-system.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-system.o -MD -MP -MF .deps/libspecsysinfo_a-system.Tpo -c -o libspecsysinfo_a-system.o `test -f 'system.c' || echo './'`system.c
+--- libspecsysinfo_a-software.o ---
+mv -f .deps/libspecsysinfo_a-software.Tpo .deps/libspecsysinfo_a-software.Po
+--- libspecsysinfo_a-uptime.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../../src/zabbix_agent/ -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libspecsysinfo_a-uptime.o -MD -MP -MF .deps/libspecsysinfo_a-uptime.Tpo -c -o libspecsysinfo_a-uptime.o `test -f 'uptime.c' || echo './'`uptime.c
+--- libspecsysinfo_a-boottime.o ---
+mv -f .deps/libspecsysinfo_a-boottime.Tpo .deps/libspecsysinfo_a-boottime.Po
+--- libspecsysinfo_a-kernel.o ---
+mv -f .deps/libspecsysinfo_a-kernel.Tpo .deps/libspecsysinfo_a-kernel.Po
+--- hostname.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT hostname.o -MD -MP -MF .deps/hostname.Tpo -c -o hostname.o hostname.c
+--- libspecsysinfo_a-inodes.o ---
+mv -f .deps/libspecsysinfo_a-inodes.Tpo .deps/libspecsysinfo_a-inodes.Po
+--- libspecsysinfo_a-swap.o ---
+mv -f .deps/libspecsysinfo_a-swap.Tpo .deps/libspecsysinfo_a-swap.Po
+--- libspecsysinfo_a-diskspace.o ---
+mv -f .deps/libspecsysinfo_a-diskspace.Tpo .deps/libspecsysinfo_a-diskspace.Po
+--- libspecsysinfo_a-diskio.o ---
+mv -f .deps/libspecsysinfo_a-diskio.Tpo .deps/libspecsysinfo_a-diskio.Po
+--- libspecsysinfo_a-cpu.o ---
+mv -f .deps/libspecsysinfo_a-cpu.Tpo .deps/libspecsysinfo_a-cpu.Po
+--- libspecsysinfo_a-net.o ---
+mv -f .deps/libspecsysinfo_a-net.Tpo .deps/libspecsysinfo_a-net.Po
+--- libspecsysinfo_a-memory.o ---
+mv -f .deps/libspecsysinfo_a-memory.Tpo .deps/libspecsysinfo_a-memory.Po
+--- libspecsysinfo_a-proc.o ---
+mv -f .deps/libspecsysinfo_a-proc.Tpo .deps/libspecsysinfo_a-proc.Po
+--- libspecsysinfo_a-uptime.o ---
+mv -f .deps/libspecsysinfo_a-uptime.Tpo .deps/libspecsysinfo_a-uptime.Po
+--- libspecsysinfo_a-system.o ---
+mv -f .deps/libspecsysinfo_a-system.Tpo .deps/libspecsysinfo_a-system.Po
+--- libspecsysinfo.a ---
+rm -f libspecsysinfo.a
+ar cru libspecsysinfo.a libspecsysinfo_a-boottime.o  libspecsysinfo_a-cpu.o  libspecsysinfo_a-diskio.o  libspecsysinfo_a-diskspace.o  libspecsysinfo_a-freebsd.o  libspecsysinfo_a-inodes.o  libspecsysinfo_a-kernel.o  libspecsysinfo_a-memory.o  libspecsysinfo_a-net.o libspecsysinfo_a-proc.o  libspecsysinfo_a-software.o  libspecsysinfo_a-swap.o  libspecsysinfo_a-system.o  libspecsysinfo_a-uptime.o 
+ranlib libspecsysinfo.a
+--- hostname.o ---
+mv -f .deps/hostname.Tpo .deps/hostname.Po
+--- libspechostnamesysinfo.a ---
+rm -f libspechostnamesysinfo.a
+ar cru libspechostnamesysinfo.a hostname.o 
+ranlib libspechostnamesysinfo.a
+--- libzbxproxysysinfo_a-sysinfo.o ---
+--- libzbxserversysinfo_a-sysinfo.o ---
+--- libzbxagentsysinfo_a-sysinfo.o ---
+--- libzbxproxysysinfo_a-sysinfo.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -DWITH_COMMON_METRICS  -DWITH_SIMPLE_METRICS  -DWITH_HOSTNAME_METRIC -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxproxysysinfo_a-sysinfo.o -MD -MP -MF .deps/libzbxproxysysinfo_a-sysinfo.Tpo -c -o libzbxproxysysinfo_a-sysinfo.o `test -f 'sysinfo.c' || echo './'`sysinfo.c
+--- libzbxserversysinfo_a-sysinfo.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -DWITH_COMMON_METRICS  -DWITH_SIMPLE_METRICS -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxserversysinfo_a-sysinfo.o -MD -MP -MF .deps/libzbxserversysinfo_a-sysinfo.Tpo -c -o libzbxserversysinfo_a-sysinfo.o `test -f 'sysinfo.c' || echo './'`sysinfo.c
+--- libzbxagentsysinfo_a-sysinfo.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -DWITH_AGENT_METRICS  -DWITH_COMMON_METRICS  -DWITH_SIMPLE_METRICS  -DWITH_SPECIFIC_METRICS  -DWITH_HOSTNAME_METRIC -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxagentsysinfo_a-sysinfo.o -MD -MP -MF .deps/libzbxagentsysinfo_a-sysinfo.Tpo -c -o libzbxagentsysinfo_a-sysinfo.o `test -f 'sysinfo.c' || echo './'`sysinfo.c
+mv -f .deps/libzbxagentsysinfo_a-sysinfo.Tpo .deps/libzbxagentsysinfo_a-sysinfo.Po
+--- libzbxagentsysinfo.a ---
+rm -f libzbxagentsysinfo.a
+ar cru libzbxagentsysinfo.a libzbxagentsysinfo_a-sysinfo.o 
+ranlib libzbxagentsysinfo.a
+--- libzbxproxysysinfo_a-sysinfo.o ---
+mv -f .deps/libzbxproxysysinfo_a-sysinfo.Tpo .deps/libzbxproxysysinfo_a-sysinfo.Po
+--- libzbxserversysinfo_a-sysinfo.o ---
+mv -f .deps/libzbxserversysinfo_a-sysinfo.Tpo .deps/libzbxserversysinfo_a-sysinfo.Po
+--- libzbxproxysysinfo.a ---
+--- libzbxserversysinfo.a ---
+--- libzbxproxysysinfo.a ---
+rm -f libzbxproxysysinfo.a
+--- libzbxserversysinfo.a ---
+rm -f libzbxserversysinfo.a
+--- libzbxproxysysinfo.a ---
+ar cru libzbxproxysysinfo.a libzbxproxysysinfo_a-sysinfo.o 
+--- libzbxserversysinfo.a ---
+ar cru libzbxserversysinfo.a libzbxserversysinfo_a-sysinfo.o 
+--- libzbxproxysysinfo.a ---
+ranlib libzbxproxysysinfo.a
+--- libzbxserversysinfo.a ---
+ranlib libzbxserversysinfo.a
+Making all in zbxsys
+--- threads.o ---
+--- mutexs.o ---
+--- threads.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT threads.o -MD -MP -MF .deps/threads.Tpo -c -o threads.o threads.c
+--- mutexs.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT mutexs.o -MD -MP -MF .deps/mutexs.Tpo -c -o mutexs.o mutexs.c
+--- threads.o ---
+mv -f .deps/threads.Tpo .deps/threads.Po
+--- mutexs.o ---
+mv -f .deps/mutexs.Tpo .deps/mutexs.Po
+--- libzbxsys.a ---
+rm -f libzbxsys.a
+ar cru libzbxsys.a threads.o mutexs.o 
+ranlib libzbxsys.a
+Making all in zbxcomms
+--- comms.o ---
+--- telnet.o ---
+--- comms.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT comms.o -MD -MP -MF .deps/comms.Tpo -c -o comms.o comms.c
+--- telnet.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT telnet.o -MD -MP -MF .deps/telnet.Tpo -c -o telnet.o telnet.c
+mv -f .deps/telnet.Tpo .deps/telnet.Po
+--- comms.o ---
+mv -f .deps/comms.Tpo .deps/comms.Po
+--- libzbxcomms.a ---
+rm -f libzbxcomms.a
+ar cru libzbxcomms.a comms.o telnet.o 
+ranlib libzbxcomms.a
+Making all in zbxjson
+--- json.o ---
+--- json_parser.o ---
+--- json.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT json.o -MD -MP -MF .deps/json.Tpo -c -o json.o json.c
+--- json_parser.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT json_parser.o -MD -MP -MF .deps/json_parser.Tpo -c -o json_parser.o json_parser.c
+mv -f .deps/json_parser.Tpo .deps/json_parser.Po
+--- json.o ---
+mv -f .deps/json.Tpo .deps/json.Po
+--- libzbxjson.a ---
+rm -f libzbxjson.a
+ar cru libzbxjson.a json.o json_parser.o 
+ranlib libzbxjson.a
+Making all in zbxexec
+--- execute.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT execute.o -MD -MP -MF .deps/execute.Tpo -c -o execute.o execute.c
+mv -f .deps/execute.Tpo .deps/execute.Po
+--- libzbxexec.a ---
+rm -f libzbxexec.a
+ar cru libzbxexec.a execute.o 
+ranlib libzbxexec.a
+Making all in zbxmodules
+--- modules.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT modules.o -MD -MP -MF .deps/modules.Tpo -c -o modules.o modules.c
+mv -f .deps/modules.Tpo .deps/modules.Po
+--- libzbxmodules.a ---
+rm -f libzbxmodules.a
+ar cru libzbxmodules.a modules.o 
+ranlib libzbxmodules.a
+Making all in zbxregexp
+--- zbxregexp.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT zbxregexp.o -MD -MP -MF .deps/zbxregexp.Tpo -c -o zbxregexp.o zbxregexp.c
+mv -f .deps/zbxregexp.Tpo .deps/zbxregexp.Po
+--- libzbxregexp.a ---
+rm -f libzbxregexp.a
+ar cru libzbxregexp.a zbxregexp.o 
+ranlib libzbxregexp.a
+Making all in zbxcommshigh
+--- comms.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT comms.o -MD -MP -MF .deps/comms.Tpo -c -o comms.o comms.c
+mv -f .deps/comms.Tpo .deps/comms.Po
+--- libzbxcommshigh.a ---
+rm -f libzbxcommshigh.a
+ar cru libzbxcommshigh.a comms.o 
+ranlib libzbxcommshigh.a
+Making all in zbxdb
+--- libzbxdb_a-db.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdb_a-db.o -MD -MP -MF .deps/libzbxdb_a-db.Tpo -c -o libzbxdb_a-db.o `test -f 'db.c' || echo './'`db.c
+mv -f .deps/libzbxdb_a-db.Tpo .deps/libzbxdb_a-db.Po
+--- libzbxdb.a ---
+rm -f libzbxdb.a
+ar cru libzbxdb.a libzbxdb_a-db.o 
+ranlib libzbxdb.a
+Making all in zbxdbupgrade
+--- dbupgrade.o ---
+--- dbupgrade_2010.o ---
+--- dbupgrade_2020.o ---
+--- dbupgrade_2030.o ---
+--- dbupgrade_2040.o ---
+--- dbupgrade_2050.o ---
+--- dbupgrade_3000.o ---
+--- dbupgrade.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT dbupgrade.o -MD -MP -MF .deps/dbupgrade.Tpo -c -o dbupgrade.o dbupgrade.c
+--- dbupgrade_2010.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT dbupgrade_2010.o -MD -MP -MF .deps/dbupgrade_2010.Tpo -c -o dbupgrade_2010.o dbupgrade_2010.c
+--- dbupgrade_2020.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT dbupgrade_2020.o -MD -MP -MF .deps/dbupgrade_2020.Tpo -c -o dbupgrade_2020.o dbupgrade_2020.c
+--- dbupgrade_2030.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT dbupgrade_2030.o -MD -MP -MF .deps/dbupgrade_2030.Tpo -c -o dbupgrade_2030.o dbupgrade_2030.c
+--- dbupgrade_2040.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT dbupgrade_2040.o -MD -MP -MF .deps/dbupgrade_2040.Tpo -c -o dbupgrade_2040.o dbupgrade_2040.c
+--- dbupgrade_3000.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT dbupgrade_3000.o -MD -MP -MF .deps/dbupgrade_3000.Tpo -c -o dbupgrade_3000.o dbupgrade_3000.c
+--- dbupgrade_2050.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT dbupgrade_2050.o -MD -MP -MF .deps/dbupgrade_2050.Tpo -c -o dbupgrade_2050.o dbupgrade_2050.c
+--- dbupgrade_2040.o ---
+mv -f .deps/dbupgrade_2040.Tpo .deps/dbupgrade_2040.Po
+--- dbupgrade_3000.o ---
+mv -f .deps/dbupgrade_3000.Tpo .deps/dbupgrade_3000.Po
+--- dbupgrade_2010.o ---
+mv -f .deps/dbupgrade_2010.Tpo .deps/dbupgrade_2010.Po
+--- dbupgrade_2030.o ---
+mv -f .deps/dbupgrade_2030.Tpo .deps/dbupgrade_2030.Po
+--- dbupgrade.o ---
+mv -f .deps/dbupgrade.Tpo .deps/dbupgrade.Po
+--- dbupgrade_2050.o ---
+mv -f .deps/dbupgrade_2050.Tpo .deps/dbupgrade_2050.Po
+--- dbupgrade_2020.o ---
+mv -f .deps/dbupgrade_2020.Tpo .deps/dbupgrade_2020.Po
+--- libzbxdbupgrade.a ---
+rm -f libzbxdbupgrade.a
+ar cru libzbxdbupgrade.a dbupgrade.o  dbupgrade_2010.o dbupgrade_2020.o  dbupgrade_2030.o dbupgrade_2040.o  dbupgrade_2050.o dbupgrade_3000.o 
+ranlib libzbxdbupgrade.a
+Making all in zbxdbcache
+--- libzbxdbcache_a-dbcache.o ---
+--- libzbxdbcache_a-nextchecks.o ---
+--- libzbxdbcache_a-dbconfig.o ---
+--- libzbxdbcache_a-dbsync.o ---
+--- libzbxdbcache_a-valuecache.o ---
+--- libzbxdbcache_a-dbconfig_dump.o ---
+--- libzbxdbcache_a-dbcache.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I../../../src/libs/zbxalgo -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbcache_a-dbcache.o -MD -MP -MF .deps/libzbxdbcache_a-dbcache.Tpo -c -o libzbxdbcache_a-dbcache.o `test -f 'dbcache.c' || echo './'`dbcache.c
+--- libzbxdbcache_a-nextchecks.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I../../../src/libs/zbxalgo -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbcache_a-nextchecks.o -MD -MP -MF .deps/libzbxdbcache_a-nextchecks.Tpo -c -o libzbxdbcache_a-nextchecks.o `test -f 'nextchecks.c' || echo './'`nextchecks.c
+--- libzbxdbcache_a-dbconfig.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I../../../src/libs/zbxalgo -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbcache_a-dbconfig.o -MD -MP -MF .deps/libzbxdbcache_a-dbconfig.Tpo -c -o libzbxdbcache_a-dbconfig.o `test -f 'dbconfig.c' || echo './'`dbconfig.c
+--- libzbxdbcache_a-dbsync.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I../../../src/libs/zbxalgo -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbcache_a-dbsync.o -MD -MP -MF .deps/libzbxdbcache_a-dbsync.Tpo -c -o libzbxdbcache_a-dbsync.o `test -f 'dbsync.c' || echo './'`dbsync.c
+--- libzbxdbcache_a-valuecache.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I../../../src/libs/zbxalgo -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbcache_a-valuecache.o -MD -MP -MF .deps/libzbxdbcache_a-valuecache.Tpo -c -o libzbxdbcache_a-valuecache.o `test -f 'valuecache.c' || echo './'`valuecache.c
+--- libzbxdbcache_a-dbconfig_dump.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I../../../src/libs/zbxalgo -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbcache_a-dbconfig_dump.o -MD -MP -MF .deps/libzbxdbcache_a-dbconfig_dump.Tpo -c -o libzbxdbcache_a-dbconfig_dump.o `test -f 'dbconfig_dump.c' || echo './'`dbconfig_dump.c
+--- libzbxdbcache_a-nextchecks.o ---
+mv -f .deps/libzbxdbcache_a-nextchecks.Tpo .deps/libzbxdbcache_a-nextchecks.Po
+--- libzbxdbcache_a-dbconfig_dump.o ---
+mv -f .deps/libzbxdbcache_a-dbconfig_dump.Tpo .deps/libzbxdbcache_a-dbconfig_dump.Po
+--- libzbxdbcache_a-dbsync.o ---
+mv -f .deps/libzbxdbcache_a-dbsync.Tpo .deps/libzbxdbcache_a-dbsync.Po
+--- libzbxdbcache_a-valuecache.o ---
+mv -f .deps/libzbxdbcache_a-valuecache.Tpo .deps/libzbxdbcache_a-valuecache.Po
+--- libzbxdbcache_a-dbcache.o ---
+mv -f .deps/libzbxdbcache_a-dbcache.Tpo .deps/libzbxdbcache_a-dbcache.Po
+--- libzbxdbcache_a-dbconfig.o ---
+mv -f .deps/libzbxdbcache_a-dbconfig.Tpo .deps/libzbxdbcache_a-dbconfig.Po
+--- libzbxdbcache.a ---
+rm -f libzbxdbcache.a
+ar cru libzbxdbcache.a libzbxdbcache_a-dbcache.o  libzbxdbcache_a-nextchecks.o  libzbxdbcache_a-dbconfig.o  libzbxdbcache_a-dbsync.o  libzbxdbcache_a-valuecache.o  libzbxdbcache_a-dbconfig_dump.o 
+ranlib libzbxdbcache.a
+Making all in zbxdbhigh
+--- libzbxdbhigh_a-host.o ---
+--- libzbxdbhigh_a-odbc.o ---
+--- libzbxdbhigh_a-db.o ---
+--- libzbxdbhigh_a-dbschema.o ---
+--- libzbxdbhigh_a-proxy.o ---
+--- libzbxdbhigh_a-discovery.o ---
+--- libzbxdbhigh_a-lld.o ---
+--- libzbxdbhigh_a-lld_common.o ---
+--- libzbxdbhigh_a-lld_item.o ---
+--- libzbxdbhigh_a-lld_graph.o ---
+--- libzbxdbhigh_a-lld_trigger.o ---
+--- libzbxdbhigh_a-lld_host.o ---
+--- libzbxdbhigh_a-host.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-host.o -MD -MP -MF .deps/libzbxdbhigh_a-host.Tpo -c -o libzbxdbhigh_a-host.o `test -f 'host.c' || echo './'`host.c
+--- libzbxdbhigh_a-odbc.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-odbc.o -MD -MP -MF .deps/libzbxdbhigh_a-odbc.Tpo -c -o libzbxdbhigh_a-odbc.o `test -f 'odbc.c' || echo './'`odbc.c
+--- libzbxdbhigh_a-db.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-db.o -MD -MP -MF .deps/libzbxdbhigh_a-db.Tpo -c -o libzbxdbhigh_a-db.o `test -f 'db.c' || echo './'`db.c
+--- libzbxdbhigh_a-dbschema.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-dbschema.o -MD -MP -MF .deps/libzbxdbhigh_a-dbschema.Tpo -c -o libzbxdbhigh_a-dbschema.o `test -f 'dbschema.c' || echo './'`dbschema.c
+--- libzbxdbhigh_a-proxy.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-proxy.o -MD -MP -MF .deps/libzbxdbhigh_a-proxy.Tpo -c -o libzbxdbhigh_a-proxy.o `test -f 'proxy.c' || echo './'`proxy.c
+--- libzbxdbhigh_a-discovery.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-discovery.o -MD -MP -MF .deps/libzbxdbhigh_a-discovery.Tpo -c -o libzbxdbhigh_a-discovery.o `test -f 'discovery.c' || echo './'`discovery.c
+--- libzbxdbhigh_a-lld.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-lld.o -MD -MP -MF .deps/libzbxdbhigh_a-lld.Tpo -c -o libzbxdbhigh_a-lld.o `test -f 'lld.c' || echo './'`lld.c
+--- libzbxdbhigh_a-lld_common.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-lld_common.o -MD -MP -MF .deps/libzbxdbhigh_a-lld_common.Tpo -c -o libzbxdbhigh_a-lld_common.o `test -f 'lld_common.c' || echo './'`lld_common.c
+--- libzbxdbhigh_a-lld_item.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-lld_item.o -MD -MP -MF .deps/libzbxdbhigh_a-lld_item.Tpo -c -o libzbxdbhigh_a-lld_item.o `test -f 'lld_item.c' || echo './'`lld_item.c
+--- libzbxdbhigh_a-lld_graph.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-lld_graph.o -MD -MP -MF .deps/libzbxdbhigh_a-lld_graph.Tpo -c -o libzbxdbhigh_a-lld_graph.o `test -f 'lld_graph.c' || echo './'`lld_graph.c
+--- libzbxdbhigh_a-lld_trigger.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-lld_trigger.o -MD -MP -MF .deps/libzbxdbhigh_a-lld_trigger.Tpo -c -o libzbxdbhigh_a-lld_trigger.o `test -f 'lld_trigger.c' || echo './'`lld_trigger.c
+--- libzbxdbhigh_a-lld_host.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-lld_host.o -MD -MP -MF .deps/libzbxdbhigh_a-lld_host.Tpo -c -o libzbxdbhigh_a-lld_host.o `test -f 'lld_host.c' || echo './'`lld_host.c
+--- libzbxdbhigh_a-odbc.o ---
+In file included from odbc.c:25:
+--- libzbxdbhigh_a-lld_common.o ---
+mv -f .deps/libzbxdbhigh_a-lld_common.Tpo .deps/libzbxdbhigh_a-lld_common.Po
+--- libzbxdbhigh_a-odbc.o ---
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:397:9: warning: 'PACKAGE' macro redefined [-Wmacro-redefined]
+#define PACKAGE "unixODBC"
+        ^
+../../../include/config.h:606:9: note: previous definition is here
+#define PACKAGE "zabbix"
+        ^
+In file included from odbc.c:25:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:400:9: warning: 'PACKAGE_BUGREPORT' macro redefined [-Wmacro-redefined]
+#define PACKAGE_BUGREPORT "nick@unixodbc.org"
+        ^
+../../../include/config.h:609:9: note: previous definition is here
+#define PACKAGE_BUGREPORT ""
+        ^
+In file included from odbc.c:25:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+--- libzbxdbhigh_a-itservices.o ---
+--- libzbxdbhigh_a-odbc.o ---
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:403:9: warning: 'PACKAGE_NAME' macro redefined [-Wmacro-redefined]
+#define PACKAGE_NAME "unixODBC"
+        ^
+../../../include/config.h:612:9: note: previous definition is here
+#define PACKAGE_NAME "Zabbix"
+        ^
+In file included from odbc.c:25:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:406:9: warning: 'PACKAGE_STRING' macro redefined [-Wmacro-redefined]
+#define PACKAGE_STRING "unixODBC 2.3.9"
+        ^
+../../../include/config.h:615:9: note: previous definition is here
+#define PACKAGE_STRING "Zabbix 3.0.32"
+        ^
+In file included from odbc.c:25:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:409:9: warning: 'PACKAGE_TARNAME' macro redefined [-Wmacro-redefined]
+#define PACKAGE_TARNAME "unixODBC"
+        ^
+../../../include/config.h:618:9: note: previous definition is here
+#define PACKAGE_TARNAME "zabbix"
+        ^
+In file included from odbc.c:25:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:415:9: warning: 'PACKAGE_VERSION' macro redefined [-Wmacro-redefined]
+#define PACKAGE_VERSION "2.3.9"
+        ^
+../../../include/config.h:624:9: note: previous definition is here
+#define PACKAGE_VERSION "3.0.32"
+        ^
+In file included from odbc.c:25:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:472:9: warning: 'VERSION' macro redefined [-Wmacro-redefined]
+#define VERSION "2.3.9"
+--- libzbxdbhigh_a-itservices.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-itservices.o -MD -MP -MF .deps/libzbxdbhigh_a-itservices.Tpo -c -o libzbxdbhigh_a-itservices.o `test -f 'itservices.c' || echo './'`itservices.c
+--- libzbxdbhigh_a-odbc.o ---
+        ^
+../../../include/config.h:636:9: note: previous definition is here
+#define VERSION "3.0.32"
+        ^
+--- libzbxdbhigh_a-discovery.o ---
+mv -f .deps/libzbxdbhigh_a-discovery.Tpo .deps/libzbxdbhigh_a-discovery.Po
+--- libzbxdbhigh_a-template_item.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/zabbix_server/ -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxdbhigh_a-template_item.o -MD -MP -MF .deps/libzbxdbhigh_a-template_item.Tpo -c -o libzbxdbhigh_a-template_item.o `test -f 'template_item.c' || echo './'`template_item.c
+--- libzbxdbhigh_a-dbschema.o ---
+mv -f .deps/libzbxdbhigh_a-dbschema.Tpo .deps/libzbxdbhigh_a-dbschema.Po
+--- libzbxdbhigh_a-odbc.o ---
+7 warnings generated.
+mv -f .deps/libzbxdbhigh_a-odbc.Tpo .deps/libzbxdbhigh_a-odbc.Po
+--- libzbxdbhigh_a-lld.o ---
+mv -f .deps/libzbxdbhigh_a-lld.Tpo .deps/libzbxdbhigh_a-lld.Po
+--- libzbxdbhigh_a-itservices.o ---
+mv -f .deps/libzbxdbhigh_a-itservices.Tpo .deps/libzbxdbhigh_a-itservices.Po
+--- libzbxdbhigh_a-template_item.o ---
+mv -f .deps/libzbxdbhigh_a-template_item.Tpo .deps/libzbxdbhigh_a-template_item.Po
+--- libzbxdbhigh_a-db.o ---
+mv -f .deps/libzbxdbhigh_a-db.Tpo .deps/libzbxdbhigh_a-db.Po
+--- libzbxdbhigh_a-lld_graph.o ---
+mv -f .deps/libzbxdbhigh_a-lld_graph.Tpo .deps/libzbxdbhigh_a-lld_graph.Po
+--- libzbxdbhigh_a-lld_item.o ---
+mv -f .deps/libzbxdbhigh_a-lld_item.Tpo .deps/libzbxdbhigh_a-lld_item.Po
+--- libzbxdbhigh_a-proxy.o ---
+mv -f .deps/libzbxdbhigh_a-proxy.Tpo .deps/libzbxdbhigh_a-proxy.Po
+--- libzbxdbhigh_a-lld_host.o ---
+mv -f .deps/libzbxdbhigh_a-lld_host.Tpo .deps/libzbxdbhigh_a-lld_host.Po
+--- libzbxdbhigh_a-lld_trigger.o ---
+mv -f .deps/libzbxdbhigh_a-lld_trigger.Tpo .deps/libzbxdbhigh_a-lld_trigger.Po
+--- libzbxdbhigh_a-host.o ---
+mv -f .deps/libzbxdbhigh_a-host.Tpo .deps/libzbxdbhigh_a-host.Po
+--- libzbxdbhigh.a ---
+rm -f libzbxdbhigh.a
+ar cru libzbxdbhigh.a libzbxdbhigh_a-host.o  libzbxdbhigh_a-odbc.o libzbxdbhigh_a-db.o  libzbxdbhigh_a-dbschema.o  libzbxdbhigh_a-proxy.o  libzbxdbhigh_a-discovery.o  libzbxdbhigh_a-lld.o  libzbxdbhigh_a-lld_common.o  libzbxdbhigh_a-lld_item.o  libzbxdbhigh_a-lld_graph.o  libzbxdbhigh_a-lld_trigger.o  libzbxdbhigh_a-lld_host.o  libzbxdbhigh_a-itservices.o  libzbxdbhigh_a-template_item.o 
+ranlib libzbxdbhigh.a
+Making all in zbxmemory
+--- memalloc.o ---
+--- strpool.o ---
+--- memalloc.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT memalloc.o -MD -MP -MF .deps/memalloc.Tpo -c -o memalloc.o memalloc.c
+--- strpool.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT strpool.o -MD -MP -MF .deps/strpool.Tpo -c -o strpool.o strpool.c
+mv -f .deps/strpool.Tpo .deps/strpool.Po
+--- memalloc.o ---
+mv -f .deps/memalloc.Tpo .deps/memalloc.Po
+--- libzbxmemory.a ---
+rm -f libzbxmemory.a
+ar cru libzbxmemory.a memalloc.o strpool.o 
+ranlib libzbxmemory.a
+Making all in zbxserver
+--- libzbxserver_a-evalfunc.o ---
+--- libzbxserver_a-expression.o ---
+--- libzbxserver_a-evalfunc.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxdbcache -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxserver_a-evalfunc.o -MD -MP -MF .deps/libzbxserver_a-evalfunc.Tpo -c -o libzbxserver_a-evalfunc.o `test -f 'evalfunc.c' || echo './'`evalfunc.c
+--- libzbxserver_a-expression.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxdbcache -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxserver_a-expression.o -MD -MP -MF .deps/libzbxserver_a-expression.Tpo -c -o libzbxserver_a-expression.o `test -f 'expression.c' || echo './'`expression.c
+--- libzbxserver_a-evalfunc.o ---
+mv -f .deps/libzbxserver_a-evalfunc.Tpo .deps/libzbxserver_a-evalfunc.Po
+--- libzbxserver_a-expression.o ---
+mv -f .deps/libzbxserver_a-expression.Tpo .deps/libzbxserver_a-expression.Po
+--- libzbxserver.a ---
+rm -f libzbxserver.a
+ar cru libzbxserver.a libzbxserver_a-evalfunc.o  libzbxserver_a-expression.o 
+ranlib libzbxserver.a
+Making all in zbxicmpping
+--- icmpping.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT icmpping.o -MD -MP -MF .deps/icmpping.Tpo -c -o icmpping.o icmpping.c
+mv -f .deps/icmpping.Tpo .deps/icmpping.Po
+--- libzbxicmpping.a ---
+rm -f libzbxicmpping.a
+ar cru libzbxicmpping.a icmpping.o 
+ranlib libzbxicmpping.a
+Making all in zbxself
+--- selfmon.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT selfmon.o -MD -MP -MF .deps/selfmon.Tpo -c -o selfmon.o selfmon.c
+mv -f .deps/selfmon.Tpo .deps/selfmon.Po
+--- libzbxself.a ---
+rm -f libzbxself.a
+ar cru libzbxself.a selfmon.o 
+ranlib libzbxself.a
+Making all in zabbix_server/dbsyncer
+--- dbsyncer.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT dbsyncer.o -MD -MP -MF .deps/dbsyncer.Tpo -c -o dbsyncer.o dbsyncer.c
+mv -f .deps/dbsyncer.Tpo .deps/dbsyncer.Po
+--- libzbxdbsyncer.a ---
+rm -f libzbxdbsyncer.a
+ar cru libzbxdbsyncer.a dbsyncer.o 
+ranlib libzbxdbsyncer.a
+Making all in zabbix_server/dbconfig
+--- dbconfig.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT dbconfig.o -MD -MP -MF .deps/dbconfig.Tpo -c -o dbconfig.o dbconfig.c
+mv -f .deps/dbconfig.Tpo .deps/dbconfig.Po
+--- libzbxdbconfig.a ---
+rm -f libzbxdbconfig.a
+ar cru libzbxdbconfig.a dbconfig.o 
+ranlib libzbxdbconfig.a
+Making all in zabbix_server/discoverer
+--- discoverer.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT discoverer.o -MD -MP -MF .deps/discoverer.Tpo -c -o discoverer.o discoverer.c
+mv -f .deps/discoverer.Tpo .deps/discoverer.Po
+--- libzbxdiscoverer.a ---
+rm -f libzbxdiscoverer.a
+ar cru libzbxdiscoverer.a discoverer.o 
+ranlib libzbxdiscoverer.a
+Making all in zabbix_server/httppoller
+--- httpmacro.o ---
+--- httptest.o ---
+--- httppoller.o ---
+--- httpmacro.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT httpmacro.o -MD -MP -MF .deps/httpmacro.Tpo -c -o httpmacro.o httpmacro.c
+--- httptest.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT httptest.o -MD -MP -MF .deps/httptest.Tpo -c -o httptest.o httptest.c
+--- httppoller.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT httppoller.o -MD -MP -MF .deps/httppoller.Tpo -c -o httppoller.o httppoller.c
+--- httptest.o ---
+httptest.c:450:6: warning: comparing a pointer to a null character constant; did you mean to compare to NULL? [-Wpointer-compare]
+        if ('\0' != httptest->httptest.ssl_key_password)
+            ^~~~
+            (void *)0
+--- httppoller.o ---
+mv -f .deps/httppoller.Tpo .deps/httppoller.Po
+--- httpmacro.o ---
+mv -f .deps/httpmacro.Tpo .deps/httpmacro.Po
+--- httptest.o ---
+1 warning generated.
+mv -f .deps/httptest.Tpo .deps/httptest.Po
+--- libzbxhttppoller.a ---
+rm -f libzbxhttppoller.a
+ar cru libzbxhttppoller.a httpmacro.o httptest.o  httppoller.o 
+ranlib libzbxhttppoller.a
+Making all in zabbix_server/pinger
+--- pinger.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT pinger.o -MD -MP -MF .deps/pinger.Tpo -c -o pinger.o pinger.c
+mv -f .deps/pinger.Tpo .deps/pinger.Po
+--- libzbxpinger.a ---
+rm -f libzbxpinger.a
+ar cru libzbxpinger.a pinger.o 
+ranlib libzbxpinger.a
+Making all in zabbix_server/poller
+--- libzbxpoller_a-checks_agent.o ---
+--- libzbxpoller_a-checks_internal.o ---
+--- libzbxpoller_a-checks_simple.o ---
+--- libzbxpoller_a-checks_simple_vmware.o ---
+--- libzbxpoller_a-checks_snmp.o ---
+--- libzbxpoller_a-checks_db.o ---
+--- libzbxpoller_a-checks_aggregate.o ---
+--- libzbxpoller_a-checks_external.o ---
+--- libzbxpoller_a-checks_ipmi.o ---
+--- libzbxpoller_a-checks_ssh.o ---
+--- libzbxpoller_a-checks_telnet.o ---
+--- libzbxpoller_a-checks_java.o ---
+--- libzbxpoller_a-checks_agent.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_agent.o -MD -MP -MF .deps/libzbxpoller_a-checks_agent.Tpo -c -o libzbxpoller_a-checks_agent.o `test -f 'checks_agent.c' || echo './'`checks_agent.c
+--- libzbxpoller_a-checks_internal.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_internal.o -MD -MP -MF .deps/libzbxpoller_a-checks_internal.Tpo -c -o libzbxpoller_a-checks_internal.o `test -f 'checks_internal.c' || echo './'`checks_internal.c
+--- libzbxpoller_a-checks_simple.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_simple.o -MD -MP -MF .deps/libzbxpoller_a-checks_simple.Tpo -c -o libzbxpoller_a-checks_simple.o `test -f 'checks_simple.c' || echo './'`checks_simple.c
+--- libzbxpoller_a-checks_simple_vmware.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_simple_vmware.o -MD -MP -MF .deps/libzbxpoller_a-checks_simple_vmware.Tpo -c -o libzbxpoller_a-checks_simple_vmware.o `test -f 'checks_simple_vmware.c' || echo './'`checks_simple_vmware.c
+--- libzbxpoller_a-checks_snmp.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_snmp.o -MD -MP -MF .deps/libzbxpoller_a-checks_snmp.Tpo -c -o libzbxpoller_a-checks_snmp.o `test -f 'checks_snmp.c' || echo './'`checks_snmp.c
+--- libzbxpoller_a-checks_db.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_db.o -MD -MP -MF .deps/libzbxpoller_a-checks_db.Tpo -c -o libzbxpoller_a-checks_db.o `test -f 'checks_db.c' || echo './'`checks_db.c
+--- libzbxpoller_a-checks_aggregate.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_aggregate.o -MD -MP -MF .deps/libzbxpoller_a-checks_aggregate.Tpo -c -o libzbxpoller_a-checks_aggregate.o `test -f 'checks_aggregate.c' || echo './'`checks_aggregate.c
+--- libzbxpoller_a-checks_external.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_external.o -MD -MP -MF .deps/libzbxpoller_a-checks_external.Tpo -c -o libzbxpoller_a-checks_external.o `test -f 'checks_external.c' || echo './'`checks_external.c
+--- libzbxpoller_a-checks_ipmi.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_ipmi.o -MD -MP -MF .deps/libzbxpoller_a-checks_ipmi.Tpo -c -o libzbxpoller_a-checks_ipmi.o `test -f 'checks_ipmi.c' || echo './'`checks_ipmi.c
+--- libzbxpoller_a-checks_ssh.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_ssh.o -MD -MP -MF .deps/libzbxpoller_a-checks_ssh.Tpo -c -o libzbxpoller_a-checks_ssh.o `test -f 'checks_ssh.c' || echo './'`checks_ssh.c
+--- libzbxpoller_a-checks_telnet.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_telnet.o -MD -MP -MF .deps/libzbxpoller_a-checks_telnet.Tpo -c -o libzbxpoller_a-checks_telnet.o `test -f 'checks_telnet.c' || echo './'`checks_telnet.c
+--- libzbxpoller_a-checks_java.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_java.o -MD -MP -MF .deps/libzbxpoller_a-checks_java.Tpo -c -o libzbxpoller_a-checks_java.o `test -f 'checks_java.c' || echo './'`checks_java.c
+--- libzbxpoller_a-checks_agent.o ---
+mv -f .deps/libzbxpoller_a-checks_agent.Tpo .deps/libzbxpoller_a-checks_agent.Po
+--- libzbxpoller_a-checks_telnet.o ---
+mv -f .deps/libzbxpoller_a-checks_telnet.Tpo .deps/libzbxpoller_a-checks_telnet.Po
+--- libzbxpoller_a-checks_calculated.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-checks_calculated.o -MD -MP -MF .deps/libzbxpoller_a-checks_calculated.Tpo -c -o libzbxpoller_a-checks_calculated.o `test -f 'checks_calculated.c' || echo './'`checks_calculated.c
+--- libzbxpoller_a-poller.o ---
+--- libzbxpoller_a-checks_external.o ---
+mv -f .deps/libzbxpoller_a-checks_external.Tpo .deps/libzbxpoller_a-checks_external.Po
+--- libzbxpoller_a-poller.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I../../../src/libs/zbxsysinfo/simple -I../../../src/libs/zbxdbcache -I/usr/local/include  -I/usr/local/include -I/include -I/usr/local/include -I/include -I/usr/local/include -I/usr/local/lib/perl5/5.32/mach/CORE -I/usr/include -I. -I/usr/local/include -I/usr/local/include -I/usr/local/include -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxpoller_a-poller.o -MD -MP -MF .deps/libzbxpoller_a-poller.Tpo -c -o libzbxpoller_a-poller.o `test -f 'poller.c' || echo './'`poller.c
+--- libzbxpoller_a-checks_simple.o ---
+mv -f .deps/libzbxpoller_a-checks_simple.Tpo .deps/libzbxpoller_a-checks_simple.Po
+--- libzbxpoller_a-checks_db.o ---
+In file included from checks_db.c:27:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:397:9: warning: 'PACKAGE' macro redefined [-Wmacro-redefined]
+#define PACKAGE "unixODBC"
+        ^
+../../../include/config.h:606:9: note: previous definition is here
+#define PACKAGE "zabbix"
+        ^
+In file included from checks_db.c:27:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:400:9: warning: 'PACKAGE_BUGREPORT' macro redefined [-Wmacro-redefined]
+#define PACKAGE_BUGREPORT "nick@unixodbc.org"
+        ^
+../../../include/config.h:609:9: note: previous definition is here
+#define PACKAGE_BUGREPORT ""
+        ^
+In file included from checks_db.c:27:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:403:9: warning: 'PACKAGE_NAME' macro redefined [-Wmacro-redefined]
+#define PACKAGE_NAME "unixODBC"
+        ^
+../../../include/config.h:612:9: note: previous definition is here
+#define PACKAGE_NAME "Zabbix"
+        ^
+In file included from checks_db.c:27:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:406:9: warning: 'PACKAGE_STRING' macro redefined [-Wmacro-redefined]
+#define PACKAGE_STRING "unixODBC 2.3.9"
+        ^
+../../../include/config.h:615:9: note: previous definition is here
+#define PACKAGE_STRING "Zabbix 3.0.32"
+        ^
+In file included from checks_db.c:27:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:409:9: warning: 'PACKAGE_TARNAME' macro redefined [-Wmacro-redefined]
+#define PACKAGE_TARNAME "unixODBC"
+        ^
+../../../include/config.h:618:9: note: previous definition is here
+#define PACKAGE_TARNAME "zabbix"
+        ^
+In file included from checks_db.c:27:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:415:9: warning: 'PACKAGE_VERSION' macro redefined [-Wmacro-redefined]
+#define PACKAGE_VERSION "2.3.9"
+        ^
+../../../include/config.h:624:9: note: previous definition is here
+#define PACKAGE_VERSION "3.0.32"
+        ^
+In file included from checks_db.c:27:
+In file included from ../../../include/zbxodbc.h:23:
+In file included from /usr/local/include/sql.h:19:
+In file included from /usr/local/include/sqltypes.h:52:
+/usr/local/include/unixodbc_conf.h:472:9: warning: 'VERSION' macro redefined [-Wmacro-redefined]
+#define VERSION "2.3.9"
+        ^
+../../../include/config.h:636:9: note: previous definition is here
+#define VERSION "3.0.32"
+        ^
+--- libzbxpoller_a-checks_java.o ---
+mv -f .deps/libzbxpoller_a-checks_java.Tpo .deps/libzbxpoller_a-checks_java.Po
+--- libzbxpoller_a-checks_ssh.o ---
+mv -f .deps/libzbxpoller_a-checks_ssh.Tpo .deps/libzbxpoller_a-checks_ssh.Po
+--- libzbxpoller_a-checks_aggregate.o ---
+mv -f .deps/libzbxpoller_a-checks_aggregate.Tpo .deps/libzbxpoller_a-checks_aggregate.Po
+--- libzbxpoller_a-checks_db.o ---
+7 warnings generated.
+mv -f .deps/libzbxpoller_a-checks_db.Tpo .deps/libzbxpoller_a-checks_db.Po
+--- libzbxpoller_a-checks_calculated.o ---
+mv -f .deps/libzbxpoller_a-checks_calculated.Tpo .deps/libzbxpoller_a-checks_calculated.Po
+--- libzbxpoller_a-checks_internal.o ---
+mv -f .deps/libzbxpoller_a-checks_internal.Tpo .deps/libzbxpoller_a-checks_internal.Po
+--- libzbxpoller_a-checks_ipmi.o ---
+mv -f .deps/libzbxpoller_a-checks_ipmi.Tpo .deps/libzbxpoller_a-checks_ipmi.Po
+--- libzbxpoller_a-poller.o ---
+mv -f .deps/libzbxpoller_a-poller.Tpo .deps/libzbxpoller_a-poller.Po
+--- libzbxpoller_a-checks_snmp.o ---
+mv -f .deps/libzbxpoller_a-checks_snmp.Tpo .deps/libzbxpoller_a-checks_snmp.Po
+--- libzbxpoller_a-checks_simple_vmware.o ---
+mv -f .deps/libzbxpoller_a-checks_simple_vmware.Tpo .deps/libzbxpoller_a-checks_simple_vmware.Po
+--- libzbxpoller.a ---
+rm -f libzbxpoller.a
+ar cru libzbxpoller.a libzbxpoller_a-checks_agent.o  libzbxpoller_a-checks_internal.o  libzbxpoller_a-checks_simple.o  libzbxpoller_a-checks_simple_vmware.o  libzbxpoller_a-checks_snmp.o  libzbxpoller_a-checks_db.o  libzbxpoller_a-checks_aggregate.o  libzbxpoller_a-checks_external.o  libzbxpoller_a-checks_ipmi.o  libzbxpoller_a-checks_ssh.o  libzbxpoller_a-checks_telnet.o  libzbxpoller_a-checks_java.o  libzbxpoller_a-checks_calculated.o  libzbxpoller_a-poller.o 
+ranlib libzbxpoller.a
+Making all in zabbix_server/trapper
+--- active.o ---
+--- trapper.o ---
+--- nodecommand.o ---
+--- proxyconfig.o ---
+--- proxydiscovery.o ---
+--- proxyautoreg.o ---
+--- proxyhosts.o ---
+--- active.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT active.o -MD -MP -MF .deps/active.Tpo -c -o active.o active.c
+--- trapper.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT trapper.o -MD -MP -MF .deps/trapper.Tpo -c -o trapper.o trapper.c
+--- nodecommand.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT nodecommand.o -MD -MP -MF .deps/nodecommand.Tpo -c -o nodecommand.o nodecommand.c
+--- proxyconfig.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT proxyconfig.o -MD -MP -MF .deps/proxyconfig.Tpo -c -o proxyconfig.o proxyconfig.c
+--- proxydiscovery.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT proxydiscovery.o -MD -MP -MF .deps/proxydiscovery.Tpo -c -o proxydiscovery.o proxydiscovery.c
+--- proxyautoreg.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT proxyautoreg.o -MD -MP -MF .deps/proxyautoreg.Tpo -c -o proxyautoreg.o proxyautoreg.c
+--- proxyhosts.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT proxyhosts.o -MD -MP -MF .deps/proxyhosts.Tpo -c -o proxyhosts.o proxyhosts.c
+--- proxyconfig.o ---
+mv -f .deps/proxyconfig.Tpo .deps/proxyconfig.Po
+--- proxydiscovery.o ---
+mv -f .deps/proxydiscovery.Tpo .deps/proxydiscovery.Po
+--- proxyautoreg.o ---
+mv -f .deps/proxyautoreg.Tpo .deps/proxyautoreg.Po
+--- proxyhosts.o ---
+mv -f .deps/proxyhosts.Tpo .deps/proxyhosts.Po
+--- nodecommand.o ---
+mv -f .deps/nodecommand.Tpo .deps/nodecommand.Po
+--- active.o ---
+mv -f .deps/active.Tpo .deps/active.Po
+--- trapper.o ---
+mv -f .deps/trapper.Tpo .deps/trapper.Po
+--- libzbxtrapper.a ---
+rm -f libzbxtrapper.a
+ar cru libzbxtrapper.a active.o trapper.o  nodecommand.o proxyconfig.o  proxydiscovery.o proxyautoreg.o  proxyhosts.o 
+ranlib libzbxtrapper.a
+Making all in zabbix_server/selfmon
+--- selfmon.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT selfmon.o -MD -MP -MF .deps/selfmon.Tpo -c -o selfmon.o selfmon.c
+mv -f .deps/selfmon.Tpo .deps/selfmon.Po
+--- libzbxselfmon.a ---
+rm -f libzbxselfmon.a
+ar cru libzbxselfmon.a selfmon.o 
+ranlib libzbxselfmon.a
+Making all in zabbix_server/snmptrapper
+--- snmptrapper.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT snmptrapper.o -MD -MP -MF .deps/snmptrapper.Tpo -c -o snmptrapper.o snmptrapper.c
+mv -f .deps/snmptrapper.Tpo .deps/snmptrapper.Po
+--- libzbxsnmptrapper.a ---
+rm -f libzbxsnmptrapper.a
+ar cru libzbxsnmptrapper.a snmptrapper.o 
+ranlib libzbxsnmptrapper.a
+Making all in zabbix_server/vmware
+--- libzbxvmware_a-vmware.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include   -I/usr/local/include -DLIBICONV_PLUG -I/usr/local/include/libxml2 -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT libzbxvmware_a-vmware.o -MD -MP -MF .deps/libzbxvmware_a-vmware.Tpo -c -o libzbxvmware_a-vmware.o `test -f 'vmware.c' || echo './'`vmware.c
+mv -f .deps/libzbxvmware_a-vmware.Tpo .deps/libzbxvmware_a-vmware.Po
+--- libzbxvmware.a ---
+rm -f libzbxvmware.a
+ar cru libzbxvmware.a libzbxvmware_a-vmware.o 
+ranlib libzbxvmware.a
+Making all in zabbix_proxy
+--- all-recursive ---
+Making all in heart
+--- heart.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT heart.o -MD -MP -MF .deps/heart.Tpo -c -o heart.o heart.c
+mv -f .deps/heart.Tpo .deps/heart.Po
+--- libzbxheart.a ---
+rm -f libzbxheart.a
+ar cru libzbxheart.a heart.o 
+ranlib libzbxheart.a
+Making all in housekeeper
+--- housekeeper.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT housekeeper.o -MD -MP -MF .deps/housekeeper.Tpo -c -o housekeeper.o housekeeper.c
+mv -f .deps/housekeeper.Tpo .deps/housekeeper.Po
+--- libzbxhousekeeper.a ---
+rm -f libzbxhousekeeper.a
+ar cru libzbxhousekeeper.a housekeeper.o 
+ranlib libzbxhousekeeper.a
+Making all in proxyconfig
+--- proxyconfig.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT proxyconfig.o -MD -MP -MF .deps/proxyconfig.Tpo -c -o proxyconfig.o proxyconfig.c
+mv -f .deps/proxyconfig.Tpo .deps/proxyconfig.Po
+--- libzbxproxyconfig.a ---
+rm -f libzbxproxyconfig.a
+ar cru libzbxproxyconfig.a proxyconfig.o 
+ranlib libzbxproxyconfig.a
+Making all in datasender
+--- datasender.o ---
+cc -DHAVE_CONFIG_H -I. -I../../../include    -I/usr/local/include -DLIBICONV_PLUG  -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT datasender.o -MD -MP -MF .deps/datasender.Tpo -c -o datasender.o datasender.c
+mv -f .deps/datasender.Tpo .deps/datasender.Po
+--- libzbxdatasender.a ---
+rm -f libzbxdatasender.a
+ar cru libzbxdatasender.a datasender.o 
+ranlib libzbxdatasender.a
+--- zabbix_proxy-servercomms.o ---
+--- zabbix_proxy-events.o ---
+--- zabbix_proxy-proxy.o ---
+--- zabbix_proxy-scripts.o ---
+--- zabbix_proxy-servercomms.o ---
+cc -DHAVE_CONFIG_H -I. -I../../include   -I/usr/local/include -DLIBICONV_PLUG -DZABBIX_DAEMON  -DSYSCONFDIR="\"/usr/local/etc/zabbix3\""  -DDATADIR="\"/usr/local/etc/zabbix3\""  -DLIBDIR="\"/usr/local/lib\"" -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT zabbix_proxy-servercomms.o -MD -MP -MF .deps/zabbix_proxy-servercomms.Tpo -c -o zabbix_proxy-servercomms.o `test -f 'servercomms.c' || echo './'`servercomms.c
+--- zabbix_proxy-events.o ---
+cc -DHAVE_CONFIG_H -I. -I../../include   -I/usr/local/include -DLIBICONV_PLUG -DZABBIX_DAEMON  -DSYSCONFDIR="\"/usr/local/etc/zabbix3\""  -DDATADIR="\"/usr/local/etc/zabbix3\""  -DLIBDIR="\"/usr/local/lib\"" -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT zabbix_proxy-events.o -MD -MP -MF .deps/zabbix_proxy-events.Tpo -c -o zabbix_proxy-events.o `test -f 'events.c' || echo './'`events.c
+--- zabbix_proxy-proxy.o ---
+cc -DHAVE_CONFIG_H -I. -I../../include   -I/usr/local/include -DLIBICONV_PLUG -DZABBIX_DAEMON  -DSYSCONFDIR="\"/usr/local/etc/zabbix3\""  -DDATADIR="\"/usr/local/etc/zabbix3\""  -DLIBDIR="\"/usr/local/lib\"" -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT zabbix_proxy-proxy.o -MD -MP -MF .deps/zabbix_proxy-proxy.Tpo -c -o zabbix_proxy-proxy.o `test -f 'proxy.c' || echo './'`proxy.c
+--- zabbix_proxy-scripts.o ---
+cc -DHAVE_CONFIG_H -I. -I../../include   -I/usr/local/include -DLIBICONV_PLUG -DZABBIX_DAEMON  -DSYSCONFDIR="\"/usr/local/etc/zabbix3\""  -DDATADIR="\"/usr/local/etc/zabbix3\""  -DLIBDIR="\"/usr/local/lib\"" -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing -MT zabbix_proxy-scripts.o -MD -MP -MF .deps/zabbix_proxy-scripts.Tpo -c -o zabbix_proxy-scripts.o `test -f 'scripts.c' || echo './'`scripts.c
+--- zabbix_proxy-events.o ---
+mv -f .deps/zabbix_proxy-events.Tpo .deps/zabbix_proxy-events.Po
+--- zabbix_proxy-scripts.o ---
+mv -f .deps/zabbix_proxy-scripts.Tpo .deps/zabbix_proxy-scripts.Po
+--- zabbix_proxy-servercomms.o ---
+mv -f .deps/zabbix_proxy-servercomms.Tpo .deps/zabbix_proxy-servercomms.Po
+--- zabbix_proxy-proxy.o ---
+mv -f .deps/zabbix_proxy-proxy.Tpo .deps/zabbix_proxy-proxy.Po
+--- zabbix_proxy ---
+cc -DZABBIX_DAEMON  -DSYSCONFDIR="\"/usr/local/etc/zabbix3\""  -DDATADIR="\"/usr/local/etc/zabbix3\""  -DLIBDIR="\"/usr/local/lib\"" -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -L/usr/local/lib  -L/usr/local/lib -L/usr/local/lib  -L/usr/local/lib -L/usr/local/lib -L/usr/local/lib -L/usr/lib   -L/usr/local/lib -rdynamic   -fstack-protector-strong  -L//usr/lib -o zabbix_proxy zabbix_proxy-servercomms.o  zabbix_proxy-events.o zabbix_proxy-proxy.o  zabbix_proxy-scripts.o heart/libzbxheart.a  ../../src/zabbix_server/dbsyncer/libzbxdbsyncer.a  ../../src/zabbix_server/discoverer/libzbxdiscoverer.a  housekeeper/libzbxhousekeeper.a  ../../src/zabbix_server/httppoller/libzbxhttppoller.a  proxyconfig/libzbxproxyconfig.a  ../../src/zabbix_server/pinger/libzbxpinger.a  ../../src/zabbix_server/poller/libzbxpoller.a  ../../src/zabbix_server/trapper/libzbxtrapper.a  ../../src/zabbix_server/snmptrapper/libzbxsnmptrapper.a  datasender/libzbxdatasender.a  ../../src/zabbix_server/selfmon/libzbxselfmon.a  ../../src/zabbix_server/vmware/libzbxvmware.a  ../../src/libs/zbxsysinfo/libzbxproxysysinfo.a  ../../src/libs/zbxsysinfo/common/libcommonsysinfo.a  ../../src/libs/zbxsysinfo/simple/libsimplesysinfo.a  ../../src/libs/zbxsysinfo/freebsd/libspechostnamesysinfo.a  ../../src/libs/zbxlog/libzbxlog.a  ../../src/libs/zbxserver/libzbxserver.a  ../../src/libs/zbxdbcache/libzbxdbcache.a  ../../src/libs/zbxmemory/libzbxmemory.a  ../../src/libs/zbxregexp/libzbxregexp.a  ../../src/libs/zbxalgo/libzbxalgo.a  ../../src/libs/zbxnix/libzbxnix.a  ../../src/libs/zbxsys/libzbxsys.a  ../../src/libs/zbxconf/libzbxconf.a  ../../src/libs/zbxcommon/libzbxcommon.a  ../../src/libs/zbxcrypto/libzbxcrypto.a  ../../src/libs/zbxcomms/libzbxcomms.a  ../../src/libs/zbxcommshigh/libzbxcommshigh.a  ../../src/libs/zbxjson/libzbxjson.a  ../../src/libs/zbxexec/libzbxexec.a  ../../src/libs/zbxself/libzbxself.a  ../../src/libs/zbxicmpping/libzbxicmpping.a  ../../src/libs/zbxdbupgrade/libzbxdbupgrade.a  ../../src/libs/zbxdbhigh/libzbxdbhigh.a  ../../src/libs/zbxdb/libzbxdb.a  ../../src/libs/zbxmodules/libzbxmodules.a      -lsqlite3 -lxml2  -lodbc  -lnetsnmp -lssh2 -lOpenIPMI -lOpenIPMIposix -lssl -lcrypto   -lcurl -lkvm -lm -lexecinfo -ldevstat
+Making all in database
+Making all in man
+Making all in misc
+Making all in upgrades
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   zabbix3-proxy-3.0.32 depends on executable: fping - not found
+===>   Installing existing package /packages/All/fping-5.0_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing fping-5.0_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting fping-5.0_1: ....... done
+===>   zabbix3-proxy-3.0.32 depends on executable: fping - found
+===>   Returning to build of zabbix3-proxy-3.0.32
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for zabbix3-proxy-3.0.32
+===>   Generating temporary packing list
+===> Creating groups.
+===> Creating users
+Making install in src
+Making install in libs
+Making install in zbxcrypto
+Making install in zbxcommon
+Making install in zbxlog
+Making install in zbxalgo
+Making install in zbxnix
+Making install in zbxconf
+Making install in zbxsysinfo
+Making install in agent
+Making install in common
+Making install in simple
+Making install in freebsd
+Making install in zbxsys
+Making install in zbxcomms
+Making install in zbxjson
+Making install in zbxexec
+Making install in zbxmodules
+Making install in zbxregexp
+Making install in zbxcommshigh
+Making install in zbxdb
+Making install in zbxdbupgrade
+Making install in zbxdbcache
+Making install in zbxdbhigh
+Making install in zbxmemory
+Making install in zbxserver
+Making install in zbxicmpping
+Making install in zbxself
+Making install in zabbix_server/dbsyncer
+Making install in zabbix_server/dbconfig
+Making install in zabbix_server/discoverer
+Making install in zabbix_server/httppoller
+Making install in zabbix_server/pinger
+Making install in zabbix_server/poller
+Making install in zabbix_server/trapper
+Making install in zabbix_server/selfmon
+Making install in zabbix_server/snmptrapper
+Making install in zabbix_server/vmware
+Making install in zabbix_proxy
+Making install in heart
+Making install in housekeeper
+Making install in proxyconfig
+Making install in datasender
+ /bin/mkdir -p '/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/stage/usr/local/sbin'
+  install  -s -m 555 zabbix_proxy '/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/stage/usr/local/sbin'
+/usr/bin/make  install-data-hook
+/bin/mkdir -p "/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/stage/usr/local/etc/zabbix3/zabbix_proxy.conf.d"
+/bin/mkdir -p "/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/stage/usr/local/etc/zabbix3/zabbix/externalscripts"
+/bin/mkdir -p "/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/stage/usr/local/lib"
+test -f "/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/stage/usr/local/etc/zabbix3/zabbix_proxy.conf.sample" || cp "../../conf/zabbix_proxy.conf" "/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/stage/usr/local/etc/zabbix3/zabbix_proxy.conf.sample"
+Making install in database
+Making install in man
+ /bin/mkdir -p '/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/stage/usr/local/man/man8'
+ install  -m 0644 'zabbix_proxy.man' '/wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/stage/usr/local/man/man8/zabbix_proxy.8'
+Making install in misc
+Making install in upgrades
+/bin/mkdir -p /wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/stage/usr/local/share/zabbix3/proxy/database
+(cd /wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/zabbix-3.0.32/upgrades/ && /bin/sh -c '(/usr/bin/find -Ed $1 $3 | /usr/bin/cpio -dumpl $2 >/dev/null 2>&1) &&  /usr/bin/find -Ed $1 $3 \(   -type d -exec /bin/sh -c '\''cd '\''$2'\'' && chmod 755 "$@"'\'' . {} +  -o -type f -exec /bin/sh -c '\''cd '\''$2'\'' && chmod 0644 "$@"'\'' . {} + \)' COPYTREE_SHARE dbpatches  /wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/stage/usr/local/share/zabbix3/proxy/upgrades/)
+(cd /wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/zabbix-3.0.32/database/ &&  /bin/sh -c '(/usr/bin/find -Ed $1 $3 | /usr/bin/cpio -dumpl $2 >/dev/null 2>&1) &&  /usr/bin/find -Ed $1 $3 \(   -type d -exec /bin/sh -c '\''cd '\''$2'\'' && chmod 755 "$@"'\'' . {} +  -o -type f -exec /bin/sh -c '\''cd '\''$2'\'' && chmod 0644 "$@"'\'' . {} + \)' COPYTREE_SHARE "ibm_db2 mysql oracle postgresql sqlite3"  /wrkdirs/usr/ports/net-mgmt/zabbix3-proxy/work/stage/usr/local/share/zabbix3/proxy/database/)
+====> Compressing man pages (compress-man)
+===> Staging rc.d startup script(s)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:32:09+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for zabbix3-proxy-3.0.32
+install -l rs /.npkg/All/zabbix3-proxy-3.0.32.pkg /.npkg/All/zabbix3-proxy-3.0.32.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for zabbix3-proxy-3.0.32
+build of net-mgmt/zabbix3-proxy | zabbix3-proxy-3.0.32 ended at Mon Oct 18 23:32:38 EAT 2021
+build time: 00:00:29

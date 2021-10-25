@@ -1,0 +1,1435 @@
+=>> Building editors/vim
+build started at Mon Oct 18 23:43:58 EAT 2021
+port directory: /usr/ports/editors/vim
+package name: vim-8.2.3458
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-03 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: adamw@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root  wheel  7138 Oct 18 18:58 /usr/ports/editors/vim/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: af67f424b
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 03
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/03/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=console
+DEPENDS_ARGS=
+MAKE_ARGS= FLAVOR=console
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for vim-8.2.3458:
+     DEFAULT_VIMRC=on: Install bundled vimrc as default setting
+     MAKE_JOBS=off: Enable parallel build
+     NLS=on: Native Language Support
+     XTERM_SAVE=off: Restore xterm screen after exit
+====> Optional language bindings
+     LUA=off: Lua scripting language support
+     PERL=off: Perl scripting language support
+     PYTHON=on: Python bindings or support
+     RUBY=off: Ruby bindings or support
+     SCHEME=off: MzScheme (Racket) bindings
+     TCL=off: Tcl scripting language support
+====> Options available for the single CTAGS: you have to select exactly one of them
+     CTAGS_BASE=on: Use system ctags
+     CTAGS_EXUBERANT=off: Use exctags instead of ctags
+     CTAGS_UNIVERSAL=off: Use uctags instead of ctags
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+adamw@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--disable-canberra  --enable-cscope  --enable-gui=no  --enable-multibyte  --with-tlib=ncursesw --without-x --disable-luainterp --without-lua-prefix --enable-nls --disable-perlinterp --enable-python3interp --with-python3-command=/usr/local/bin/python3.8 --disable-rubyinterp --disable-mzschemeinterp --disable-tclinterp --without-tclsh --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PKG_CONFIG=pkgconf PYTHON="/usr/local/bin/python3.8" XDG_DATA_HOME=/wrkdirs/usr/ports/editors/vim/work-console  XDG_CONFIG_HOME=/wrkdirs/usr/ports/editors/vim/work-console  XDG_CACHE_HOME=/wrkdirs/usr/ports/editors/vim/work-console/.cache  HOME=/wrkdirs/usr/ports/editors/vim/work-console TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/editors/vim/work-console/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/editors/vim/work-console  XDG_CONFIG_HOME=/wrkdirs/usr/ports/editors/vim/work-console  XDG_CACHE_HOME=/wrkdirs/usr/ports/editors/vim/work-console/.cache  HOME=/wrkdirs/usr/ports/editors/vim/work-console TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/editors/vim/work-console/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS="-DLIBICONV_PLUG"  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -DLIBICONV_PLUG "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+VIM_VER=vim82 GUI="@comment " DESKTOP="@comment " CTAGS_BASE="" NO_CTAGS_BASE="@comment " CTAGS_EXUBERANT="@comment " NO_CTAGS_EXUBERANT="" CTAGS_UNIVERSAL="@comment " NO_CTAGS_UNIVERSAL="" DEFAULT_VIMRC="" NO_DEFAULT_VIMRC="@comment " LUA="@comment " NO_LUA="" MAKE_JOBS="@comment " NO_MAKE_JOBS="" NLS="" NO_NLS="@comment " PERL="@comment " NO_PERL="" PYTHON="" NO_PYTHON="@comment " RUBY="@comment " NO_RUBY="" SCHEME="@comment " NO_SCHEME="" TCL="@comment " NO_TCL="" XTERM_SAVE="@comment " NO_XTERM_SAVE="" PYTHON_INCLUDEDIR=include/python3.8  PYTHON_LIBDIR=lib/python3.8  PYTHON_PLATFORM=freebsd12  PYTHON_SITELIBDIR=lib/python3.8/site-packages  PYTHON_SUFFIX=38  PYTHON_EXT_SUFFIX=.cpython-38  PYTHON_VER=3.8  PYTHON_VERSION=python3.8 PYTHON2="@comment " PYTHON3="" OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/vim"  EXAMPLESDIR="share/examples/vim"  DATADIR="share/vim"  WWWDIR="www/vim"  ETCDIR="etc/vim"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ CTAGS_BASE="" NO_CTAGS_BASE="@comment " CTAGS_EXUBERANT="@comment " NO_CTAGS_EXUBERANT="" CTAGS_UNIVERSAL="@comment " NO_CTAGS_UNIVERSAL="" DEFAULT_VIMRC="" NO_DEFAULT_VIMRC="@comment " LUA="@comment " NO_LUA="" MAKE_JOBS="@comment " NO_MAKE_JOBS="" NLS="" NO_NLS="@comment " PERL="@comment " NO_PERL="" PYTHON="" NO_PYTHON="@comment " RUBY="@comment " NO_RUBY="" SCHEME="@comment " NO_SCHEME="" TCL="@comment " NO_TCL="" XTERM_SAVE="@comment " NO_XTERM_SAVE="" PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/vim DOCSDIR=/usr/local/share/doc/vim EXAMPLESDIR=/usr/local/share/examples/vim  WWWDIR=/usr/local/www/vim ETCDIR=/usr/local/etc/vim
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License VIM accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   vim-8.2.3458 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting pkg-1.17.2: .......... done
+===>   vim-8.2.3458 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of vim-8.2.3458
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License VIM accepted by the user
+===> Fetching all distfiles required by vim-8.2.3458 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License VIM accepted by the user
+===> Fetching all distfiles required by vim-8.2.3458 for building
+=> SHA256 Checksum OK for vim-vim-v8.2.3458_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License VIM accepted by the user
+===> Fetching all distfiles required by vim-8.2.3458 for building
+===>  Extracting for vim-8.2.3458
+=> SHA256 Checksum OK for vim-vim-v8.2.3458_GH0.tar.gz.
+install  -m 0644 /usr/ports/editors/vim/files/vietnamese_viscii.vim /wrkdirs/usr/ports/editors/vim/work-console/vim-8.2.3458/runtime/keymap
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for vim-8.2.3458
+===>  Applying FreeBSD patches for vim-8.2.3458 from /usr/ports/editors/vim/files
+echo '#define SYS_VIMRC_FILE "'/usr/local/etc/vim'/vimrc"' >> /wrkdirs/usr/ports/editors/vim/work-console/vim-8.2.3458/src/feature.h
+echo '#define SYS_GVIMRC_FILE "'/usr/local/etc/vim'/gvimrc"' >> /wrkdirs/usr/ports/editors/vim/work-console/vim-8.2.3458/src/feature.h
+/usr/bin/sed -i.bak -e 's|-liconv||g; s|/usr/local|/usr/local|g'  /wrkdirs/usr/ports/editors/vim/work-console/vim-8.2.3458/src/auto/configure
+/usr/bin/find /wrkdirs/usr/ports/editors/vim/work-console/vim-8.2.3458/runtime -name 'menu*.vim' | /usr/bin/xargs /usr/bin/grep -l 'ctags -R' |  /usr/bin/xargs /usr/bin/sed -i.bak -Ee 's!ctags -R ?\.!/usr/bin/find . -type f \\| /usr/bin/xargs ctags!g'
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   vim-8.2.3458 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-1.8.0,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing pkgconf-1.8.0,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting pkgconf-1.8.0,1: .......... done
+===>   vim-8.2.3458 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of vim-8.2.3458
+===>   vim-8.2.3458 depends on executable: msgfmt - not found
+===>   Installing existing package /packages/All/gettext-tools-0.21.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing gettext-tools-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Installing gettext-runtime-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] |   `-- Installing indexinfo-0.3.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] |   `-- Extracting indexinfo-0.3.1: .... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Extracting gettext-runtime-0.21: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Installing libtextstyle-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Extracting libtextstyle-0.21: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting gettext-tools-0.21: .......... done
+===>   vim-8.2.3458 depends on executable: msgfmt - found
+===>   Returning to build of vim-8.2.3458
+===>   vim-8.2.3458 depends on file: /usr/local/bin/python3.8 - not found
+===>   Installing existing package /packages/All/python38-3.8.12_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Installing python38-3.8.12_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Installing libffi-3.3_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Extracting libffi-3.3_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Installing mpdecimal-2.5.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Extracting mpdecimal-2.5.1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Installing readline-8.1.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] `-- Extracting readline-8.1.1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-03] Extracting python38-3.8.12_1: .......... done
+=====
+Message from python38-3.8.12_1:
+
+--
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+py38-gdbm       databases/py-gdbm@py38
+py38-sqlite3    databases/py-sqlite3@py38
+py38-tkinter    x11-toolkits/py-tkinter@py38
+===>   vim-8.2.3458 depends on file: /usr/local/bin/python3.8 - found
+===>   Returning to build of vim-8.2.3458
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   vim-8.2.3458 depends on shared library: libintl.so - found (/usr/local/lib/libintl.so)
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for vim-8.2.3458
+configure: loading site script /usr/ports/Templates/config.site
+configure: creating cache auto/config.cache
+checking whether make sets $(MAKE)... yes
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking for cc option to accept ISO C99... none needed
+checking how to run the C preprocessor... cpp
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for library containing strerror... none required
+checking for gawk... (cached) /usr/bin/awk
+checking for strip... strip
+checking for ANSI C header files... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... (cached) yes
+checking for unsigned long long int... (cached) yes
+checking for long long int... (cached) yes
+checking if the compiler supports trailing commas... yes
+checking if the compiler supports C++ comments... yes
+checking --enable-fail-if-missing argument... no
+checking for clang version... 10000001
+checking if clang supports -fno-strength-reduce... no
+configure: checking for buggy tools...
+checking for Haiku... no
+checking for QNX... no
+checking for Darwin (Mac OS X)... no
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking AvailabilityMacros.h usability... no
+checking AvailabilityMacros.h presence... no
+checking for AvailabilityMacros.h... no
+checking --with-local-dir argument... Defaulting to /usr/local
+checking --with-vim-name argument... Defaulting to vim
+checking --with-ex-name argument... Defaulting to ex
+checking --with-view-name argument... Defaulting to view
+checking --with-global-runtime argument... no
+checking --with-modified-by argument... no
+checking if character set is EBCDIC... no
+checking --disable-smack argument... no
+checking linux/xattr.h usability... no
+checking linux/xattr.h presence... no
+checking for linux/xattr.h... no
+checking --disable-selinux argument... no
+checking for is_selinux_enabled in -lselinux... no
+checking --with-features argument... Defaulting to huge
+checking --with-compiledby argument... no
+checking --disable-xsmp argument... no
+checking --disable-xsmp-interact argument... no
+checking --enable-luainterp argument... no
+checking --enable-mzschemeinterp argument... no
+checking --enable-perlinterp argument... no
+checking --enable-pythoninterp argument... no
+checking --enable-python3interp argument... yes
+checking --with-python3-command argument... /usr/local/bin/python3.8
+checking Python version... 3.8
+checking Python is 3.0 or better... yep
+checking Python's abiflags... 
+checking Python's install prefix... /usr/local
+checking Python's execution prefix... /usr/local
+checking Python's configuration directory... /usr/local/lib/python3.8/config-3.8
+checking Python3's dll name... libpython3.8.so.1.0
+checking if -pthread should be used... yes
+checking if compile and link flags for Python 3 are sane... yes
+checking if -fPIE can be added for Python3... yes
+checking --enable-tclinterp argument... no
+checking --enable-rubyinterp argument... no
+checking --enable-cscope argument... yes
+checking --disable-netbeans argument... no
+checking --disable-channel argument... no
+checking for socket in -lsocket... no
+checking whether compiling with IPv6 networking is possible... yes
+checking for inet_ntop... (cached) yes
+checking --enable-terminal argument... defaulting to yes
+checking --enable-autoservername argument... no
+checking --enable-multibyte argument... yes
+checking --disable-rightleft argument... no
+checking --disable-arabic argument... no
+checking --enable-xim argument... defaulting to auto
+checking --enable-fontset argument... no
+defaulting to: don't HAVE_X11
+checking --enable-gui argument... no GUI support
+checking X11/SM/SMlib.h usability... no
+checking X11/SM/SMlib.h presence... no
+checking for X11/SM/SMlib.h... no
+checking for /proc link to executable... /proc/curproc/file
+checking for CYGWIN or MSYS environment... no
+checking whether toupper is broken... no
+checking whether __DATE__ and __TIME__ work... yes
+checking whether __attribute__((unused)) is allowed... yes
+checking for elf.h... (cached) yes
+checking for main in -lelf... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for sys/select.h... (cached) yes
+checking sys/utsname.h usability... yes
+checking sys/utsname.h presence... yes
+checking for sys/utsname.h... yes
+checking termcap.h usability... yes
+checking termcap.h presence... yes
+checking for termcap.h... yes
+checking for fcntl.h... (cached) yes
+checking sgtty.h usability... no
+checking sgtty.h presence... no
+checking for sgtty.h... no
+checking for sys/ioctl.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking termio.h usability... no
+checking termio.h presence... no
+checking for termio.h... no
+checking iconv.h usability... yes
+checking iconv.h presence... yes
+checking for iconv.h... yes
+checking for inttypes.h... (cached) yes
+checking for langinfo.h... (cached) yes
+checking for math.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking stropts.h usability... no
+checking stropts.h presence... no
+checking for stropts.h... no
+checking for errno.h... (cached) yes
+checking for sys/resource.h... (cached) yes
+checking sys/systeminfo.h usability... no
+checking sys/systeminfo.h presence... no
+checking for sys/systeminfo.h... no
+checking for locale.h... (cached) yes
+checking sys/stream.h usability... no
+checking sys/stream.h presence... no
+checking for sys/stream.h... no
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking libc.h usability... no
+checking libc.h presence... no
+checking for libc.h... no
+checking sys/statfs.h usability... no
+checking sys/statfs.h presence... no
+checking for sys/statfs.h... no
+checking for poll.h... (cached) yes
+checking for sys/poll.h... (cached) yes
+checking for pwd.h... (cached) yes
+checking for utime.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking sys/ptms.h usability... no
+checking sys/ptms.h presence... no
+checking for sys/ptms.h... no
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking for libgen.h... (cached) yes
+checking util/debug.h usability... no
+checking util/debug.h presence... no
+checking for util/debug.h... no
+checking util/msg18n.h usability... no
+checking util/msg18n.h presence... no
+checking for util/msg18n.h... no
+checking frame.h usability... no
+checking frame.h presence... no
+checking for frame.h... no
+checking for sys/acl.h... (cached) yes
+checking sys/access.h usability... no
+checking sys/access.h presence... no
+checking for sys/access.h... no
+checking sys/sysinfo.h usability... no
+checking sys/sysinfo.h presence... no
+checking for sys/sysinfo.h... no
+checking for wchar.h... (cached) yes
+checking for wctype.h... (cached) yes
+checking for sys/ptem.h... no
+checking for sys/sysctl.h... (cached) yes
+checking for pthread_np.h... yes
+checking for strings.h... (cached) yes
+checking if strings.h can be included after string.h... yes
+checking whether cc needs -traditional... no
+checking for an ANSI C-conforming const... yes
+checking for working volatile... yes
+checking for mode_t... (cached) yes
+checking for off_t... (cached) yes
+checking for pid_t... (cached) yes
+checking for size_t... (cached) yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for uint32_t... (cached) yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for ino_t... yes
+checking for dev_t... yes
+checking whether byte ordering is bigendian... no
+checking for inline... inline
+checking for rlim_t... yes
+checking for stack_t... (cached) yes
+checking whether stack_t has an ss_base field... no
+checking --with-tlib argument... ncursesw
+checking for linking with ncursesw library... OK
+checking for tgetent()... yes
+checking whether we talk terminfo... yes
+checking what tgetent() returns for an unknown terminal... non-zero
+checking whether termcap.h contains ospeed... yes
+checking whether termcap.h contains UP, BC and PC... yes
+checking whether tputs() uses outfuntype... no
+checking whether sys/select.h and sys/time.h may both be included... yes
+checking for /dev/ptc... no
+checking for SVR4 ptys... no
+checking for ptyranges... don't know
+checking return type of signal handlers... void
+checking for struct sigcontext... yes
+checking getcwd implementation is broken... no
+checking for fchdir... yes
+checking for fchown... (cached) yes
+checking for fchmod... (cached) yes
+checking for fsync... (cached) yes
+checking for getcwd... (cached) yes
+checking for getpseudotty... no
+checking for getpwent... yes
+checking for getpwnam... yes
+checking for getpwuid... yes
+checking for getrlimit... (cached) yes
+checking for gettimeofday... (cached) yes
+checking for localtime_r... yes
+checking for lstat... (cached) yes
+checking for memset... (cached) yes
+checking for mkdtemp... (cached) yes
+checking for nanosleep... yes
+checking for opendir... (cached) yes
+checking for putenv... (cached) yes
+checking for qsort... yes
+checking for readlink... (cached) yes
+checking for select... (cached) yes
+checking for setenv... (cached) yes
+checking for getpgid... (cached) yes
+checking for setpgid... (cached) yes
+checking for setsid... (cached) yes
+checking for sigaltstack... (cached) yes
+checking for sigstack... no
+checking for sigset... yes
+checking for sigsetjmp... yes
+checking for sigaction... (cached) yes
+checking for sigprocmask... (cached) yes
+checking for sigvec... (cached) yes
+checking for strcasecmp... (cached) yes
+checking for strcoll... yes
+checking for strerror... (cached) yes
+checking for strftime... (cached) yes
+checking for stricmp... no
+checking for strncasecmp... (cached) yes
+checking for strnicmp... no
+checking for strpbrk... (cached) yes
+checking for strptime... (cached) yes
+checking for strtol... (cached) yes
+checking for tgetent... yes
+checking for towlower... (cached) yes
+checking for towupper... yes
+checking for iswupper... yes
+checking for tzset... yes
+checking for usleep... (cached) yes
+checking for utime... (cached) yes
+checking for utimes... (cached) yes
+checking for mblen... (cached) yes
+checking for ftruncate... yes
+checking for unsetenv... (cached) yes
+checking for posix_openpt... yes
+checking for sys/select.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking types of arguments for select... int,fd_set *,struct timeval *
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking --enable-canberra argument... no
+checking --enable-libsodium argument... Defaulting to yes
+checking for libsodium... no; try installing libsodium-dev
+checking for st_blksize... yes
+checking whether stat() ignores a trailing slash... no
+checking for iconv_open()... yes; with 
+checking for nl_langinfo(CODESET)... yes
+checking for strtod in -lm... yes
+checking for strtod() and other floating point functions... yes
+checking for isinf()... yes
+checking for isnan()... yes
+checking --disable-acl argument... no
+checking for acl_get_file in -lposix1e... no
+checking for acl_get_file in -lacl... no
+checking for POSIX ACL support... yes
+checking for acl_get in -lsec... no
+checking for Solaris ACL support... no
+checking for AIX ACL support... no
+checking --disable-gpm argument... no
+checking for gpm... no
+checking --disable-sysmouse argument... no
+checking for sysmouse... yes
+checking for FD_CLOEXEC... yes
+checking for rename... yes
+checking for dirfd... yes
+checking for flock... yes
+checking for sysctl... yes
+checking for sysinfo... not usable
+checking for sysinfo.mem_unit... no
+checking for sysinfo.uptime... no
+checking for sysconf... yes
+checking for _SC_SIGSTKSZ via sysconf()... not usable
+checking size of int... 4
+checking size of long... 8
+checking size of time_t... 8
+checking size of off_t... 8
+checking uint32_t is 32 bits... ok
+checking whether memmove handles overlaps... yes
+checking for _xpg4_setrunelocale in -lxpg4... no
+checking how to create tags... ctags -t
+checking how to run man with a section nr... man
+checking --disable-nls argument... no
+checking for msgfmt... msgfmt
+checking for NLS... gettext() works with -lintl
+checking for bind_textdomain_codeset... yes
+checking for _nl_msg_cat_cntr... yes
+checking if msgfmt supports --desktop... yes
+checking for dlfcn.h... (cached) yes
+checking for dlopen()... yes
+checking for dlsym()... yes
+checking setjmp.h usability... yes
+checking setjmp.h presence... yes
+checking for setjmp.h... yes
+checking for GCC 3 or later... yes
+checking whether we need -D_FORTIFY_SOURCE=1... yes
+checking whether we need to force -D_FILE_OFFSET_BITS=64... no
+checking linker --as-needed support... yes
+configure: updating cache auto/config.cache
+configure: creating auto/config.status
+config.status: creating auto/config.mk
+config.status: creating auto/config.h
+/usr/bin/sed -i.bak -e '/^#define HAVE_SYSINFO/ d' /wrkdirs/usr/ports/editors/vim/work-console/vim-8.2.3458/src/auto/config.h
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building for vim-8.2.3458
+Starting make in the src directory.
+If there are problems, cd to the src directory and run make there
+cd src && /usr/bin/make all
+/bin/sh install-sh -c -d objects
+touch objects/.dirstamp
+CC="cc -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include    " srcdir=. sh ./osdef.sh
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/alloc.o alloc.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/arabic.o arabic.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/arglist.o arglist.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/autocmd.o autocmd.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/beval.o beval.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/buffer.o buffer.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/change.o change.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/blob.o blob.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/blowfish.o blowfish.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/cindent.o cindent.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/clientserver.o clientserver.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/clipboard.o clipboard.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/cmdexpand.o cmdexpand.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/cmdhist.o cmdhist.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/crypt.o crypt.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/crypt_zip.o crypt_zip.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/debugger.o debugger.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/dict.o dict.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/diff.o diff.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/digraph.o digraph.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/drawline.o drawline.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/drawscreen.o drawscreen.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/edit.o edit.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/eval.o eval.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/evalbuffer.o evalbuffer.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/evalfunc.o evalfunc.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/evalvars.o evalvars.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/evalwindow.o evalwindow.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ex_cmds.o ex_cmds.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ex_cmds2.o ex_cmds2.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ex_docmd.o ex_docmd.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ex_eval.o ex_eval.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ex_getln.o ex_getln.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/fileio.o fileio.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/filepath.o filepath.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/findfile.o findfile.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/float.o float.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/fold.o fold.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/getchar.o getchar.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/gui_xim.o gui_xim.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/hardcopy.o hardcopy.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/hashtab.o hashtab.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/help.o help.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/highlight.o highlight.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/if_cscope.o if_cscope.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/if_xcmdsrv.o if_xcmdsrv.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/indent.o indent.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/insexpand.o insexpand.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/list.o list.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/locale.o locale.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/map.o map.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/mark.o mark.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/match.o match.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/mbyte.o mbyte.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/memline.o memline.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/menu.o menu.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/misc1.o misc1.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/misc2.o misc2.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/mouse.o mouse.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/move.o move.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/normal.o normal.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ops.o ops.c
+cc -c -I.    -I/usr/local/include/python3.8 -D_THREAD_SAFE -fPIE   -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/option.o option.c
+cc -c -I.    -I/usr/local/include/python3.8 -D_THREAD_SAFE -fPIE   -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/optionstr.o optionstr.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/os_unix.o os_unix.c
+creating auto/pathdef.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/pathdef.o auto/pathdef.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/popupmenu.o popupmenu.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/popupwin.o popupwin.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/profiler.o profiler.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/pty.o pty.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/quickfix.o quickfix.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/regexp.o regexp.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/register.o register.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/screen.o screen.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/scriptfile.o scriptfile.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/search.o search.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/session.o session.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/sha256.o sha256.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/sign.o sign.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/sound.o sound.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/spell.o spell.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/spellfile.o spellfile.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/spellsuggest.o spellsuggest.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/strings.o strings.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/syntax.o syntax.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/tag.o tag.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/term.o term.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/terminal.o terminal.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/testing.o testing.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/textformat.o textformat.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/textobject.o textobject.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/textprop.o textprop.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/time.o time.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/typval.o typval.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/ui.o ui.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/undo.o undo.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/usercmd.o usercmd.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/userfunc.o userfunc.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/vim9compile.o vim9compile.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/vim9execute.o vim9execute.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/vim9script.o vim9script.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/vim9type.o vim9type.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/viminfo.o viminfo.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/window.o window.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/bufwrite.o bufwrite.c
+cc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE=""  -DVSNPRINTF=vim_vsnprintf  -DSNPRINTF=vim_snprintf  -DIS_COMBINING_FUNCTION=utf_iscomposing_uint  -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_encoding.o libvterm/src/encoding.c
+cc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE=""  -DVSNPRINTF=vim_vsnprintf  -DSNPRINTF=vim_snprintf  -DIS_COMBINING_FUNCTION=utf_iscomposing_uint  -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_keyboard.o libvterm/src/keyboard.c
+cc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE=""  -DVSNPRINTF=vim_vsnprintf  -DSNPRINTF=vim_snprintf  -DIS_COMBINING_FUNCTION=utf_iscomposing_uint  -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_mouse.o libvterm/src/mouse.c
+cc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE=""  -DVSNPRINTF=vim_vsnprintf  -DSNPRINTF=vim_snprintf  -DIS_COMBINING_FUNCTION=utf_iscomposing_uint  -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_parser.o libvterm/src/parser.c
+cc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE=""  -DVSNPRINTF=vim_vsnprintf  -DSNPRINTF=vim_snprintf  -DIS_COMBINING_FUNCTION=utf_iscomposing_uint  -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_pen.o libvterm/src/pen.c
+cc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE=""  -DVSNPRINTF=vim_vsnprintf  -DSNPRINTF=vim_snprintf  -DIS_COMBINING_FUNCTION=utf_iscomposing_uint  -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_screen.o libvterm/src/screen.c
+cc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE=""  -DVSNPRINTF=vim_vsnprintf  -DSNPRINTF=vim_snprintf  -DIS_COMBINING_FUNCTION=utf_iscomposing_uint  -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_state.o libvterm/src/state.c
+cc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE=""  -DVSNPRINTF=vim_vsnprintf  -DSNPRINTF=vim_snprintf  -DIS_COMBINING_FUNCTION=utf_iscomposing_uint  -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_unicode.o libvterm/src/unicode.c
+cc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -DINLINE=""  -DVSNPRINTF=vim_vsnprintf  -DSNPRINTF=vim_snprintf  -DIS_COMBINING_FUNCTION=utf_iscomposing_uint  -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_vterm.o libvterm/src/vterm.c
+cc -c -I. -I/usr/local/include/python3.8 -D_THREAD_SAFE -fPIE  -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/if_python3.o if_python3.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/netbeans.o netbeans.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/job.o job.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/channel.o channel.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/xdiffi.o xdiff/xdiffi.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/xemit.o xdiff/xemit.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/xprepare.o xdiff/xprepare.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/xutils.o xdiff/xutils.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/xhistogram.o xdiff/xhistogram.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/xpatience.o xdiff/xpatience.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/charset.o charset.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/json.o json.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/main.o main.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/memfile.o memfile.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        -o objects/message.o message.c
+cc -c -I. -Iproto -DHAVE_CONFIG_H   -DLIBICONV_PLUG -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1        version.c -o objects/version.o
+link.sh: $LINK_AS_NEEDED set to 'yes': invoking linker directly.
+  cc   -fstack-protector-strong  -L/usr/local/lib -Wl,--as-needed  -o vim objects/alloc.o  objects/arabic.o  objects/arglist.o  objects/autocmd.o  objects/beval.o  objects/buffer.o  objects/change.o  objects/blob.o  objects/blowfish.o  objects/cindent.o  objects/clientserver.o  objects/clipboard.o  objects/cmdexpand.o  objects/cmdhist.o  objects/crypt.o  objects/crypt_zip.o  objects/debugger.o  objects/dict.o  objects/diff.o  objects/digraph.o  objects/drawline.o  objects/drawscreen.o  objects/edit.o  objects/eval.o  objects/evalbuffer.o  objects/evalfunc.o  objects/evalvars.o  objects/evalwindow.o  objects/ex_cmds.o  objects/ex_cmds2.o  objects/ex_docmd.o  objects/ex_eval.o  objects/ex_getln.o  objects/fileio.o  objects/filepath.o  objects/findfile.o  objects/float.o  objects/fold.o  objects/getchar.o  objects/gui_xim.o  objects/hardcopy.o  objects/hashtab.o  objects/help.o  objects/highlight.o  objects/if_cscope.o  objects/if_xcmdsrv.o  objects/indent.o  objects/insexpand.o  objects/list.o  objects/locale.o  objects/map.o  objects/mark.o  objects/match.o  objects/mbyte.o  objects/memline.o  objects/menu.o  objects/misc1.o  objects/misc2.o  objects/mouse.o  objects/move.o  objects/normal.o  objects/ops.o  objects/option.o  objects/optionstr.o  objects/os_unix.o  objects/pathdef.o  objects/popupmenu.o  objects/popupwin.o  objects/profiler.o  objects/pty.o  objects/quickfix.o  objects/regexp.o  objects/register.o  objects/screen.o  objects/scriptfile.o  objects/search.o  objects/session.o  objects/sha256.o  objects/sign.o  objects/sound.o  objects/spell.o  objects/spellfile.o  objects/spellsuggest.o  objects/strings.o  objects/syntax.o  objects/tag.o  objects/term.o  objects/terminal.o  objects/testing.o  objects/textformat.o  objects/textobject.o  objects/textprop.o  objects/time.o  objects/typval.o  objects/ui.o  objects/undo.o  objects/usercmd.o  objects/userfunc.o  objects/version.o  objects/vim9compile.o  objects/vim9execute.o  objects/vim9script.o  objects/vim9type.o  objects/viminfo.o  objects/window.o  objects/bufwrite.o    objects/vterm_encoding.o objects/vterm_keyboard.o objects/vterm_mouse.o objects/vterm_parser.o objects/vterm_pen.o objects/vterm_screen.o objects/vterm_state.o objects/vterm_unicode.o objects/vterm_vterm.o          objects/if_python3.o        objects/netbeans.o  objects/job.o objects/channel.o  objects/xdiffi.o  objects/xemit.o  objects/xprepare.o  objects/xutils.o  objects/xhistogram.o  objects/xpatience.o objects/charset.o  objects/json.o  objects/main.o  objects/memfile.o  objects/message.o               -lm -lelf  -pthread -lncursesw  -lintl          -L/usr/local/lib/python3.8/config-3.8 -lpython3.8 -lcrypt -lintl -ldl -L/usr/local/lib -lintl -lutil -lm -lm           
+link.sh: Linked fine
+cd xxd; CC="cc" CFLAGS="-DLIBICONV_PLUG -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1" LDFLAGS="-fstack-protector-strong  -L/usr/local/lib -Wl,--as-needed"  /usr/bin/make -f Makefile
+cc -DLIBICONV_PLUG -I/usr/local/include -O2 -pipe  -DLIBICONV_PLUG -fstack-protector-strong -fno-strict-aliasing  -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -fstack-protector-strong  -L/usr/local/lib -Wl,--as-needed -DUNIX -o xxd xxd.c
+OLD_PO_FILE_INPUT=yes msgfmt -v -o af.mo af.po
+1411 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o ca.mo ca.po
+1928 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o cs.mo cs.po
+1272 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o da.mo da.po
+1961 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o de.mo de.po
+2651 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o en_GB.mo en_GB.po
+181 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o eo.mo eo.po
+2165 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o es.mo es.po
+1697 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o fi.mo fi.po
+1938 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o fr.mo fr.po
+2187 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o ga.mo ga.po
+1928 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o it.mo it.po
+2722 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o ja.mo ja.po
+2035 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o ko.UTF-8.mo ko.UTF-8.po
+1867 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o ko.mo ko.po
+1867 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o lv.mo lv.po
+78 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o nb.mo nb.po
+1655 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o nl.mo nl.po
+1207 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o no.mo no.po
+1655 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o pl.mo pl.po
+1858 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o pt_BR.mo pt_BR.po
+1934 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o ru.mo ru.po
+2038 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o sk.mo sk.po
+1615 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o sr.mo sr.po
+2708 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o sv.mo sv.po
+1684 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o tr.mo tr.po
+2729 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o uk.mo uk.po
+1961 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o vi.mo vi.po
+1410 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o zh_CN.UTF-8.mo zh_CN.UTF-8.po
+1621 translated messages, 3 fuzzy translations.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o zh_CN.mo zh_CN.po
+1620 translated messages, 3 fuzzy translations.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o zh_TW.UTF-8.mo zh_TW.UTF-8.po
+1410 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o zh_TW.mo zh_TW.po
+1410 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o cs.cp1250.mo cs.cp1250.po
+1272 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o ja.euc-jp.mo ja.euc-jp.po
+2035 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o ja.sjis.mo ja.sjis.po
+2035 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o pl.UTF-8.mo pl.UTF-8.po
+1858 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o pl.cp1250.mo pl.cp1250.po
+1858 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o ru.cp1251.mo ru.cp1251.po
+2038 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o sk.cp1250.mo sk.cp1250.po
+1615 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o uk.cp1251.mo uk.cp1251.po
+1961 translated messages.
+OLD_PO_FILE_INPUT=yes msgfmt -v -o zh_CN.cp936.mo zh_CN.cp936.po
+1621 translated messages, 3 fuzzy translations.
+echo af  ca  cs  cs.cp1250  da  de  en_GB  eo  es  fi  fr  ga  it  ja  ja.euc-jp  ja.sjis  ko  ko.UTF-8  lv  nb  nl  no  pl  pl.UTF-8  pl.cp1250  pt_BR  ru  ru.cp1251  sk  sk.cp1250  sr  sv  tr  uk  uk.cp1251  vi  zh_CN  zh_CN.UTF-8  zh_CN.cp936  zh_TW  zh_TW.UTF-8 | tr " " "\n" |sed -e '/\./d' | sort > LINGUAS
+msgfmt --desktop -d . --template gvim.desktop.in -o tmp_gvim.desktop
+rm -f LINGUAS
+if command -v desktop-file-validate; then desktop-file-validate tmp_gvim.desktop; fi
+mv tmp_gvim.desktop gvim.desktop
+echo af  ca  cs  cs.cp1250  da  de  en_GB  eo  es  fi  fr  ga  it  ja  ja.euc-jp  ja.sjis  ko  ko.UTF-8  lv  nb  nl  no  pl  pl.UTF-8  pl.cp1250  pt_BR  ru  ru.cp1251  sk  sk.cp1250  sr  sv  tr  uk  uk.cp1251  vi  zh_CN  zh_CN.UTF-8  zh_CN.cp936  zh_TW  zh_TW.UTF-8 | tr " " "\n" |sed -e '/\./d' | sort > LINGUAS
+msgfmt --desktop -d . --template vim.desktop.in -o tmp_vim.desktop
+rm -f LINGUAS
+if command -v desktop-file-validate; then desktop-file-validate tmp_vim.desktop; fi
+mv tmp_vim.desktop vim.desktop
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   vim-8.2.3458 depends on file: /usr/local/bin/python3.8 - found
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for vim-8.2.3458
+===>   Generating temporary packing list
+Starting make in the src directory.
+If there are problems, cd to the src directory and run make there
+cd src && /usr/bin/make install
+if test -f /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/vim; then  mv -f /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/vim.rm;  rm -f /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/vim.rm;  fi
+cp vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin
+/usr/bin/strip /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/vim
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/vim
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim
+cp vimtutor /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/vimtutor
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/vimtutor
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/doc
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/doc
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/print
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/print
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/colors
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/colors
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/syntax
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/syntax
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/indent
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/indent
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/ftplugin
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/ftplugin
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/autoload
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/autoload
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/autoload/dist
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/autoload/dist
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/autoload/xml
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/autoload/xml
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/plugin
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/plugin
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tutor
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tutor
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/spell
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/spell
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/compiler
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/compiler
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/man1 "" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/man1/evim.1
+cd ../runtime/doc; if test -z "" -a -f tags; then  mv -f tags tags.dist; fi
+generating help tags
+help tags updated
+cd ../runtime/doc;  files=`ls *.txt tags`;  files="$files `ls *.??x tags-?? 2>/dev/null || true`";  cp $files  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/doc;  cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/doc;  chmod 644 $files
+cp  ../runtime/doc/*.pl /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/doc
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/doc/*.pl
+cd ../runtime/doc; if test -f tags.dist; then mv -f tags.dist tags; fi
+cp ../runtime/menu.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/menu.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/menu.vim
+cp ../runtime/synmenu.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/synmenu.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/synmenu.vim
+cp ../runtime/delmenu.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/delmenu.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/delmenu.vim
+cp ../runtime/defaults.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/defaults.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/defaults.vim
+cp ../runtime/evim.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/evim.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/evim.vim
+cp ../runtime/mswin.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/mswin.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/mswin.vim
+cp ../runtime/rgb.txt /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/rgb.txt
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/rgb.txt
+cp ../runtime/bugreport.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/bugreport.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/bugreport.vim
+cp ../runtime/vimrc_example.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/vimrc_example.vim
+cp ../runtime/gvimrc_example.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/gvimrc_example.vim
+cp ../runtime/filetype.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/filetype.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/filetype.vim
+cp ../runtime/ftoff.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/ftoff.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/ftoff.vim
+cp ../runtime/scripts.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/scripts.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/scripts.vim
+cp ../runtime/ftplugin.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/ftplugin.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/ftplugin.vim
+cp ../runtime/ftplugof.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/ftplugof.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/ftplugof.vim
+cp ../runtime/indent.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/indent.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/indent.vim
+cp ../runtime/indoff.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/indoff.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/indoff.vim
+cp ../runtime/optwin.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/optwin.vim
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/optwin.vim
+cd ../runtime/print; cp *.ps /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/print
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/print; chmod 644 *.ps
+cd ../runtime/colors; cp -r *.vim tools README.txt /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/colors
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/colors; chmod 755 tools
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/colors; chmod 644 *.vim README.txt tools/*.vim
+cd ../runtime/syntax; cp *.vim README.txt /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/syntax
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/syntax; chmod 644 *.vim README.txt
+cd ../runtime/indent; cp *.vim README.txt /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/indent
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/indent; chmod 644 *.vim README.txt
+cd ../runtime/autoload; cp *.vim README.txt /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/autoload
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/autoload; chmod 644 *.vim README.txt
+cd ../runtime/autoload/dist; cp *.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/autoload/dist
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/autoload/dist; chmod 644 *.vim
+cd ../runtime/autoload/xml; cp *.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/autoload/xml
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/autoload/xml; chmod 644 *.vim
+cd ../runtime/plugin; cp *.vim README.txt /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/plugin
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/plugin; chmod 644 *.vim README.txt
+cd ../runtime/ftplugin; cp *.vim README.txt logtalk.dict /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/ftplugin
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/ftplugin; chmod 644 *.vim README.txt
+cd ../runtime/compiler; cp *.vim README.txt /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/compiler
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/compiler; chmod 644 *.vim README.txt
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/macros
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/macros
+cp -r ../runtime/macros/* /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/macros
+chmod 755 `find /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/macros -type d -print`
+chmod 644 `find /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/macros -type f -print`
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/macros/less.sh
+cvs=`find /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/macros \( -name CVS -o -name AAPDIR -o -name "*.info" \) -print`;  if test -n "$cvs"; then  rm -rf $cvs;  fi
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/pack
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/pack
+cp -r ../runtime/pack/* /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/pack
+chmod 755 `find /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/pack -type d -print`
+chmod 644 `find /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/pack -type f -print`
+cp ../runtime/tutor/README* ../runtime/tutor/tutor* /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tutor
+rm -f /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tutor/*.info
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tutor/*
+if test -f ../runtime/spell/en.latin1.spl; then  cp ../runtime/spell/*.spl ../runtime/spell/*.sug ../runtime/spell/*.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/spell;  chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/spell/*.spl /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/spell/*.sug /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/spell/*.vim;  fi
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin; ln -s vim ex
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin; ln -s vim view
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin; ln -s vim rvim
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin; ln -s vim rview
+cd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin; ln -s vim vimdiff
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/man1/rview.1
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tools
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tools
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da/man1 "-da" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da/man1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.ISO8859-1/man1 "-da" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.ISO8859-1/man1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.UTF-8/man1 "-da.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.UTF-8/man1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de/man1 "-de" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de/man1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.ISO8859-1/man1 "-de" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.UTF-8/man1 "-de.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.UTF-8/man1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr/man1 "-fr" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr/man1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr/man1/xxd.1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.ISO8859-1/man1 "-fr" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.ISO8859-1/man1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.ISO8859-1/man1/xxd.1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.UTF-8/man1 "-fr.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.UTF-8/man1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.UTF-8/man1/xxd.1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it/man1 "-it" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it/man1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it/man1/xxd.1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.ISO8859-1/man1 "-it" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.ISO8859-1/man1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.ISO8859-1/man1/xxd.1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.UTF-8/man1 "-it.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.UTF-8/man1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.UTF-8/man1/xxd.1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ja/man1 "-ja.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ja/man1/xxd.1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl/man1 "-pl" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl/man1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl/man1/xxd.1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.ISO8859-2/man1 "-pl" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.ISO8859-2/man1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.ISO8859-2/man1/xxd.1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.UTF-8/man1 "-pl.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.UTF-8/man1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.UTF-8/man1/xxd.1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.KOI8-R/man1 "-ru" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.KOI8-R/man1/xxd.1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.UTF-8/man1 "-ru.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.UTF-8/man1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.UTF-8/man1/xxd.1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr/man1 "-tr" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr/man1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.ISO8859-9/man1 "-tr" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.ISO8859-9/man1
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.UTF-8/man1 "-tr.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+creating /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.UTF-8/man1
+if test -f /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/xxd; then  mv -f /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/xxd.rm;  rm -f /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/xxd.rm;  fi
+cp xxd/xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin
+/usr/bin/strip /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/xxd
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/xxd
+/bin/sh ./installman.sh xxd /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/man1 "" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/man1/xxd.1
+cp -r ../runtime/tools/* /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tools
+cvs=`find /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tools \( -name CVS -o -name AAPDIR \) -print`;  if test -n "$cvs"; then  rm -rf $cvs;  fi
+chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tools/*
+perlpath=`./which.sh perl` && sed -e "s+/usr/bin/perl+$perlpath+" ../runtime/tools/efm_perl.pl >/wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tools/efm_perl.pl
+awkpath=`./which.sh nawk` && sed -e "s+/usr/bin/nawk+$awkpath+" ../runtime/tools/mve.awk >/wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tools/mve.awk; if test -z "$awkpath"; then  awkpath=`./which.sh gawk` && sed -e "s+/usr/bin/nawk+$awkpath+" ../runtime/tools/mve.awk >/wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tools/mve.awk; if test -z "$awkpath"; then  awkpath=`./which.sh awk` && sed -e "s+/usr/bin/nawk+$awkpath+" ../runtime/tools/mve.awk >/wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tools/mve.awk; fi; fi
+chmod 755 `grep -l "^#!" /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/tools/*`
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/lang
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/lang
+/bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/keymap
+chmod 755 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/keymap
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da/man1 "-da" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da/man1/vimdiff.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.ISO8859-1/man1 "-da" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.ISO8859-1/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.ISO8859-1/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.ISO8859-1/man1/vimdiff.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.UTF-8/man1 "-da.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.UTF-8/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.UTF-8/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.UTF-8/man1/vimdiff.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de/man1 "-de" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de/man1/vim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.ISO8859-1/man1 "-de" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.ISO8859-1/man1/vim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.UTF-8/man1 "-de.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.UTF-8/man1/vim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr/man1 "-fr" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.ISO8859-1/man1 "-fr" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.ISO8859-1/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.ISO8859-1/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.ISO8859-1/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.ISO8859-1/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.UTF-8/man1 "-fr.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.UTF-8/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.UTF-8/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.UTF-8/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.UTF-8/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it/man1 "-it" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.ISO8859-1/man1 "-it" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.ISO8859-1/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.ISO8859-1/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.ISO8859-1/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.ISO8859-1/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.UTF-8/man1 "-it.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.UTF-8/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.UTF-8/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.UTF-8/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.UTF-8/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ja/man1 "-ja.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ja/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ja/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ja/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ja/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl/man1 "-pl" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.ISO8859-2/man1 "-pl" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.ISO8859-2/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.ISO8859-2/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.ISO8859-2/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.ISO8859-2/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.UTF-8/man1 "-pl.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.UTF-8/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.UTF-8/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.UTF-8/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.UTF-8/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.KOI8-R/man1 "-ru" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.KOI8-R/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.KOI8-R/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.KOI8-R/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.KOI8-R/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.UTF-8/man1 "-ru.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.UTF-8/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.UTF-8/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.UTF-8/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.UTF-8/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr/man1 "-tr" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.ISO8859-9/man1 "-tr" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.ISO8859-9/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.ISO8859-9/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.ISO8859-9/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.ISO8859-9/man1/evim.1
+/bin/sh ./installman.sh install /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.UTF-8/man1 "-tr.UTF-8" /usr/local/share/vim /usr/local/share/vim/vim82 /usr/local/etc/vim ../runtime/doc 644  vim vimdiff evim
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.UTF-8/man1/vim.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.UTF-8/man1/vimtutor.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.UTF-8/man1/vimdiff.1
+installing /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.UTF-8/man1/evim.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.ISO8859-1/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.ISO8859-1/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.ISO8859-1/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.UTF-8/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.UTF-8/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/da.UTF-8/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.ISO8859-1/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.ISO8859-1/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.ISO8859-1/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.UTF-8/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.UTF-8/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/de.UTF-8/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.ISO8859-1/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.ISO8859-1/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.ISO8859-1/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.UTF-8/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.UTF-8/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/fr.UTF-8/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.ISO8859-1/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.ISO8859-1/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.ISO8859-1/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.UTF-8/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.UTF-8/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/it.UTF-8/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ja/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ja/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ja/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.ISO8859-2/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.ISO8859-2/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.ISO8859-2/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.UTF-8/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.UTF-8/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/pl.UTF-8/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.KOI8-R/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.KOI8-R/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.KOI8-R/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.UTF-8/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.UTF-8/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/ru.UTF-8/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.ISO8859-9/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.ISO8859-9/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.ISO8859-9/man1/rview.1
+/bin/sh ./installml.sh install ""  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.UTF-8/man1 vim vimdiff evim  ex view rvim rview  gvim gview rgvim rgview  gvimdiff eview
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.UTF-8/man1/rvim.1
+creating link /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/man/tr.UTF-8/man1/rview.1
+if test -n "yes" -a -f po/Makefile; then  cd po; /usr/bin/make prefix=/wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local LOCALEDIR=/wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/lang  INSTALL_DATA=cp FILEMOD=644 install;  fi
+for lang in af  ca  cs  cs.cp1250  da  de  en_GB  eo  es  fi  fr  ga  it  ja  ja.euc-jp  ja.sjis  ko  ko.UTF-8  lv  nb  nl  no  pl  pl.UTF-8  pl.cp1250  pt_BR  ru  ru.cp1251  sk  sk.cp1250  sr  sv  tr  uk  uk.cp1251  vi  zh_CN  zh_CN.UTF-8  zh_CN.cp936  zh_TW  zh_TW.UTF-8; do  dir=/wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/lang/$lang/;  if test ! -x "$dir"; then  mkdir $dir; chmod 755 $dir;  fi;  dir=/wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/lang/$lang/LC_MESSAGES;  if test ! -x "$dir"; then  mkdir $dir; chmod 755 $dir;  fi;  if test -r $lang.mo; then  cp $lang.mo $dir/vim.mo;  chmod 644 $dir/vim.mo;  fi;  done
+if test -d ../runtime/lang; then  cp ../runtime/lang/README.txt ../runtime/lang/*.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/lang;  chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/lang/README.txt /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/lang/*.vim;  fi
+if test -d ../runtime/keymap; then  cp ../runtime/keymap/README.txt ../runtime/keymap/*.vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/keymap;  chmod 644 /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/keymap/README.txt /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/vim/vim82/keymap/*.vim;  fi
+if test -n "/wrkdirs/usr/ports/editors/vim/work-console/stage"; then  /bin/sh install-sh -c -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/hicolor/48x48/apps /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/locolor/32x32/apps  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/locolor/16x16/apps /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/applications;  fi
+if test -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/hicolor/48x48/apps -a -w /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/hicolor/48x48/apps  -a ! -f /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/hicolor/48x48/apps/gvim.png; then  cp ../runtime/vim48x48.png /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/hicolor/48x48/apps/gvim.png;  if test -z "/wrkdirs/usr/ports/editors/vim/work-console/stage" -a -x ""  -a -w /usr/local/share/icons/hicolor  -a -f /usr/local/share/icons/hicolor/index.theme; then   -q /usr/local/share/icons/hicolor;  fi  fi
+if test -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/locolor/32x32/apps -a -w /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/locolor/32x32/apps  -a ! -f /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/locolor/32x32/apps/gvim.png; then  cp ../runtime/vim32x32.png /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/locolor/32x32/apps/gvim.png;  fi
+if test -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/locolor/16x16/apps -a -w /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/locolor/16x16/apps  -a ! -f /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/locolor/16x16/apps/gvim.png; then  cp ../runtime/vim16x16.png /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/icons/locolor/16x16/apps/gvim.png;  fi
+if test -d /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/applications -a -w /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/applications; then  if test -f po/vim.desktop -a -f po/gvim.desktop; then  cp po/vim.desktop po/gvim.desktop  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/applications;  else  cp ../runtime/vim.desktop  ../runtime/gvim.desktop  /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/applications;  fi;  if test -z "/wrkdirs/usr/ports/editors/vim/work-console/stage" -a -x ""; then   -q /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/share/applications;  fi  fi
+/bin/rm -f /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/ex
+/bin/rm -f /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/view
+/bin/ln -sf vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/eview
+/bin/ln -sf vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/evim
+/bin/ln -sf vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/gview
+/bin/ln -sf vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/gvim
+/bin/ln -sf vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/gvimdiff
+/bin/ln -sf vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/rgview
+/bin/ln -sf vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/rgvim
+/bin/ln -sf vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/rview
+/bin/ln -sf vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/rvim
+/bin/ln -sf vim /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/bin/vimdiff
+/bin/mkdir -p /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/etc/vim
+install  -m 0644 /usr/ports/editors/vim/files/vimrc /wrkdirs/usr/ports/editors/vim/work-console/stage/usr/local/etc/vim/vimrc.sample
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:43:58+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=af67f424b' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for vim-8.2.3458
+install -l rs /.npkg/All/vim-8.2.3458.pkg /.npkg/All/vim-8.2.3458.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for vim-8.2.3458
+build of editors/vim@console | vim-8.2.3458 ended at Mon Oct 18 23:45:30 EAT 2021
+build time: 00:01:32

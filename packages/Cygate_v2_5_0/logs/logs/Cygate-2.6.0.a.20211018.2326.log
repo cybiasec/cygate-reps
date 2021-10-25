@@ -1,0 +1,1849 @@
+=>> Building security/Cygate
+build started at Mon Oct 18 23:45:12 EAT 2021
+port directory: /usr/ports/security/Cygate
+package name: Cygate-2.6.0.a.20211018.2326
+building for: FreeBSD Cygate_v2_5_0_amd64-Cygate_devel-job-02 12.3-PRERELEASE FreeBSD 12.3-PRERELEASE 1202508 amd64
+maintained by: coreteam@pfsense.org
+Makefile datestamp: -rw-r--r--  1 root  wheel  3792 Oct 18 20:26 /usr/ports/security/Cygate/Makefile
+Ports top last git commit: af67f424b
+Ports top unclean checkout: no
+Port dir last git commit: 
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.3.0-1019-gef452659
+Host OSVERSION: 1202000
+Jail OSVERSION: 1202508
+Job Id: 02
+
+
+
+
+!!! Jail is newer than host. (Jail: 1202508, Host: 1202000) !!!
+!!! This is not supported. !!!
+!!! Host kernel must be same or newer than jail. !!!
+!!! Expect build failures. !!!
+
+
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1202508
+UNAME_v=FreeBSD 12.3-PRERELEASE 1202508
+UNAME_r=12.3-PRERELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.3.0-1019-gef452659
+MASTERMNT=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+GID=0
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+UID=0
+PWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=Cygate_v2_5_0_amd64-Cygate_devel
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/Cygate_v2_5_0_amd64-Cygate_devel/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.3.0-1019-gef452659
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=php74
+DEPENDS_ARGS=
+MAKE_ARGS= FLAVOR=php74
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+coreteam@pfsense.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/security/Cygate/work-php74  XDG_CONFIG_HOME=/wrkdirs/usr/ports/security/Cygate/work-php74  XDG_CACHE_HOME=/wrkdirs/usr/ports/security/Cygate/work-php74/.cache  HOME=/wrkdirs/usr/ports/security/Cygate/work-php74 TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/security/Cygate/work-php74/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+KMODDIR="/boot/modules" SYSDIR="/usr/src/sys" NO_XREF=yes XDG_DATA_HOME=/wrkdirs/usr/ports/security/Cygate/work-php74  XDG_CONFIG_HOME=/wrkdirs/usr/ports/security/Cygate/work-php74  XDG_CACHE_HOME=/wrkdirs/usr/ports/security/Cygate/work-php74/.cache  HOME=/wrkdirs/usr/ports/security/Cygate/work-php74 TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/security/Cygate/work-php74/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+KMODDIR="boot/modules" PHP_EXT_DIR=20190902 OSREL=12.3 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/Cygate"  EXAMPLESDIR="share/examples/Cygate"  DATADIR="share/Cygate"  WWWDIR="www/Cygate"  ETCDIR="etc/Cygate"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PHP_EXT_DIR=20190902 PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/Cygate DOCSDIR=/usr/local/share/doc/Cygate EXAMPLESDIR=/usr/local/share/examples/Cygate  WWWDIR=/usr/local/www/Cygate ETCDIR=/usr/local/etc/Cygate
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/local/etc/poudriere.d/Cygate_devel-make.conf ####
+ALLOW_UNSUPPORTED_SYSTEM=yes
+
+# Define pfSense repos
+PFSENSE_REPOS=	Cygate-repo Cygate-repo-devel Cygate-repo-245
+
+# Used by pfSense-upgrade port to set pkg_set_version
+PFSENSE_PKG_SET_VERSION=	2.6.0-DEVELOPMENT
+
+# Generic options
+OPTIONS_UNSET_FORCE=	DOCS DOXYGEN EXAMPLES INFO MAN MANPAGES X11
+
+# Individual ports options
+.if ${.CURDIR:N*net/quagga*}=="" || ${.CURDIR:N*net/frr*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+. if ${CUR_ARCH} == "armv7"
+WITH_DEBUG=yes
+. endif
+.endif
+
+.if ${.CURDIR:N*net/frr*}==""
+ETCDIR=	/var/etc/frr
+.endif
+
+DEFAULT_VERSIONS=	php=74 ssl=base
+PHP_FD_SETSIZE=		3172
+
+. if ${.CURDIR:N*sysutils/check_reload_status*}==""
+WITH_DEBUG=	yes
+. endif
+
+# Options for packages
+
+# databases
+databases_rrdtool_UNSET_FORCE=	PYTHON_MODULE RUBY_MODULE PERL_MODULE DEJAVU GRAPH
+
+# devel
+devel_git_UNSET_FORCE=CVS GITWEB GUI HTMLDOCS P4 SVN CONTRIB PERL ETCSHELLS
+
+# dns
+dns_dnsmasq_UNSET_FORCE=	DNSSEC
+
+dns_unbound_SET_FORCE=	LIBEVENT PYTHON
+dns_unbound112_SET_FORCE=	LIBEVENT PYTHON
+
+dns_bind916_SET_FORCE=DLZ_FILESYSTEM FILTER_AAAA IPV6 LINKS RRL SIGCHASE SSL THREADS GSSAPI_NONE
+dns_bind916_UNSET_FORCE=FIXED_RRSET IDN LARGE_FILE LMDB
+
+# emulators
+emulators_open-vm-tools_UNSET_FORCE=DOCS FUSE LIBNOTIFY X11
+
+# graphics
+graphics_cairo_UNSET_FORCE=X11 XCB OPENGL
+
+graphics_gd_SET_FORCE=ICONV
+graphics_gd_UNSET_FORCE=FONTCONFIG XPM
+
+graphics_graphviz_SET_FORCE=ICONV NLS
+graphics_graphviz_UNSET_FORCE=DIGCOLA IPSEPCOLA PANGOCAIRO XPM
+
+# lang
+lang_gcc_UNSET_FORCE=JAVA
+
+# mail
+mail_pear-Mail_SET_FORCE=	PEAR_NET_SMTP
+
+# net
+net_freeradius3_SET_FORCE=EXPERIMENTAL HEIMDAL LDAP MYSQL PERL PGSQL PYTHON SQLITE3
+
+net_frr7_SET_FORCE=SNMP
+
+net_haproxy18_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy18_UNSET_FORCE=DPCRE
+
+net_haproxy_SET_FORCE=OPENSSL SPCRE LUA PROMEX
+net_haproxy_UNSET_FORCE=DPCRE
+
+net_haproxy-devel_SET_FORCE=OPENSSL SPCRE LUA
+net_haproxy-devel_UNSET_FORCE=DPCRE
+
+net_libpcap_SET_FORCE=IPV6
+net_libpcap_UNSET_FORCE=DAG
+
+net_miniupnpd_SET_FORCE=	PF_FILTER_RULES IPV6 CHECK_PORTINUSE
+
+net_mtr_UNSET_FORCE=X11
+
+net_nss_ldap_UNSET_FORCE=SASL KERBEROS
+
+net_ntp_UNSET_FORCE=	PERL_UTILS
+
+# net-mgmt
+net-mgmt_net-snmp_SET_FORCE=IPV6 MFD_REWRITES TLS
+net-mgmt_net-snmp_UNSET_FORCE=AX_DISABLE_TRAP AX_SOCKONLY DOCS DUMMY JAIL MYSQL PYTHON SMUX TKMIB UNPRIVILEGED
+
+net-mgmt_zabbix3-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix3-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix3-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix4-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix4-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix4-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix44-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix44-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix44-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix5-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix5-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix5-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix52-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix52-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix52-proxy_UNSET_FORCE=MYSQL
+
+net-mgmt_zabbix54-agent_SET_FORCE=IPV6
+
+net-mgmt_zabbix54-proxy_SET_FORCE=IPMI IPV6 LIBXML2 SQLITE SSH
+net-mgmt_zabbix54-proxy_UNSET_FORCE=MYSQL
+
+# security
+security_ca_root_nss_SET_FORCE=	ETCSYMLINK
+
+security_opensc_SET_FORCE=	PCSC
+security_opensc_UNSET_FORCE=	DOCS MANPAGES
+
+security_openvpn_SET_FORCE=	X509ALTUSERNAME ASYNC_PUSH
+security_openvpn_UNSET_FORCE=	EASYRSA
+
+shells_scponly_SET_FORCE=CHROOT SCP WILDCARDS WINSCP
+shells_scponly_UNSET_FORCE=DEFAULT_CHDIR DOCS GFTP RSYNC SVN SVNSERVE UNISON
+
+security_sudo_SET_FORCE=LDAP
+
+security_snort_SET_FORCE=APPID COREDUMPS GRE IPV6 NORMALIZER PERFPROFILE SOURCEFIRE
+security_snort_UNSET_FORCE=BARNYARD FILEINSPECT HA PULLEDPORK
+
+.if ${.CURDIR:N*security/snort3*}==""
+CUR_ARCH!=  /usr/bin/uname -p
+.if ${CUR_ARCH} == "armv7" || ${CUR_ARCH} == "aarch64"
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ
+security_snort3_UNSET_FORCE=HYPERSCAN TSC
+else
+security_snort3_SET_FORCE=LARGEPCAP STATICDAQ HYPERSCAN
+.endif
+.endif
+
+security_strongswan_SET_FORCE=	CURL EAPDYNAMIC EAPRADIUS EAPSIMFILE \
+			IKEv1 UNBOUND XAUTH IPSECKEY PKCS11 PKI UNITY VICI VSTR SWANCTL
+security_strongswan_UNSET_FORCE=	EAPAKA3GPP2 BUILTIN LIBC SMP
+
+security_suricata_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+security_suricata4_SET_FORCE=GEOIP HTP_PORT IPFW JSON LUAJIT NSS PORTS_PCAP NETMAP HYPERSCAN REDIS
+.if ${.CURDIR:N*security/suricata*}==""
+CUR_ARCH!=	/usr/bin/uname -p
+NATIVE_BUILD!=	/sbin/sysctl -qn kern.supported_archs | grep -q ${CUR_ARCH} && echo yes || /usr/bin/true
+.if ${NATIVE_BUILD} != "yes"
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS RUST
+.else
+security_suricata_UNSET_FORCE=LUA PRELUDE SC TESTS
+security_suricata4_UNSET_FORCE=LUA PRELUDE SC TESTS
+.endif
+.endif
+
+security_xinetd_UNSET_FORCE=	XCONV
+
+# sysutils
+sysutils_apcupsd_SET_FORCE=APCDUMB_DRV APCSMART_DRV PCNET_DRV SNMP_DRV TCP_WRAPPERS USB
+sysutils_apcupsd_UNSET_FORCE=CGI CLIENT_ONLY GAPCMON SNMP_DRV_OLD TEST_DRV
+
+sysutils_flashrom_UNSET_FORCE=	FTDI BUSPIRATE
+
+sysutils_pftop_SET_FORCE=ALTQ
+
+sysutils_syslog-ng_SET_FORCE=	SYS_SSL
+sysutils_syslog-ng_UNSET_FORCE=	PORTS_SSL
+
+# www
+www_c-icap_SET_FORCE=LARGE_FILES
+www_c-icap_UNSET_FORCE=IPV6
+
+www_lightsquid_SET_FORCE=GD
+
+www_lighttpd_SET_FORCE=	NODELAY
+
+www_nginx_SET_FORCE=	LUA
+
+www_squid_SET_FORCE=ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS FS_DISKD GSSAPI_MIT HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE LAX_HTTP SNMP SSL SSL_CRTD TP_PF WCCP WCCPV2
+www_squid_UNSET_FORCE=AUTH_SMB AUTH_SQL DEBUG DNS_HELPER ECAP ESI FS_ROCK GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL STACKTRACES TP_IPF TP_IPFW VIA_DB
+
+www_squidguard_SET_FORCE=DNS_BL LDAP STRIP_NTDOMAIN
+www_squidguard_UNSET_FORCE=QUOTE_STRING
+
+www_e2guardian_SET_FORCE=ICAP NTLM SSL_MITM
+
+PKG_REPO_BRANCH_DEVEL=v2_5_0
+PKG_REPO_BRANCH_RELEASE=v2_5_2
+PKG_REPO_SERVER_DEVEL=pkg+http://10.42.0.2/packages
+PKG_REPO_SERVER_RELEASE=pkg+http://10.42.0.2/packages
+POUDRIERE_PORTS_NAME=Cygate_devel
+PFSENSE_DEFAULT_REPO=Cygate-repo-devel
+PRODUCT_NAME=Cygate
+REPO_BRANCH_PREFIX=
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19414
+open files                      (-n)  9000
+virtual mem size        (kbytes, -v)  8388608
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License APACHE20 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.17.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pkg-1.17.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pkg-1.17.2: .......... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License APACHE20 accepted by the user
+===> Fetching all distfiles required by Cygate-2.6.0.a.20211018.2326 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License APACHE20 accepted by the user
+===> Fetching all distfiles required by Cygate-2.6.0.a.20211018.2326 for building
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  License APACHE20 accepted by the user
+===> Fetching all distfiles required by Cygate-2.6.0.a.20211018.2326 for building
+===>  Extracting for Cygate-2.6.0.a.20211018.2326
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Patching for Cygate-2.6.0.a.20211018.2326
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   Cygate-2.6.0.a.20211018.2326 depends on shared library: libltdl.so - not found
+===>   Installing existing package /packages/All/libltdl-2.4.6.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing libltdl-2.4.6...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting libltdl-2.4.6: .......... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on shared library: libltdl.so - found (/usr/local/lib/libltdl.so)
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Configuring for Cygate-2.6.0.a.20211018.2326
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: bind-tools>=0 - not found
+===>   Installing existing package /packages/All/bind-tools-9.16.21.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing bind-tools-9.16.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing json-c-0.15_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting json-c-0.15_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libedit-3.1.20210216,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libedit-3.1.20210216,1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libidn2-2.3.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing indexinfo-0.3.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting indexinfo-0.3.1: .... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing libunistring-0.9.10_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting libunistring-0.9.10_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libidn2-2.3.2: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libuv-1.42.0...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libuv-1.42.0: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libxml2-2.9.12...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libxml2-2.9.12: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing py38-ply-3.11...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing py38-setuptools-57.0.0...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Installing python38-3.8.12_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   |   `-- Installing gettext-runtime-0.21...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   |   `-- Extracting gettext-runtime-0.21: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   |   `-- Installing libffi-3.3_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   |   `-- Extracting libffi-3.3_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   |   `-- Installing mpdecimal-2.5.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   |   `-- Extracting mpdecimal-2.5.1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   |   `-- Installing readline-8.1.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   |   `-- Extracting readline-8.1.1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Extracting python38-3.8.12_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting py38-setuptools-57.0.0: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting py38-ply-3.11: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting bind-tools-9.16.21: .......... done
+=====
+Message from python38-3.8.12_1:
+
+--
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+py38-gdbm       databases/py-gdbm@py38
+py38-sqlite3    databases/py-sqlite3@py38
+py38-tkinter    x11-toolkits/py-tkinter@py38
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: bind-tools>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: bsnmp-regex>=0 - not found
+===>   Installing existing package /packages/All/bsnmp-regex-0.6_2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing bsnmp-regex-0.6_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting bsnmp-regex-0.6_2: .......... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: bsnmp-regex>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: bsnmp-ucd>=0 - not found
+===>   Installing existing package /packages/All/bsnmp-ucd-0.4.5.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing bsnmp-ucd-0.4.5...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting bsnmp-ucd-0.4.5: ...... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: bsnmp-ucd>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: ca_root_nss>=0 - not found
+===>   Installing existing package /packages/All/ca_root_nss-3.71.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing ca_root_nss-3.71...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting ca_root_nss-3.71: ........ done
+=====
+Message from ca_root_nss-3.71:
+
+--
+FreeBSD does not, and can not warrant that the certification authorities
+whose certificates are included in this package have in any way been
+audited for trustworthiness or RFC 3647 compliance.
+
+Assessment and verification of trust is the complete responsibility of the
+system administrator.
+
+
+This package installs symlinks to support root certificates discovery by
+default for software that uses OpenSSL.
+
+This enables SSL Certificate Verification by client software without manual
+intervention.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * /usr/local/etc/ssl/cert.pem
+  * /usr/local/openssl/cert.pem
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: ca_root_nss>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: check_reload_status>=0 - not found
+===>   Installing existing package /packages/All/check_reload_status-0.0.11.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing check_reload_status-0.0.11...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libevent-2.1.12...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libevent-2.1.12: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting check_reload_status-0.0.11: ...... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: check_reload_status>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: choparp>=0 - not found
+===>   Installing existing package /packages/All/choparp-20150613.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing choparp-20150613...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting choparp-20150613: ...... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: choparp>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: cpdup>=0 - not found
+===>   Installing existing package /packages/All/cpdup-1.22.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing cpdup-1.22...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting cpdup-1.22: ..... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: cpdup>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: cpustats>=0 - not found
+===>   Installing existing package /packages/All/cpustats-0.1_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing cpustats-0.1_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting cpustats-0.1_1: . done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: cpustats>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: dhcp6>=0 - not found
+===>   Installing existing package /packages/All/dhcp6-20080615.2_4.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing dhcp6-20080615.2_4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting dhcp6-20080615.2_4: .......... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: dhcp6>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: dhcpleases6>=0 - not found
+===>   Installing existing package /packages/All/dhcpleases6-0.1_3.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing dhcpleases6-0.1_3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting dhcpleases6-0.1_3: .... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: dhcpleases6>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: dhcpleases>=0 - not found
+===>   Installing existing package /packages/All/dhcpleases-0.5_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing dhcpleases-0.5_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting dhcpleases-0.5_1: .... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: dhcpleases>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: dnsmasq>=0 - not found
+===>   Installing existing package /packages/All/dnsmasq-2.86,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing dnsmasq-2.86,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting dnsmasq-2.86,1: .......... done
+=====
+Message from dnsmasq-2.86,1:
+
+--
+To enable dnsmasq, edit /usr/local/etc/dnsmasq.conf and
+set dnsmasq_enable="YES" in /etc/rc.conf[.local]
+
+Further options and actions are documented inside
+/usr/local/etc/rc.d/dnsmasq
+
+SECURITY RECOMMENDATION
+~~~~~~~~~~~~~~~~~~~~~~~
+It is recommended to enable the wpad-related options
+at the end of the configuration file (you may need to
+copy them from the example file to yours) to fix
+CERT Vulnerability VU#598349.
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: dnsmasq>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: dpinger>=0 - not found
+===>   Installing existing package /packages/All/dpinger-3.0.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing dpinger-3.0...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting dpinger-3.0: .... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: dpinger>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: expiretable>=0 - not found
+===>   Installing existing package /packages/All/expiretable-0.6_2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing expiretable-0.6_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting expiretable-0.6_2: ... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: expiretable>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: filterdns>=0 - not found
+===>   Installing existing package /packages/All/filterdns-2.0_5.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing filterdns-2.0_5...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting filterdns-2.0_5: .... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: filterdns>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: filterlog>=0 - not found
+===>   Installing existing package /packages/All/filterlog-0.1_6.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing filterlog-0.1_6...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting filterlog-0.1_6: . done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: filterlog>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: hostapd>=0 - not found
+===>   Installing existing package /packages/All/hostapd-2.9_4.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing hostapd-2.9_4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting hostapd-2.9_4: ....... done
+=====
+Message from hostapd-2.9_4:
+
+--
+Add the following to /etc/rc.conf to use the ports version instead
+of the base version:
+
+    hostapd_program="/usr/local/sbin/hostapd"
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: hostapd>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: igmpproxy>=0 - not found
+===>   Installing existing package /packages/All/igmpproxy-0.3,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing igmpproxy-0.3,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting igmpproxy-0.3,1: ........ done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: igmpproxy>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: ipmitool>=0 - not found
+===>   Installing existing package /packages/All/ipmitool-1.8.18_3.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing ipmitool-1.8.18_3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting ipmitool-1.8.18_3: ......... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: ipmitool>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: isc-dhcp44-client>=0 - not found
+===>   Installing existing package /packages/All/isc-dhcp44-client-4.4.2P1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing isc-dhcp44-client-4.4.2P1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting isc-dhcp44-client-4.4.2P1: .......... done
+=====
+Message from isc-dhcp44-client-4.4.2P1:
+
+--
+****  To setup dhclient, you may need to edit /etc/rc.conf to replace the
+      base system dhclient as follows:
+
+	    dhclient_program="/usr/local/sbin/dhclient"
+	    dhclient_flags="-q"
+
+      See dhclient(8), using the following command, for details about other
+      possible options:
+
+	    MANPATH=/usr/local/man man 8 dhclient
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: isc-dhcp44-client>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: isc-dhcp44-relay>=0 - not found
+===>   Installing existing package /packages/All/isc-dhcp44-relay-4.4.2P1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing isc-dhcp44-relay-4.4.2P1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting isc-dhcp44-relay-4.4.2P1: ....... done
+=====
+Message from isc-dhcp44-relay-4.4.2P1:
+
+--
+****  This port installs the dhcp relay daemon, but doesn't invoke dhcrelay by
+      default. If you want to invoke dhcrelay at startup, add the following
+      lines to /etc/rc.conf:
+
+	    dhcrelay_enable="YES"
+	    dhcrelay_flags=""		# command option(s)
+	    dhcrelay_servers=""		# dhcrelay server(s)
+	    dhcrelay_ifaces=""		# ethernet interface(s)
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: isc-dhcp44-relay>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: isc-dhcp44-server>=0 - not found
+===>   Installing existing package /packages/All/isc-dhcp44-server-4.4.2P1_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing isc-dhcp44-server-4.4.2P1_1...
+===> Creating groups.
+Creating group 'dhcpd' with gid '136'.
+===> Creating users
+Creating user 'dhcpd' with uid '136'.
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting isc-dhcp44-server-4.4.2P1_1: .......... done
+=====
+Message from isc-dhcp44-server-4.4.2P1_1:
+
+--
+****  To setup dhcpd, please edit /usr/local/etc/dhcpd.conf.
+
+****  This port installs the dhcp daemon, but doesn't invoke dhcpd by default.
+      If you want to invoke dhcpd at startup, add these lines to /etc/rc.conf:
+
+	    dhcpd_enable="YES"				# dhcpd enabled?
+	    dhcpd_flags="-q"				# command option(s)
+	    dhcpd_conf="/usr/local/etc/dhcpd.conf"	# configuration file
+	    dhcpd_ifaces=""				# ethernet interface(s)
+	    dhcpd_withumask="022"			# file creation mask
+
+****  If compiled with paranoia support (the default), the following rc.conf
+      options are also supported:
+
+	    dhcpd_chuser_enable="YES"		# runs w/o privileges?
+	    dhcpd_withuser="dhcpd"		# user name to run as
+	    dhcpd_withgroup="dhcpd"		# group name to run as
+	    dhcpd_chroot_enable="YES"		# runs chrooted?
+	    dhcpd_devfs_enable="YES"		# use devfs if available?
+	    dhcpd_rootdir="/var/db/dhcpd"	# directory to run in
+	    dhcpd_includedir="<some_dir>"	# directory with config-
+						  files to include
+
+****  WARNING: never edit the chrooted or jailed dhcpd.conf file but
+      /usr/local/etc/dhcpd.conf instead which is always copied where
+      needed upon startup.
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: isc-dhcp44-server>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: libxml2>=0 - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: links>=0 - not found
+===>   Installing existing package /packages/All/links-2.20.2_1,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing links-2.20.2_1,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting links-2.20.2_1,1: ..... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: links>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: minicron>=0 - not found
+===>   Installing existing package /packages/All/minicron-0.0.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing minicron-0.0.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting minicron-0.0.2: . done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: minicron>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: miniupnpd>=0 - not found
+===>   Installing existing package /packages/All/miniupnpd-2.2.1_1,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing miniupnpd-2.2.1_1,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting miniupnpd-2.2.1_1,1: ....... done
+=====
+Message from miniupnpd-2.2.1_1,1:
+
+--
+*** !!WARNING!! !!WARNING!! !!WARNING!! ***
+This port allows machines within your network to create holes in your
+firewall.  Please ensure this is really what you want!
+*** !!WARNING!! !!WARNING!! !!WARNING!! ***
+
+For this daemon to work, you must modify your pf rules to add an anchor
+in both the NAT and rules section.  Both must be called 'miniupnpd'.
+Example:
+
+# NAT section
+# UPnPd rdr anchor
+rdr-anchor "miniupnpd"
+
+# Rules section
+# uPnPd rule anchor
+anchor "miniupnpd"
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: miniupnpd>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: mobile-broadband-provider-info>=0 - not found
+===>   Installing existing package /packages/All/mobile-broadband-provider-info-20210805.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing mobile-broadband-provider-info-20210805...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libxslt-1.1.34_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing libgcrypt-1.9.4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Installing libgpg-error-1.42...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Extracting libgpg-error-1.42: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting libgcrypt-1.9.4: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libxslt-1.1.34_2: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting mobile-broadband-provider-info-20210805: ....... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: mobile-broadband-provider-info>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: mpd5>=0 - not found
+===>   Installing existing package /packages/All/mpd5-5.9_4.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing mpd5-5.9_4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting mpd5-5.9_4: ......... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: mpd5>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: nginx>=0 - not found
+===>   Installing existing package /packages/All/nginx-1.20.1_4,2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing nginx-1.20.1_4,2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing lua-resty-core-0.1.22...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing lua-resty-lrucache-0.11...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Installing luajit-openresty-2.1.20210510...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Extracting luajit-openresty-2.1.20210510: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting lua-resty-lrucache-0.11: ..... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting lua-resty-core-0.1.22: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing pcre-8.45...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting pcre-8.45: .......... done
+===> Creating groups.
+Using existing group 'www'.
+===> Creating users
+Using existing user 'www'.
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting nginx-1.20.1_4,2: .......... done
+=====
+Message from nginx-1.20.1_4,2:
+
+--
+Recent version of the NGINX introduces dynamic modules support.  In
+FreeBSD ports tree this feature was enabled by default with the DSO
+knob.  Several vendor's and third-party modules have been converted
+to dynamic modules.  Unset the DSO knob builds an NGINX without
+dynamic modules support.
+
+To load a module at runtime, include the new `load_module'
+directive in the main context, specifying the path to the shared
+object file for the module, enclosed in quotation marks.  When you
+reload the configuration or restart NGINX, the module is loaded in.
+It is possible to specify a path relative to the source directory,
+or a full path, please see
+https://www.nginx.com/blog/dynamic-modules-nginx-1-9-11/ and
+http://nginx.org/en/docs/ngx_core_module.html#load_module for
+details.
+
+Default path for the NGINX dynamic modules is
+
+/usr/local/libexec/nginx.
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: nginx>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: ntp>=0 - not found
+===>   Installing existing package /packages/All/ntp-4.2.8p15.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing ntp-4.2.8p15...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting ntp-4.2.8p15: .......... done
+=====
+Message from ntp-4.2.8p15:
+
+--
+Please add
+
+	ntpd_program="/usr/local/sbin/ntpd"
+	ntpdate_program="/usr/local/sbin/ntpdate"
+
+to your /etc/rc.conf or run
+
+	sysrc ntpd_program="/usr/local/sbin/ntpd"
+	sysrc ntpdate_program="/usr/local/sbin/ntpdate"
+
+to enable ntp from ports/packages instead of base ntp.
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: ntp>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: openvpn>=0 - not found
+===>   Installing existing package /packages/All/openvpn-2.5.4.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing openvpn-2.5.4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libinotify-20180201_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libinotify-20180201_2: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing liblz4-1.9.3,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting liblz4-1.9.3,1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing lzo2-2.10_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting lzo2-2.10_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting openvpn-2.5.4: .......... done
+=====
+Message from libinotify-20180201_2:
+
+--
+Libinotify functionality on FreeBSD is missing support for
+
+  - detecting a file being moved into or out of a directory within the
+    same filesystem
+  - certain modifications to a symbolic link (rather than the
+    file it points to.)
+
+in addition to the known limitations on all platforms using kqueue(2)
+where various open and close notifications are unimplemented.
+
+This means the following regression tests will fail:
+
+Directory notifications:
+   IN_MOVED_FROM
+   IN_MOVED_TO
+
+Open/close notifications:
+   IN_OPEN
+   IN_CLOSE_NOWRITE
+   IN_CLOSE_WRITE
+
+Symbolic Link notifications:
+   IN_DONT_FOLLOW
+   IN_ATTRIB
+   IN_MOVE_SELF
+   IN_DELETE_SELF
+
+Kernel patches to address the missing directory and symbolic link
+notifications are available from:
+
+https://github.com/libinotify-kqueue/libinotify-kqueue/tree/master/patches
+
+You might want to consider increasing the kern.maxfiles tunable if you plan
+to use this library for applications that need to monitor activity of a lot
+of files.
+=====
+Message from openvpn-2.5.4:
+
+--
+Edit /etc/rc.conf[.local] to start OpenVPN automatically at system
+  startup. See /usr/local/etc/rc.d/openvpn for details.
+
+  Connect to VPN server as a client with this command to include
+  the client.up/down scripts in the initialization:
+  openvpn-client <spec>.ovpn
+
+  For compatibility notes when interoperating with older OpenVPN
+  versions, please see <http://openvpn.net/relnotes.html>
+
+  Note that OpenVPN does not officially support LibreSSL.
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: openvpn>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-openssl_x509_crl>=0 - not found
+===>   Installing existing package /packages/All/php74-openssl_x509_crl-1.3.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-openssl_x509_crl-1.3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing libargon2-20190702...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting libargon2-20190702: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing pcre2-10.37...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting pcre2-10.37: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-7.4.24: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-bcmath-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-bcmath-7.4.24: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-openssl-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-openssl-7.4.24: ....... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-openssl_x509_crl-1.3: .......... done
+=====
+Message from php74-bcmath-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-bcmath.ini
+=====
+Message from php74-openssl-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-openssl.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-openssl_x509_crl>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-pear-Auth_RADIUS>=0 - not found
+===>   Installing existing package /packages/All/php74-pear-Auth_RADIUS-1.1.0_4.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-pear-Auth_RADIUS-1.1.0_4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-pear-1.10.12...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing php74-xml-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting php74-xml-7.4.24: ........ done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing php74-zlib-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting php74-zlib-7.4.24: ....... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-pear-1.10.12: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-pecl-radius-1.4.0b1_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-pecl-radius-1.4.0b1_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-pear-Auth_RADIUS-1.1.0_4: ....... done
+install ok: channel://pear.php.net/Auth_RADIUS-1.1.0
+=====
+Message from php74-xml-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-xml.ini
+=====
+Message from php74-zlib-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-zlib.ini
+=====
+Message from php74-pecl-radius-1.4.0b1_1:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-radius.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-pear-Auth_RADIUS>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-pear-Crypt_CHAP>=0 - not found
+===>   Installing existing package /packages/All/php74-pear-Crypt_CHAP-1.5.0.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-pear-Crypt_CHAP-1.5.0...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-pecl-mcrypt-1.0.4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing libmcrypt-2.5.8_3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting libmcrypt-2.5.8_3: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-pecl-mcrypt-1.0.4: ........ done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-pear-Crypt_CHAP-1.5.0: ... done
+install ok: channel://pear.php.net/Crypt_CHAP-1.5.0
+=====
+Message from php74-pecl-mcrypt-1.0.4:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-mcrypt.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-pear-Crypt_CHAP>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-pear-Mail>=0 - not found
+===>   Installing existing package /packages/All/php74-pear-Mail-1.4.1,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-pear-Mail-1.4.1,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-pear-Net_SMTP-1.10.0...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing php74-pear-Net_Socket-1.2.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting php74-pear-Net_Socket-1.2.2: ....... done
+install ok: channel://pear.php.net/Net_Socket-1.2.2
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-pear-Net_SMTP-1.10.0: .......... done
+pear/Net_SMTP can optionally use package "pear/Auth_SASL" (version >= 1.0.5)
+install ok: channel://pear.php.net/Net_SMTP-1.10.0
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-pear-Mail-1.4.1,1: .......... done
+install ok: channel://pear.php.net/Mail-1.4.1
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-pear-Mail>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-pear-Net_IPv6>=0 - not found
+===>   Installing existing package /packages/All/php74-pear-Net_IPv6-1.3.0.b2_2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-pear-Net_IPv6-1.3.0.b2_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-pear-Net_IPv6-1.3.0.b2_2: ...... done
+install ok: channel://pear.php.net/Net_IPv6-1.3.0b2
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-pear-Net_IPv6>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-pear-XML_RPC2>=0 - not found
+===>   Installing existing package /packages/All/php74-pear-XML_RPC2-1.1.4.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-pear-XML_RPC2-1.1.4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-curl-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing curl-7.79.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Installing libnghttp2-1.45.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Extracting libnghttp2-1.45.1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Installing libssh2-1.9.0_3,3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Extracting libssh2-1.9.0_3,3: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting curl-7.79.1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-curl-7.4.24: ....... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-pear-Cache_Lite-1.8.3,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-pear-Cache_Lite-1.8.3,1: .......... done
+install ok: channel://pear.php.net/Cache_Lite-1.8.3
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-pear-HTTP_Request2-2.5.0,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing php74-pear-Net_URL2-2.2.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting php74-pear-Net_URL2-2.2.1: .......... done
+install ok: channel://pear.php.net/Net_URL2-2.2.1
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-pear-HTTP_Request2-2.5.0,1: .......... done
+pear/HTTP_Request2 can optionally use PHP extension "fileinfo"
+install ok: channel://pear.php.net/HTTP_Request2-2.5.0
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-pear-XML_RPC2-1.1.4: .......... done
+install ok: channel://pear.php.net/XML_RPC2-1.1.4
+=====
+Message from php74-curl-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-curl.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-pear-XML_RPC2>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-simplepie>=0 - not found
+===>   Installing existing package /packages/All/php74-simplepie-1.5.1_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-simplepie-1.5.1_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-mbstring-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing oniguruma-6.9.7.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting oniguruma-6.9.7.1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-mbstring-7.4.24: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-tokenizer-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-tokenizer-7.4.24: ....... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-simplepie-1.5.1_1: .... done
+=====
+Message from php74-mbstring-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-mbstring.ini
+=====
+Message from php74-tokenizer-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-tokenizer.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-simplepie>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-Cygate-module>=0 - not found
+===>   Installing existing package /packages/All/php74-Cygate-module-0.74.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-Cygate-module-0.74...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing strongswan-5.9.3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing ldns-1.7.1_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting ldns-1.7.1_2: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing unbound-1.13.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Installing expat-2.4.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Extracting expat-2.4.1: .......... done
+===> Creating groups.
+Using existing group 'unbound'.
+===> Creating users
+Using existing user 'unbound'.
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting unbound-1.13.2: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing vstr-1.0.15_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting vstr-1.0.15_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting strongswan-5.9.3: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-Cygate-module-0.74: ...... done
+=====
+Message from vstr-1.0.15_1:
+
+--
+===>   NOTICE:
+
+The vstr port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+=====
+Message from strongswan-5.9.3:
+
+--
+The default strongSwan configuration interface have been updated to vici since version 5.9.2_1.
+To use the stroke interface by default either compile the port without the vici option or
+set 'strongswan_interface="stroke"' in your rc.conf file.
+=====
+Message from php74-Cygate-module-0.74:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-Cygate.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-Cygate-module>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-phpseclib>=0 - not found
+===>   Installing existing package /packages/All/php74-phpseclib-2.0.17.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-phpseclib-2.0.17...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-phpseclib-2.0.17: .......... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: php74-phpseclib>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: Cygate-Status_Monitoring>=0 - not found
+===>   Installing existing package /packages/All/Cygate-Status_Monitoring-1.7.11_4.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing Cygate-Status_Monitoring-1.7.11_4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing php74-pecl-rrd-2.0.1_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing rrdtool-1.7.2_4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Installing glib-2.70.0_1,2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   |   `-- Installing libiconv-1.16...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   |   `-- Extracting libiconv-1.16: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Extracting glib-2.70.0_1,2: .......... done
+No schema files found: doing nothing.
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Installing perl5-5.32.1_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   | `-- Extracting perl5-5.32.1_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting rrdtool-1.7.2_4: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting php74-pecl-rrd-2.0.1_1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting Cygate-Status_Monitoring-1.7.11_4: ........ done
+=====
+Message from php74-pecl-rrd-2.0.1_1:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-rrd.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: Cygate-Status_Monitoring>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: Cygate-repo>=0 - not found
+===>   Installing existing package /packages/All/Cygate-repo-2.6.0.a.20211018.2326.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing Cygate-repo-2.6.0.a.20211018.2326...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting Cygate-repo-2.6.0.a.20211018.2326: .......... done
+grep: /etc/rc.php_ini_setup: No such file or directory
+grep: /etc/rc.php_ini_setup: No such file or directory
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: Cygate-repo>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: Cygate-upgrade>=0 - not found
+===>   Installing existing package /packages/All/Cygate-upgrade-1.0_8.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing Cygate-upgrade-1.0_8...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting Cygate-upgrade-1.0_8: ..... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: Cygate-upgrade>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: pftop>=0 - not found
+===>   Installing existing package /packages/All/pftop-0.7_9.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pftop-0.7_9...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pftop-0.7_9: ..... done
+=====
+Message from pftop-0.7_9:
+
+--
+===>   NOTICE:
+
+The pftop port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: pftop>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: qstats>=0 - not found
+===>   Installing existing package /packages/All/qstats-0.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing qstats-0.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting qstats-0.2: . done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: qstats>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: radvd>=0 - not found
+===>   Installing existing package /packages/All/radvd-2.19_2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing radvd-2.19_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting radvd-2.19_2: .......... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: radvd>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: rate>=0 - not found
+===>   Installing existing package /packages/All/rate-0.9_2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing rate-0.9_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting rate-0.9_2: ..... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: rate>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: scponly>=0 - not found
+===>   Installing existing package /packages/All/scponly-4.8.20110526_5.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing scponly-4.8.20110526_5...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting scponly-4.8.20110526_5: .......... done
+
+To setup chroot cage, run the following commands:
+  1) cd /usr/local/share/examples/scponly/ && /bin/sh setup_chroot.sh
+  2) Set scponlyc_enable="YES" in /etc/rc.conf
+  3) Run /usr/local/etc/rc.d/scponly start
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: scponly>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: ssh_tunnel_shell>=0 - not found
+===>   Installing existing package /packages/All/ssh_tunnel_shell-0.2_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing ssh_tunnel_shell-0.2_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting ssh_tunnel_shell-0.2_1: . done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: ssh_tunnel_shell>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: sshguard>=0 - not found
+===>   Installing existing package /packages/All/sshguard-2.4.2_1,1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing sshguard-2.4.2_1,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting sshguard-2.4.2_1,1: .......... done
+=====
+Message from sshguard-2.4.2_1,1:
+
+--
+To enable SSHGuard at startup, add the following line to your 'rc.conf':
+sshguard_enable="YES"
+
+Starting SSHGuard through syslogd(8) is discouraged and not supported.
+
+Configure SSHGuard by editing BACKEND in '/usr/local/etc/sshguard.conf'. See
+sshguard-setup(7) for instructions on setting up your firewall.
+
+Please note that a few rc script parameters have been renamed to
+better reflect the documentation:
+
+sshguard_safety_thresh -> sshguard_danger_thresh
+sshguard_pardon_min_interval -> sshguard_release_interval
+sshguard_prescribe_interval -> sshguard_reset_interval
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: sshguard>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: strongswan>=0 - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: uclcmd>=0 - not found
+===>   Installing existing package /packages/All/uclcmd-0.1_3.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing uclcmd-0.1_3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing libucl-0.8.1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting libucl-0.8.1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting uclcmd-0.1_3: .... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: uclcmd>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: unbound>=0 - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: voucher>=0 - not found
+===>   Installing existing package /packages/All/voucher-0.1_2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing voucher-0.1_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting voucher-0.1_2: . done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: voucher>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: wol>=0 - not found
+===>   Installing existing package /packages/All/wol-0.7.1_4.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing wol-0.7.1_4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting wol-0.7.1_4: .......... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: wol>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: wpa_supplicant>=0 - not found
+===>   Installing existing package /packages/All/wpa_supplicant-2.9_11.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing wpa_supplicant-2.9_11...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing dbus-1.12.20_5...
+===> Creating groups.
+Creating group 'messagebus' with gid '556'.
+===> Creating users
+Creating user 'messagebus' with uid '556'.
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting dbus-1.12.20_5: ......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting wpa_supplicant-2.9_11: ......... done
+=====
+Message from wpa_supplicant-2.9_11:
+
+--
+To use the ports version of WPA Supplicant instead of the base, add:
+
+    wpa_supplicant_program="/usr/local/sbin/wpa_supplicant"
+
+to /etc/rc.conf
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: wpa_supplicant>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: xinetd>=0 - not found
+===>   Installing existing package /packages/All/xinetd-2.3.15_2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing xinetd-2.3.15_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting xinetd-2.3.15_2: ......... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: xinetd>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: openvpn-auth-script>=0 - not found
+===>   Installing existing package /packages/All/openvpn-auth-script-1.0.0.3.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing openvpn-auth-script-1.0.0.3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting openvpn-auth-script-1.0.0.3: .... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: openvpn-auth-script>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: opensc>0 - not found
+===>   Installing existing package /packages/All/opensc-0.22.0.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing opensc-0.22.0...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing pcsc-lite-1.9.4,2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting pcsc-lite-1.9.4,2: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting opensc-0.22.0: .......... done
+=====
+Message from pcsc-lite-1.9.4,2:
+
+--
+PC/SC-Lite has been installed.
+
+You need to install a driver for your smartcard reader e.g.,
+- devel/libccid
+- security/ifd-slb_rf60
+
+For cardreaders connected to the serial port: After installing the driver,
+please update the pcscd configuration file:
+/usr/local/etc/reader.conf
+
+For USB cardreaders add the following lines to /etc/devd.conf to enable
+hotplugging:
+
+attach 100 {
+        device-name "ugen[0-9]+";
+        action "/usr/local/sbin/pcscd -H";
+};
+
+detach 100 {
+        device-name "ugen[0-9]+";
+        action "/usr/local/sbin/pcscd -H";
+};
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: opensc>0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: ccid>0 - not found
+===>   Installing existing package /packages/All/ccid-1.4.36.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing ccid-1.4.36...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting ccid-1.4.36: ....... done
+=====
+Message from ccid-1.4.36:
+
+--
+===>   NOTICE:
+
+The ccid port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://docs.freebsd.org/en/articles/contributing/#ports-contributing
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: ccid>0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: iftop>0 - not found
+===>   Installing existing package /packages/All/iftop-1.0.p4.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing iftop-1.0.p4...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting iftop-1.0.p4: ..... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: iftop>0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: nss_ldap>0 - not found
+===>   Installing existing package /packages/All/nss_ldap-1.265_14.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing nss_ldap-1.265_14...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing openldap24-client-2.4.59_2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Installing cyrus-sasl-2.1.27_2...
+*** Added group `cyrus' (id 60)
+*** Added user `cyrus' (id 60)
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] |   `-- Extracting cyrus-sasl-2.1.27_2: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting openldap24-client-2.4.59_2: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting nss_ldap-1.265_14: ...... done
+=====
+Message from cyrus-sasl-2.1.27_2:
+
+--
+You can use sasldb2 for authentication, to add users use:
+
+	saslpasswd2 -c username
+
+If you want to enable SMTP AUTH with the system Sendmail, read
+Sendmail.README
+
+NOTE: This port has been compiled with a default pwcheck_method of
+      auxprop.  If you want to authenticate your user by /etc/passwd,
+      PAM or LDAP, install ports/security/cyrus-sasl2-saslauthd and
+      set sasl_pwcheck_method to saslauthd after installing the
+      Cyrus-IMAPd 2.X port.  You should also check the
+      /usr/local/lib/sasl2/*.conf files for the correct
+      pwcheck_method.
+      If you want to use GSSAPI mechanism, install
+      ports/security/cyrus-sasl2-gssapi.
+      If you want to use SRP mechanism, install
+      ports/security/cyrus-sasl2-srp.
+      If you want to use LDAP auxprop plugin, install
+      ports/security/cyrus-sasl2-ldapdb.
+=====
+Message from openldap24-client-2.4.59_2:
+
+--
+The OpenLDAP client package has been successfully installed.
+
+Edit
+  /usr/local/etc/openldap/ldap.conf
+to change the system-wide client defaults.
+
+Try `man ldap.conf' and visit the OpenLDAP FAQ-O-Matic at
+  http://www.OpenLDAP.org/faq/index.cgi?file=3
+for more information.
+=====
+Message from nss_ldap-1.265_14:
+
+--
+The nss_ldap module expects to find its configuration files at the
+following paths:
+
+LDAP configuration:     /usr/local/etc/nss_ldap.conf
+LDAP secret (optional): /usr/local/etc/nss_ldap.secret
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: nss_ldap>0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: pam_ldap>0 - not found
+===>   Installing existing package /packages/All/pam_ldap-186_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pam_ldap-186_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pam_ldap-186_1: ......... done
+=====
+Message from pam_ldap-186_1:
+
+--
+Edit /usr/local/etc/ldap.conf in order to use this module.  Then
+create a /usr/local/etc/pam.d/ldap with a line similar to the following:
+
+login	auth	sufficient	/usr/local/lib/pam_ldap.so
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: pam_ldap>0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: pam_mkhomedir>0 - not found
+===>   Installing existing package /packages/All/pam_mkhomedir-0.2.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing pam_mkhomedir-0.2...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting pam_mkhomedir-0.2: ... done
+=====
+Message from pam_mkhomedir-0.2:
+
+--
+You may want to add something like this to your /etc/pam.d/login
+or /etc/pam.d/sshd ( when you've configured ssh with PAM )
+file to use this module:
+
+session         required       /usr/local/lib/pam_mkhomedir.so
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: pam_mkhomedir>0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/include/php/main/php.h - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: dmidecode>=0 - not found
+===>   Installing existing package /packages/All/dmidecode-3.3.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing dmidecode-3.3...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting dmidecode-3.3: .......... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: dmidecode>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: smartmontools>=0 - not found
+===>   Installing existing package /packages/All/smartmontools-7.2_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing smartmontools-7.2_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting smartmontools-7.2_1: .......... done
+=====
+Message from smartmontools-7.2_1:
+
+--
+smartmontools has been installed
+
+To check the status of drives, use the following:
+
+	/usr/local/sbin/smartctl -a /dev/ad0	for first ATA/SATA drive
+	/usr/local/sbin/smartctl -a /dev/da0	for first SCSI drive
+	/usr/local/sbin/smartctl -a /dev/ada0	for first SATA drive
+
+To include drive health information in your daily status reports,
+add a line like the following to /etc/periodic.conf:
+	daily_status_smart_devices="/dev/ad0 /dev/da0"
+substituting the appropriate device names for your SMART-capable disks.
+
+To enable drive monitoring, you can use /usr/local/sbin/smartd.
+A sample configuration file has been installed as
+/usr/local/etc/smartd.conf.sample
+Copy this file to /usr/local/etc/smartd.conf and edit appropriately
+
+To have smartd start at boot
+	echo 'smartd_enable="YES"' >> /etc/rc.conf
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: smartmontools>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: wrapalixresetbutton>=0 - not found
+===>   Installing existing package /packages/All/wrapalixresetbutton-0.0.8.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing wrapalixresetbutton-0.0.8...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting wrapalixresetbutton-0.0.8: ...... done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: wrapalixresetbutton>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: beep>=0 - not found
+===>   Installing existing package /packages/All/beep-1.0_1.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing beep-1.0_1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting beep-1.0_1: ..... done
+=====
+Message from beep-1.0_1:
+
+--
+Speaker sound support:
+======================
+
+For PC speaker sound to work you need to be in the operator group
+and need r/w permissions to /dev/speaker device.
+
+Load kernel module:
+
+# kldload speaker
+
+Add a user to operator group:
+
+% pw groupmod operator -m jerry
+
+Uncomment the following lines in /etc/devfs.rules file (create it
+if it doesn't exist):
+
+# Allow members of group operator to cat things to the speaker
+
+[speaker=10]
+add path 'speaker' mode 0660 group operator
+
+To load these new rules add the following to /etc/rc.conf:
+
+devfs_speaker_ruleset="speaker"
+
+Then restart devfs to load the new rules:
+
+% /etc/rc.d/devfs restart
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: beep>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: bwi-firmware-kmod>=0 - not found
+===>   Installing existing package /packages/All/bwi-firmware-kmod-3.130.20.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing bwi-firmware-kmod-3.130.20...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting bwi-firmware-kmod-3.130.20: . done
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: bwi-firmware-kmod>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: devcpu-data>=0 - not found
+===>   Installing existing package /packages/All/devcpu-data-1.39.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing devcpu-data-1.39...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting devcpu-data-1.39: .......... done
+=====
+Message from devcpu-data-1.39:
+
+--
+Installing this port will allow host startup to update the CPU microcode on 
+a FreeBSD system automatically.  There are two methods for updating CPU
+microcode: the first methods loads and applies the update before the kernel
+begins booting, and the second method loads and applies updates using an
+rc script.  The first method is preferred, but is currently only supported
+on Intel i386 and amd64 processors running FreeBSD 12.0.  It is safe to
+enable both methods.
+
+The first method ensures that any CPU features introduced by a microcode
+update are visible to the kernel.  In other words, the update is loaded
+before the kernel performs CPU feature detection.
+
+To enable updates using the first method, add the following lines to
+the system's /boot/loader.conf:
+
+cpu_microcode_load="YES"
+cpu_microcode_name="/boot/firmware/intel-ucode.bin"
+
+This method will not load the microcode update until the system is
+rebooted.
+
+To enable updates using the second method, add the following line to
+the system's /etc/rc.conf:
+
+microcode_update_enable="YES"
+
+Then, to ensure the update is applied, reboot the system or start the
+microcode update service via:
+
+# service microcode_update start
+
+If the CPU requires a microcode update, a console message such as the following
+will appear:
+
+Updating CPU Microcode...
+/usr/local/share/cpucontrol/m32306c3_00000022.fw: updating cpu /dev/cpuctl0 from rev 0x17 to rev 0x22... done.
+/usr/local/share/cpucontrol/m32306c3_00000022.fw: updating cpu /dev/cpuctl2 from rev 0x17 to rev 0x22... done.
+/usr/local/share/cpucontrol/m32306c3_00000022.fw: updating cpu /dev/cpuctl4 from rev 0x17 to rev 0x22... done.
+/usr/local/share/cpucontrol/m32306c3_00000022.fw: updating cpu /dev/cpuctl6 from rev 0x17 to rev 0x22... done.
+Done.
+===>   Cygate-2.6.0.a.20211018.2326 depends on package: devcpu-data>=0 - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/bz2.so - not found
+===>   Installing existing package /packages/All/php74-bz2-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-bz2-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-bz2-7.4.24: ....... done
+=====
+Message from php74-bz2-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-bz2.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/bz2.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/bcmath.so - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/ctype.so - not found
+===>   Installing existing package /packages/All/php74-ctype-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-ctype-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-ctype-7.4.24: ....... done
+=====
+Message from php74-ctype-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-ctype.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/ctype.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/curl.so - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/dom.so - not found
+===>   Installing existing package /packages/All/php74-dom-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-dom-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-dom-7.4.24: .......... done
+=====
+Message from php74-dom-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-dom.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/dom.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/filter.so - not found
+===>   Installing existing package /packages/All/php74-filter-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-filter-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-filter-7.4.24: ........ done
+=====
+Message from php74-filter-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-filter.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/filter.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/gettext.so - not found
+===>   Installing existing package /packages/All/php74-gettext-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-gettext-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-gettext-7.4.24: ....... done
+=====
+Message from php74-gettext-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-gettext.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/gettext.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/intl.so - not found
+===>   Installing existing package /packages/All/php74-intl-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-intl-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing icu-69.1,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting icu-69.1,1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-intl-7.4.24: .......... done
+=====
+Message from php74-intl-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-intl.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/intl.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/json.so - not found
+===>   Installing existing package /packages/All/php74-json-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-json-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-json-7.4.24: .......... done
+=====
+Message from php74-json-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-json.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/json.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/mbstring.so - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/mcrypt.so - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/opcache.so - not found
+===>   Installing existing package /packages/All/php74-opcache-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-opcache-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-opcache-7.4.24: .......... done
+=====
+Message from php74-opcache-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-10-opcache.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/opcache.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/openssl.so - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/pcntl.so - not found
+===>   Installing existing package /packages/All/php74-pcntl-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-pcntl-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-pcntl-7.4.24: ........ done
+=====
+Message from php74-pcntl-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-pcntl.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/pcntl.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/pdo.so - not found
+===>   Installing existing package /packages/All/php74-pdo-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-pdo-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-pdo-7.4.24: .......... done
+=====
+Message from php74-pdo-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-pdo.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/pdo.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/pdo_sqlite.so - not found
+===>   Installing existing package /packages/All/php74-pdo_sqlite-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-pdo_sqlite-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Installing sqlite3-3.35.5_3,1...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] `-- Extracting sqlite3-3.35.5_3,1: .......... done
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-pdo_sqlite-7.4.24: ........ done
+=====
+Message from php74-pdo_sqlite-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-30-pdo_sqlite.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/pdo_sqlite.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/posix.so - not found
+===>   Installing existing package /packages/All/php74-posix-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-posix-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-posix-7.4.24: ....... done
+=====
+Message from php74-posix-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-posix.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/posix.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/radius.so - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/readline.so - not found
+===>   Installing existing package /packages/All/php74-readline-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-readline-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-readline-7.4.24: ........ done
+=====
+Message from php74-readline-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-readline.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/readline.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/session.so - not found
+===>   Installing existing package /packages/All/php74-session-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-session-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-session-7.4.24: .......... done
+=====
+Message from php74-session-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-18-session.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/session.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/shmop.so - not found
+===>   Installing existing package /packages/All/php74-shmop-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-shmop-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-shmop-7.4.24: ....... done
+=====
+Message from php74-shmop-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-shmop.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/shmop.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/simplexml.so - not found
+===>   Installing existing package /packages/All/php74-simplexml-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-simplexml-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-simplexml-7.4.24: ......... done
+=====
+Message from php74-simplexml-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-simplexml.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/simplexml.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/sockets.so - not found
+===>   Installing existing package /packages/All/php74-sockets-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-sockets-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-sockets-7.4.24: .......... done
+=====
+Message from php74-sockets-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-sockets.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/sockets.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/sysvmsg.so - not found
+===>   Installing existing package /packages/All/php74-sysvmsg-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-sysvmsg-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-sysvmsg-7.4.24: ....... done
+=====
+Message from php74-sysvmsg-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-sysvmsg.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/sysvmsg.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/sysvsem.so - not found
+===>   Installing existing package /packages/All/php74-sysvsem-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-sysvsem-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-sysvsem-7.4.24: ....... done
+=====
+Message from php74-sysvsem-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-sysvsem.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/sysvsem.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/sysvshm.so - not found
+===>   Installing existing package /packages/All/php74-sysvshm-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-sysvshm-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-sysvshm-7.4.24: ....... done
+=====
+Message from php74-sysvshm-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-sysvshm.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/sysvshm.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/sqlite3.so - not found
+===>   Installing existing package /packages/All/php74-sqlite3-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-sqlite3-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-sqlite3-7.4.24: ........ done
+=====
+Message from php74-sqlite3-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-sqlite3.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/sqlite3.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/tokenizer.so - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/xml.so - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/ldap.so - not found
+===>   Installing existing package /packages/All/php74-ldap-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-ldap-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-ldap-7.4.24: ....... done
+=====
+Message from php74-ldap-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-ldap.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/ldap.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/zlib.so - found
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/xmlreader.so - not found
+===>   Installing existing package /packages/All/php74-xmlreader-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-xmlreader-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-xmlreader-7.4.24: ....... done
+=====
+Message from php74-xmlreader-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-30-xmlreader.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/xmlreader.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/xmlwriter.so - not found
+===>   Installing existing package /packages/All/php74-xmlwriter-7.4.24.pkg
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Installing php74-xmlwriter-7.4.24...
+[Cygate_v2_5_0_amd64-Cygate_devel-job-02] Extracting php74-xmlwriter-7.4.24: ....... done
+=====
+Message from php74-xmlwriter-7.4.24:
+
+--
+This file has been added to automatically load the installed extension:
+/usr/local/etc/php/ext-20-xmlwriter.ini
+===>   Cygate-2.6.0.a.20211018.2326 depends on file: /usr/local/lib/php/20190902/xmlwriter.so - found
+===>   Returning to build of Cygate-2.6.0.a.20211018.2326
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Staging for Cygate-2.6.0.a.20211018.2326
+===>   Generating temporary packing list
+/bin/mkdir -p /wrkdirs/usr/ports/security/Cygate/work-php74/stage/etc
+echo 0 > /wrkdirs/usr/ports/security/Cygate/work-php74/stage/etc/version.patch
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2021-10-18T20:45:12+0000' 'PKG_NOTE_ports_top_git_hash=af67f424b' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.3.0-1019-gef452659' NO_DEPENDS=yes USER=nobody UID=65534 GID=65534
+===>  Building package for Cygate-2.6.0.a.20211018.2326
+install -l rs /.npkg/All/Cygate-2.6.0.a.20211018.2326.pkg /.npkg/All/Cygate-2.6.0.a.20211018.2326.txz
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for Cygate-2.6.0.a.20211018.2326
+build of security/Cygate@php74 | Cygate-2.6.0.a.20211018.2326 ended at Mon Oct 18 23:45:29 EAT 2021
+build time: 00:00:17
